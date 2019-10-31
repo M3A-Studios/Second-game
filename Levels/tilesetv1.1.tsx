@@ -809,6 +809,6 @@
   <image width="128" height="128" source="../MarioCopy/images/276.png"/>
  </tile>
  <tile id="269">
-  <image width="128" height="128" source="../MarioCopy/images/277..png"/>
+  <image width="128" height="128" source="../MarioCopy/images/277.png"/>
  </tile>
 </tileset>

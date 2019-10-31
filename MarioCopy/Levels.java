@@ -50,18 +50,18 @@ public class Levels extends World
                if (levelHeight == 0) { //only do it the first time it sees height that isnt 0
                    line = line.replaceAll("[^\\d]",""); //replace all non digits with nothing
                    levelHeight = Integer.parseInt(line); //set levelHeight
-                   System.out.println("Size: " + levelWidth + "x" + levelHeight); //debug show levelheight and width
+                   //System.out.println("Size: " + levelWidth + "x" + levelHeight); //debug show levelheight and width
                 }
            }
            if (line.contains("nextlayerid=\"")) { //check for total amount of layers
                line = line.replaceAll("[^\\d]",""); //replace all non digits with nothing
                totalLayers = Integer.parseInt(line) - 1; //get total layers as int
-               System.out.println("Array off [" + (totalLayers - 1) + "][" + (levelWidth * levelHeight - 1) + "]"); //debug total layer
+               //System.out.println("Array off [" + (totalLayers - 1) + "][" + (levelWidth * levelHeight - 1) + "]"); //debug total layer
                world = new int[totalLayers][levelWidth * levelHeight]; //make the array to hold all the layers and their information (2 dimensional)
            }
            if (line.contains("<layer")) { //check if entering a new layer
                if (!mapString.equals("")) { //check if map isn't empty before moving on to next layer
-                   System.out.println("Layer " + currentLayer + ": " + mapString); //debug print this layer out.
+                   //System.out.println("Layer " + currentLayer + ": " + mapString); //debug print this layer out.
                    
                    String[] layer = mapString.split(","); //split values by ,
                    for (int i = 0; i < (levelWidth * levelHeight); i++){ 
@@ -76,7 +76,7 @@ public class Levels extends World
            }
         }
         
-        System.out.println("Layer " + currentLayer + ": " + mapString); //debug print the last layer
+        //System.out.println("Layer " + currentLayer + ": " + mapString); //debug print the last layer
         
         String[] layer = mapString.split(","); //split values by , so 0,0 -> 0 and 0
         for (int i = 0; i < (levelWidth * levelHeight); i++){ 
@@ -95,7 +95,7 @@ public class Levels extends World
          * array: world[laag][postie]
          *
          */
-        System.out.println(levelWidth + ", " + levelHeight);
+        //System.out.println(levelWidth + ", " + levelHeight);
         int width = -1;
         int height = 0;
         for (int laag = 0; laag < totalLayers; laag++) { //conditie
@@ -112,13 +112,13 @@ public class Levels extends World
                 }
                 placeBlock: {
                     Actor nextBlock;;
-                    if (check(Globals.nonSolids,world[laag][positie])) 
+                    if (check(Globals.nonSolids,world[laag][positie] - 1)) 
                     {
-                        nextBlock = new NonSolid(world[laag][positie] + 7);
+                        nextBlock = new NonSolid(world[laag][positie]);
                     }
                     else if (world[laag][positie] != 0)
                     {
-                        nextBlock = new Solid(world[laag][positie] + 7);
+                        nextBlock = new Solid(world[laag][positie]);
                     } 
                     else 
                     {
@@ -130,7 +130,8 @@ public class Levels extends World
             width = -1;
             height = 0;
             if (laag == playerLayer) {
-                //load the player and enemies here.
+                Actor player = new Player();
+                addObject(player, 60, 300);
             }
         }
     }
