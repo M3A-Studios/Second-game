@@ -26,7 +26,7 @@ public class Player extends Physics
     }
 
     public void ClimbingAnim(){
-        if (isClimbing()){
+        if (climbing()){
             for(int i=0;i<100;i++){
                 if (i>=50){
                     setImage(new GreenfootImage("alienGreen_climb1.png"));

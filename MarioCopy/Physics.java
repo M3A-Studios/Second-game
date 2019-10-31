@@ -38,7 +38,7 @@ public class Physics extends Actor
     }
     public void fall()
     {
-        if(!onGround() && !isClimbing()){ //Change to if(!onGround() || !isClimbing()){
+        if(!onGround() && !climbing()){ //Change to if(!onGround() || !isClimbing()){
             setLocation(getX(), getY() + vSpeed);
         }
     }
@@ -102,34 +102,20 @@ public class Physics extends Actor
      
      return canMoveRight; 
     }
-    
-   /* public void climbing(){
-      boolean isClimbing = false; //boolean to play anim while climbing.
-      
-        if(isTouching(Ladder.class) && Greenfoot.isKeyDown("W"))
-        {
-          setLocation(getX(),getY() - Speed);
-          isClimbing = true;
-        }
-        
-        //while(isClimbing == true) //<-- play animation while the player is climbing!
-          //{}
-    } */
-   
-    
-  public boolean climbing(){
-     if(isTouching(Ladder.class) && !isTouching(Solid.class)){ //Issue je gaat in de grond finger in je kont
-        if(Greenfoot.isKeyDown("w"))
-        {
-         vSpeed = 0;
-         setLocation(getX(), getY() - 3 );
-        }
-        if(Greenfoot.isKeyDown("s"))
-        {
-         vSpeed = 0;
-         setLocation(getX(), getY() + 3 );
-        }
-     }
-     return true;
-  }    
+    public boolean climbing(){
+       if(isTouching(Ladder.class) && !isTouching(Solid.class)){ //Issue je gaat in de grond finger in je kont
+          if(Greenfoot.isKeyDown("w"))
+          {
+            vSpeed = 0;
+            setLocation(getX(), getY() - 3 );
+          }
+          if(Greenfoot.isKeyDown("s"))
+          {
+             vSpeed = 0;
+             setLocation(getX(), getY() + 3 );
+          }
+          return true;
+       }
+       return false;
+      }    
 }
