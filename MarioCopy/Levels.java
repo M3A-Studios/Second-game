@@ -15,8 +15,7 @@ public class Levels extends World
     }
     public Levels(int level, int playerLayer)
     {    
-        //Hallo nigger
-        super(1280, 720, 1); 
+        super(Options.screenWidth, Options.screenHeight, 1, false); 
         getMap(level);
         renderMap(playerLayer);
         
@@ -85,7 +84,7 @@ public class Levels extends World
         }
         dataReader.close(); //remove the scanner. we don't need it anymore
     }
-    private static void renderMap(int playerLayer) {
+    private void renderMap(int playerLayer) {
         /* render map
          * lagen zijn as world[laag -1][positie - 1]
          * moet worden geloopt dat het net zo vaak loopt als totalLayers
@@ -96,13 +95,46 @@ public class Levels extends World
          * array: world[laag][postie]
          *
          */
+        System.out.println(levelWidth + ", " + levelHeight);
+        int width = -1;
+        int height = 0;
         for (int laag = 0; laag < totalLayers; laag++) { //conditie
             for (int positie = 0; positie < (levelWidth * levelHeight); positie++) {
-                //doe iets
+                width++;
+                if (width >= levelWidth) {
+                    height ++;
+                    width = 0;
+                }
+                //System.out.println(width + ", " + height);
+                if (height > levelHeight - 1) {
+                    System.out.println("Error in loading the map, out of bounds");
+                    break;
+                }
+                placeBlock: {
+                    Actor nextBlock;
+                    if (world[laag][positie] != 0)
+                    {
+                        nextBlock = new Solid(world[laag][positie] - 1 + 8);
+                    } 
+                    else 
+                    {
+                        break placeBlock;
+                    }
+                    Add(width, height, nextBlock);
+                }
             }
+            width = -1;
+            height = 0;
             if (laag == playerLayer) {
                 //load the player and enemies here.
             }
         }
+    }
+    private void Add(int width, int height, Actor nextBlock) {
+        addObject(nextBlock, width*Options.blockSize + Options.blockSize/2,
+                height*Options.blockSize + Options.blockSize/2);
+    }
+    public static boolean check(Integer[] arr, int toCheckValue) {
+        return Arrays.asList(arr).contains(toCheckValue);
     }
 }
