@@ -111,10 +111,14 @@ public class Levels extends World
                     break;
                 }
                 placeBlock: {
-                    Actor nextBlock;
-                    if (world[laag][positie] != 0)
+                    Actor nextBlock;;
+                    if (check(Globals.nonSolids,world[laag][positie])) 
                     {
-                        nextBlock = new Solid(world[laag][positie] - 1 + 8);
+                        nextBlock = new NonSolid(world[laag][positie] + 7);
+                    }
+                    else if (world[laag][positie] != 0)
+                    {
+                        nextBlock = new Solid(world[laag][positie] + 7);
                     } 
                     else 
                     {
