@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Camera
+comment1.params=
+comment1.target=Camera()
+comment2.params=
+comment2.target=void\ act()
+comment3.params=dsx\ dsy
+comment3.target=void\ scroll(int,\ int)
+numComments=4

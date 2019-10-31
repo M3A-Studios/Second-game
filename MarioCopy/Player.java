@@ -27,6 +27,8 @@ public class Player extends Physics
         ClimbingAnim();
         LeftRightWalkingAnim();
         standingStill();
+        Camera.playerX = getX();
+        Camera.playerY = getY();
     }
 
     public void ClimbingAnim(){

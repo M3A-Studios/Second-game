@@ -1,16 +1,47 @@
 #Greenfoot project file
+<<<<<<< refs/remotes/origin/master
 class.Player.image=alienGreen_front.png
 dependency1.from=Levels
 dependency1.to=NonSolid
+=======
+class.Camera.image=camera.png
+class.LadderMid.image=228.png
+class.LadderTop.image=229.png
+class.Player.image=alienGreen_front.png
+dependency1.from=Levels
+dependency1.to=Camera
+>>>>>>> camera stuff
 dependency1.type=UsesDependency
-dependency10.from=Physics
-dependency10.to=Ladder
+dependency10.from=MyWorld
+dependency10.to=Solid
 dependency10.type=UsesDependency
+dependency11.from=MyWorld
+dependency11.to=Options
+dependency11.type=UsesDependency
+dependency12.from=Blocks
+dependency12.to=Options
+dependency12.type=UsesDependency
+dependency13.from=Physics
+dependency13.to=Solid
+dependency13.type=UsesDependency
+dependency14.from=Physics
+dependency14.to=Ladder
+dependency14.type=UsesDependency
+dependency15.from=Player
+dependency15.to=Camera
+dependency15.type=UsesDependency
 dependency2.from=Levels
+<<<<<<< refs/remotes/origin/master
 dependency2.to=Solid
 dependency2.type=UsesDependency
 dependency3.from=Levels
 dependency3.to=Ladder
+=======
+dependency2.to=NonSolid
+dependency2.type=UsesDependency
+dependency3.from=Levels
+dependency3.to=Solid
+>>>>>>> camera stuff
 dependency3.type=UsesDependency
 dependency4.from=Levels
 dependency4.to=Player
@@ -22,14 +53,15 @@ dependency6.from=Levels
 dependency6.to=Globals
 dependency6.type=UsesDependency
 dependency7.from=MyWorld
-dependency7.to=Options
+dependency7.to=Player
 dependency7.type=UsesDependency
-dependency8.from=Blocks
-dependency8.to=Options
+dependency8.from=MyWorld
+dependency8.to=LadderMid
 dependency8.type=UsesDependency
-dependency9.from=Physics
-dependency9.to=Solid
+dependency9.from=MyWorld
+dependency9.to=LadderTop
 dependency9.type=UsesDependency
+<<<<<<< refs/remotes/origin/master
 editor.fx.0.height=1004
 editor.fx.0.width=1920
 editor.fx.0.x=0
@@ -37,6 +69,15 @@ editor.fx.0.y=27
 height=1004
 package.numDependencies=10
 package.numTargets=10
+=======
+editor.fx.0.height=1080
+editor.fx.0.width=1920
+editor.fx.0.x=0
+editor.fx.0.y=0
+height=1053
+package.numDependencies=15
+package.numTargets=13
+>>>>>>> camera stuff
 project.charset=UTF-8
 publish.hasSource=false
 publish.locked=true
@@ -50,7 +91,7 @@ readme.name=@README
 readme.width=47
 readme.x=10
 readme.y=10
-simulation.speed=50
+simulation.speed=46
 target1.height=50
 target1.name=Globals
 target1.showInterface=false
@@ -59,12 +100,40 @@ target1.width=80
 target1.x=0
 target1.y=0
 target10.height=50
+<<<<<<< refs/remotes/origin/master
 target10.name=Solid
+=======
+target10.name=Levels
+>>>>>>> camera stuff
 target10.showInterface=false
 target10.type=ClassTarget
 target10.width=80
 target10.x=0
 target10.y=0
+<<<<<<< refs/remotes/origin/master
+=======
+target11.height=50
+target11.name=Camera
+target11.showInterface=false
+target11.type=ClassTarget
+target11.width=80
+target11.x=0
+target11.y=0
+target12.height=50
+target12.name=LadderMid
+target12.showInterface=false
+target12.type=ClassTarget
+target12.width=90
+target12.x=0
+target12.y=0
+target13.height=50
+target13.name=MyWorld
+target13.showInterface=false
+target13.type=ClassTarget
+target13.width=80
+target13.x=0
+target13.y=0
+>>>>>>> camera stuff
 target2.height=50
 target2.name=Options
 target2.showInterface=false
@@ -94,14 +163,22 @@ target5.width=80
 target5.x=0
 target5.y=0
 target6.height=50
+<<<<<<< refs/remotes/origin/master
 target6.name=Ladder
+=======
+target6.name=Solid
+>>>>>>> camera stuff
 target6.showInterface=false
 target6.type=ClassTarget
 target6.width=80
 target6.x=0
 target6.y=0
 target7.height=50
+<<<<<<< refs/remotes/origin/master
 target7.name=Levels
+=======
+target7.name=Physics
+>>>>>>> camera stuff
 target7.showInterface=false
 target7.type=ClassTarget
 target7.width=80
@@ -115,14 +192,24 @@ target8.width=80
 target8.x=0
 target8.y=0
 target9.height=50
+<<<<<<< refs/remotes/origin/master
 target9.name=MyWorld
+=======
+target9.name=NonSolid
+>>>>>>> camera stuff
 target9.showInterface=false
 target9.type=ClassTarget
 target9.width=80
 target9.x=0
 target9.y=0
 version=3.0.0
+<<<<<<< refs/remotes/origin/master
 width=1920
 world.lastInstantiated=Levels
 xPosition=0
+=======
+width=1853
+world.lastInstantiated=Levels
+xPosition=1987
+>>>>>>> camera stuff
 yPosition=27

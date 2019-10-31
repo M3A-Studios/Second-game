@@ -5,20 +5,40 @@ public class Levels extends World
 {
     private static int levelWidth;
     private static int levelHeight;
-    private static String mapString;
-    private static int world[][];
-    private static int currentLayer;
-    private static int totalLayers;
+    private static String mapString; //mapstring used in getMap() for world[][]
+    private static int world[][]; //world map 2 dimensional. [layer][position]
+    private static int currentLayer; //current layer in tile map (for getMap())
+    private static int totalLayers; //total layers in tile map
+    Camera camera; //camera object created later at spawnCamera()
     public Levels()
     {    
         this(1,1); //by default load level 1 if non is specified
     }
+    public void act() {
+        scroll(); //scroll the camera
+    }
     public Levels(int level, int playerLayer)
     {    
-        super(Options.screenWidth, Options.screenHeight, 1, false); 
-        getMap(level);
-        renderMap(playerLayer);
-        
+        super(Options.screenWidth, Options.screenHeight, 1, false); //render the screen with said screensize
+        getMap(level); //get the map of this level
+        renderMap(playerLayer); //spawn the map and player as said layer
+        spawnCamera(); //spawn the camera 
+    }
+    private void spawnCamera() {
+        camera = new Camera();
+        addObject(camera, 0, 0);
+    }
+    private void scroll() {
+        int dsx = 0, dsy = 0;
+        int minX = Options.screenWidth/10*2;
+        int maxX = Options.screenWidth-(Options.screenWidth/10*2);
+        int minY = Options.screenHeight/10*2;
+        int maxY = Options.screenHeight-(Options.screenHeight/10*2);
+        if (camera.getX() < minX) dsx = camera.getX() - minX;
+        if (camera.getX() < maxX) dsx = camera.getX() - maxX;
+        if (camera.getY() < minY) dsy = camera.getY() - minY;
+        if (camera.getY() < maxY) dsy = camera.getY() - maxY;
+        camera.scroll(dsx, dsy);
     }
     private static void getMap(int level) {
         levelWidth = 0; //reset level width
@@ -85,17 +105,7 @@ public class Levels extends World
         dataReader.close(); //remove the scanner. we don't need it anymore
     }
     private void renderMap(int playerLayer) {
-        /* render map
-         * lagen zijn as world[laag -1][positie - 1]
-         * moet worden geloopt dat het net zo vaak loopt als totalLayers
-         * per loop moet het loopen tussen 0 en ((levelWidth * levelHeight) - 1) (dus voor 20x20 is het 0 tot 399)
-         * moet na de width +1 doen op de x as en dan doorgaan. zodat niet alles in een lijn bovenaan rendered
-         * 
-         * variabele: totalLayers (totaal aantal lagen) levelWidth (hoe wijd het level is in blokjes) levelHeight (hoe hoog het level is in blokjes)
-         * array: world[laag][postie]
-         *
-         */
-        //System.out.println(levelWidth + ", " + levelHeight);
+        System.out.println(levelWidth + ", " + levelHeight);
         int width = -1;
         int height = 0;
         for (int laag = 0; laag < totalLayers; laag++) { //conditie
