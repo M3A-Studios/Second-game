@@ -33,24 +33,40 @@ public class MyWorld extends World
         player.setLocation(37,567);
 
         LadderMid ladderMid = new LadderMid();
-        addObject(ladderMid,456,573);
-        ladderMid.setLocation(481,555);
+        addObject(ladderMid,307,555);
 
         LadderMid ladderMid2 = new LadderMid();
-        addObject(ladderMid2,465,481);
-        ladderMid2.setLocation(481,514);
+        addObject(ladderMid2,307,514);
 
         LadderTop ladderTop = new LadderTop();
-        addObject(ladderTop,507,460);
-        ladderTop.setLocation(481,472);
+        addObject(ladderTop,307,472);
+
         Solid solid = new Solid(99);
         addObject(solid,42,631);
         solid.setLocation(22,620);
+
         Solid solid2 = new Solid(99);
-        addObject(solid2,100,613);
-        solid2.setLocation(78,629);
+        addObject(solid2,64,620);
+
         Solid solid3 = new Solid(99);
-        addObject(solid3,137,608);
-        solid3.setLocation(118,624);
+        addObject(solid3,106,620);
+
+        Solid solid4 = new Solid(99);
+        addObject(solid4,148,620);
+
+        Solid solid5 = new Solid(99);
+        addObject(solid5,190,620);
+
+        Solid solid6 = new Solid(99);
+        addObject(solid6,232,620);
+
+        Solid solid7 = new Solid(99);
+        addObject(solid7,274,620);
+
+        Solid solid8 = new Solid(99);
+        addObject(solid8,316,620);
+        Solid solid9 = new Solid(99);
+        addObject(solid9,138,478);
+        solid9.setLocation(147,508);
     }
 }

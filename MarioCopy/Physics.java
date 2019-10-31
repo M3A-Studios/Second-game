@@ -11,7 +11,7 @@ public class Physics extends Actor
     protected int vSpeed = 0;
     protected int acceleration = 1;
     protected int jumpHeight = -15;
-    protected int speed = 5;
+    protected int speed = 3;
     
     public boolean moveAround()
     {
