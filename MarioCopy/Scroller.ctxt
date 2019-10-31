@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Scroller
+comment0.text=\n\ CLASS\:\ Scroller\ (extends\ Object)\n\ AUTHOR\:\ danpost\ (greenfoot.org\ username)\n\ DATE\:\ November\ 11,\ 2016\n\ MODIFIED\:\ December\ 22,\ 2016\ (fixed\ 'scroll'\ method\ for\ limited\ no-image\ scrolling)\n\ MODIFIED\:\ February\ 21,\ 2017\ (fixed\ scroll\ offsets\ for\ unlimited\ no-image\ scrolling)\n\ \n\ DESCRIPTION\:\ \ This\ is\ a\ support\ class\ for\ a\ scrolling\ world.\ \ It\ contains\ two\ constructors;\n\ one\ for\ unlimited\ scrolling\ and\ one\ for\ limited\ scrolling.\ \ Both\ constructors\ have\ an\ 'image'\n\ parameter.\ \ Because\ image\ manipulation\ can\ hog\ up\ CPU\ time,\ it\ is\ important\ to\ remember\ that\n\ it\ is\ better\ not\ to\ have\ a\ scrolling\ background\ image\ (having\ an\ Actor\ for\ the\ background\ is\n\ probably\ worse\ than\ having\ the\ background\ scroll).\ \ For\ unlimited\ scrolling\ using\ a\ background\n\ image,\ the\ smaller\ that\ background\ image\ to\ be\ tiled,\ the\ better.\ \ Making\ the\ viewport\ (the\n\ size\ of\ the\ world\ that\ is\ visible)\ smaller\ can\ help\ in\ CPU\ expense,\ also.\ \ Scrolling\ worlds\n\ should\ be\ unbounded,\ allowing\ actors\ to\ move\ beyond\ the\ visible\ area.\ \ Ensuring\ that\ actors\n\ are\ removed\ from\ the\ world\ if\ no\ longer\ needed\ when\ out\ of\ view\ will\ help\ to\ prevent\ lag,\n\ as\ well.\ \ \n\ \n\ It\ is\ the\ responsibility\ of\ the\ World\ object\ that\ creates\ a\ Scroller\ object\ to\ determine\ when\n\ to\ scroll\ and\ by\ how\ much.\n
+comment1.params=viewWorld\ image
+comment1.target=Scroller(greenfoot.World,\ greenfoot.GreenfootImage)
+comment1.text=\n\ This\ constructor\ is\ for\ an\ unlimited\ scrolling\ world;\n\ If\ 'image'\ is\ null,\ the\ background\ will\ not\ change;\ else\ the\ given\ image\ is\ wrapped\n\ \n\ @param\ viewWorld\ the\ world\ that\ scrolling\ will\ be\ performed\ on\n\ @param\ image\ the\ background\ image\ that\ will\ be\ tiled,\ if\ needed,\ and\ wrap\ with\ scrolling\n
+comment2.params=
+comment2.target=int\ getX()
+comment2.text=\n\ This\ constructor\ is\ for\ a\ limited\ scrolling\ world;\n\ If\ 'image'\ is\ smaller\ than\ the\ given\ total\ scrolling\ area,\ it\ will\ be\ tiled\n\ If\ 'image'\ is\ null,\ the\ background\ will\ not\ change\n\ \n\ @param\ viewWorld\ the\ world\ that\ scrolling\ will\ be\ performed\ on\n\ @param\ image\ the\ background\ image\ that\ will\ be\ tiled,\ if\ needed,\ to\ fill\ the\ scrolling\ area\n\ @param\ wide\ the\ width\ of\ the\ visible\ area\ encompassed\ through\ scrolling;\n\ the\ given\ value\ must\ be\ at\ least\ equal\ to\ the\ width\ of\ 'viewWorld'\ and\n\ is\ given\ in\ world\ cells\ (not\ in\ pixels)\n\ @param\ high\ the\ height\ of\ the\ visible\ area\ encompassed\ through\ scrolling;\n\ the\ given\ value\ must\ be\ at\ least\ equal\ to\ the\ height\ of\ 'viewWorld'\ and\n\ is\ given\ in\ world\ cells\ (not\ in\ pixels)\n
+comment3.params=viewWorld\ image\ wide\ high
+comment3.target=Scroller(greenfoot.World,\ greenfoot.GreenfootImage,\ int,\ int)
+comment4.params=dsx\ dsy
+comment4.target=void\ scroll(int,\ int)
+comment4.text=\n\ performs\ scrolling\ on\ 'world'\ by\ the\ given\ distances\ along\ the\ horizontal\ and\ vertical;\n\ if\ 'limited'\ is\ false,\ requested\ distances\ are\ actual\ scrolling\ distances;\n\ if\ 'limited'\ is\ true,\ the\ distances\ may\ be\ adjusted\ due\ to\ the\ limits\ of\ scrolling\n\n\ @param\ dsx\ the\ requested\ distance\ to\ shift\ everything\ horizontally\n\ @param\ dsy\ the\ requested\ distance\ to\ shift\ everything\ vertically\n
+comment5.params=
+comment5.target=int\ getScrolledX()
+comment5.text=\n\ getter\ method\ for\ the\ current\ total\ scrolled\ distance\ horizontally\n\n\ @return\ the\ current\ total\ offset\ of\ horizontal\ scrolling\n
+comment6.params=
+comment6.target=int\ getScrolledY()
+comment6.text=\n\ getter\ method\ for\ the\ current\ total\ scrolled\ distance\ vertically\n\n\ @return\ the\ current\ total\ offset\ of\ vertical\ scrolling\n
+numComments=7
