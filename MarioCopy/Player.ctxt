@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Player
+comment0.text=\n\ Write\ a\ description\ of\ class\ Player\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=Player()
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=boolean\ delay()
+comment4.params=
+comment4.target=void\ ClimbingAnim()
+comment5.params=
+comment5.target=void\ standingStill()
+comment6.params=
+comment6.target=void\ LeftRightWalkingAnim()
+numComments=7
