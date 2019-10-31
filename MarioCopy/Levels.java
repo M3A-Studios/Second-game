@@ -6,21 +6,29 @@ public class Levels extends World
     private static int levelWidth;
     private static int levelHeight;
     private static String mapString;
-    private static int world[];
-    public Levels(int level)
+    private static int world[][];
+    private static int currentLayer;
+    private static int totalLayers;
+    public Levels()
+    {    
+        this(1,1); //by default load level 1 if non is specified
+    }
+    public Levels(int level, int playerLayer)
     {    
         super(1280, 720, 1); 
         getMap(level);
+        renderMap(playerLayer);
+        
     }
     private static void getMap(int level) {
-        levelWidth = 0;
-        levelHeight = 0;
-        mapString = "";
+        levelWidth = 0; //reset level width
+        levelHeight = 0; //reset level height
+        mapString = ""; //clear out map
+        currentLayer = 1; //set to first layer
         
         //read the level layout
-        File readFile = new File("Levels/Level" + level + ".tmx"); //set what file to read
+        File readFile = new File("levels/level" + level + ".tmx"); //set what file to read files should be named "level(number).tmx" so "level1.tmx" just count tutorial as 0 or -1
         Scanner dataReader = null; //scanner for the file
-        
         try
         {
             dataReader = new Scanner(readFile); //try to read the file
@@ -33,24 +41,67 @@ public class Levels extends World
         {
            String line = dataReader.next(); //line is next line
            if (line.contains("width=\"") && !line.contains("tile")) { //check for width
-               line = line.replaceAll("[^\\d]",""); //replace all non numbers with nothing
-               levelWidth = Integer.parseInt(line); //set levelWidth
+               if (levelWidth == 0) { //only do it the first time it sees height that isnt 0
+                   line = line.replaceAll("[^\\d]",""); //replace all non digits with nothing
+                   levelWidth = Integer.parseInt(line); //set levelWidth
+                }
            }
            if (line.contains("height=\"") && !line.contains("tile")) { //check for height
-               line = line.replaceAll("[^\\d]",""); //replace all non numbers with nothing
-               levelHeight = Integer.parseInt(line); //set levelHeight
+               if (levelHeight == 0) { //only do it the first time it sees height that isnt 0
+                   line = line.replaceAll("[^\\d]",""); //replace all non digits with nothing
+                   levelHeight = Integer.parseInt(line); //set levelHeight
+                   System.out.println("Size: " + levelWidth + "x" + levelHeight); //debug show levelheight and width
+                }
+           }
+           if (line.contains("nextlayerid=\"")) { //check for total amount of layers
+               line = line.replaceAll("[^\\d]",""); //replace all non digits with nothing
+               totalLayers = Integer.parseInt(line) - 1; //get total layers as int
+               System.out.println("Array off [" + (totalLayers - 1) + "][" + (levelWidth * levelHeight - 1) + "]"); //debug total layer
+               world = new int[totalLayers][levelWidth * levelHeight]; //make the array to hold all the layers and their information (2 dimensional)
+           }
+           if (line.contains("<layer")) { //check if entering a new layer
+               if (!mapString.equals("")) { //check if map isn't empty before moving on to next layer
+                   System.out.println("Layer " + currentLayer + ": " + mapString); //debug print this layer out.
+                   
+                   String[] layer = mapString.split(","); //split values by ,
+                   for (int i = 0; i < (levelWidth * levelHeight); i++){ 
+                       world[currentLayer - 1][i] = Integer.parseInt(layer[i]); //turn array into int array just some parsing from text to integer
+                   }
+                   currentLayer ++; //go to next layer in the map
+                   mapString = ""; //reset mapString for new layer back to having no values
+               }
            }
            if (line.contains(",")) { //check if line is part of the map
                 mapString = mapString += line; //add new line to total map
            }
         }
-        String[] integerStrings = mapString.split(","); //split values by ,
-        world = new int[integerStrings.length]; //make an array with space for every slot 
-        for (int i = 0; i < world.length; i++){ 
-            world[i] = Integer.parseInt(integerStrings[i]); //turn array into int array
-        }
         
+        System.out.println("Layer " + currentLayer + ": " + mapString); //debug print the last layer
+        
+        String[] layer = mapString.split(","); //split values by , so 0,0 -> 0 and 0
+        for (int i = 0; i < (levelWidth * levelHeight); i++){ 
+           world[currentLayer - 1][i] = Integer.parseInt(layer[i]); //turn array into int array
+        }
         dataReader.close(); //remove the scanner. we don't need it anymore
-
+    }
+    private static void renderMap(int playerLayer) {
+        /* render map
+         * lagen zijn as world[laag -1][positie - 1]
+         * moet worden geloopt dat het net zo vaak loopt als totalLayers
+         * per loop moet het loopen tussen 0 en ((levelWidth * levelHeight) - 1) (dus voor 20x20 is het 0 tot 399)
+         * moet na de width +1 doen op de x as en dan doorgaan. zodat niet alles in een lijn bovenaan rendered
+         * 
+         * variabele: totalLayers (totaal aantal lagen) levelWidth (hoe wijd het level is in blokjes) levelHeight (hoe hoog het level is in blokjes)
+         * array: world[laag][postie]
+         *
+         */
+        for (int laag = 0; laag < totalLayers; laag++) { //conditie
+            for (int positie = 0; positie < (levelWidth * levelHeight); positie++) {
+                //doe iets
+            }
+            if (laag == playerLayer) {
+                //load the player and enemies here.
+            }
+        }
     }
 }

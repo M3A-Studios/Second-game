@@ -1,7 +1,11 @@
 #BlueJ class context
 comment0.target=Levels
-comment1.params=level
-comment1.target=Levels(int)
-comment2.params=level
-comment2.target=void\ getMap(int)
-numComments=3
+comment1.params=
+comment1.target=Levels()
+comment2.params=level\ playerLayer
+comment2.target=Levels(int,\ int)
+comment3.params=level
+comment3.target=void\ getMap(int)
+comment4.params=playerLayer
+comment4.target=void\ renderMap(int)
+numComments=5
