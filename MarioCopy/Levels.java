@@ -9,6 +9,7 @@ public class Levels extends World
     private static int world[];
     public Levels(int level)
     {    
+        //Hallo nigger
         super(1280, 720, 1); 
         getMap(level);
     }

@@ -11,6 +11,7 @@ public class Player extends Physics
     private int imageWidth;
     private int imageHeight;
     private int moveDelay = 0;
+
     Player() {
         getImage().scale(getImage().getWidth()/3,getImage().getHeight()/3);
         imageWidth = getImage().getWidth();
@@ -26,20 +27,22 @@ public class Player extends Physics
         ClimbingAnim();
         LeftRightWalkingAnim();
         standingStill();
-        delay();
-    }
-    private boolean delay(){
-        moveDelay++;
-        if (moveDelay == 5){
-            moveDelay = 0;
-            return true;
-        }
-        return false;
     }
     public void ClimbingAnim(){
         if (isClimbing()){
-            setImage(new GreenfootImage("alienGreen_climb1.png"));
-            getImage().scale(getImage().getWidth()/3,getImage().getHeight()/3);
+            for(int i=0;i<100;i++){
+                if (i>=50){
+                    System.out.println(i);
+                    setImage(new GreenfootImage("alienGreen_climb1.png"));
+                    getImage().scale(getImage().getWidth()/3,getImage().getHeight()/3);
+                }
+                if (i<50){
+                    setImage(new GreenfootImage("alienGreen_climb2.png"));
+                    getImage().scale(getImage().getWidth()/3,getImage().getHeight()/3);
+                }
+            }
+            /*setImage(new GreenfootImage("alienGreen_climb1.png"));
+            getImage().scale(getImage().getWidth()/3,getImage().getHeight()/3);*/
         }
     }
     public void standingStill(){
@@ -52,7 +55,7 @@ public class Player extends Physics
         if (onGround() && Greenfoot.isKeyDown("d") && canMoveRight()){
                 setImage(new GreenfootImage("alienGreen_walk1.png"));
                 getImage().scale(getImage().getWidth()/3,getImage().getHeight()/3);
-            if (delay()){
+            if (moveAround()){
                 setImage(new GreenfootImage("alienGreen_walk2.png"));
                 getImage().scale(getImage().getWidth()/3,getImage().getHeight()/3);
             }
@@ -61,7 +64,7 @@ public class Player extends Physics
                 setImage(new GreenfootImage("alienGreen_walk1.png"));
                 getImage().scale(getImage().getWidth()/3,getImage().getHeight()/3);
                 getImage().mirrorHorizontally();
-            if (delay()){
+            if (moveAround()){
                 setImage(new GreenfootImage("alienGreen_walk2.png"));
                 getImage().scale(getImage().getWidth()/3,getImage().getHeight()/3);
                 getImage().mirrorHorizontally();
