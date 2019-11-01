@@ -119,6 +119,11 @@ public class Levels extends World
                     else if (world[laag][positie] != 0)
                     {
                         nextBlock = new Solid(world[laag][positie]);
+                    }
+                    else if (world[laag][positie] != 0)
+                    {
+                        System.out.print("Ladder created");
+                        nextBlock = new Ladder(world[laag][positie]);
                     } 
                     else 
                     {

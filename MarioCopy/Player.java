@@ -28,11 +28,11 @@ public class Player extends Physics
         LeftRightWalkingAnim();
         standingStill();
     }
+
     public void ClimbingAnim(){
         if (isClimbing()){
             for(int i=0;i<100;i++){
                 if (i>=50){
-                    System.out.println(i);
                     setImage(new GreenfootImage("alienGreen_climb1.png"));
                     getImage().scale(getImage().getWidth()/3,getImage().getHeight()/3);
                 }
@@ -41,9 +41,10 @@ public class Player extends Physics
                     getImage().scale(getImage().getWidth()/3,getImage().getHeight()/3);
                 }
             }
-            /*setImage(new GreenfootImage("alienGreen_climb1.png"));
-            getImage().scale(getImage().getWidth()/3,getImage().getHeight()/3);*/
-        }
+            setImage(new GreenfootImage("alienGreen_climb1.png"));
+            getImage().scale(getImage().getWidth()/3,getImage().getHeight()/3);
+        } 
+        
     }
     public void standingStill(){
         if (onGround() && !moveAround()){

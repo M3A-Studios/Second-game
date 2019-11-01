@@ -30,7 +30,7 @@ public class Physics extends Actor
     }
     public void jump()
     {
-        if(Greenfoot.isKeyDown("space") && onGround() && !isClimbing())
+        if(Greenfoot.isKeyDown("space") && onGround())
         {
             setLocation(getX(), getY() - 1);
             vSpeed = jumpHeight;
@@ -38,7 +38,7 @@ public class Physics extends Actor
     }
     public void fall()
     {
-        if(!onGround() && !isClimbing()){ //Change to if(!onGround() || !isClimbing()){
+        if(!onGround()){ //Change to if(!onGround() || !isClimbing()){
             setLocation(getX(), getY() + vSpeed);
         }
     }
@@ -102,15 +102,29 @@ public class Physics extends Actor
      return canMoveRight; 
     }
     
-    public boolean isClimbing(){
-            if (getOneObjectAtOffset(getImage().getWidth() / -2, getImage().getHeight() / 2 + vSpeed, Ladder.class) != null ||
-            getOneObjectAtOffset(getImage().getWidth() / 2, getImage().getHeight() / 2 + vSpeed, Ladder.class) != null) { 
-                return true; 
-            } else { 
-                return false;
-            }
+   /* public void climbing(){
+      boolean isClimbing = false; //boolean to play anim while climbing.
+      
+        if(isTouching(Ladder.class) && Greenfoot.isKeyDown("W"))
+        {
+          setLocation(getX(),getY() - vSpeed);
+          isClimbing = true;
         }
-    public void climbing(){
+        
+        //while(isClimbing == true) //<-- play animation while the player is climbing!
+          //{}
+    } */
+   
+    
+ public boolean isClimbing(){
+   if (getOneObjectAtOffset(getImage().getWidth() / -2, getImage().getHeight() / 2 + vSpeed, Ladder.class) != null ||
+       getOneObjectAtOffset(getImage().getWidth() / 2, getImage().getHeight() / 2 + vSpeed, Ladder.class) != null) { 
+       return true; 
+       } else { 
+       return false;
+       }
+        }
+ public void climbing(){
         if(Greenfoot.isKeyDown("w") && isClimbing())
         {
          setLocation(getX(), getY() - 3);
