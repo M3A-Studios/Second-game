@@ -116,23 +116,19 @@ public class Physics extends Actor
     } */
    
     
- public boolean isClimbing(){
-   if (getOneObjectAtOffset(getImage().getWidth() / -2, getImage().getHeight() / 2 + vSpeed, Ladder.class) != null ||
-       getOneObjectAtOffset(getImage().getWidth() / 2, getImage().getHeight() / 2 + vSpeed, Ladder.class) != null) { 
-       return true; 
-       } else { 
-       return false;
-       }
-        }
- public void climbing(){
-        if(Greenfoot.isKeyDown("w") && isClimbing())
+ public boolean climbing(){
+     if(isTouching(Ladder.class)){
+        if(Greenfoot.isKeyDown("w"))
         {
-         setLocation(getX(), getY() - 3);
+         vSpeed = 0;
+         setLocation(getX(), getY() - 3 );
         }
-        if(Greenfoot.isKeyDown("s") && isClimbing())
+        if(Greenfoot.isKeyDown("s"))
         {
-         setLocation(getX(), getY() + 3);
+         vSpeed = 0;
+         setLocation(getX(), getY() + 3 );
         }
-    }
-        
+     }
+     return true;
+  }    
 }
