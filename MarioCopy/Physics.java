@@ -116,8 +116,8 @@ public class Physics extends Actor
     } */
    
     
- public boolean climbing(){
-     if(isTouching(Ladder.class)){
+  public boolean climbing(){
+     if(isTouching(Ladder.class) && !isTouching(Solid.class)){ //Issue je gaat in de grond finger in je kont
         if(Greenfoot.isKeyDown("w"))
         {
          vSpeed = 0;
