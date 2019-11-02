@@ -9,10 +9,12 @@ public class Levels extends World
     private static int world[][]; //world map 2 dimensional. [layer][position]
     private static int currentLayer; //current layer in tile map (for getMap())
     private static int totalLayers; //total layers in tile map
+    private static GreenfootImage background;
     Camera camera; //camera object created later at spawnCamera()
+    Actor player; //player object created later at renderMap()
     public Levels()
     {    
-        this(1,1); //by default load level 1 if non is specified
+        this(1,3); //by default load level 1 if non is specified
     }
     public void act() {
         scroll(); //scroll the camera
@@ -21,24 +23,32 @@ public class Levels extends World
     {    
         super(Options.screenWidth, Options.screenHeight, 1, false); //render the screen with said screensize
         getMap(level); //get the map of this level
+        getBackground(level); //get the background
         renderMap(playerLayer); //spawn the map and player as said layer
         spawnCamera(); //spawn the camera 
     }
     private void spawnCamera() {
-        camera = new Camera();
-        addObject(camera, 0, 0);
+        camera = new Camera(this, background, Globals.worldWidth, Globals.worldHeight);
+        scroll();
     }
     private void scroll() {
+        int loX = Options.screenWidth/16*7; //Barrier left of center to move
+        int hiX = Options.screenWidth-(Options.screenWidth/16*7); //Barrier right of center to move
+        int loY = Options.screenHeight/8*2; //Barrier from the ceiling to move
+        int hiY = Options.screenHeight-(Options.screenHeight/8*3); //Barrier from the bottom to move
+        // determine offsets and scroll
         int dsx = 0, dsy = 0;
-        int minX = Options.screenWidth/10*2;
-        int maxX = Options.screenWidth-(Options.screenWidth/10*2);
-        int minY = Options.screenHeight/10*2;
-        int maxY = Options.screenHeight-(Options.screenHeight/10*2);
-        if (camera.getX() < minX) dsx = camera.getX() - minX;
-        if (camera.getX() < maxX) dsx = camera.getX() - maxX;
-        if (camera.getY() < minY) dsy = camera.getY() - minY;
-        if (camera.getY() < maxY) dsy = camera.getY() - maxY;
+        System.out.println(player);
+        if (player.getX() < loX) dsx = player.getX()-loX;
+        if (player.getX() > hiX) dsx = player.getX()-hiX;
+        if (player.getY() < loY) dsy = player.getY()-loY;
+        if (player.getY() > hiY) dsy = player.getY()-hiY;
+        System.out.println(dsx + ", " + dsy);
         camera.scroll(dsx, dsy);
+    }  
+    private static GreenfootImage getBackground(int level) {
+        background = new GreenfootImage("background.png");
+        return background;
     }
     private static void getMap(int level) {
         levelWidth = 0; //reset level width
@@ -102,10 +112,12 @@ public class Levels extends World
         for (int i = 0; i < (levelWidth * levelHeight); i++){ 
            world[currentLayer - 1][i] = Integer.parseInt(layer[i]); //turn array into int array
         }
+        Globals.worldHeight = levelHeight * Options.blockSize;
+        Globals.worldWidth = levelWidth * Options.blockSize;
         dataReader.close(); //remove the scanner. we don't need it anymore
     }
     private void renderMap(int playerLayer) {
-        System.out.println(levelWidth + ", " + levelHeight);
+        //System.out.println(levelWidth + ", " + levelHeight);
         int width = -1;
         int height = 0;
         for (int laag = 0; laag < totalLayers; laag++) { //conditie
@@ -145,7 +157,7 @@ public class Levels extends World
             width = -1;
             height = 0;
             if (laag == playerLayer) {
-                Actor player = new Player();
+                player = new Player();
                 addObject(player, 60, 300);
             }
         }

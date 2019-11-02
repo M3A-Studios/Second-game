@@ -56,6 +56,7 @@ public class Physics extends Actor
         if(!onGround())
         {
             vSpeed++;
+            if (vSpeed > 10) vSpeed = 10;
         }
         else
         {
