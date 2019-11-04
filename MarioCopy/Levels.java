@@ -49,11 +49,12 @@ public class Levels extends World
         int hiY = Options.screenHeight-(Options.screenHeight/8*3); //Barrier from the bottom to move
         // determine offsets and scroll
         int dsx = 0, dsy = 0;
+        //check if player is past the barriers ^ 
         if (player.getX() < loX) dsx = player.getX()-loX;
         if (player.getX() > hiX) dsx = player.getX()-hiX;
         if (player.getY() < loY) dsy = player.getY()-loY;
         if (player.getY() > hiY) dsy = player.getY()-hiY;
-        camera.scroll(dsx, dsy);
+        camera.scroll(dsx, dsy); //scroll the world
     }  
     private static GreenfootImage getBackground(int level) {
         background = new GreenfootImage("background.png");
