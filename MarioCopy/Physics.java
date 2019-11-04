@@ -38,7 +38,7 @@ public class Physics extends Actor
     }
     public void fall()
     {
-        if(!onGround()){ //Change to if(!onGround() || !isClimbing()){
+        if(!onGround() && !isClimbing()){ //Change to if(!onGround() || !isClimbing()){
             setLocation(getX(), getY() + vSpeed);
         }
     }
@@ -108,7 +108,7 @@ public class Physics extends Actor
       
         if(isTouching(Ladder.class) && Greenfoot.isKeyDown("W"))
         {
-          setLocation(getX(),getY() - vSpeed);
+          setLocation(getX(),getY() - Speed);
           isClimbing = true;
         }
         

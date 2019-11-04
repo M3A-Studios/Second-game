@@ -4,8 +4,15 @@ comment0.text=\n\ Write\ a\ description\ of\ class\ Player\ here.\n\ \n\ @author
 comment1.params=
 comment1.target=boolean\ moveAround()
 comment10.params=
+<<<<<<< Updated upstream
 comment10.target=boolean\ climbing()
 comment10.text=\ public\ void\ climbing(){\n\ \ \ \ \ \ boolean\ isClimbing\ \=\ false;\ //boolean\ to\ play\ anim\ while\ climbing.\n\ \ \ \ \ \ \n\ \ \ \ \ \ \ \ if(isTouching(Ladder.class)\ &&\ Greenfoot.isKeyDown("W"))\n\ \ \ \ \ \ \ \ {\n\ \ \ \ \ \ \ \ \ \ setLocation(getX(),getY()\ -\ vSpeed);\n\ \ \ \ \ \ \ \ \ \ isClimbing\ \=\ true;\n\ \ \ \ \ \ \ \ }\n\ \ \ \ \ \ \ \ \n\ \ \ \ \ \ \ \ //while(isClimbing\ \=\=\ true)\ //<--\ play\ animation\ while\ the\ player\ is\ climbing\!\n\ \ \ \ \ \ \ \ \ \ //{}\n}
+=======
+comment10.target=boolean\ isClimbing()
+comment10.text=\ public\ void\ climbing(){\n\ \ \ \ \ \ boolean\ isClimbing\ \=\ false;\ //boolean\ to\ play\ anim\ while\ climbing.\n\ \ \ \ \ \ \n\ \ \ \ \ \ \ \ if(isTouching(Ladder.class)\ &&\ Greenfoot.isKeyDown("W"))\n\ \ \ \ \ \ \ \ {\n\ \ \ \ \ \ \ \ \ \ setLocation(getX(),getY()\ -\ Speed);\n\ \ \ \ \ \ \ \ \ \ isClimbing\ \=\ true;\n\ \ \ \ \ \ \ \ }\n\ \ \ \ \ \ \ \ \n\ \ \ \ \ \ \ \ //while(isClimbing\ \=\=\ true)\ //<--\ play\ animation\ while\ the\ player\ is\ climbing\!\n\ \ \ \ \ \ \ \ \ \ //{}\n}
+comment11.params=
+comment11.target=void\ climbing()
+>>>>>>> Stashed changes
 comment2.params=
 comment2.target=void\ jump()
 comment3.params=
