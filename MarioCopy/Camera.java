@@ -2,6 +2,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Camera  
 {
     private int scrolledX, scrolledY;
+    public static int entityXOffset, entityYOffset;
     private int wide, high;
     private World world;
     private GreenfootImage background;
@@ -52,6 +53,8 @@ public class Camera
         //scroll every actor in the map.
         for (Object obj : world.getObjects(null))
         {
+            entityXOffset = -dsx;
+            entityYOffset = -dsy;
             Actor actor = (Actor) obj;
             String actorString = "" + actor.getClass().getName();
             actor.setLocation(actor.getX()-dsx, actor.getY()-dsy);

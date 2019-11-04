@@ -25,7 +25,18 @@ public class Levels extends World
         getMap(level); //get the map of this level
         getBackground(level); //get the background
         renderMap(playerLayer); //spawn the map and player as said layer
-        spawnCamera(); //spawn the camera 
+        spawnCamera(); //spawn the camera
+        renderHUD();
+    }
+    private void renderHUD() {
+        Heart Heart1 = new Heart(1);
+        Heart Heart2 = new Heart(2);
+        Heart Heart3 = new Heart(3);
+        addObject (Heart1, Options.blockSize, Options.blockSize);
+        addObject (Heart2, Options.blockSize * 2, Options.blockSize);
+        addObject (Heart3, Options.blockSize * 3, Options.blockSize);
+        
+        
     }
     private void spawnCamera() {
         camera = new Camera(this, background, Globals.worldWidth, Globals.worldHeight);
@@ -38,12 +49,10 @@ public class Levels extends World
         int hiY = Options.screenHeight-(Options.screenHeight/8*3); //Barrier from the bottom to move
         // determine offsets and scroll
         int dsx = 0, dsy = 0;
-        System.out.println(player);
         if (player.getX() < loX) dsx = player.getX()-loX;
         if (player.getX() > hiX) dsx = player.getX()-hiX;
         if (player.getY() < loY) dsy = player.getY()-loY;
         if (player.getY() > hiY) dsy = player.getY()-hiY;
-        System.out.println(dsx + ", " + dsy);
         camera.scroll(dsx, dsy);
     }  
     private static GreenfootImage getBackground(int level) {
@@ -134,19 +143,18 @@ public class Levels extends World
                 }
                 placeBlock: {
                     Actor nextBlock;;
-                    if (check(Globals.nonSolids,world[laag][positie] - 1)) 
+                    if (check(Globals.nonSolids,world[laag][positie])) 
                     {
                         nextBlock = new NonSolid(world[laag][positie]);
                     }
+                    else if (check(Globals.ladder, world[laag][positie]))
+                    {
+                        nextBlock = new Ladder(world[laag][positie]);
+                    } 
                     else if (world[laag][positie] != 0)
                     {
                         nextBlock = new Solid(world[laag][positie]);
                     }
-                    else if (world[laag][positie] != 0)
-                    {
-                        System.out.print("Ladder created");
-                        nextBlock = new Ladder(world[laag][positie]);
-                    } 
                     else 
                     {
                         break placeBlock;
@@ -167,6 +175,6 @@ public class Levels extends World
                 height*Options.blockSize + Options.blockSize/2);
     }
     public static boolean check(Integer[] arr, int toCheckValue) {
-        return Arrays.asList(arr).contains(toCheckValue);
+        return Arrays.asList(arr).contains((toCheckValue - 1));
     }
 }

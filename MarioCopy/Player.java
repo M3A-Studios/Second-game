@@ -4,73 +4,99 @@ public class Player extends Physics
 {
     private int imageWidth;
     private int imageHeight;
-    private int moveDelay = 0;
-    private int hAmount = 6;
-
+    public static int health = 6; //health amount
+    private boolean started = false;
+    private boolean moving;
+    private double leftKeyDown;
+    private double rightKeyDown;
+    
+    
+    private GreenfootImage climb1 = new GreenfootImage("alienGreen_climb1.png");
+    private GreenfootImage climb2 = new GreenfootImage("alienGreen_climb2.png");
+    private GreenfootImage front = new GreenfootImage("alienGreen_front.png");
+    private GreenfootImage walk1 = new GreenfootImage("alienGreen_walk1.png");
+    private GreenfootImage walk2 = new GreenfootImage("alienGreen_walk2.png");
+    private GreenfootImage walk1m = new GreenfootImage("alienGreen_walk1.png");
+    private GreenfootImage walk2m = new GreenfootImage("alienGreen_walk2.png");
     Player() {
         GreenfootImage image = new GreenfootImage ("alienGreen_front.png");
-        image.scale((Options.blockSize),(Options.blockSize));
+        image.scale((Options.blockSize),(Options.blockSize)*3/2);
         setImage(image);
+        started = false;
+        
+        climb1.scale((Options.blockSize),(Options.blockSize)*3/2);
+        climb2.scale((Options.blockSize),(Options.blockSize)*3/2);
+        front.scale((Options.blockSize),(Options.blockSize)*3/2);
+        walk1.scale((Options.blockSize),(Options.blockSize)*3/2);
+        walk2.scale((Options.blockSize),(Options.blockSize)*3/2);
+        walk1m.scale((Options.blockSize),(Options.blockSize)*3/2);
+        walk2m.scale((Options.blockSize),(Options.blockSize)*3/2);
+        walk1m.mirrorHorizontally();
+        walk2m.mirrorHorizontally();
     }   
     public void act() 
     {
-        moveAround();
-        checkFalling();
-        fall();
-        jump();
-        climbing();
-        ClimbingAnim();
-        LeftRightWalkingAnim();
-        standingStill();
-        Health();
-    }
-
-    public void ClimbingAnim(){
-        if (isClimbing()){
-            for(int i=0;i<100;i++){
-                if (i>=50){
-                    setImage(new GreenfootImage("alienGreen_climb1.png"));
-                    getImage().scale(getImage().getWidth()/3,getImage().getHeight()/3);
-                }
-                if (i<50){
-                    setImage(new GreenfootImage("alienGreen_climb2.png"));
-                    getImage().scale(getImage().getWidth()/3,getImage().getHeight()/3);
-                }
-            }
-            setImage(new GreenfootImage("alienGreen_climb1.png"));
-            getImage().scale(getImage().getWidth()/3,getImage().getHeight()/3);
+        if (!started) {
+            started = true;
+            setDoubleX(getX());
+            setDoubleY(getY());
         } 
-        
+        updateGravity();
+        walkingAnim();
+        standingStill();
+        entityOffset();
+       if(Greenfoot.isKeyDown("space"))
+        {   
+            if(onGround()){jump(20);}
+        }
+       moving = false;
+       if(Greenfoot.isKeyDown("d"))
+       {
+           rightKeyDown += 0.2;
+           if (rightKeyDown > 60) rightKeyDown = 60;
+           double speed = 5 + rightKeyDown/10;
+           if (canMoveRight(speed)) {
+               moveRight(speed);
+               moving = true;
+           }
+       }
+       else 
+       {
+           rightKeyDown = 0;
+       }
+       if(Greenfoot.isKeyDown("a"))
+       {
+           leftKeyDown += 0.2;
+           if (leftKeyDown > 60) leftKeyDown = 60;
+           double speed = 5 + leftKeyDown/10;
+           if (canMoveLeft(speed)) {
+               moveLeft(speed);
+               moving = true;
+           }
+       }
+       else 
+       {
+           leftKeyDown = 0;
+       }
     }
     public void standingStill(){
-        if (onGround() && !moveAround()){
-            setImage(new GreenfootImage("alienGreen_front.png"));
-            getImage().scale(getImage().getWidth()/3,getImage().getHeight()/3);
+        if (onGround() && !moving){
+            setImage(front);
         }
     }
-    public void LeftRightWalkingAnim(){
-        if (onGround() && Greenfoot.isKeyDown("d") && canMoveRight()){
-                setImage(new GreenfootImage("alienGreen_walk1.png"));
-                getImage().scale(getImage().getWidth()/3,getImage().getHeight()/3);
-            if (moveAround()){
-                setImage(new GreenfootImage("alienGreen_walk2.png"));
-                getImage().scale(getImage().getWidth()/3,getImage().getHeight()/3);
+    public void walkingAnim(){
+        if (onGround() && Greenfoot.isKeyDown("d")){
+            setImage(walk1);
+            if (moving){
+                setImage(walk2);
             }
         }
-        if (onGround() && Greenfoot.isKeyDown("a") && canMoveLeft()){
-                setImage(new GreenfootImage("alienGreen_walk1.png"));
-                getImage().scale(getImage().getWidth()/3,getImage().getHeight()/3);
-                getImage().mirrorHorizontally();
-            if (moveAround()){
-                setImage(new GreenfootImage("alienGreen_walk2.png"));
-                getImage().scale(getImage().getWidth()/3,getImage().getHeight()/3);
-                getImage().mirrorHorizontally();
+        if (onGround() && Greenfoot.isKeyDown("a")){
+            setImage(walk1m);
+            if (moving){
+                setImage(walk2m);
             }
         }
     }
-    public void Health()
-    {
-        String Hp = Integer.toString(hAmount);
-        getWorld().showText(Hp, 100, 400);
-    }   
+   
 }

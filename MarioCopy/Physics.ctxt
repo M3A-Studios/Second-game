@@ -1,32 +1,33 @@
 #BlueJ class context
 comment0.target=Physics
-comment0.text=\n\ Write\ a\ description\ of\ class\ Player\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=
-comment1.target=boolean\ moveAround()
+comment1.target=double\ getDoubleX()
 comment10.params=
-<<<<<<< Updated upstream
-comment10.target=boolean\ climbing()
-comment10.text=\ public\ void\ climbing(){\n\ \ \ \ \ \ boolean\ isClimbing\ \=\ false;\ //boolean\ to\ play\ anim\ while\ climbing.\n\ \ \ \ \ \ \n\ \ \ \ \ \ \ \ if(isTouching(Ladder.class)\ &&\ Greenfoot.isKeyDown("W"))\n\ \ \ \ \ \ \ \ {\n\ \ \ \ \ \ \ \ \ \ setLocation(getX(),getY()\ -\ vSpeed);\n\ \ \ \ \ \ \ \ \ \ isClimbing\ \=\ true;\n\ \ \ \ \ \ \ \ }\n\ \ \ \ \ \ \ \ \n\ \ \ \ \ \ \ \ //while(isClimbing\ \=\=\ true)\ //<--\ play\ animation\ while\ the\ player\ is\ climbing\!\n\ \ \ \ \ \ \ \ \ \ //{}\n}
-=======
-comment10.target=boolean\ isClimbing()
-comment10.text=\ public\ void\ climbing(){\n\ \ \ \ \ \ boolean\ isClimbing\ \=\ false;\ //boolean\ to\ play\ anim\ while\ climbing.\n\ \ \ \ \ \ \n\ \ \ \ \ \ \ \ if(isTouching(Ladder.class)\ &&\ Greenfoot.isKeyDown("W"))\n\ \ \ \ \ \ \ \ {\n\ \ \ \ \ \ \ \ \ \ setLocation(getX(),getY()\ -\ Speed);\n\ \ \ \ \ \ \ \ \ \ isClimbing\ \=\ true;\n\ \ \ \ \ \ \ \ }\n\ \ \ \ \ \ \ \ \n\ \ \ \ \ \ \ \ //while(isClimbing\ \=\=\ true)\ //<--\ play\ animation\ while\ the\ player\ is\ climbing\!\n\ \ \ \ \ \ \ \ \ \ //{}\n}
+comment10.target=boolean\ onGround()
 comment11.params=
-comment11.target=void\ climbing()
->>>>>>> Stashed changes
+comment11.target=boolean\ willBumpHead()
+comment12.params=speed
+comment12.target=boolean\ canMoveLeft(double)
+comment13.params=speed
+comment13.target=boolean\ canMoveRight(double)
+comment14.params=speed
+comment14.target=void\ moveRight(double)
+comment15.params=speed
+comment15.target=void\ moveLeft(double)
 comment2.params=
-comment2.target=void\ jump()
-comment3.params=
-comment3.target=void\ fall()
-comment4.params=
-comment4.target=boolean\ onGround()
-comment5.params=
-comment5.target=void\ checkFalling()
-comment6.params=
-comment6.target=boolean\ isOnSolidGround()
+comment2.target=double\ getDoubleY()
+comment3.params=x
+comment3.target=void\ setDoubleX(double)
+comment4.params=y
+comment4.target=void\ setDoubleY(double)
+comment5.params=x\ y
+comment5.target=void\ setNewLocation(double,\ double)
+comment6.params=x\ y
+comment6.target=void\ setRelativeLocation(double,\ double)
 comment7.params=
-comment7.target=boolean\ didBumpHead()
-comment8.params=
-comment8.target=boolean\ canMoveLeft()
+comment7.target=void\ entityOffset()
+comment8.params=height
+comment8.target=void\ jump(int)
 comment9.params=
-comment9.target=boolean\ canMoveRight()
-numComments=11
+comment9.target=void\ updateGravity()
+numComments=16
