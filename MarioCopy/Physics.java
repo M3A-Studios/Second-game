@@ -3,7 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Physics extends Actor
 {
     protected double vSpeed = 0;
-    protected double acceleration = 0.75;
+    protected double acceleration = 0.9;
     
     //Emily is a gay tranny who wanted doubles
     private double doubleX;
@@ -34,10 +34,10 @@ public class Physics extends Actor
         doubleX = doubleX + Camera.entityXOffset;
         doubleY = doubleY + Camera.entityYOffset;
     }
-    public void jump(int height)
+    public void jump(double height)
     {
         setRelativeLocation(0, - 1);
-        vSpeed = -height;
+        vSpeed = vSpeed - height;
     }
     public void updateGravity()
     {

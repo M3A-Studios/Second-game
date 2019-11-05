@@ -9,6 +9,7 @@ public class Player extends Physics
     private boolean moving;
     private double leftKeyDown;
     private double rightKeyDown;
+    private double spaceKeyDown;
     
     
     private GreenfootImage climb1 = new GreenfootImage("alienGreen_climb1.png");
@@ -47,7 +48,18 @@ public class Player extends Physics
         entityOffset();
        if(Greenfoot.isKeyDown("space"))
         {   
-            if(onGround()){jump(20);}
+            if(onGround())
+            {
+                spaceKeyDown = 0;
+                jump(14 );
+            }
+            else
+            {
+                spaceKeyDown += 1;
+                if (spaceKeyDown < 60) {
+                    jump(0.4);
+                }
+            }
         }
        moving = false;
        if(Greenfoot.isKeyDown("d"))
