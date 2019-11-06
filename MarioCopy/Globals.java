@@ -10,7 +10,7 @@ public class Globals
     public static Integer waters[] = {};
     public static Integer spikes[] = {};
     public static Integer finishFlag[] = {};
-    public static Integer nonSolids[] = {215,216,269,260,252,253,254,217,218};
+    public static Integer nonSolids[] = {215,216,269,260,252,253,254,217,218,225};
     public static Integer ladder[] = {220,221};
     public static Integer lever[] = {225,226,227};
     public static Integer coins[] = {165,166,167};

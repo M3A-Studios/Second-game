@@ -55,10 +55,14 @@ public class Physics extends Actor
     }
     public boolean onLadder()
     {
-        if (getOneObjectAtOffset(getImage().getWidth() / -2, getImage().getHeight() / 2 + (int) Math.ceil(vSpeed), Ladder.class) != null ||
-        getOneObjectAtOffset(0, getImage().getHeight() / 2 + (int) Math.ceil(vSpeed), Ladder.class) != null ||
-        getOneObjectAtOffset(getImage().getWidth() / 2, getImage().getHeight() / 2 + (int) Math.ceil(vSpeed), Ladder.class) != null) { 
-            return true; 
+        if (getOneObjectAtOffset(0, -1 + getImage().getHeight() / 2 + (int) Math.ceil(vSpeed), Ladder.class) != null) { 
+            if (getOneObjectAtOffset(0, -1 + (int) Math.ceil(vSpeed), Ladder.class) != null) {
+                return true;
+            }
+            else 
+            { 
+                return false;
+            }
         } else { 
             return false;
         }

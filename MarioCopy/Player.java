@@ -91,7 +91,7 @@ public class Player extends Physics
            leftKeyDown = 0;
        }
        
-       if (isTouching(Ladder.class))
+       if ( onLadder())
        {
            if (Greenfoot.isKeyDown("W"))
            {
