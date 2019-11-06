@@ -90,6 +90,18 @@ public class Player extends Physics
        {
            leftKeyDown = 0;
        }
+       
+       if (isTouching(Ladder.class))
+       {
+           if (Greenfoot.isKeyDown("W"))
+           {
+           setRelativeLocation(0,-5);
+           }
+           if (Greenfoot.isKeyDown("S") && !onGround())
+           {
+           setRelativeLocation(0,5);
+           }
+        }
     }
     public void standingStill(){
         if (onGround() && !moving){
@@ -110,5 +122,6 @@ public class Player extends Physics
             }
         }
     }
+    
    
 }

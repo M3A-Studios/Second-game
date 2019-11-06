@@ -38,10 +38,11 @@ public class Physics extends Actor
     {
         setRelativeLocation(0, - 1);
         vSpeed = vSpeed - height;
+        if (vSpeed < -20) vSpeed = -20;
     }
     public void updateGravity()
     {
-        if(!onGround() && !willBumpHead())
+        if(!onGround() && !willBumpHead() && !onLadder())
         {
             vSpeed = vSpeed + acceleration;
             if (vSpeed > 20) vSpeed = 10;
@@ -50,6 +51,16 @@ public class Physics extends Actor
         else
         {
             vSpeed = 0;
+        }
+    }
+    public boolean onLadder()
+    {
+        if (getOneObjectAtOffset(getImage().getWidth() / -2, getImage().getHeight() / 2 + (int) Math.ceil(vSpeed), Ladder.class) != null ||
+        getOneObjectAtOffset(0, getImage().getHeight() / 2 + (int) Math.ceil(vSpeed), Ladder.class) != null ||
+        getOneObjectAtOffset(getImage().getWidth() / 2, getImage().getHeight() / 2 + (int) Math.ceil(vSpeed), Ladder.class) != null) { 
+            return true; 
+        } else { 
+            return false;
         }
     }
     public boolean onGround()
@@ -74,6 +85,7 @@ public class Physics extends Actor
             getOneObjectAtOffset(getImage().getWidth() / -2 - (int) Math.ceil(speed) - 1, 0,  Solid.class) != null ||
             getOneObjectAtOffset(getImage().getWidth() / -2 - (int) Math.ceil(speed) - 1, getImage().getHeight() / 2 - 1,  Solid.class) != null)
             return false;
+         if (doubleX - speed < getImage().getWidth()/2) return false;   
          return true; 
     }
     public boolean canMoveRight(double speed){
@@ -81,6 +93,7 @@ public class Physics extends Actor
             getOneObjectAtOffset(getImage().getWidth() / 2 + (int) Math.ceil(speed) + 1, 0, Solid.class) != null ||
             getOneObjectAtOffset(getImage().getWidth() / 2 + (int) Math.ceil(speed) + 1, getImage().getHeight() / 2 - 1, Solid.class) != null)
             return false;
+         if (doubleX - speed > Options.screenWidth - getImage().getWidth()/2) return false;   
          return true; 
     } 
     public void moveRight(double speed)

@@ -4,6 +4,9 @@ public class Heart extends Actor
 {
     GreenfootImage image;
     private int heart;
+    private boolean started = false;
+    private int startX;
+    private int startY;
     private GreenfootImage half = new GreenfootImage("heartHalf.png");
     private GreenfootImage full = new GreenfootImage("heartFull.png");
     private GreenfootImage empty = new GreenfootImage("heartEmpty.png");
@@ -14,6 +17,7 @@ public class Heart extends Actor
         full.scale((Options.blockSize),(Options.blockSize));
         empty.scale((Options.blockSize),(Options.blockSize));
         renderHeart();
+        
     }
     public void renderHeart() {
         String state;
@@ -29,6 +33,11 @@ public class Heart extends Actor
         }
     }      
     public void act() {
+        if (!started) {
+            startX = getX();
+            startY = getY();
+            started = true;
+        } else { setLocation(startX, startY);}
         renderHeart();
     }
 }
