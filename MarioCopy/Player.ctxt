@@ -8,4 +8,6 @@ comment3.params=
 comment3.target=void\ standingStill()
 comment4.params=
 comment4.target=void\ walkingAnim()
-numComments=5
+comment5.params=Direction
+comment5.target=void\ animateMovement(java.lang.String)
+numComments=6

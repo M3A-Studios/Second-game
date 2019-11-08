@@ -10,6 +10,7 @@ public class Player extends Physics
     private double leftKeyDown;
     private double rightKeyDown;
     private double spaceKeyDown;
+    private int atime = 0;
     
     
     private GreenfootImage climb1 = new GreenfootImage("alienGreen_climb1.png");
@@ -46,7 +47,7 @@ public class Player extends Physics
         walkingAnim();
         standingStill();
         entityOffset();
-       if(Greenfoot.isKeyDown("space"))
+       if(Greenfoot.isKeyDown("space") && !onLadder()) //Michael shit niet springen op ladder
         {   
             if(onGround())
             {
@@ -95,38 +96,53 @@ public class Player extends Physics
        {
            if (Greenfoot.isKeyDown("W"))
            {
-           setRelativeLocation(0,-5);
+               setRelativeLocation(0,-5);
            }
            if (Greenfoot.isKeyDown("S") && !onGround())
            {
-           setRelativeLocation(0,5);
+               setRelativeLocation(0,5);
            }
         }
-        
-       if (isTouching(Lever.class))
-       {
-           
-       }
     }
     public void standingStill(){
-        if (onGround() && !moving){
+        if (!moving && !onLadder() && onGround()){
             setImage(front);
         }
     }
-    public void walkingAnim(){
+    public void walkingAnim(){ //Reworked
         if (onGround() && Greenfoot.isKeyDown("d")){
-            setImage(walk1);
-            if (moving){
-                setImage(walk2);
-            }
+            animateMovement("Right"); //Michael shit
         }
         if (onGround() && Greenfoot.isKeyDown("a")){
-            setImage(walk1m);
-            if (moving){
-                setImage(walk2m);
-            }
+            animateMovement("Left"); //Michael shit
+        }
+        if (onLadder() && Greenfoot.isKeyDown("w") || Greenfoot.isKeyDown("s")){
+            animateMovement("Ladder"); //Michael shit
         }
     }
     
+    public void animateMovement(String Direction){ // Michael shit start here
+       if (Direction == "Right"){
+            atime=atime+1;
+            if (atime==15) atime=0;
+            if (atime==0) setImage(walk1);
+            if (atime==5) setImage(walk2);
+            if (atime==10) setImage(walk1);
+       }
+       if (Direction == "Left"){
+            atime=atime+1;
+            if (atime==15) atime=0;
+            if (atime==0) setImage(walk1m);
+            if (atime==5) setImage(walk2m);
+            if (atime==10) setImage(walk2m);
+       }
+       if (Direction == "Ladder"){
+            atime=atime+1;
+            if (atime==15) atime=0;
+            if (atime==0) setImage(climb1);
+            if (atime==0) setImage(climb2);
+            if (atime==10) setImage(climb1);
+       }
+    } //Ends here
    
 }

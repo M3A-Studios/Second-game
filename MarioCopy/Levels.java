@@ -157,6 +157,10 @@ public class Levels extends World
                     {
                         nextBlock = new Lever(world[laag][positie]);
                     } 
+                    else if (check(Globals.animatedObjects, world[laag][positie]))
+                    {
+                        nextBlock = new AnimatedObject(world[laag][positie]);
+                    }
                     else if (world[laag][positie] != 0)
                     {
                         nextBlock = new Solid(world[laag][positie]);
