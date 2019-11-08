@@ -102,6 +102,11 @@ public class Player extends Physics
            setRelativeLocation(0,5);
            }
         }
+        
+       if (isTouching(Lever.class))
+       {
+           
+       }
     }
     public void standingStill(){
         if (onGround() && !moving){
