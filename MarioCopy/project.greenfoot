@@ -80,9 +80,15 @@ editor.fx.0.height=0
 editor.fx.0.width=0
 editor.fx.0.x=0
 editor.fx.0.y=0
+<<<<<<< Updated upstream
 height=1053
 package.numDependencies=25
 package.numTargets=15
+=======
+height=1004
+package.numDependencies=24
+package.numTargets=14
+>>>>>>> Stashed changes
 project.charset=UTF-8
 publish.hasSource=false
 publish.locked=true
