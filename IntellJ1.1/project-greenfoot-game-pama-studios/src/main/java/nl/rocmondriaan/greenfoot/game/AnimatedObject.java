@@ -1,10 +1,9 @@
+package nl.rocmondriaan.greenfoot.game;
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-import java.util.List;
-import java.util.*;
 
 /**
  * Shit animates shit man
- * 
+ *
  * @author Michael
  * @version 1.0
  */
@@ -16,7 +15,7 @@ public class AnimatedObject extends Blocks
     private GreenfootImage Torch2 = new GreenfootImage("261.png");
     private GreenfootImage Torch3 = new GreenfootImage("262.png");
 
-    
+
     public void act(){
         changeImage();
         Torch1.scale((Options.blockSize),(Options.blockSize));
@@ -26,9 +25,10 @@ public class AnimatedObject extends Blocks
     AnimatedObject(int ID){
         super(ID);
         selectImage = ID;
+        System.out.println(selectImage);
     }
     public void changeImage(){
-        if (selectImage == 252){
+        if (selectImage == 253){
             animateTorch();
         }
         else if (selectImage == 253){
@@ -36,26 +36,6 @@ public class AnimatedObject extends Blocks
         }
     }
 
-    /*public void changeImage(){ //Object selection werkt nog nieeeee
-        switch (selectImage)
-        {
-            case 1: selectImage = 252;
-                    animateTorch();
-                    break;
-            case 2: selectImage = 226;
-                    animateLever();
-                    break;
-            case 3: selectImage = 3;
-                    break;
-            case 4: selectImage = 4;
-                    break;
-            case 5: selectImage = 5;
-                    break;
-            default: selectImage = 2;
-                    break;
-
-        }
-    }*/
     public void animateTorch(){ //Fix this shit --reminder to self (Blocken moet automatisch scalen als ingeladen maar is temp shit jaaaa)
         atime=atime+1; //Counter
         if (atime==30) atime=0; //Reset
