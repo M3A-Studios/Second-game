@@ -52,11 +52,10 @@ public class Player extends Physics
             if(onGround())
             {
                 spaceKeyDown = 0;
-                jump(14);
+                jump(14 );
             }
             else
             {
-                System.out.println(spaceKeyDown);
                 spaceKeyDown += 1;
                 if (spaceKeyDown < 60) {
                     jump(0.4);
@@ -110,14 +109,14 @@ public class Player extends Physics
             setImage(front);
         }
     }
-    public void walkingAnim(){ //Reworked
-        if (onGround() && Greenfoot.isKeyDown("d")){
+    public void walkingAnim(){ //Reworked again 2.0
+        if ( !onLadder() && Greenfoot.isKeyDown("d")){ //Hierbij onLadder inplaats van onGround
             animateMovement("Right"); //Michael shit
         }
-        if (onGround() && Greenfoot.isKeyDown("a")){
+        if ( !onLadder() && Greenfoot.isKeyDown("a")){
             animateMovement("Left"); //Michael shit
         }
-        if (onLadder() && Greenfoot.isKeyDown("w") || Greenfoot.isKeyDown("s")){
+        if (onLadder() && Greenfoot.isKeyDown("w") || onLadder() && Greenfoot.isKeyDown("s")){ //onLadder bij s moest erbij nog
             animateMovement("Ladder"); //Michael shit
         }
     }

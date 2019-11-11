@@ -69,9 +69,9 @@ public class Physics extends Actor
     }
     public boolean onGround()
     {
-        if (getOneObjectAtOffset(getImage().getWidth() / -2 + 1, getImage().getHeight() / 2 + (int) Math.ceil(vSpeed), Solid.class) != null ||
+        if (getOneObjectAtOffset(getImage().getWidth() / -2, getImage().getHeight() / 2 + (int) Math.ceil(vSpeed), Solid.class) != null ||
         getOneObjectAtOffset(0, getImage().getHeight() / 2 + (int) Math.ceil(vSpeed), Solid.class) != null ||
-        getOneObjectAtOffset(getImage().getWidth() / 2 - 1, getImage().getHeight() / 2 + (int) Math.ceil(vSpeed), Solid.class) != null) { 
+        getOneObjectAtOffset(getImage().getWidth() / 2, getImage().getHeight() / 2 + (int) Math.ceil(vSpeed), Solid.class) != null) { 
             return true; 
         } else { 
             return false;
