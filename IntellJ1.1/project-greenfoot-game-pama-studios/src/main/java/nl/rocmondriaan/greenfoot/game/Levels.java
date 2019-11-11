@@ -1,19 +1,14 @@
 package nl.rocmondriaan.greenfoot.game;
 
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-import nl.rocmondriaan.greenfoot.demo.DemoEnemy;
-import nl.rocmondriaan.greenfoot.demo.DemoHero;
-import nl.rocmondriaan.greenfoot.demo.DemoTileFactory;
 import nl.rocmondriaan.greenfoot.engine.*; //AABB, BasicTile, Camera, CollisionEngine, Mover, TileEngine, TileFactory, TileType
 import java.io.*;
 import java.util.*;
 
 public class Levels extends World
 {
-
     // Declareren van TileEngine
     private TileEngine te;
-
 
     private static int levelWidth;
     private static int levelHeight;
@@ -22,10 +17,11 @@ public class Levels extends World
     private static int currentLayer; //current layer in tile map (for getMap())
     private static int totalLayers; //total layers in tile map
     private static GreenfootImage background;
+
     Camera camera; //camera object created later at spawnCamera()
     Mover player; //player object created later at renderMap()
-    public Levels()
-    {
+
+    public Levels() {
         this(1,3); //by default load level 1 if non is specified
     }
     public void act() {
@@ -33,7 +29,6 @@ public class Levels extends World
     }
     public Levels(int level, int playerLayer)
     {
-
         super(Options.screenWidth, Options.screenHeight, 1, false); //render the screen with said screensize
         Greenfoot.setSpeed(55);
 
@@ -46,7 +41,7 @@ public class Levels extends World
 
         // Declareren en initialiseren van een main karakter van het spel mijne heet Hero. Deze klasse
         // moet de klasse Mover extenden voor de camera om te werken
-        Player player = new Player();
+        player = new Player();
 
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 0, 0);
@@ -65,15 +60,12 @@ public class Levels extends World
         renderHUD();
     }
     private void renderHUD() {
-
         Heart Heart1 = new Heart(1);
         Heart Heart2 = new Heart(2);
         Heart Heart3 = new Heart(3);
         addObject (Heart1, Options.blockSize, Options.blockSize);
         addObject (Heart2, Options.blockSize * 2, Options.blockSize);
         addObject (Heart3, Options.blockSize * 3, Options.blockSize);
-
-
     }
     private void spawnCamera() {
         camera = new Camera(this, background, Globals.worldWidth, Globals.worldHeight);
@@ -211,7 +203,6 @@ public class Levels extends World
             width = -1;
             height = 0;
             if (laag == playerLayer) {
-                player = new Player();
                 addObject(player, 60, 300);
             }
         }
