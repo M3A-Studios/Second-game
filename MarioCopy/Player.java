@@ -52,10 +52,11 @@ public class Player extends Physics
             if(onGround())
             {
                 spaceKeyDown = 0;
-                jump(14 );
+                jump(14);
             }
             else
             {
+                System.out.println(spaceKeyDown);
                 spaceKeyDown += 1;
                 if (spaceKeyDown < 60) {
                     jump(0.4);
