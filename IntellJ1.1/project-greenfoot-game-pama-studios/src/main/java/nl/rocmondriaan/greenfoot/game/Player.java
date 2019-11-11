@@ -53,6 +53,7 @@ public class Player extends Physics
         } else {
             updateGravity();
             walkingAnim();
+            standingStill();
             if (Greenfoot.isKeyDown("space")) {
                 if (onGround()) {
                     spaceKeyDown = 0;
@@ -106,10 +107,10 @@ public class Player extends Physics
         }
     }
     public void walkingAnim(){ //Reworked again 2.0
-        if ( !onLadder() && onGround() && Greenfoot.isKeyDown("d")){
+        if ( !onLadder() && Greenfoot.isKeyDown("d")){
             animateMovement("Right"); //Michael shit
         }
-        if ( !onLadder() && onGround() && Greenfoot.isKeyDown("a")){
+        if ( !onLadder() && Greenfoot.isKeyDown("a")){
             animateMovement("Left"); //Michael shit
         }
         if (onLadder() && Greenfoot.isKeyDown("w") || onLadder() && Greenfoot.isKeyDown("s")){
