@@ -48,15 +48,10 @@ public class Player extends Physics
             setDoubleX(getX());
             setDoubleY(getY());
         }
-        skip++;
-        if (skip >= 2) {
-            skip = 0;
-        } else {
-            updateGravity();
-            walkingAnim();
-            standingStill();
-            checkinput();
-        }
+        updateGravity();
+        walkingAnim();
+        standingStill();
+        checkinput();
     }
     public void checkinput()
     {

@@ -7,19 +7,32 @@ import java.util.*;
 
 public class Levels extends World
 {
-    // Declareren van TileEngine
-    private TileEngine te;
-
     private static int levelWidth;
     private static int levelHeight;
     private static int[][] world; //world map 2 dimensional. [layer][position]
     private static int totalLayers; //total layers in tile map
 
-    private Camera camera; //camera object created later at spawnCamera()
-    private Mover player; //player object created later at renderMap()
+    private Camera2 camera; //camera object created later at spawnCamera()
+    private Actor player; //player object created later at renderMap()
 
     public void act() {
         scroll(); //scroll the camera
+    }
+    private void scroll() {
+        int loX = Options.screenWidth/16*7; //Barrier left of center to move
+        int hiX = Options.screenWidth-(Options.screenWidth/16*7); //Barrier right of center to move
+        int loY = Options.screenHeight/8*2; //Barrier from the ceiling to move
+        int hiY = Options.screenHeight-(Options.screenHeight/8*3); //Barrier from the bottom to move
+        // determine offsets and scroll
+        int dsx = 0, dsy = 0;
+        //check if player is past the barriers ^
+        if (player.getX() < loX) dsx = player.getX()-loX;
+        if (player.getX() > hiX) dsx = player.getX()-hiX;
+        if (player.getY() < loY) dsy = player.getY()-loY;
+        if (player.getY() > hiY) dsy = player.getY()-hiY;
+        System.out.println("Player: " + player.getX() + ", " + player.getY());
+        System.out.println("Camera ds: " + dsx + ", " + dsy);
+        camera.scroll(dsx, dsy); //scroll the world
     }
     //by default load level 1 if non is specified
     public Levels() {
@@ -27,20 +40,13 @@ public class Levels extends World
     }
     public Levels(int level) {
         super(Options.screenWidth, Options.screenHeight, 1, false); //render the screen with said screensize
-        Greenfoot.setSpeed(55);
         System.out.println("Loading Level: " + level);
-
-        // initialiseren van de TileEngine klasse om de map aan de world toe te voegen
-        te = new TileEngine(this, 64, 60);
-
-        // New Camera Object initialiseren
-        nl.rocmondriaan.greenfoot.engine.Camera camera = new nl.rocmondriaan.greenfoot.engine.Camera(te);
-
-        player = new Player(); // Declareren en initialiseren van main character
-
-        addObject(camera, 0, 0); //Camera toevoegen aan de wereld
-        camera.follow(player); // Laat de camera een object volgen. Die moet een Mover instatie zijn of een extentie hiervan.
-        camera.act(); // Force act zodat de camera op de juist plek staat.
+        Globals.worldHeight = 0;
+        Globals.worldWidth = 0;
+        Camera2.scrolledX = 0;
+        Camera2.scrolledY = 0;
+        Camera2.entityXOffset = 0;
+        Camera2.entityYOffset = 0;
 
         getMap(level); //get the map of this level
         renderMap(getPlayerLayer(level)); //spawn the map and player as said layer
@@ -66,22 +72,8 @@ public class Levels extends World
         addObject (Heart3, Options.blockSize * 3, Options.blockSize);
     }
     private void spawnCamera(int level) {
-        camera = new Camera(this, getBackground(level), Globals.worldWidth, Globals.worldHeight);
+        camera = new Camera2(this, getBackground(level), Globals.worldWidth, Globals.worldHeight);
         scroll();
-    }
-    private void scroll() {
-        int loX = Options.screenWidth/16*7; //Barrier left of center to move
-        int hiX = Options.screenWidth-(Options.screenWidth/16*7); //Barrier right of center to move
-        int loY = Options.screenHeight/8*2; //Barrier from the ceiling to move
-        int hiY = Options.screenHeight-(Options.screenHeight/8*3); //Barrier from the bottom to move
-        // determine offsets and scroll
-        int dsx = 0, dsy = 0;
-        //check if player is past the barriers ^
-        if (player.getX() < loX) dsx = player.getX()-loX;
-        if (player.getX() > hiX) dsx = player.getX()-hiX;
-        if (player.getY() < loY) dsy = player.getY()-loY;
-        if (player.getY() > hiY) dsy = player.getY()-hiY;
-        camera.scroll(dsx, dsy); //scroll the world
     }
     private static GreenfootImage getBackground(int level) {
         GreenfootImage background;
@@ -204,6 +196,7 @@ public class Levels extends World
             width = -1;
             height = 0;
             if (laag == playerLayer) {
+                player = new Player();
                 addObject(player, 60, 300);
             }
         }

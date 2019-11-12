@@ -1,9 +1,8 @@
 package nl.rocmondriaan.greenfoot.game;
 
-import nl.rocmondriaan.greenfoot.engine.Mover;
 import greenfoot.*;
 
-public class Physics extends Mover
+public class Physics extends Actor
 {
     protected double vSpeed = 0;
     protected double acceleration = 0.9;
@@ -34,8 +33,8 @@ public class Physics extends Mover
         setLocation((int) doubleX, (int) doubleY);
     }
     public void entityOffset() {
-        doubleX = doubleX + Camera.entityXOffset;
-        doubleY = doubleY + Camera.entityYOffset;
+        doubleX = doubleX + Camera2.entityXOffset;
+        doubleY = doubleY + Camera2.entityYOffset;
     }
     public void jump(double height)
     {

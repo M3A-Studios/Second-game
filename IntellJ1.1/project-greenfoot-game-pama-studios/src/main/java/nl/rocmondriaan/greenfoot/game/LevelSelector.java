@@ -15,14 +15,12 @@ public class LevelSelector extends World
     private static int selectedLevel;
     private static int levelWidth;
     private static int levelHeight;
-    private static String mapString; //mapstring used in getMap() for world[][]
-    private static int world[][]; //world map 2 dimensional. [layer][position]
-    private static int currentLayer; //current layer in tile map (for getMap())
+    private static int[][] world; //world map 2 dimensional. [layer][position]
     private static int totalLayers; //total layers in tile map
     private static GreenfootImage background = new GreenfootImage("background.png");;
 
-    Camera camera; //camera object created later at spawnCamera()
-    Mover selectorPlayer; //player object created later at renderMap()
+    Camera2 camera; //camera object created later at spawnCamera()
+    Actor selectorPlayer; //player object created later at renderMap()
 
     public void act() {
         scroll(); //scroll the camera
@@ -32,28 +30,6 @@ public class LevelSelector extends World
     }
     public LevelSelector(int level) {
         super(Options.screenWidth, Options.screenHeight, 1, false); //render the screen with said screensize
-        Greenfoot.setSpeed(55);
-
-        // initialiseren van de TileEngine klasse om de map aan de world toe te voegen
-        te = new TileEngine(this, 64, 60);
-
-        // Declarenre en initialiseren van de camera klasse met de TileEngine klasse
-        // zodat de camera weet welke tiles allemaal moeten meebewegen met de camera
-        nl.rocmondriaan.greenfoot.engine.Camera camera = new nl.rocmondriaan.greenfoot.engine.Camera(te);
-
-        // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
-        addObject(camera, 0, 0);
-        //addObject(player, 300, 200);
-
-        // Declareren en initialiseren van een main karakter van het spel mijne heet Hero. Deze klasse
-        // moet de klasse Mover extenden voor de camera om te werken
-        selectorPlayer = new SelectorPlayer();
-
-        // Laat de camera een object volgen. Die moet een Mover instatie zijn of een extentie hiervan.
-        camera.follow(selectorPlayer);
-
-        // Force act zodat de camera op de juist plek staat.
-        camera.act();
 
         selectedLevel = level;
         levelX = (int) (Options.blockSize * getLevelX(level));
@@ -142,7 +118,7 @@ public class LevelSelector extends World
         }
     }
     private void spawnCamera() {
-        camera = new Camera(this, background, Globals.worldWidth, Globals.worldHeight);
+        camera = new Camera2(this, background, Globals.worldWidth, Globals.worldHeight);
         scroll();
     }
     private void scroll() {
@@ -159,14 +135,11 @@ public class LevelSelector extends World
         if (selectorPlayer.getY() > hiY) dsy = selectorPlayer.getY()-hiY;
         camera.scroll(dsx, dsy); //scroll the world
     }
-
-    //get map and render it
-
     private static void getMap() {
         levelWidth = 0; //reset level width
         levelHeight = 0; //reset level height
-        mapString = ""; //clear out map
-        currentLayer = 1; //set to first layer
+        String mapString = ""; //clear out map
+        int currentLayer = 1; //set to first layer
 
         //read the level layout
         File readFile = new File("src/main/resources/tilemap/levelselector.tmx");
@@ -209,7 +182,7 @@ public class LevelSelector extends World
                     for (int i = 0; i < (levelWidth * levelHeight); i++){
                         world[currentLayer - 1][i] = Integer.parseInt(layer[i]); //turn array into int array just some parsing from text to integer
                     }
-                    currentLayer ++; //go to next layer in the map
+                    currentLayer++; //go to next layer in the map
                     mapString = ""; //reset mapString for new layer back to having no values
                 }
             }
@@ -259,6 +232,7 @@ public class LevelSelector extends World
             width = -1;
             height = 0;
             if (laag == playerLayer) {
+                selectorPlayer = new SelectorPlayer();
                 addObject(selectorPlayer, levelX, levelY);
             }
         }

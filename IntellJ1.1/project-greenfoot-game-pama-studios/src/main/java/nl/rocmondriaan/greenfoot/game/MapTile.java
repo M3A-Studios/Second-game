@@ -3,7 +3,7 @@ package nl.rocmondriaan.greenfoot.game;
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import nl.rocmondriaan.greenfoot.engine.*;
 
-public class MapTile extends Mover
+public class MapTile extends Actor
 {
     private GreenfootImage image;
     MapTile(int ID) {

@@ -3,7 +3,7 @@ package nl.rocmondriaan.greenfoot.game;
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import nl.rocmondriaan.greenfoot.engine.*;
 
-public class Camera extends Mover
+public class Camera2 extends Actor
 {
     public static int scrolledX, scrolledY;
     public static int entityXOffset, entityYOffset;
@@ -11,13 +11,13 @@ public class Camera extends Mover
     private World world;
     private GreenfootImage background;
 
-    Camera(World activeWorld, int width, int height) {
+    Camera2(World activeWorld, int width, int height) {
         world = activeWorld; //set the world the camera is in
         wide = width; //set the world size for the camera
         high = height; //set the world size for the camera
         scroll(0,0);
     }
-    Camera(World activeWorld, GreenfootImage backgroundImage, int width, int height) {
+    Camera2(World activeWorld, GreenfootImage backgroundImage, int width, int height) {
         world = activeWorld; //set the world the camera is in
         wide = width; //set the world size for the camera
         high = height; //set the world size for the camera

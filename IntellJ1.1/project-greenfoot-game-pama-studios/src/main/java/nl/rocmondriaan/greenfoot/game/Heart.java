@@ -3,7 +3,7 @@ package nl.rocmondriaan.greenfoot.game;
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import nl.rocmondriaan.greenfoot.engine.*;
 
-public class Heart extends Mover
+public class Heart extends Actor
 {
     GreenfootImage image;
     private int heart;

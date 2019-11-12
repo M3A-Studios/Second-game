@@ -1,5 +1,7 @@
 package nl.rocmondriaan.greenfoot.game;
 import greenfoot.*;
+import nl.rocmondriaan.greenfoot.demo.DemoWorld;
+
 import java.util.List;
 
 public class SelectorPlayer extends Physics {
@@ -29,7 +31,7 @@ public class SelectorPlayer extends Physics {
         if (Greenfoot.isKeyDown("a")) {
         }
         if (Greenfoot.isKeyDown("enter") || Greenfoot.isKeyDown("space")) {
-            Greenfoot.setWorld(new Levels(LevelSelector.getSelectedLevel()));
+            Greenfoot.setWorld(new Levels());
         }
     }
 }
