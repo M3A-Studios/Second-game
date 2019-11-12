@@ -13,7 +13,8 @@ public class Player extends Physics
     private double rightKeyDown;
     private double spaceKeyDown;
     private int atime = 0;
-
+    private boolean dead = false;
+    private int dyingAnimation = 0;
     private int skip;
 
     private GreenfootImage climb1 = new GreenfootImage("alienGreen_climb1.png");
@@ -39,7 +40,8 @@ public class Player extends Physics
         walk1m.mirrorHorizontally();
         walk2m.mirrorHorizontally();
     }
-    public void act() {
+    public void act()
+    {
         entityOffset();
         if (!started) {
             started = true;
@@ -53,50 +55,72 @@ public class Player extends Physics
             updateGravity();
             walkingAnim();
             standingStill();
-            if (Greenfoot.isKeyDown("space")) {
-                if (onGround()) {
-                    spaceKeyDown = 0;
-                    jump(14);
-                } else {
-                    spaceKeyDown += 1;
-                    if (spaceKeyDown < 60) {
-                        if (vSpeed < 0) {
-                            jump(0.4);
-                        }
+            checkinput();
+        }
+    }
+    public void checkinput()
+    {
+        if (Greenfoot.isKeyDown("space")) {
+            if (onGround()) {
+                spaceKeyDown = 0;
+                jump(14);
+            } else {
+                spaceKeyDown += 1;
+                if (spaceKeyDown < 60) {
+                    if (vSpeed < 0) {
+                        jump(0.4);
                     }
                 }
             }
-            moving = false;
-            if (Greenfoot.isKeyDown("d")) {
-                rightKeyDown += 0.2;
-                if (rightKeyDown > 60) rightKeyDown = 60;
-                double speed = 5 + rightKeyDown / 10;
-                if (canMoveRight(speed)) {
-                    moveRight(speed);
-                    moving = true;
-                }
-            } else {
-                rightKeyDown = 0;
+        }
+        moving = false;
+        if (Greenfoot.isKeyDown("d")) {
+            rightKeyDown += 0.2;
+            if (rightKeyDown > 60) rightKeyDown = 60;
+            double speed = 5 + rightKeyDown / 10;
+            if (canMoveRight(speed)) {
+                moveRight(speed);
+                moving = true;
             }
-            if (Greenfoot.isKeyDown("a")) {
-                leftKeyDown += 0.2;
-                if (leftKeyDown > 60) leftKeyDown = 60;
-                double speed = 5 + leftKeyDown / 10;
-                if (canMoveLeft(speed)) {
-                    moveLeft(speed);
-                    moving = true;
-                }
-            } else {
-                leftKeyDown = 0;
+        } else {
+            rightKeyDown = 0;
+        }
+        if (Greenfoot.isKeyDown("a")) {
+            leftKeyDown += 0.2;
+            if (leftKeyDown > 60) leftKeyDown = 60;
+            double speed = 5 + leftKeyDown / 10;
+            if (canMoveLeft(speed)) {
+                moveLeft(speed);
+                moving = true;
             }
+        } else {
+            leftKeyDown = 0;
+        }
 
-            if (onLadder()) {
-                if (Greenfoot.isKeyDown("W")) {
-                    setRelativeLocation(0, -5);
-                }
-                if (Greenfoot.isKeyDown("S") && !onGround()) {
-                    setRelativeLocation(0, 5);
-                }
+        if (onLadder()) {
+            if (Greenfoot.isKeyDown("W")) {
+                setRelativeLocation(0, -5);
+            }
+            if (Greenfoot.isKeyDown("S") && !onGround()) {
+                setRelativeLocation(0, 5);
+            }
+        }
+
+        if (Greenfoot.isKeyDown(Options.interact))
+        {health = health - 1;}
+        if (Greenfoot.isKeyDown("X"))
+        {health = health - 1;}
+
+        if (deathCheck() && !dead)
+        {
+            dead = true;
+            dyingAnimation = 0;
+        }
+        if (dead) {
+            if (dyingAnimation < 300) {
+                dyingAnimation += 1;
+            //} else {
+                //Greenfoot.setWorld(new Levels(LevelSelector.getSelectedLevel()));
             }
         }
     }
@@ -139,5 +163,12 @@ public class Player extends Physics
             if (atime==0) setImage(climb2);
             if (atime==10) setImage(climb1);
         }
-    } //Ends here
-}
+    }
+    public boolean deathCheck()
+    {
+        if (health == 0) {
+            return true;
+        }
+            return false;
+    }
+    }//Ends here

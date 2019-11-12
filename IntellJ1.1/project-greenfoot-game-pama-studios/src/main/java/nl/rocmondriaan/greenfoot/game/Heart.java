@@ -13,6 +13,8 @@ public class Heart extends Mover
     private GreenfootImage half = new GreenfootImage("heartHalf.png");
     private GreenfootImage full = new GreenfootImage("heartFull.png");
     private GreenfootImage empty = new GreenfootImage("heartEmpty.png");
+    private Object Mover;
+
     Heart(int heart)
     {
         this.heart = heart;
@@ -44,5 +46,7 @@ public class Heart extends Mover
         } else { setLocation(startX, startY);}
         renderHeart();
     }
+
+
 }
 
