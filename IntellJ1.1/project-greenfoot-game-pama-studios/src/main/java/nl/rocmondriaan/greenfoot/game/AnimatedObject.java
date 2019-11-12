@@ -25,7 +25,6 @@ public class AnimatedObject extends Blocks
     AnimatedObject(int ID){
         super(ID);
         selectImage = ID;
-        System.out.println(selectImage);
     }
     public void changeImage(){
         if (selectImage == 253){
