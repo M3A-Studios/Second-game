@@ -1,12 +1,11 @@
 package nl.rocmondriaan.greenfoot.game;
-
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Player extends Physics
 {
     private int imageWidth;
     private int imageHeight;
-    public static int health = 6; //health amount
+    public static int health = 0; //health amount
     private boolean started = false;
     private boolean moving;
     private double leftKeyDown;
@@ -70,26 +69,25 @@ public class Player extends Physics
                     }
                 }
             }
-        }
-        moving = false;
-        if (Greenfoot.isKeyDown("d")) {
-            rightKeyDown += 0.2;
-            if (rightKeyDown > 60) rightKeyDown = 60;
-            double speed = 5 + rightKeyDown / 10;
-            if (canMoveRight(speed)) {
-                moveRight(speed);
-                moving = true;
+            moving = false;
+            if (Greenfoot.isKeyDown("d") && (!Greenfoot.isKeyDown("a"))) { //&& (!Greenfoot.isKeyDown("a")) toegevoegd voor links rechts bug
+                rightKeyDown += 0.2;
+                if (rightKeyDown > 60) rightKeyDown = 60;
+                double speed = 5 + rightKeyDown / 10;
+                if (canMoveRight(speed)) {
+                    moveRight(speed);
+                    moving = true;
+                }
+            } else {
+                rightKeyDown = 0;
             }
-        } else {
-            rightKeyDown = 0;
-        }
-        if (Greenfoot.isKeyDown("a")) {
-            leftKeyDown += 0.2;
-            if (leftKeyDown > 60) leftKeyDown = 60;
-            double speed = 5 + leftKeyDown / 10;
-            if (canMoveLeft(speed)) {
-                moveLeft(speed);
-                moving = true;
+            if (Greenfoot.isKeyDown("a") && (!Greenfoot.isKeyDown("d"))) { //&& (!Greenfoot.isKeyDown("d")) toegevoegd voor links rechts bug
+                leftKeyDown += 0.2;
+                if (leftKeyDown > 60) leftKeyDown = 60;
+                double speed = 5 + leftKeyDown / 10;
+                if (canMoveLeft(speed)) {
+                    moveLeft(speed);
+                    moving = true;
             }
         } else {
             leftKeyDown = 0;
@@ -123,43 +121,44 @@ public class Player extends Physics
         }
     }
     public void standingStill(){
-        if (!moving && !onLadder() && onGround()){
+        if (!moving && !onLadder()){ //&& onGround() weg gehaalt --Michael
             setImage(front);
+            atime = 0; //Reset animation timer
         }
     }
-    public void walkingAnim(){ //Reworked again 2.0
+    public void walkingAnim(){
         if ( !onLadder() && Greenfoot.isKeyDown("d")){
-            animateMovement("Right"); //Michael shit
+            animateMovement("Right");
         }
         if ( !onLadder() && Greenfoot.isKeyDown("a")){
-            animateMovement("Left"); //Michael shit
+            animateMovement("Left");
         }
         if (onLadder() && Greenfoot.isKeyDown("w") || onLadder() && Greenfoot.isKeyDown("s")){
-            animateMovement("Ladder"); //Michael shit
+            animateMovement("Ladder");
         }
     }
 
-    public void animateMovement(String Direction){ // Michael shit start here
+    public void animateMovement(String Direction){
         if (Direction == "Right"){
             atime=atime+1;
-            if (atime==15) atime=0;
-            if (atime==0) setImage(walk1);
-            if (atime==5) setImage(walk2);
-            if (atime==10) setImage(walk1);
+            if (atime > 0 && atime < 5) {setImage(walk1);}
+            if (atime==5) {setImage(walk2);}
+            if (atime==10) {setImage(walk1);}
+            if (atime>15) {atime=0;}
         }
         if (Direction == "Left"){
             atime=atime+1;
-            if (atime==15) atime=0;
-            if (atime==0) setImage(walk1m);
-            if (atime==5) setImage(walk2m);
-            if (atime==10) setImage(walk2m);
+            if (atime > 0 && atime < 5) {setImage(walk1m);}
+            if (atime==5) {setImage(walk2m);}
+            if (atime==10) {setImage(walk1m);}
+            if (atime>15) {atime=0;}
         }
         if (Direction == "Ladder"){
             atime=atime+1;
-            if (atime==15) atime=0;
-            if (atime==0) setImage(climb1);
-            if (atime==0) setImage(climb2);
-            if (atime==10) setImage(climb1);
+            if (atime > 0 && atime < 5) {setImage(climb1);}
+            if (atime==5) {setImage(climb2);}
+            if (atime==10) {setImage(climb1);}
+            if (atime>15) {atime=0;}
         }
     }
     public boolean deathCheck()

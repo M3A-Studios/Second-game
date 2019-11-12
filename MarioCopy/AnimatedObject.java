@@ -18,6 +18,7 @@ public class AnimatedObject extends Blocks
 
     
     public void act(){
+        System.out.println(atime);
         changeImage();
         Torch1.scale((Options.blockSize),(Options.blockSize));
         Torch2.scale((Options.blockSize),(Options.blockSize));
@@ -28,7 +29,7 @@ public class AnimatedObject extends Blocks
         selectImage = ID;
     }
     public void changeImage(){
-        if (selectImage == 252){
+        if (selectImage == 253){
             animateTorch();
         }
         else if (selectImage == 253){
@@ -58,9 +59,9 @@ public class AnimatedObject extends Blocks
     }*/
     public void animateTorch(){ //Fix this shit --reminder to self (Blocken moet automatisch scalen als ingeladen maar is temp shit jaaaa)
         atime=atime+1; //Counter
-        if (atime==30) atime=0; //Reset
-        if (atime==0) setImage(Torch1);
-        if (atime==15) setImage(Torch2);
+        if (atime==30) {atime=0;} //Reset
+        if (atime==0) {setImage(Torch1);}
+        if (atime==15) {setImage(Torch2);}
     }
 }
 

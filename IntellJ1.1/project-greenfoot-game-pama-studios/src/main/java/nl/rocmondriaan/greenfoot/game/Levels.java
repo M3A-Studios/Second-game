@@ -53,6 +53,7 @@ public class Levels extends World
         renderMap(getPlayerLayer(level)); //spawn the map and player as said layer
         spawnCamera(level); //spawn the camera
         renderHUD();
+
     }
     private int getPlayerLayer(int level) {
         switch (level) {
