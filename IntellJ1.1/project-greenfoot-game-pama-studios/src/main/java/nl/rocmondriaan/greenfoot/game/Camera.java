@@ -5,7 +5,7 @@ import nl.rocmondriaan.greenfoot.engine.*;
 
 public class Camera extends Mover
 {
-    private int scrolledX, scrolledY;
+    public static int scrolledX, scrolledY;
     public static int entityXOffset, entityYOffset;
     private int wide, high;
     private World world;

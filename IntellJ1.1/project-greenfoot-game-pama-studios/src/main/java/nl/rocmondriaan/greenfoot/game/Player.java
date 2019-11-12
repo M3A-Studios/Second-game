@@ -16,7 +16,6 @@ public class Player extends Physics
 
     private int skip;
 
-
     private GreenfootImage climb1 = new GreenfootImage("alienGreen_climb1.png");
     private GreenfootImage climb2 = new GreenfootImage("alienGreen_climb2.png");
     private GreenfootImage front = new GreenfootImage("alienGreen_front.png");

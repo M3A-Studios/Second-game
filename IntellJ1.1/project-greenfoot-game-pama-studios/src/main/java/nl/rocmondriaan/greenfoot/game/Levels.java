@@ -1,82 +1,72 @@
 package nl.rocmondriaan.greenfoot.game;
 
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-import nl.rocmondriaan.greenfoot.demo.DemoEnemy;
-import nl.rocmondriaan.greenfoot.demo.DemoHero;
-import nl.rocmondriaan.greenfoot.demo.DemoTileFactory;
 import nl.rocmondriaan.greenfoot.engine.*; //AABB, BasicTile, Camera, CollisionEngine, Mover, TileEngine, TileFactory, TileType
 import java.io.*;
 import java.util.*;
 
 public class Levels extends World
 {
-
     // Declareren van TileEngine
     private TileEngine te;
 
-
     private static int levelWidth;
     private static int levelHeight;
-    private static String mapString; //mapstring used in getMap() for world[][]
-    private static int world[][]; //world map 2 dimensional. [layer][position]
-    private static int currentLayer; //current layer in tile map (for getMap())
+    private static int[][] world; //world map 2 dimensional. [layer][position]
     private static int totalLayers; //total layers in tile map
-    private static GreenfootImage background;
-    Camera camera; //camera object created later at spawnCamera()
-    Mover player; //player object created later at renderMap()
-    public Levels()
-    {
-        this(1,3); //by default load level 1 if non is specified
-    }
+
+    private Camera camera; //camera object created later at spawnCamera()
+    private Mover player; //player object created later at renderMap()
+
     public void act() {
         scroll(); //scroll the camera
     }
-    public Levels(int level, int playerLayer)
-    {
-
+    //by default load level 1 if non is specified
+    public Levels() {
+        this(1);
+    }
+    public Levels(int level) {
         super(Options.screenWidth, Options.screenHeight, 1, false); //render the screen with said screensize
         Greenfoot.setSpeed(55);
+        System.out.println("Loading Level: " + level);
 
         // initialiseren van de TileEngine klasse om de map aan de world toe te voegen
         te = new TileEngine(this, 64, 60);
 
-        // Declarenre en initialiseren van de camera klasse met de TileEngine klasse
-        // zodat de camera weet welke tiles allemaal moeten meebewegen met de camera
+        // New Camera Object initialiseren
         nl.rocmondriaan.greenfoot.engine.Camera camera = new nl.rocmondriaan.greenfoot.engine.Camera(te);
 
-        // Declareren en initialiseren van een main karakter van het spel mijne heet Hero. Deze klasse
-        // moet de klasse Mover extenden voor de camera om te werken
-        Player player = new Player();
+        player = new Player(); // Declareren en initialiseren van main character
 
-        // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
-        addObject(camera, 0, 0);
-        //addObject(player, 300, 200);
-
-        // Laat de camera een object volgen. Die moet een Mover instatie zijn of een extentie hiervan.
-        camera.follow(player);
-
-        // Force act zodat de camera op de juist plek staat.
-        camera.act();
+        addObject(camera, 0, 0); //Camera toevoegen aan de wereld
+        camera.follow(player); // Laat de camera een object volgen. Die moet een Mover instatie zijn of een extentie hiervan.
+        camera.act(); // Force act zodat de camera op de juist plek staat.
 
         getMap(level); //get the map of this level
-        getBackground(level); //get the background
-        renderMap(playerLayer); //spawn the map and player as said layer
-        spawnCamera(); //spawn the camera
+        renderMap(getPlayerLayer(level)); //spawn the map and player as said layer
+        spawnCamera(level); //spawn the camera
         renderHUD();
     }
+    private int getPlayerLayer(int level) {
+        switch (level) {
+            case 1:
+                return 3;
+            case 2:
+                return 3;
+            default:
+                return 3;
+        }
+    }
     private void renderHUD() {
-
         Heart Heart1 = new Heart(1);
         Heart Heart2 = new Heart(2);
         Heart Heart3 = new Heart(3);
         addObject (Heart1, Options.blockSize, Options.blockSize);
         addObject (Heart2, Options.blockSize * 2, Options.blockSize);
         addObject (Heart3, Options.blockSize * 3, Options.blockSize);
-
-
     }
-    private void spawnCamera() {
-        camera = new Camera(this, background, Globals.worldWidth, Globals.worldHeight);
+    private void spawnCamera(int level) {
+        camera = new Camera(this, getBackground(level), Globals.worldWidth, Globals.worldHeight);
         scroll();
     }
     private void scroll() {
@@ -94,14 +84,17 @@ public class Levels extends World
         camera.scroll(dsx, dsy); //scroll the world
     }
     private static GreenfootImage getBackground(int level) {
+        GreenfootImage background;
         background = new GreenfootImage("background.png");
         return background;
     }
     private static void getMap(int level) {
         levelWidth = 0; //reset level width
         levelHeight = 0; //reset level height
-        mapString = ""; //clear out map
-        currentLayer = 1; //set to first layer
+        //mapstring used in getMap() for world[][]
+        String mapString = ""; //clear out map
+        //current layer in tile map (for getMap())
+        int currentLayer = 1; //set to first layer
 
         //read the level layout
         File readFile = new File("src/main/resources/tilemap/level1.tmx"); //set what file to read files should be named "level(number).tmx" so "level1.tmx" just count tutorial as 0 or -1
@@ -144,7 +137,7 @@ public class Levels extends World
                     for (int i = 0; i < (levelWidth * levelHeight); i++){
                         world[currentLayer - 1][i] = Integer.parseInt(layer[i]); //turn array into int array just some parsing from text to integer
                     }
-                    currentLayer ++; //go to next layer in the map
+                    currentLayer++; //go to next layer in the map
                     mapString = ""; //reset mapString for new layer back to having no values
                 }
             }
@@ -211,7 +204,6 @@ public class Levels extends World
             width = -1;
             height = 0;
             if (laag == playerLayer) {
-                player = new Player();
                 addObject(player, 60, 300);
             }
         }
@@ -220,7 +212,7 @@ public class Levels extends World
         addObject(nextBlock, width*Options.blockSize + Options.blockSize/2,
                 height*Options.blockSize + Options.blockSize/2);
     }
-    public static boolean check(Integer[] arr, int toCheckValue) {
+    private static boolean check(Integer[] arr, int toCheckValue) {
         return Arrays.asList(arr).contains((toCheckValue - 1));
     }
 }

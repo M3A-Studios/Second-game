@@ -5,6 +5,9 @@ public class Globals
     public static int worldWidth;
     public static int worldHeight;
 
+    public static int scrolledX;
+    public static int scrolledY;
+
     public static Integer platforms[] = {};
     public static Integer slopeLefts[] = {};
     public static Integer slopeRights[] = {};
