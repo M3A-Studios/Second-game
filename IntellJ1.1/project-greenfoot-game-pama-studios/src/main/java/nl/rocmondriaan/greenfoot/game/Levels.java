@@ -37,7 +37,11 @@ public class Levels extends World
     }
     public Levels(int level) {
         super(Options.screenWidth, Options.screenHeight, 1, false); //render the screen with said screensize
+
+        //debug
         System.out.println("Loading Level: " + level);
+
+        //reset camera
         Globals.worldHeight = 0;
         Globals.worldWidth = 0;
         Camera2.scrolledX = 0;

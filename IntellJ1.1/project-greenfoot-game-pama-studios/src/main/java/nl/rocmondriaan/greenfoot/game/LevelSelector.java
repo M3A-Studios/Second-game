@@ -35,6 +35,14 @@ public class LevelSelector extends World
         levelX = (int) (Options.blockSize * getLevelX(level));
         levelY = (int) (Options.blockSize * getLevelY(level));
 
+        //reset camera position
+        Globals.worldHeight = 0;
+        Globals.worldWidth = 0;
+        Camera2.scrolledX = 0;
+        Camera2.scrolledY = 0;
+        Camera2.entityXOffset = 0;
+        Camera2.entityYOffset = 0;
+
         getMap(); //get the map of this level
         renderMap(4); //spawn the map and player as said layer
         renderLocks();
@@ -133,7 +141,7 @@ public class LevelSelector extends World
     private void scroll() {
         int loX = Options.screenWidth/16*7; //Barrier left of center to move
         int hiX = Options.screenWidth-(Options.screenWidth/16*7); //Barrier right of center to move
-        int loY = Options.screenHeight/8*2; //Barrier from the ceiling to move
+        int loY = Options.screenHeight/8*3; //Barrier from the ceiling to move
         int hiY = Options.screenHeight-(Options.screenHeight/8*3); //Barrier from the bottom to move
         // determine offsets and scroll
         int dsx = 0, dsy = 0;

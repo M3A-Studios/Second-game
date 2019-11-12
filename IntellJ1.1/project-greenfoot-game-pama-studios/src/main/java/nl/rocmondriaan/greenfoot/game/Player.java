@@ -55,6 +55,9 @@ public class Player extends Physics
     }
     public void checkinput()
     {
+        if (Greenfoot.isKeyDown("escape")) {
+            Greenfoot.setWorld(new LevelSelector(Globals.currentLevel));
+        }
         if (Greenfoot.isKeyDown("space")) {
             if (onGround()) {
                 spaceKeyDown = 0;
