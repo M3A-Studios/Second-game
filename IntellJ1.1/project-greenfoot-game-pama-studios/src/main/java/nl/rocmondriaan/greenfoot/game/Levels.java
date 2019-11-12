@@ -1,7 +1,6 @@
 package nl.rocmondriaan.greenfoot.game;
 
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-import nl.rocmondriaan.greenfoot.engine.*; //AABB, BasicTile, Camera, CollisionEngine, Mover, TileEngine, TileFactory, TileType
 import java.io.*;
 import java.util.*;
 
@@ -30,8 +29,6 @@ public class Levels extends World
         if (player.getX() > hiX) dsx = player.getX()-hiX;
         if (player.getY() < loY) dsy = player.getY()-loY;
         if (player.getY() > hiY) dsy = player.getY()-hiY;
-        System.out.println("Player: " + player.getX() + ", " + player.getY());
-        System.out.println("Camera ds: " + dsx + ", " + dsy);
         camera.scroll(dsx, dsy); //scroll the world
     }
     //by default load level 1 if non is specified
@@ -58,7 +55,7 @@ public class Levels extends World
             case 1:
                 return 3;
             case 2:
-                return 3;
+                return 0;
             default:
                 return 3;
         }
@@ -89,7 +86,7 @@ public class Levels extends World
         int currentLayer = 1; //set to first layer
 
         //read the level layout
-        File readFile = new File("src/main/resources/tilemap/level1.tmx"); //set what file to read files should be named "level(number).tmx" so "level1.tmx" just count tutorial as 0 or -1
+        File readFile = new File("src/main/resources/tilemap/level" + level + ".tmx"); //set what file to read files should be named "level(number).tmx" so "level1.tmx" just count tutorial as 0 or -1
         Scanner dataReader = null; //scanner for the file
         try
         {

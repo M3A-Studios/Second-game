@@ -37,6 +37,7 @@ public class LevelSelector extends World
 
         getMap(); //get the map of this level
         renderMap(4); //spawn the map and player as said layer
+        renderLocks();
         spawnCamera(); //spawn the camera
     }
     public static int getSelectedLevel() {
@@ -44,6 +45,14 @@ public class LevelSelector extends World
     }
     public static void setSelectedLevel(int input) {
         selectedLevel = input;
+    }
+    public void renderLocks() {
+        for (int i = 0; i < 15; i-=-1) {
+            if (i > Globals.levelsUnlocked) {
+                Actor nextBlock = new LevelLock();
+                addObject(nextBlock, (int) (getLevelX(i) * Options.blockSize), (int) (getLevelY(i) * Options.blockSize  + Options.blockSize / 4));
+            }
+        }
     }
     public static double getLevelX(int level) {
         switch(level) {
@@ -84,37 +93,37 @@ public class LevelSelector extends World
     public static double getLevelY(int level) {
         switch(level) {
             case 1:
-                return 28.5;
+                return 28.25;
             case 2:
-                return 26.5;
+                return 26.25;
             case 3:
-                return 24.5;
+                return 24.25;
             case 4:
-                return 19.5;
+                return 19.25;
             case 5:
-                return 17.5;
+                return 17.25;
             case 6:
-                return 18.5;
+                return 18.25;
             case 7:
-                return 17.5;
+                return 17.25;
             case 8:
-                return 15.5;
+                return 15.25;
             case 9:
-                return 13.5;
+                return 13.25;
             case 10:
-                return 12.5;
+                return 12.25;
             case 11:
-                return 11.5;
+                return 11.25;
             case 12:
-                return 9.5;
+                return 9.25;
             case 13:
-                return 5.5;
+                return 5.25;
             case 14:
-                return 6.5;
+                return 6.25;
             case 15:
-                return 6.5;
+                return 6.25;
             default:
-                return 28.5;
+                return 28.25;
         }
     }
     private void spawnCamera() {

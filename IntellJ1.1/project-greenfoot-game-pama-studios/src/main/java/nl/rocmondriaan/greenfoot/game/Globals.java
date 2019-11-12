@@ -4,6 +4,7 @@ public class Globals
 {
     public static int worldWidth;
     public static int worldHeight;
+    public static int levelsUnlocked = 1;
 
     public static Integer[] platforms = {};
     public static Integer[] slopeLefts = {};
