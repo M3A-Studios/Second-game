@@ -5,7 +5,7 @@ public class Player extends Physics
 {
     private int imageWidth;
     private int imageHeight;
-    public static int health = 0; //health amount
+    public static int health = 6; //health amount
     private boolean started = false;
     private boolean moving;
     private double leftKeyDown;
@@ -69,6 +69,7 @@ public class Player extends Physics
                     }
                 }
             }
+        }
             moving = false;
             if (Greenfoot.isKeyDown("d") && (!Greenfoot.isKeyDown("a"))) { //&& (!Greenfoot.isKeyDown("a")) toegevoegd voor links rechts bug
                 rightKeyDown += 0.2;

@@ -3,7 +3,7 @@ import greenfoot.*;
 import nl.rocmondriaan.greenfoot.engine.*;
 import java.util.*;
 
-public class Particles extends Mover {
+public class Particles extends Actor {
     private GreenfootImage smoke1 = new GreenfootImage("WhiteSmoke1.png");
     private GreenfootImage smoke2 = new GreenfootImage("WhiteSmoke2.png");
     private GreenfootImage smoke3 = new GreenfootImage("WhiteSmoke3.png");
