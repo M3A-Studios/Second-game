@@ -47,79 +47,79 @@ public class Player extends Physics
             setDoubleX(getX());
             setDoubleY(getY());
         }
-        updateGravity();
-        walkingAnim();
-        standingStill();
-        checkinput();
+        if (!deathCheck()) {
+            updateGravity();
+            walkingAnim();
+            standingStill();
+            checkinput();
+        }
     }
     public void checkinput() {
-        if (!deathCheck()) {
-            if (Greenfoot.isKeyDown("escape")) {
-                Greenfoot.setWorld(new LevelSelector(Globals.currentLevel));
-            }
-            if (Greenfoot.isKeyDown("space")) {
-                if (onGround()) {
-                    spaceKeyDown = 0;
-                    jump(14);
-                } else {
-                    spaceKeyDown += 1;
-                    if (spaceKeyDown < 60) {
-                        if (vSpeed < 0) {
-                            jump(0.4);
-                        }
+        if (Greenfoot.isKeyDown("escape")) {
+            Greenfoot.setWorld(new LevelSelector(Globals.currentLevel));
+        }
+        if (Greenfoot.isKeyDown("space")) {
+            if (onGround()) {
+                spaceKeyDown = 0;
+                jump(14);
+            } else {
+                spaceKeyDown += 1;
+                if (spaceKeyDown < 60) {
+                    if (vSpeed < 0) {
+                        jump(0.4);
                     }
                 }
             }
-            moving = false;
-            if (Greenfoot.isKeyDown("d") && (!Greenfoot.isKeyDown("a"))) { //&& (!Greenfoot.isKeyDown("a")) toegevoegd voor links rechts bug
-                rightKeyDown += 0.2;
-                if (rightKeyDown > 60) rightKeyDown = 60;
-                double speed = 5 + rightKeyDown / 10;
-                if (canMoveRight(speed)) {
-                    moveRight(speed);
-                    moving = true;
-                }
-            } else {
-                rightKeyDown = 0;
+        }
+        moving = false;
+        if (Greenfoot.isKeyDown("d") && (!Greenfoot.isKeyDown("a"))) { //&& (!Greenfoot.isKeyDown("a")) toegevoegd voor links rechts bug
+            rightKeyDown += 0.2;
+            if (rightKeyDown > 60) rightKeyDown = 60;
+            double speed = 5 + rightKeyDown / 10;
+            if (canMoveRight(speed)) {
+                moveRight(speed);
+                moving = true;
             }
-            if (Greenfoot.isKeyDown("a") && (!Greenfoot.isKeyDown("d"))) { //&& (!Greenfoot.isKeyDown("d")) toegevoegd voor links rechts bug
-                leftKeyDown += 0.2;
-                if (leftKeyDown > 60) leftKeyDown = 60;
-                double speed = 5 + leftKeyDown / 10;
-                if (canMoveLeft(speed)) {
-                    moveLeft(speed);
-                    moving = true;
-                }
-            } else {
-                leftKeyDown = 0;
+        } else {
+            rightKeyDown = 0;
+        }
+        if (Greenfoot.isKeyDown("a") && (!Greenfoot.isKeyDown("d"))) { //&& (!Greenfoot.isKeyDown("d")) toegevoegd voor links rechts bug
+            leftKeyDown += 0.2;
+            if (leftKeyDown > 60) leftKeyDown = 60;
+            double speed = 5 + leftKeyDown / 10;
+            if (canMoveLeft(speed)) {
+                moveLeft(speed);
+                moving = true;
             }
+        } else {
+            leftKeyDown = 0;
+        }
 
-            if (onLadder()) {
-                if (Greenfoot.isKeyDown("W")) {
-                    setRelativeLocation(0, -5);
-                }
-                if (Greenfoot.isKeyDown("S") && !onGround()) {
-                    setRelativeLocation(0, 5);
-                }
+        if (onLadder()) {
+            if (Greenfoot.isKeyDown("W")) {
+                setRelativeLocation(0, -5);
             }
+            if (Greenfoot.isKeyDown("S") && !onGround()) {
+                setRelativeLocation(0, 5);
+            }
+        }
 
-            if (Greenfoot.isKeyDown(Options.interact)) {
-                health = health - 1;
-            }
-            if (Greenfoot.isKeyDown("X")) {
-                health = health - 1;
-            }
+        if (Greenfoot.isKeyDown(Options.interact)) {
+            health = health - 1;
+        }
+        if (Greenfoot.isKeyDown("X")) {
+            health = health - 1;
+        }
 
-            if (deathCheck() && !dead) {
-                dead = true;
-                dyingAnimation = 0;
-            }
-            if (dead) {
-                if (dyingAnimation < 300) {
-                    dyingAnimation += 1;
-                    //} else {
-                    //Greenfoot.setWorld(new Levels(LevelSelector.getSelectedLevel()));
-                }
+        if (deathCheck() && !dead) {
+            dead = true;
+            dyingAnimation = 0;
+        }
+        if (dead) {
+            if (dyingAnimation < 300) {
+                dyingAnimation += 1;
+                //} else {
+                //Greenfoot.setWorld(new Levels(LevelSelector.getSelectedLevel()));
             }
         }
     }
@@ -164,9 +164,10 @@ public class Player extends Physics
             if (atime>15) {atime=0;}
         }
         if (Direction == "Death") {
+            atime=atime+1;
             if (atime > 0 && atime < 5) {setRelativeLocation(0,-1);}
-            if (atime==5) {setRelativeLocation(0,-1);}
-            if (atime==10) {setRelativeLocation(0,-1);}
+            if (atime==5) {setRelativeLocation(0,-5);}
+            if (atime==10) {setRelativeLocation(0,-10);}
             if (atime>15) {atime=0;}
         }
     }
