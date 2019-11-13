@@ -201,7 +201,7 @@ public class Levels extends World
             height = 0;
             if (laag == playerLayer) {
                 player = new Player();
-                addObject(player, 60, 300);
+                addObject(player, Options.blockSize * 3/2, Options.blockSize * 9);
             }
         }
     }

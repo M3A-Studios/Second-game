@@ -1,15 +1,11 @@
 package nl.rocmondriaan.greenfoot.game;
 
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-import nl.rocmondriaan.greenfoot.engine.*;
 import java.io.*;
 import java.util.*;
 
 public class LevelSelector extends World
 {
-    // Declareren van TileEngine
-    private TileEngine te;
-
     private static int levelX;
     private static int levelY;
     private static int selectedLevel;
@@ -26,12 +22,17 @@ public class LevelSelector extends World
         scroll(); //scroll the camera
     }
     public LevelSelector() {
-        this(1);
+         this(-1);
     }
     public LevelSelector(int level) {
         super(Options.screenWidth, Options.screenHeight, 1, false); //render the screen with said screensize
-
-        selectedLevel = level;
+        if (level == -1) {
+            if (selectedLevel < 1) {
+                selectedLevel = 1;
+            }
+        } else {
+            selectedLevel = level;
+        }
         levelX = (int) (Options.blockSize * getLevelX(level));
         levelY = (int) (Options.blockSize * getLevelY(level));
 
