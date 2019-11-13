@@ -1,13 +1,12 @@
 package nl.rocmondriaan.greenfoot.game;
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
+import greenfoot.Greenfoot;
+import greenfoot.GreenfootImage;
 
 public class Player extends Physics
 {
-    private int imageWidth;
-    private int imageHeight;
-    public static int health = 6; //health amount
-    private boolean started = false;
+    static int health = 6; //health amount
+    private boolean started;
     private boolean moving;
     private double leftKeyDown;
     private double rightKeyDown;
@@ -17,6 +16,11 @@ public class Player extends Physics
     private int dyingAnimation = 0;
     private int skip;
 
+    //sizes for the images
+    private int playerWidth = Options.blockSize;          //1 block
+    private int playerHeight = Options.blockSize * 3 / 2; //1.5 blocks
+    
+    //Images 
     private GreenfootImage climb1 = new GreenfootImage("alienGreen_climb1.png");
     private GreenfootImage climb2 = new GreenfootImage("alienGreen_climb2.png");
     private GreenfootImage front = new GreenfootImage("alienGreen_front.png");
@@ -28,34 +32,43 @@ public class Player extends Physics
     private GreenfootImage jump = new GreenfootImage("alienGreen_jump.png");
     private GreenfootImage jumpm = new GreenfootImage("alienGreen_jump.png");
 
+    /**
+     * Constructor method used to simply size the images and set it, also sets started to false
+     * which is used in the first frame of act() to get the player's spawn location
+     */
     Player() {
-        GreenfootImage image = new GreenfootImage ("alienGreen_front.png");
-        image.scale((Options.blockSize),(Options.blockSize)*3/2);
-        setImage(image);
         started = false;
 
-        climb1.scale((Options.blockSize),(Options.blockSize)*3/2);
-        climb2.scale((Options.blockSize),(Options.blockSize)*3/2);
-        front.scale((Options.blockSize),(Options.blockSize)*3/2);
-        jump.scale((Options.blockSize),(Options.blockSize)*3/2);
-        jumpm.scale((Options.blockSize),(Options.blockSize)*3/2);
-        deadimg.scale((Options.blockSize),(Options.blockSize)*3/2);
-        walk1.scale((Options.blockSize),(Options.blockSize)*3/2);
-        walk2.scale((Options.blockSize),(Options.blockSize)*3/2);
-        walk1m.scale((Options.blockSize),(Options.blockSize)*3/2);
-        walk2m.scale((Options.blockSize),(Options.blockSize)*3/2);
+        climb1.scale(playerWidth,playerHeight);
+        climb2.scale(playerWidth,playerHeight);
+        front.scale(playerWidth,playerHeight);
+        jump.scale(playerWidth,playerHeight);
+        jumpm.scale(playerWidth,playerHeight);
+        deadimg.scale(playerWidth,playerHeight);
+        walk1.scale(playerWidth,playerHeight);
+        walk2.scale(playerWidth,playerHeight);
+        walk1m.scale(playerWidth,playerHeight);
+        walk2m.scale(playerWidth,playerHeight);
         walk1m.mirrorHorizontally();
         walk2m.mirrorHorizontally();
         jumpm.mirrorHorizontally();
+
+        setImage(front);
     }
-    public void act()
-    {
-        entityOffset();
+
+    /**
+     * Act method gets executed every frame Checks for various methods. also checks if game has started and if not
+     * it will set the startlocation for physics
+     */
+    public void act() {
+        entityOffset(); //make it immune to camera scrolling
+        //check if started, if not set the start coordinates for physics
         if (!started) {
             started = true;
             setDoubleX(getX());
             setDoubleY(getY());
         }
+        //execute normal gameplay as long as the player is alive
         if (!deathCheck()) {
             updateGravity();
             walkingAnim();
@@ -63,7 +76,21 @@ public class Player extends Physics
             standingStill();
         }
     }
-    public void checkinput() {
+
+    /**
+     * Check for various player inputs
+     *
+     * escape = back to level selector
+     *
+     * these keys still need to be put into options as rn only interact is dynamic and the rest is hardcoded
+     *
+     * jumpkey = jump
+     * leftkey = moving left
+     * rightkey = moving right
+     * downkey = moving down
+     * interact = interact with object
+     */
+    private void checkinput() {
         if (Greenfoot.isKeyDown("escape")) {
             Greenfoot.setWorld(new LevelSelector(Globals.currentLevel));
         }
@@ -134,13 +161,22 @@ public class Player extends Physics
             }
         }
     }
-    public void standingStill(){
+
+    /**
+     * Checks if you're standing still and not on a ladder
+     */
+    private void standingStill(){
         if (!moving && !onLadder()){ //&& onGround() weg gehaalt --Michael
             setImage(front);
             atime = 0; //Reset animation timer
         }
     }
-    public void walkingAnim(){
+
+
+    /**
+     * Checks what animation should be played and based on that calls animateMovement with said animation
+     */
+    private void walkingAnim(){
         if (!onLadder() && Greenfoot.isKeyDown("d") && onGround()){
             animateMovement("Right");
         }
@@ -160,55 +196,55 @@ public class Player extends Physics
         }
     }
 
-    public void animateMovement(String Direction){
-        if (Direction == "Right"){
-            atime=atime+1;
-            if (atime > 0 && atime < 5) {setImage(walk1);}
-            if (atime==5) {setImage(walk2);}
-            if (atime==10) {setImage(walk1);}
-            if (atime>15) {atime=0;}
+    /**
+     * Handles animations for the character
+     *
+     * @param Direction     String of what direction the player is moving in to know which animations to use
+     */
+    private void animateMovement(String Direction){
+        atime=atime+1;
+        if (Direction.equals("Right")){
+            if (atime == 0) {setImage(walk1);}
+            else if (atime >= 10) {atime=0;}
+            else if (atime == 5) {setImage(walk2);}
         }
-        if (Direction == "Left"){
-            atime=atime+1;
-            if (atime > 0 && atime < 5) {setImage(walk1m);}
-            if (atime==5) {setImage(walk2m);}
-            if (atime==10) {setImage(walk1m);}
-            if (atime>15) {atime=0;}
+        else if (Direction.equals("Left")){
+            if (atime == 0) {setImage(walk1m);}
+            else if (atime >= 10) {atime=0;}
+            else if (atime == 5) {setImage(walk2m);}
         }
-        if (Direction == "Jump"){
-            atime=atime+1;
-            if (atime > 0 && atime < 5) {setImage(jump);}
-            if (atime==5) {setImage(jump);}
-            if (atime==10) {setImage(jump);}
-            if (atime>15) {atime=0;}
+        else if (Direction.equals("Jump")){
+            if (atime == 0) {setImage(jump);}
+            else if (atime >= 10) {atime=0;}
+            else if (atime == 5) {setImage(jump);}
         }
-        if (Direction == "Jumpm"){
-            atime=atime+1;
-            if (atime > 0 && atime < 5) {setImage(jumpm);}
-            if (atime==5) {setImage(jumpm);}
-            if (atime==10) {setImage(jumpm);}
-            if (atime>15) {atime=0;}
+        else if (Direction.equals("Jumpm")){
+            if (atime == 0) {setImage(jumpm);}
+            else if (atime >= 10) {atime=0;}
+            else if (atime == 5) {setImage(jumpm);}
         }
-        if (Direction == "Ladder"){
-            atime=atime+1;
-            if (atime > 0 && atime < 5) {setImage(climb1);}
-            if (atime==5) {setImage(climb2);}
-            if (atime==10) {setImage(climb1);}
-            if (atime>15) {atime=0;}
+        else if (Direction.equals("Ladder")){
+            if (atime == 0) {setImage(climb1);}
+            else if (atime >= 10) {atime=0;}
+            else if (atime == 5) {setImage(climb2);}
         }
-        if (Direction == "Death") {
-            atime=atime+1;
+        else if (Direction.equals("Death")) {
             setImage(deadimg);
             if (atime > 0 && atime < 10) {setRelativeLocation(0,-5); }
             if (atime>10) {atime=0;}
         }
     }
-    public boolean deathCheck()
-    {
-        if (health == 0) {
+
+    /**
+     * Simple method to check if the health has reached zero or if the player has fallen into the void
+     *
+     * @return      returns true or false, true being that the player has died
+     */
+    private boolean deathCheck() {
+        if (health == 0 || getY() == Options.screenHeight - 2) {
             animateMovement("Death");
             return true;
         }
             return false;
     }
-    }//Ends here
+}

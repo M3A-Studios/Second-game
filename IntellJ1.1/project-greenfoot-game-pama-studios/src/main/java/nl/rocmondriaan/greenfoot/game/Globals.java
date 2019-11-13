@@ -2,14 +2,20 @@ package nl.rocmondriaan.greenfoot.game;
 
 public class Globals
 {
+    //Simply a class used to store values that should be accessible across the entire game
+    //Holds some basic values, should eventually be moved but eh :shrug:
+
+    //Keep track of some world related variables
     public static int worldWidth;
     public static int worldHeight;
     public static int levelsUnlocked;
     public static int currentLevel;
 
+    //Keep track of the coins and score
     public static int levelCoinsCollected;
     public static int totalCoinsCollected;
 
+    //Used in the levels and levelSelector class to know what ID is what kind of block with the check method there.
     public static Integer[] platforms = {};
     public static Integer[] slopeLefts = {};
     public static Integer[] slopeRights = {};

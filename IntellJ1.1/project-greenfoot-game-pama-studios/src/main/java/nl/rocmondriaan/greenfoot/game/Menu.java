@@ -1,12 +1,14 @@
 package nl.rocmondriaan.greenfoot.game;
 
-import greenfoot.*;
-
-import javax.swing.text.html.Option;
+import greenfoot.GreenfootImage;
+import greenfoot.World;
 
 public class Menu extends World {
-    private int frame = 0;
 
+    /**
+     * Simple constructor that sets the background when this world is loaded and also adds the background
+     * then proceeds to use renderMenu() at the end to render the actual menu buttons
+     */
     public Menu() {
         super(Options.screenWidth, Options.screenHeight, 1, false); //render the screen with said screensize
         GreenfootImage background = new GreenfootImage("menuBackground.png");
@@ -16,13 +18,11 @@ public class Menu extends World {
         addObject(new MenuPlayer(), Options.blockSize * -1, (int) (Options.blockSize * 5.95));
         renderMenu();
     }
-    public void act() {
-        frame ++;
-        if (frame > 600) {
-            frame = 0;
-        }
-    }
-    public void renderMenu() {
+
+    /**
+     * Simply renders the menu buttons and sets them to the right place on the screen
+     */
+    private void renderMenu() {
         MenuNewGame startButton = new MenuNewGame();
         addObject(startButton, Options.blockSize * 10, (int) (Options.blockSize * 1.5));
         MenuContinue continueButton = new MenuContinue();

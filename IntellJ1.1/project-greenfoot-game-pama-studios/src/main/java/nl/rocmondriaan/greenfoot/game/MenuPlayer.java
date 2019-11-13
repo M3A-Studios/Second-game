@@ -1,6 +1,9 @@
 package nl.rocmondriaan.greenfoot.game;
-import greenfoot.*;
+
+import greenfoot.GreenfootImage;
+
 public class MenuPlayer extends Physics {
+    //set all the images for walking & jumping
     private GreenfootImage greenWalk1 = new GreenfootImage("alienGreen_walk1.png");
     private GreenfootImage greenWalk2 = new GreenfootImage("alienGreen_walk2.png");
     private GreenfootImage blueWalk1 = new GreenfootImage("alienBlue_walk1.png");
@@ -9,9 +12,16 @@ public class MenuPlayer extends Physics {
     private GreenfootImage pinkWalk2 = new GreenfootImage("alienPink_walk2.png");
     private GreenfootImage yellowWalk1 = new GreenfootImage("alienYellow_walk1.png");
     private GreenfootImage yellowWalk2 = new GreenfootImage("alienYellow_walk2.png");
+
+    //some counters and check if started or not in act method first frame
     private int frame;
     private int color;
     private boolean started = false;
+
+
+    /**
+     * Simply scales some images in the constructor and sets image to the first of the walking green alien
+     */
     MenuPlayer() {
         greenWalk1.scale((Options.blockSize) * 2,(int) (Options.blockSize * 2.8));
         greenWalk2.scale((Options.blockSize) * 2,(int) (Options.blockSize * 2.8));
@@ -23,13 +33,18 @@ public class MenuPlayer extends Physics {
         yellowWalk2.scale((Options.blockSize) * 2,(int) (Options.blockSize * 2.8));
         setImage(greenWalk1);
     }
+
+    /**
+     * Act method being executed every frame, first frame will set the proper location of the alien in the memory
+     * For the rest simply counts the frames to apply the right image and move the player around in the animation
+     */
     public void act() {
         if (!started) {
             started = true;
             setNewLocation(Options.blockSize * -1, (int) (Options.blockSize * 5.95));
         }
-        frame ++;
-        if (frame % 13 == 0 || frame == 1) {
+        frame ++; //count frames
+        if (frame % 13 == 0 || frame == 1) { //if first frame or frame is a multiplier of 13 it changes images
             if (color == 0) {
                 if (getImage() == greenWalk1) {
                     setImage(greenWalk2);
@@ -56,6 +71,7 @@ public class MenuPlayer extends Physics {
                 }
             }
         }
+        //hardcoded bs that simply does the whole animation of the guy in the background
         if (frame < 100) {
             setRelativeLocation(Options.blockSize / 64.0 * 3,0);
         } else if (frame < 140) {

@@ -1,48 +1,59 @@
 package nl.rocmondriaan.greenfoot.game;
 
-import greenfoot.*;
+import greenfoot.Actor;
 
 public class Physics extends Actor
 {
-    protected double vSpeed = 0;
-    protected double acceleration = 0.9;
+    double vSpeed = 0;
+    double acceleration = 0.9;
 
-    //Emily is a gay tranny who wanted doubles
     private double doubleX;
     private double doubleY;
+
     public double getDoubleX() {
         return doubleX;
     }
+
     public double getDoubleY() {
         return doubleY;
     }
-    protected void setDoubleX(double x) {
+
+    void setDoubleX(double x) {
         doubleX = x;
     }
-    protected void setDoubleY(double y) {
+
+    void setDoubleY(double y) {
         doubleY = y;
     }
-    public void setNewLocation(double x, double y) {
+
+    void setNewLocation(double x, double y) {
         doubleX = x;
         doubleY = y;
         setLocation((int) doubleX, (int) doubleY);
     }
-    public void setRelativeLocation(double x, double y) {
+
+    void setRelativeLocation(double x, double y) {
         doubleX = doubleX + x;
         doubleY = doubleY + y;
         setLocation((int) doubleX, (int) doubleY);
     }
-    public void entityOffset() {
+
+    void entityOffset() {
         doubleX = doubleX + Camera2.entityXOffset;
         doubleY = doubleY + Camera2.entityYOffset;
     }
-    public void jump(double height)
-    {
+
+    //OWO
+    //
+    //SHOULD DEFINITELY BE CHANGED TO ACTUALLY WORK DYNAMICALLY WITH THE SCREENSIZES AND NOT BE BASED ON PIXELS
+    //
+    //OWO
+    void jump(double height) {
         setRelativeLocation(0, - 1);
         vSpeed = vSpeed - height;
     }
-    public void updateGravity()
-    {
+
+    void updateGravity() {
         if(!onGround() && !willBumpHead() && !onLadder())
         {
             vSpeed = vSpeed + acceleration;
@@ -54,58 +65,49 @@ public class Physics extends Actor
             vSpeed = 0;
         }
     }
-    public boolean onLadder()
-    {
+
+    boolean onLadder() {
         if (getOneObjectAtOffset(0, -1 + getImage().getHeight() / 2 + (int) vSpeed, Ladder.class) != null) {
-            if (getOneObjectAtOffset(0, -1 + (int) vSpeed, Ladder.class) != null) {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return getOneObjectAtOffset(0, -1 + (int) vSpeed, Ladder.class) != null;
         } else {
             return false;
         }
     }
-    public boolean onGround()
-    {
-        if (getOneObjectAtOffset(getImage().getWidth() / -2 + 1, getImage().getHeight() / 2 + (int) vSpeed + 1, Solid.class) != null ||
+
+    boolean onGround() {
+        return getOneObjectAtOffset(getImage().getWidth() / -2 + 1, getImage().getHeight() / 2 + (int) vSpeed + 1, Solid.class) != null ||
                 getOneObjectAtOffset(0, getImage().getHeight() / 2 + (int) vSpeed + 1, Solid.class) != null ||
-                getOneObjectAtOffset(getImage().getWidth() / 2 - 1, getImage().getHeight() / 2 + (int) vSpeed + 1, Solid.class) != null) {
-            return true;
-        } else {
-            return false;
-        }
+                getOneObjectAtOffset(getImage().getWidth() / 2 - 1, getImage().getHeight() / 2 + (int) vSpeed + 1, Solid.class) != null;
     }
-    public boolean willBumpHead(){
-        if (getOneObjectAtOffset(getImage().getWidth() / -2, getImage().getHeight() / -2 + (int) vSpeed, Solid.class) != null ||
+
+    private boolean willBumpHead(){
+        return getOneObjectAtOffset(getImage().getWidth() / -2, getImage().getHeight() / -2 + (int) vSpeed, Solid.class) != null ||
                 getOneObjectAtOffset(getImage().getWidth() / 2, getImage().getHeight() / -2 + (int) vSpeed, Solid.class) != null ||
-                getOneObjectAtOffset(0, getImage().getHeight() / -2 + (int) vSpeed, Solid.class) != null)
-            return true;
-        return false;
+                getOneObjectAtOffset(0, getImage().getHeight() / -2 + (int) vSpeed, Solid.class) != null;
     }
-    public boolean canMoveLeft(double speed){
+
+    boolean canMoveLeft(double speed){
         if (getOneObjectAtOffset(getImage().getWidth() / -2 - (int) speed - 1, getImage().getHeight() / -2, Solid.class) != null ||
                 getOneObjectAtOffset(getImage().getWidth() / -2 - (int) speed - 1, 0,  Solid.class) != null ||
                 getOneObjectAtOffset(getImage().getWidth() / -2 - (int) speed - 1, getImage().getHeight() / 2 - 1,  Solid.class) != null)
             return false;
-        if (doubleX - speed < getImage().getWidth()/2) return false;
-        return true;
+        return !(doubleX - speed < getImage().getWidth() / 2.0);
     }
-    public boolean canMoveRight(double speed){
+
+    boolean canMoveRight(double speed){
         if (getOneObjectAtOffset(getImage().getWidth() / 2 + (int) speed + 1, getImage().getHeight() / -2, Solid.class) != null ||
                 getOneObjectAtOffset(getImage().getWidth() / 2 + (int) speed + 1, 0, Solid.class) != null ||
                 getOneObjectAtOffset(getImage().getWidth() / 2 + (int) speed + 1, getImage().getHeight() / 2 - 1, Solid.class) != null)
             return false;
-        if (doubleX - speed > Options.screenWidth - getImage().getWidth()/2) return false;
-        return true;
+        return !(doubleX - speed > Options.screenWidth - getImage().getWidth() / 2.0);
     }
-    public void moveRight(double speed)
+
+    void moveRight(double speed)
     {
         setRelativeLocation(speed,0);
     }
-    public void moveLeft(double speed)
+
+    void moveLeft(double speed)
     {
         setRelativeLocation(- speed,0);
     }

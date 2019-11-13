@@ -1,7 +1,8 @@
 package nl.rocmondriaan.greenfoot.game;
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-import nl.rocmondriaan.greenfoot.engine.Mover;
-import java.util.*;
+
+import greenfoot.GreenfootImage;
+
+import java.util.Random;
 
 
 public class AnimatedObject extends Blocks

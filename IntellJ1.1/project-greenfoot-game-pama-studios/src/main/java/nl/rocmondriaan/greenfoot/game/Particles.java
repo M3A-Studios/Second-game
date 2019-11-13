@@ -1,7 +1,9 @@
 package nl.rocmondriaan.greenfoot.game;
-import greenfoot.*;
-import nl.rocmondriaan.greenfoot.engine.*;
-import java.util.*;
+
+import greenfoot.Actor;
+import greenfoot.GreenfootImage;
+
+import java.util.Random;
 
 public class Particles extends Actor {
     private GreenfootImage smoke1 = new GreenfootImage("WhiteSmoke1.png");

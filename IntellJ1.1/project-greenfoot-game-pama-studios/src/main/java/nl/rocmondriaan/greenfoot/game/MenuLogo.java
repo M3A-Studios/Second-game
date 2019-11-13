@@ -1,9 +1,13 @@
 package nl.rocmondriaan.greenfoot.game;
 
-import greenfoot.*;
+import greenfoot.Actor;
+import greenfoot.GreenfootImage;
 
-public class MenuLogo extends Actor
+class MenuLogo extends Actor
 {
+    /**
+     * Simply sets the image, scales it and sets it to that
+     */
     MenuLogo() {
         GreenfootImage image = new GreenfootImage("pamaLogo.png");
         image.scale((Options.blockSize * 5), (Options.blockSize * 5));

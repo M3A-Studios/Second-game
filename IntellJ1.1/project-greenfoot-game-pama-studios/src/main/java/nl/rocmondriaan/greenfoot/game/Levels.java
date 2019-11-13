@@ -1,24 +1,45 @@
 package nl.rocmondriaan.greenfoot.game;
 
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-import java.io.*;
-import java.util.*;
+import greenfoot.Actor;
+import greenfoot.GreenfootImage;
+import greenfoot.World;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class Levels extends World
 {
-    private static int levelWidth;
-    private static int levelHeight;
-    private static int[][] world; //world map 2 dimensional. [layer][position]
+    private static int levelWidth; //width of the level in blocks
+    private static int levelHeight; //height of the level in blocks
     private static int totalLayers; //total layers in tile map
 
-    private Camera2 camera; //camera object created later at spawnCamera()
-    private Actor player; //player object created later at renderMap()
+    private Camera2 camera; //camera object initialized later at spawnCamera()
+    private Actor player; //player object initialized later at renderMap()
 
+    /**
+     * Act method called every frame to scroll the camera as long as the death condition isn't met.
+     */
     public void act() {
         if (!Player.dead){
-            scroll(); //scroll the camera
+            scroll(); //scrolls the camera
         }
     }
+    
+    /**
+     * Collects information on how far the camera should scroll and then scrolls by that much
+     * only moves when set barrier is crossed to create a deadzone in the center that doesn't scroll
+     * this makes the camera a bit nicer as it isn't as annoying
+     * might want to add a bit of drag later to this.
+     *
+     * loX (low X)  = barrier left of center
+     * hiX (high X) = barrier right of center
+     * loY (low Y)  = barrier above the center
+     * hiY (high Y) = barrier below the center
+     *
+     * calls up camera.scroll with resulted dsx and dsy to scroll by those cords relative to current camera position
+     */
     private void scroll() {
         int loX = Options.screenWidth/16*7; //Barrier left of center to move
         int hiX = Options.screenWidth-(Options.screenWidth/16*7); //Barrier right of center to move
@@ -31,12 +52,22 @@ public class Levels extends World
         if (player.getX() > hiX) dsx = player.getX()-hiX;
         if (player.getY() < loY) dsy = player.getY()-loY;
         if (player.getY() > hiY) dsy = player.getY()-hiY;
-        camera.scroll(dsx, dsy); //scroll the world
+        camera.scroll(dsx, dsy); //scroll the camera
     }
+    
     //by default load level 1 if non is specified
     public Levels() {
         this(1);
     }
+    
+    /**
+     * Constructor method of the level worlds. Creates the screen based on Options.screenWidth and Options.screenHeight (see Options class)
+     * world has a cellsize of 1 pixel and isn't bounded (bounded meaning we can spawn blocks past the screen border like say x -10 or x 5819291
+     *
+     * @param level         pass on what level the game should be loading. based on this loads the file at
+     *                      the location (src/main/resources/tilemap/level" + level + ".tmx"). the file is expected
+     *                      to be a .tmx
+     */
     public Levels(int level) {
         super(Options.screenWidth, Options.screenHeight, 1, false); //render the screen with said screensize
 
@@ -51,12 +82,19 @@ public class Levels extends World
         Camera2.entityXOffset = 0;
         Camera2.entityYOffset = 0;
 
-        getMap(level); //get the map of this level
-        renderMap(getPlayerLayer(level)); //spawn the map and player as said layer
-        spawnCamera(level); //spawn the camera
-        renderHUD();
+        //getMap(level); //get the map of this level
+        renderMap(getMap(level), getPlayerLayer(level)); //spawn the map and player as said layer
+        spawnCamera(getBackground(level)); //spawn the camera
+        renderHUD(); //render the Heads Up Display (overlay like hearts and score)
 
     }
+
+    /**
+     * Method used to get on what screenlayer the player should be spawned (screenlayers being the layers in Tiled)
+     *
+     * @param level         int of what level the playerlayer should be returned. handled in a switch case
+     * @return              returns int of what layer the player should spawn on
+     */
     private int getPlayerLayer(int level) {
         switch (level) {
             case 1:
@@ -67,32 +105,55 @@ public class Levels extends World
                 return 3;
         }
     }
+
+    /**
+     * Method for rendering the Heads Up Display (HUD) or well. the overlay, things like hearts, score,
+     * items in inventory etc. Really only just makes objects and places them
+     */
     private void renderHUD() {
-        Heart Heart1 = new Heart(1);
-        Heart Heart2 = new Heart(2);
-        Heart Heart3 = new Heart(3);
-        addObject (Heart1, Options.blockSize, Options.blockSize);
-        addObject (Heart2, Options.blockSize * 2, Options.blockSize);
-        addObject (Heart3, Options.blockSize * 3, Options.blockSize);
+        addObject (new Heart(1), Options.blockSize, Options.blockSize);
+        addObject (new Heart(2), Options.blockSize * 2, Options.blockSize);
+        addObject (new Heart(3), Options.blockSize * 3, Options.blockSize);
     }
-    private void spawnCamera(int level) {
-        camera = new Camera2(this, getBackground(level), Globals.worldWidth, Globals.worldHeight);
-        scroll();
+
+    /**
+     * Simple method to spawn the camera and update it to the player's position
+     * grabs what background the level should use based on the level argument
+     *
+     * @param background  background image to scroll when camera is moving, automatically gets scaled to the worldheight
+     */
+    private void spawnCamera(GreenfootImage background) {
+        camera = new Camera2(this, background, Globals.worldWidth, Globals.worldHeight);
+        scroll(); //scroll to the player's position properly
     }
+
+    /**
+     * Method used to get the image to use as background, mainly used later in spawnCamera()
+     *
+     * @param level         int argument for what level it should get the background from, handled in a switch
+     * @return              returns an image
+     */
     private static GreenfootImage getBackground(int level) {
+        //currently has no case in this because we only have one background.. will update later
         GreenfootImage background;
         background = new GreenfootImage("background.png");
         return background;
     }
-    private static void getMap(int level) {
-        levelWidth = 0; //reset level width
-        levelHeight = 0; //reset level height
-        //mapstring used in getMap() for world[][]
-        String mapString = ""; //clear out map
-        //current layer in tile map (for getMap())
+
+    /**
+     * Method that reads a file and based on that returns a 2 dimensional array later to be used when rendering the map
+     *
+     * @param level         int argument to tell the method what level it should load, the level file should be at
+     * @return              returns 2 dimensional array as [layer][ID]
+     */
+    private static int[][] getMap(int level) {
+        levelWidth = 0; //reset level width (in tiles)
+        levelHeight = 0; //reset level height (in tiles)
+        int[][] world = new int[0][]; //world map 2 dimensional. [layer][position]
+        StringBuilder mapString = new StringBuilder(); //clear out mapString (current layer)
         int currentLayer = 1; //set to first layer
 
-        //read the level layout
+        //create the scanner
         File readFile = new File("src/main/resources/tilemap/level" + level + ".tmx"); //set what file to read files should be named "level(number).tmx" so "level1.tmx" just count tutorial as 0 or -1
         Scanner dataReader = null; //scanner for the file
         try
@@ -103,113 +164,143 @@ public class Levels extends World
         {
             System.out.println("File Read error" + e); //show error
         }
+        //read the next line as long as one exists, checks if there is any data first
+        assert dataReader != null : "The map file that is being read has no text in it!";
         while(dataReader.hasNext()) //while there's a next line
         {
-            String line = dataReader.next(); //line is next line
-            if (line.contains("width=\"") && !line.contains("tile")) { //check for width
+            String line = dataReader.next(); //String line is the next line in the file
+            if (line.contains("width=\"") && !line.contains("tile")) { //check for width text
                 if (levelWidth == 0) { //only do it the first time it sees height that isnt 0
-                    line = line.replaceAll("[^\\d]",""); //replace all non digits with nothing
+                    line = line.replaceAll("[^\\d]",""); //replace all non digits with nothing 
                     levelWidth = Integer.parseInt(line); //set levelWidth
                 }
             }
-            if (line.contains("height=\"") && !line.contains("tile")) { //check for height
+            if (line.contains("height=\"") && !line.contains("tile")) { //check for height text
                 if (levelHeight == 0) { //only do it the first time it sees height that isnt 0
                     line = line.replaceAll("[^\\d]",""); //replace all non digits with nothing
                     levelHeight = Integer.parseInt(line); //set levelHeight
-                    //System.out.println("Size: " + levelWidth + "x" + levelHeight); //debug show levelheight and width
                 }
             }
             if (line.contains("nextlayerid=\"")) { //check for total amount of layers
                 line = line.replaceAll("[^\\d]",""); //replace all non digits with nothing
                 totalLayers = Integer.parseInt(line) - 1; //get total layers as int
-                //System.out.println("Array off [" + (totalLayers - 1) + "][" + (levelWidth * levelHeight - 1) + "]"); //debug total layer
                 world = new int[totalLayers][levelWidth * levelHeight]; //make the array to hold all the layers and their information (2 dimensional)
             }
             if (line.contains("<layer")) { //check if entering a new layer
-                if (!mapString.equals("")) { //check if map isn't empty before moving on to next layer
-                    //System.out.println("Layer " + currentLayer + ": " + mapString); //debug print this layer out.
+                if (!mapString.toString().equals("")) { //check if map isn't empty before moving on to next layer
 
-                    String[] layer = mapString.split(","); //split values by ,
+                    String[] layer = mapString.toString().split(","); //split values by ,
                     for (int i = 0; i < (levelWidth * levelHeight); i++){
                         world[currentLayer - 1][i] = Integer.parseInt(layer[i]); //turn array into int array just some parsing from text to integer
                     }
                     currentLayer++; //go to next layer in the map
-                    mapString = ""; //reset mapString for new layer back to having no values
+                    mapString = new StringBuilder(); //reset mapString for new layer back to having no values
                 }
             }
             if (line.contains(",")) { //check if line is part of the map
-                mapString = mapString += line; //add new line to total map
+                mapString = new StringBuilder(mapString.append(line)); //add new line to total map
+                //note we are using StringBuilder here to it being more efficient being that we do this a lot of times.
             }
         }
 
-        //System.out.println("Layer " + currentLayer + ": " + mapString); //debug print the last layer
-
-        String[] layer = mapString.split(","); //split values by , so 0,0 -> 0 and 0
+        String[] layer = mapString.toString().split(","); //split values by "," so 0,0 -> 0 and 0
         for (int i = 0; i < (levelWidth * levelHeight); i++){
-            world[currentLayer - 1][i] = Integer.parseInt(layer[i]); //turn array into int array
+            world[currentLayer - 1][i] = Integer.parseInt(layer[i]); //turn the String array into int array
         }
         Globals.worldHeight = levelHeight * Options.blockSize;
         Globals.worldWidth = levelWidth * Options.blockSize;
         dataReader.close(); //remove the scanner. we don't need it anymore
+        
+        return world; //return our two dimensional array
     }
-    private void renderMap(int playerLayer) {
-        //System.out.println(levelWidth + ", " + levelHeight);
+
+    /**
+     * Method used to render the actual map into the game based on a 2 dimensional array
+     * @param worldMap          Expects a 2 dimensional array which holds all layers and their values. used to render the world
+     * @param playerLayer       When the layer that is being rendered is equal to this the player gets added at the end of rendering this layer
+     */
+    private void renderMap(int[][] worldMap, int playerLayer) {
         int width = -1;
         int height = 0;
-        for (int laag = 0; laag < totalLayers; laag++) { //conditie
-            for (int positie = 0; positie < (levelWidth * levelHeight); positie++) {
-                width++;
+        for (int layer = 0; layer < totalLayers; layer++) { //for loop to check all layers
+            for (int position = 0; position < (levelWidth * levelHeight); position++) { //for loop to check all data within the layer
+                width++; //go right by one
+                //when done doing a full row go to the next and reset width to 0
                 if (width >= levelWidth) {
                     height ++;
                     width = 0;
                 }
-                //System.out.println(width + ", " + height);
+                //check for out of bounds
                 if (height > levelHeight - 1) {
                     System.out.println("Error in loading the map, out of bounds");
                     break;
                 }
                 placeBlock: {
+                    //check the ID thats at that point in the map against different types of blocks
+                    //if no block matches it will simply not place anything there (empty tile, so air)
                     Actor nextBlock;;
-                    if (check(Globals.nonSolids,world[laag][positie]))
+                    if (check(Globals.nonSolids,worldMap[layer][position]))
                     {
-                        nextBlock = new NonSolid(world[laag][positie]);
+                        nextBlock = new NonSolid(worldMap[layer][position]);
                     }
-                    else if (check(Globals.ladder, world[laag][positie]))
+                    else if (check(Globals.ladder, worldMap[layer][position]))
                     {
-                        nextBlock = new Ladder(world[laag][positie]);
+                        nextBlock = new Ladder(worldMap[layer][position]);
                     }
-                    else if (check(Globals.lever, world[laag][positie]))
+                    else if (check(Globals.lever, worldMap[layer][position]))
                     {
-                        nextBlock = new Lever(world[laag][positie]);
+                        nextBlock = new Lever(worldMap[layer][position]);
                     }
-                    else if (check(Globals.animatedObjects, world[laag][positie]))
+                    else if (check(Globals.animatedObjects, worldMap[layer][position]))
                     {
-                        nextBlock = new AnimatedObject(world[laag][positie]);
+                        nextBlock = new AnimatedObject(worldMap[layer][position]);
                     }
-                    else if (world[laag][positie] != 0)
+                    else if (worldMap[layer][position] != 0)
                     {
-                        nextBlock = new Solid(world[laag][positie]);
+                        nextBlock = new Solid(worldMap[layer][position]);
                     }
                     else
                     {
                         break placeBlock;
                     }
-                    Add(width, height, nextBlock);
+                    Add(nextBlock, width, height); //method used to place block at the right cords using the tile x,y
                 }
             }
+            //reset width and height for next layer
             width = -1;
             height = 0;
-            if (laag == playerLayer) {
+            //if the just rendered layer is the layer of the player then spawn the player here.
+            if (layer == playerLayer) {
                 player = new Player();
                 addObject(player, Options.blockSize * 3/2, Options.blockSize * 9);
             }
         }
     }
-    private void Add(int width, int height, Actor nextBlock) {
-        addObject(nextBlock, width*Options.blockSize + Options.blockSize/2,
-                height*Options.blockSize + Options.blockSize/2);
+
+    /**
+     * Method used to add a block/tile/object into the map based on the X,Y of the tile
+     * this x,y will then be sized up to be equals to the Options.blockSize
+     *
+     * @param nextBlock         actor for what block should be placed
+     * @param width             x coordinate for where the block should be placed
+     * @param height            y coordinate for where the block should be placed
+     */
+    private void Add(Actor nextBlock, int width, int height) {
+        addObject(
+                nextBlock,                                           //Actor
+                width*Options.blockSize + Options.blockSize/2,   //x coordinate
+                height*Options.blockSize + Options.blockSize/2); //y coordinate;
     }
-    private static boolean check(Integer[] arr, int toCheckValue) {
-        return Arrays.asList(arr).contains((toCheckValue - 1));
+
+    /**
+     * Method used to check if the given ID is part of the array given to it
+     * basically checks if the number is in that Integer array (Integer because we're using arraylist here)
+     *
+     * @param array     the ID to check if it's in the array
+     * @param ID        the array to check if the ID is part of it
+     * @return          returns a true or false based on if the ID is in the array
+     */
+    private static boolean check(Integer[] array, int ID) {
+        return Arrays.asList(array).contains((ID - 1));
     }
 }

@@ -1,10 +1,7 @@
 package nl.rocmondriaan.greenfoot.game;
-import greenfoot.*;
-import nl.rocmondriaan.greenfoot.demo.DemoWorld;
 
-import java.io.*;
-import java.util.*;
-import java.util.logging.Level;
+import greenfoot.Greenfoot;
+import greenfoot.GreenfootImage;
 
 public class SelectorPlayer extends Physics {
 
@@ -16,48 +13,72 @@ public class SelectorPlayer extends Physics {
     private boolean moving;
     private boolean started = false;
 
-
+    /**
+     * Simply sets the image and scales it
+     */
     SelectorPlayer() {
         GreenfootImage image = new GreenfootImage ("mapTile_136.png");
         image.scale((Options.blockSize),(Options.blockSize));
         setImage(image);
     }
+
+
+    /**
+     * Act method gets executed every frame, first frame it will get the start locations for physics
+     *
+     * checks for some input and then moves
+     */
     public void act() {
+        //if just started sets the coordinates for the physics
         if (!started) {
             started = true;
             setDoubleX(getX());
             setDoubleY(getY());
         }
-        entityOffset();
-        checkInput();
-        move();
-    }
-    private void move() {
-        if (moving) {
-            animatedTime += 1;
-            if (animatedTime < (animationBlocks * framesPerBlock)) {
-                int index = (int) (animatedTime / framesPerBlock);
-                String direction = movingDir[index];
-                if (direction.equals("up")) {
-                    setRelativeLocation(0, -(double) Options.blockSize / framesPerBlock);
-                } else if (direction.equals("down")) {
-                    setRelativeLocation(0, (double) Options.blockSize / framesPerBlock);
-                } else if (direction.equals("left")) {
-                    setRelativeLocation(-(double) Options.blockSize / framesPerBlock, 0);
-                } else if (direction.equals("right")) {
-                    setRelativeLocation((double) Options.blockSize / framesPerBlock, 0);
-                } else {
-                    System.out.println("Not moving any direction, nani");
-                }
-            } else {
-                int levelX = (int) (Options.blockSize * LevelSelector.getLevelX(movingTo));
-                int levelY = (int) (Options.blockSize * LevelSelector.getLevelY(movingTo));
-                setNewLocation((levelX - Camera2.scrolledX), (levelY - Camera2.scrolledY));
-                LevelSelector.setSelectedLevel(movingTo);
-                moving = false;
-            }
+        entityOffset(); //makes it immune to camera scrolling
+        checkInput(); //check for user input
+        if (moving) { //if player is supposed to be in an animation
+            move(); //move the player
         }
     }
+
+    /**
+     * Method used to animate the player based on the array movingDir which gets set in checkInput()
+     */
+    private void move() {
+        animatedTime += 1;
+        if (animatedTime < (animationBlocks * framesPerBlock)) {
+            int index = (int) (animatedTime / framesPerBlock);
+            String direction = movingDir[index];
+            switch (direction) {
+                case "up":
+                    setRelativeLocation(0, -(double) Options.blockSize / framesPerBlock);
+                    break;
+                case "down":
+                    setRelativeLocation(0, (double) Options.blockSize / framesPerBlock);
+                    break;
+                case "left":
+                    setRelativeLocation(-(double) Options.blockSize / framesPerBlock, 0);
+                    break;
+                case "right":
+                    setRelativeLocation((double) Options.blockSize / framesPerBlock, 0);
+                    break;
+                default:
+                    System.out.println("Not moving any direction, nani"); //debug for when no direction is properly given
+                    break;
+            }
+        } else {
+            int levelX = (int) (Options.blockSize * LevelSelector.getLevelX(movingTo)); //gets x of the level you're gonna be at
+            int levelY = (int) (Options.blockSize * LevelSelector.getLevelY(movingTo)); //gets y of the level you're gonna be at
+            setNewLocation((levelX - Camera2.scrolledX), (levelY - Camera2.scrolledY)); //set you to center of the level, incase due to too low screenrez you aren't perfectly on it
+            LevelSelector.setSelectedLevel(movingTo); //set selected level to where you just arrived
+            moving = false; //sets moving back to false
+        }
+    }
+
+    /**
+     * Big hardcoded check for input and what level you're on, used to get the movement that needs to be done for move()
+     */
     private void checkInput() {
         if (!moving) {
             if (Greenfoot.isKeyDown("d")) {
