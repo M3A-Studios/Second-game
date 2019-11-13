@@ -199,7 +199,7 @@ public class Player extends Physics
         if (Direction == "Death") {
             atime=atime+1;
             setImage(deadimg);
-            if (atime > 0 && atime < 10) {setRelativeLocation(0,-5);}
+            if (atime > 0 && atime < 10) {setRelativeLocation(0,-5); }
             if (atime>10) {atime=0;}
         }
     }

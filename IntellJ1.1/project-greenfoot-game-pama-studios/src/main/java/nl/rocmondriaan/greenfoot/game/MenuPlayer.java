@@ -1,9 +1,6 @@
 package nl.rocmondriaan.greenfoot.game;
-
 import greenfoot.*;
-
 public class MenuPlayer extends Physics {
-
     private GreenfootImage greenWalk1 = new GreenfootImage("alienGreen_walk1.png");
     private GreenfootImage greenWalk2 = new GreenfootImage("alienGreen_walk2.png");
     private GreenfootImage blueWalk1 = new GreenfootImage("alienBlue_walk1.png");
@@ -15,7 +12,6 @@ public class MenuPlayer extends Physics {
     private int frame;
     private int color;
     private boolean started = false;
-
     MenuPlayer() {
         greenWalk1.scale((Options.blockSize) * 2,(int) (Options.blockSize * 2.8));
         greenWalk2.scale((Options.blockSize) * 2,(int) (Options.blockSize * 2.8));
@@ -88,5 +84,4 @@ public class MenuPlayer extends Physics {
             setRelativeLocation(Options.blockSize / 64.0 * 3, 0);
         }
     }
-
 }
