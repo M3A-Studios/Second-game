@@ -29,6 +29,8 @@ public class Menu extends World {
         addObject(continueButton, Options.blockSize * 10, (int) (Options.blockSize * 3.5));
         MenuExit exitButton = new MenuExit();
         addObject(exitButton, Options.blockSize * 10, (int) (Options.blockSize * 10.5));
+        MenuLogo menuLogo = new MenuLogo();
+        addObject(menuLogo, Options.blockSize * 3, Options.blockSize * 2);
     }
 
 }

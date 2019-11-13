@@ -63,12 +63,15 @@ public class MenuPlayer extends Physics {
         } else if (frame < 200) {
             setRelativeLocation(Options.blockSize / 64.0 * 3,0);
         } else if (frame == 200) {
+            vSpeed = 0;
             jump(20);
-        } else if (frame <= 240) {
+        } else if (frame <= 243) {
             vSpeed = vSpeed + acceleration;
             if (vSpeed > 20) vSpeed = 20;
-            setRelativeLocation(0,vSpeed);
-            setRelativeLocation( Options.blockSize / 64.0 * 3,0);
+            setRelativeLocation(0, vSpeed);
+            setRelativeLocation(Options.blockSize / 64.0 * 3, 0);
+        } else if (frame == 244) {
+            setRelativeLocation(Options.blockSize / 64.0 * 3, Options.blockSize / 64.0 * 8);
         } else if (frame < 280) {
             setRelativeLocation( Options.blockSize / 64.0 * 3,0);
         } else if (frame < 360) {
