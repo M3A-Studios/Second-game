@@ -15,7 +15,9 @@ public class Levels extends World
     private Actor player; //player object created later at renderMap()
 
     public void act() {
-        scroll(); //scroll the camera
+        if (!Player.dead){
+            scroll(); //scroll the camera
+        }
     }
     private void scroll() {
         int loX = Options.screenWidth/16*7; //Barrier left of center to move

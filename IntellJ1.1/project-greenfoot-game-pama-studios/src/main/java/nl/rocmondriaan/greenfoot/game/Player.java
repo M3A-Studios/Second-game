@@ -1,6 +1,7 @@
 package nl.rocmondriaan.greenfoot.game;
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
+
 public class Player extends Physics
 {
     private int imageWidth;
@@ -12,17 +13,21 @@ public class Player extends Physics
     private double rightKeyDown;
     private double spaceKeyDown;
     private int atime = 0;
-    private boolean dead = false;
+    static boolean dead = false;
     private int dyingAnimation = 0;
     private int skip;
 
     private GreenfootImage climb1 = new GreenfootImage("alienGreen_climb1.png");
     private GreenfootImage climb2 = new GreenfootImage("alienGreen_climb2.png");
     private GreenfootImage front = new GreenfootImage("alienGreen_front.png");
+    private GreenfootImage deadimg = new GreenfootImage("alienGreen_dead.png");
     private GreenfootImage walk1 = new GreenfootImage("alienGreen_walk1.png");
     private GreenfootImage walk2 = new GreenfootImage("alienGreen_walk2.png");
     private GreenfootImage walk1m = new GreenfootImage("alienGreen_walk1.png");
     private GreenfootImage walk2m = new GreenfootImage("alienGreen_walk2.png");
+    private GreenfootImage jump = new GreenfootImage("alienGreen_jump.png");
+    private GreenfootImage jumpm = new GreenfootImage("alienGreen_jump.png");
+
     Player() {
         GreenfootImage image = new GreenfootImage ("alienGreen_front.png");
         image.scale((Options.blockSize),(Options.blockSize)*3/2);
@@ -32,12 +37,16 @@ public class Player extends Physics
         climb1.scale((Options.blockSize),(Options.blockSize)*3/2);
         climb2.scale((Options.blockSize),(Options.blockSize)*3/2);
         front.scale((Options.blockSize),(Options.blockSize)*3/2);
+        jump.scale((Options.blockSize),(Options.blockSize)*3/2);
+        jumpm.scale((Options.blockSize),(Options.blockSize)*3/2);
+        deadimg.scale((Options.blockSize),(Options.blockSize)*3/2);
         walk1.scale((Options.blockSize),(Options.blockSize)*3/2);
         walk2.scale((Options.blockSize),(Options.blockSize)*3/2);
         walk1m.scale((Options.blockSize),(Options.blockSize)*3/2);
         walk2m.scale((Options.blockSize),(Options.blockSize)*3/2);
         walk1m.mirrorHorizontally();
         walk2m.mirrorHorizontally();
+        jumpm.mirrorHorizontally();
     }
     public void act()
     {
@@ -50,8 +59,8 @@ public class Player extends Physics
         if (!deathCheck()) {
             updateGravity();
             walkingAnim();
-            standingStill();
             checkinput();
+            standingStill();
         }
     }
     public void checkinput() {
@@ -118,6 +127,8 @@ public class Player extends Physics
         if (dead) {
             if (dyingAnimation < 300) {
                 dyingAnimation += 1;
+                Particles beam = new Particles("beam");
+                getWorld().addObject(beam, getX(), getY());
                 //} else {
                 //Greenfoot.setWorld(new Levels(LevelSelector.getSelectedLevel()));
             }
@@ -130,14 +141,22 @@ public class Player extends Physics
         }
     }
     public void walkingAnim(){
-        if ( !onLadder() && Greenfoot.isKeyDown("d")){
+        if (!onLadder() && Greenfoot.isKeyDown("d") && onGround()){
             animateMovement("Right");
         }
-        if ( !onLadder() && Greenfoot.isKeyDown("a")){
+        if (!onLadder() && Greenfoot.isKeyDown("a") && onGround()){
             animateMovement("Left");
         }
         if (onLadder() && Greenfoot.isKeyDown("w") || onLadder() && Greenfoot.isKeyDown("s")){
             animateMovement("Ladder");
+        }
+        if (!onLadder() && Greenfoot.isKeyDown("space") && !onGround()){ //start
+            if (Greenfoot.isKeyDown("a")){
+                animateMovement("Jumpm");
+            }
+            else if (Greenfoot.isKeyDown("d")){
+                animateMovement("Jump");
+            }
         }
     }
 
@@ -156,6 +175,20 @@ public class Player extends Physics
             if (atime==10) {setImage(walk1m);}
             if (atime>15) {atime=0;}
         }
+        if (Direction == "Jump"){
+            atime=atime+1;
+            if (atime > 0 && atime < 5) {setImage(jump);}
+            if (atime==5) {setImage(jump);}
+            if (atime==10) {setImage(jump);}
+            if (atime>15) {atime=0;}
+        }
+        if (Direction == "Jumpm"){
+            atime=atime+1;
+            if (atime > 0 && atime < 5) {setImage(jumpm);}
+            if (atime==5) {setImage(jumpm);}
+            if (atime==10) {setImage(jumpm);}
+            if (atime>15) {atime=0;}
+        }
         if (Direction == "Ladder"){
             atime=atime+1;
             if (atime > 0 && atime < 5) {setImage(climb1);}
@@ -165,10 +198,9 @@ public class Player extends Physics
         }
         if (Direction == "Death") {
             atime=atime+1;
-            if (atime > 0 && atime < 5) {setRelativeLocation(0,-1);}
-            if (atime==5) {setRelativeLocation(0,-5);}
-            if (atime==10) {setRelativeLocation(0,-10);}
-            if (atime>15) {atime=0;}
+            setImage(deadimg);
+            if (atime > 0 && atime < 10) {setRelativeLocation(0,-5);}
+            if (atime>10) {atime=0;}
         }
     }
     public boolean deathCheck()
