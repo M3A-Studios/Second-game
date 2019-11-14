@@ -4,6 +4,8 @@ import greenfoot.Actor;
 import greenfoot.Greenfoot;
 import greenfoot.GreenfootImage;
 
+import java.util.List;
+
 public class Player extends Physics
 {
     private Actor popup;
@@ -298,6 +300,10 @@ public class Player extends Physics
     private void checkCheckpoint() {
         Checkpoint checkpoint = (Checkpoint) getOneIntersectingObject(Checkpoint.class);
         if (checkpoint != null) {
+            List<Checkpoint> allCheckpoints = (List<Checkpoint>) (getWorld().getObjects(Checkpoint.class));
+            for(Checkpoint currentcheckpoint : allCheckpoints) {
+                currentcheckpoint.active = false;
+            }
             Levels.activeCheckpoint = checkpoint.getCheckpoint();
             checkpoint.active = true;
         }
