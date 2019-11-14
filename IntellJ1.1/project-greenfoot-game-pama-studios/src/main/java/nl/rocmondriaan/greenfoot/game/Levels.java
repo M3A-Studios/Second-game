@@ -110,10 +110,15 @@ public class Levels extends World
      * Method for rendering the Heads Up Display (HUD) or well. the overlay, things like hearts, score,
      * items in inventory etc. Really only just makes objects and places them
      */
+
     private void renderHUD() {
         addObject (new Heart(1), Options.blockSize, Options.blockSize);
         addObject (new Heart(2), Options.blockSize * 2, Options.blockSize);
         addObject (new Heart(3), Options.blockSize * 3, Options.blockSize);
+        addObject (new CoinsHUD(3), Options.blockSize , Options.blockSize * 2);
+        addObject (new CoinsHUD(2), Options.blockSize * 2 , Options.blockSize * 2);
+        addObject (new CoinsHUD(1), (int) (Options.blockSize * 2.5) , Options.blockSize * 2);
+        addObject (new CoinsHUD(0), Options.blockSize * 3, Options.blockSize * 2);
     }
 
     /**

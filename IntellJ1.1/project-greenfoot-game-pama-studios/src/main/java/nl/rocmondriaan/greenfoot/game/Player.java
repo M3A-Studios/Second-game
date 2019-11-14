@@ -80,6 +80,7 @@ public class Player extends Physics
             standingStill();
             checkinput();
             isTouchingObject();
+            collectCoin();
         }
     }
 
@@ -268,4 +269,24 @@ public class Player extends Physics
             return false;
     }
 
+    public void collectCoin() {
+        Coins coin = (Coins) getOneIntersectingObject(Coins.class);
+        if (coin != null) {
+            if (coin.CoinID == 166) {
+                Globals.levelCoinsCollected += 1;
+                System.out.println("Collected 1 coin, current coins now: " + Globals.levelCoinsCollected); //debug
+                //getWorld().removeObject(coin);
+            }
+            if (coin.CoinID == 168) {
+                Globals.levelCoinsCollected += 10;
+                System.out.println("Collected 10 coin, current coins now: " + Globals.levelCoinsCollected); //debug
+                getWorld().removeObject(coin);
+            }
+            if (coin.CoinID == 167) {
+                Globals.levelCoinsCollected += 20;
+                System.out.println("Collected 20 coin, current coins now: " + Globals.levelCoinsCollected); //debug
+                getWorld().removeObject(coin);
+            }
+        }
+    }
 }
