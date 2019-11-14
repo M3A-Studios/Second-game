@@ -35,7 +35,7 @@ public class MenuNewGame extends Actor {
         {
             LevelSelector.setSelectedLevel(1);
             Globals.levelCoinsCollected = 0;
-            Globals.levelsUnlocked = 1;
+            //Globals.levelsUnlocked = 1;
             Greenfoot.setWorld(new LevelSelector());
         }
         //check if hovering over the button

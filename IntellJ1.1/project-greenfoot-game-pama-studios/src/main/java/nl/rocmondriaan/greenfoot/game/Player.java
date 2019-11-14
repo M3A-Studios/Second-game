@@ -65,7 +65,6 @@ public class Player extends Physics
      * it will set the startlocation for physics
      */
     public void act() {
-        entityOffset(); //make it immune to camera scrolling
         //check if started, if not set the start coordinates for physics
         if (!started) {
             started = true;
@@ -74,6 +73,7 @@ public class Player extends Physics
         }
         //execute normal gameplay as long as the player is alive
         if (!deathCheck()) {
+            entityOffset(); //make it immune to camera scrolling
             updateGravity();
             walkingAnim();
             checkinput();
@@ -156,6 +156,8 @@ public class Player extends Physics
         if (dead) {
             if (dyingAnimation < 300) {
                 dyingAnimation += 1;
+                Globals.levelCoinsCollected = 0; //Coins reset
+                System.out.println("You ded coins reset" ); //debug coins reset
                 Particles beam = new Particles("beam");
                 getWorld().addObject(beam, getX(), getY());
                 //} else {
@@ -265,4 +267,5 @@ public class Player extends Physics
         }
             return false;
     }
+
 }

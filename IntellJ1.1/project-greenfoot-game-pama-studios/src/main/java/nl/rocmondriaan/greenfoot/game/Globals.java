@@ -8,7 +8,7 @@ public class Globals
     //Keep track of some world related variables
     public static int worldWidth;
     public static int worldHeight;
-    public static int levelsUnlocked;
+    public static int levelsUnlocked = 15;
     public static int currentLevel;
 
     //Keep track of the coins and score

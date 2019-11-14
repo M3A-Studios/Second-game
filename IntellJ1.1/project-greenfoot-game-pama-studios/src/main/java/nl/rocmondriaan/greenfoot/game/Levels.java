@@ -251,6 +251,10 @@ public class Levels extends World
                     {
                         nextBlock = new Lever(worldMap[layer][position]);
                     }
+                    else if (check(Globals.coins, worldMap[layer][position]))
+                    {
+                        nextBlock = new Coins(worldMap[layer][position]);
+                    }
                     else if (check(Globals.animatedObjects, worldMap[layer][position]))
                     {
                         nextBlock = new AnimatedObject(worldMap[layer][position]);
