@@ -93,6 +93,7 @@ public class Levels extends World
         //getMap(level); //get the map of this level
         getCheckpointLocations(level);
         renderMap(getMap(level), getPlayerLayer(level), level); //spawn the map and player as said layer
+        renderText(level);
         spawnCamera(getBackground(level)); //spawn the camera
         renderHUD(); //render the Heads Up Display (overlay like hearts and score)
     }
@@ -117,6 +118,10 @@ public class Levels extends World
             Add(new Checkpoint(2, 168), checkpointX.get(2), checkpointY.get(2));
         }
 
+    private void renderText(int level) {
+        if (level == 1) {
+
+        }
     }
     /**
      * Method used to get on what screenlayer the player should be spawned (screenlayers being the layers in Tiled)
@@ -144,6 +149,7 @@ public class Levels extends World
         addObject (new Heart(1), Options.blockSize, Options.blockSize);
         addObject (new Heart(2), Options.blockSize * 2, Options.blockSize);
         addObject (new Heart(3), Options.blockSize * 3, Options.blockSize);
+        addObject(new Inventory(),Options.blockSize * 4, Options.blockSize);
         addObject (new CoinsHUD(3), Options.blockSize , Options.blockSize * 2);
         addObject (new CoinsHUD(2), Options.blockSize * 2 , Options.blockSize * 2);
         addObject (new CoinsHUD(1), (int) (Options.blockSize * 2.5) , Options.blockSize * 2);
@@ -200,7 +206,7 @@ public class Levels extends World
         }
         //read the next line as long as one exists, checks if there is any data first
         assert dataReader != null : "The map file that is being read has no text in it!";
-        while(dataReader.hasNext()) //while there's a next line
+          while(dataReader.hasNext()) //while there's a next line
         {
             String line = dataReader.next(); //String line is the next line in the file
             if (line.contains("width=\"") && !line.contains("tile")) { //check for width text
@@ -284,7 +290,15 @@ public class Levels extends World
                     }
                     else if (check(Globals.lever, worldMap[layer][position]))
                     {
-                        nextBlock = new Lever(worldMap[layer][position]);
+                        nextBlock = new Lever(worldMap[layer][position], 1);
+                    }
+                    else if (check(Globals.door, worldMap[layer][position]))
+                    {
+                        nextBlock = new Door(worldMap[layer][position], 1);
+                    }
+                    else if (check(Globals.keys, worldMap[layer][position]))
+                    {
+                        nextBlock = new Keys(worldMap[layer][position]);
                     }
                     else if (check(Globals.coins, worldMap[layer][position]))
                     {

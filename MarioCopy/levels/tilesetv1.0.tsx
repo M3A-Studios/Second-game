@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.2" tiledversion="1.2.4" name="tilesetv1.0" tilewidth="128" tileheight="128" tilecount="270" columns="0">
+<tileset version="1.2" tiledversion="1.2.4" name="tilesetv1.0" tilewidth="128" tileheight="128" tilecount="271" columns="0">
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="0">
   <image width="128" height="128" source="../images/8.png"/>
@@ -810,5 +810,8 @@
  </tile>
  <tile id="270">
   <image width="128" height="128" source="../images/277.png"/>
+ </tile>
+ <tile id="271">
+  <image width="128" height="128" source="../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/280.png"/>
  </tile>
 </tileset>

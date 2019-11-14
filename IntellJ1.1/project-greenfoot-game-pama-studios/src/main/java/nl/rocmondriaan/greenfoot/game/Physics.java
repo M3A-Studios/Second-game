@@ -156,11 +156,23 @@ public class Physics extends Actor
      * @return              returns true or false based on if you can move to the left or not
      */
     boolean canMoveLeft(double speed){
+        boolean moveleft = true;
         if (getOneObjectAtOffset(getImage().getWidth() / -2 - (int) speed - 1, getImage().getHeight() / -2, Solid.class) != null ||
                 getOneObjectAtOffset(getImage().getWidth() / -2 - (int) speed - 1, 0,  Solid.class) != null ||
                 getOneObjectAtOffset(getImage().getWidth() / -2 - (int) speed - 1, getImage().getHeight() / 2 - 1,  Solid.class) != null)
-            return false;
-        return !(doubleX - speed < getImage().getWidth() / 2.0);
+            moveleft = false;
+        Door door = (Door) getOneObjectAtOffset(getImage().getWidth() / -2 - (int) speed - 1, 0,  Door.class);
+        if (door != null) {
+            if (door.opened) {
+                moveleft = true;
+            } else {
+                moveleft = false;
+            }
+        }
+        if (doubleX - speed < getImage().getWidth() / 2.0) {
+            moveleft = false;
+        }
+        return moveleft;
     }
 
     /**
@@ -170,11 +182,23 @@ public class Physics extends Actor
      * @return              returns true or false based on if you can move to the right or not
      */
     boolean canMoveRight(double speed){
+        boolean moveright = true;
         if (getOneObjectAtOffset(getImage().getWidth() / 2 + (int) speed + 1, getImage().getHeight() / -2, Solid.class) != null ||
                 getOneObjectAtOffset(getImage().getWidth() / 2 + (int) speed + 1, 0, Solid.class) != null ||
                 getOneObjectAtOffset(getImage().getWidth() / 2 + (int) speed + 1, getImage().getHeight() / 2 - 1, Solid.class) != null)
-            return false;
-        return !(doubleX - speed > Options.screenWidth - getImage().getWidth() / 2.0);
+            moveright = false;
+        Door door = (Door) getOneObjectAtOffset(getImage().getWidth() / 2 + (int) speed + 1, 0, Door.class);
+        if (door != null) {
+            if (door.opened) {
+                moveright = true;
+            } else {
+                moveright = false;
+            }
+        }
+        if (doubleX - speed > Options.screenWidth - getImage().getWidth() / 2.0) {
+            moveright = false;
+        }
+        return moveright;
     }
 
     /**

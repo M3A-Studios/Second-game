@@ -3,29 +3,39 @@ package nl.rocmondriaan.greenfoot.game;
 import greenfoot.Greenfoot;
 
 import greenfoot.*;
+import javafx.animation.AnimationTimer;
+
+import java.util.List;
 
 public class Lever extends Blocks
 {
-    // Animation en cd timers
+    // Animation and cd timers
+    int leverID = 1;
     private int cooldownTimer = 0;
     private int animationTimer;
+    boolean isSwitched;
+
 
     // Lever Images
-    GreenfootImage links = new GreenfootImage("233.png");
-    GreenfootImage middle = new GreenfootImage ("234.png");
-    GreenfootImage rechts = new GreenfootImage ("235.png");
+    private GreenfootImage left = new GreenfootImage("233.png");
+    private GreenfootImage middle = new GreenfootImage ("234.png");
+    private GreenfootImage right = new GreenfootImage ("235.png");
     /**
      * Calls for the constructor in Blocks.java to set the image of the tile
      *
      * @param ID    ID used to get what image this block should use
      */
-    Lever(int ID) {
+    Lever(int ID, int leverID) {
         super(ID);
+        this.leverID = leverID;
+        left.scale((Options.blockSize),(Options.blockSize));
+        middle.scale((Options.blockSize),(Options.blockSize));
+        right.scale((Options.blockSize),(Options.blockSize));
     }
 
     public void act()
     {
-        // Methodes voor Animatie en lever systeem
+        // Methods for Lever Anim en sys.
         leverAnim();
         leverSys();
 
@@ -43,34 +53,63 @@ public class Lever extends Blocks
             if (cooldownTimer <= 0)
             {
                 animationTimer = 0;
-                setImage(middle);
-                middle.scale((Options.blockSize),(Options.blockSize));
                 cooldownTimer = 100;
+                if (getImage() == left) {
+
+                    isSwitched = false;
+                }
+                if (getImage() == right)
+                {
+                    isSwitched = true;
+                }
             }
         }
     }
     public void leverAnim()
     {
 
-        if (animationTimer== 30)
+        if (!isSwitched)
+        {
+            if (animationTimer== 30)
         {
             setImage(middle);
-            middle.scale((Options.blockSize),(Options.blockSize));
         }
-        if (animationTimer== 60)
+            if (animationTimer== 60)
+            {
+                setImage(right);
+                switchdoor("open");
+            }
+        }
+
+        if (isSwitched)
         {
-            setImage(rechts);
-            rechts.scale((Options.blockSize),(Options.blockSize));
+            if (animationTimer== 30)
+            {
+                setImage(middle);
+            }
+            if (animationTimer== 60)
+            {
+                setImage(left);
+                switchdoor("closed");
+            }
         }
+
     }
-    /*public boolean isLinks()
-    {
-        if()
-        {
-            return true;
+    private void switchdoor(String switchTo) {
+        //find all door objects into an array
+        List<Door> deuren = (List<Door>) (getWorld().getObjects(Door.class));
+        for(Door deur : deuren) {
+            if (leverID == deur.doorID) {
+                if (switchTo.equals("open")) {
+                    deur.open();
+                } else {
+                    deur.close();
+                }
+            }
         }
-        return false;
-    }*/
+
+    }
+
 }
 
 
