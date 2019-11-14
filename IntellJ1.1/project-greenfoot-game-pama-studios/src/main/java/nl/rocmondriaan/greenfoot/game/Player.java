@@ -5,7 +5,10 @@ import greenfoot.GreenfootImage;
 
 public class Player extends Physics
 {
-    static int health = 6; //health amount
+    public Actor popup;
+    private int imageWidth;
+    private int imageHeight;
+    public static int health = 6; //health amount
     private boolean started;
     private boolean moving;
     private double leftKeyDown;
@@ -74,6 +77,8 @@ public class Player extends Physics
             walkingAnim();
             checkinput();
             standingStill();
+            checkinput();
+            isTouchingObject();
         }
     }
 
@@ -139,10 +144,6 @@ public class Player extends Physics
                 setRelativeLocation(0, 5);
             }
         }
-
-        if (Greenfoot.isKeyDown(Options.interact)) {
-            health = health - 1;
-        }
         if (Greenfoot.isKeyDown("X")) {
             health = health - 1;
         }
@@ -162,10 +163,25 @@ public class Player extends Physics
         }
     }
 
-    /**
-     * Checks if you're standing still and not on a ladder
-     */
-    private void standingStill(){
+    public void isTouchingObject()
+    {
+        Actor lever = getOneIntersectingObject(Lever.class);
+
+        if (lever != null)
+        {
+            if (popup == null) {
+                popup = new PopUp(Options.interact);
+            }
+            getWorld().addObject(popup, lever.getX(), lever.getY() - Options.blockSize * 2);
+
+        } else {
+            if (popup != null) {
+                getWorld().removeObject(popup);
+                popup = null;
+            }
+        }
+    }
+    public void standingStill(){
         if (!moving && !onLadder()){ //&& onGround() weg gehaalt --Michael
             setImage(front);
             atime = 0; //Reset animation timer
