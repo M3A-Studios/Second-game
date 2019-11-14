@@ -1,5 +1,6 @@
 package nl.rocmondriaan.greenfoot.game;
 
+import greenfoot.Greenfoot;
 
 public class Lever extends Blocks
 {
@@ -18,12 +19,13 @@ public class Lever extends Blocks
     {
         if (cdTimer == 0)
         {
-            if (Greenfoot.isKeyDown(Options.interact))
+            if (Greenfoot.isKeyDown(Options.interact)) {
+
+            }
 
         }
         else
         {
-            System.out.print(cdTimer + ", ");
             cdTimer --;
         }
 

@@ -1,7 +1,6 @@
 package nl.rocmondriaan.greenfoot.game;
 
-import greenfoot.Actor;
-import greenfoot.GreenfootImage;
+import greenfoot.*;
 
 public class Blocks extends Actor
 {

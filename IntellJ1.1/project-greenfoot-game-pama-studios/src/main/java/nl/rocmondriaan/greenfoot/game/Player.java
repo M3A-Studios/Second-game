@@ -1,14 +1,15 @@
 package nl.rocmondriaan.greenfoot.game;
 
+import greenfoot.Actor;
 import greenfoot.Greenfoot;
 import greenfoot.GreenfootImage;
 
 public class Player extends Physics
 {
-    public Actor popup;
+    private Actor popup;
     private int imageWidth;
     private int imageHeight;
-    public static int health = 6; //health amount
+    static int health = 6; //health amount
     private boolean started;
     private boolean moving;
     private double leftKeyDown;
@@ -102,21 +103,21 @@ public class Player extends Physics
         if (Greenfoot.isKeyDown("space")) {
             if (onGround()) {
                 spaceKeyDown = 0;
-                jump(14);
+                jump(15);
             } else {
                 spaceKeyDown += 1;
                 if (spaceKeyDown < 60) {
                     if (vSpeed < 0) {
-                        jump(0.4);
+                        jump(0.15);
                     }
                 }
             }
         }
         moving = false;
         if (Greenfoot.isKeyDown("d") && (!Greenfoot.isKeyDown("a"))) { //&& (!Greenfoot.isKeyDown("a")) toegevoegd voor links rechts bug
-            rightKeyDown += 0.2;
+            rightKeyDown += 1;
             if (rightKeyDown > 60) rightKeyDown = 60;
-            double speed = 5 + rightKeyDown / 10;
+            double speed = 2 + rightKeyDown / 60.0;
             if (canMoveRight(speed)) {
                 moveRight(speed);
                 moving = true;
@@ -125,9 +126,9 @@ public class Player extends Physics
             rightKeyDown = 0;
         }
         if (Greenfoot.isKeyDown("a") && (!Greenfoot.isKeyDown("d"))) { //&& (!Greenfoot.isKeyDown("d")) toegevoegd voor links rechts bug
-            leftKeyDown += 0.2;
+            leftKeyDown += 1;
             if (leftKeyDown > 60) leftKeyDown = 60;
-            double speed = 5 + leftKeyDown / 10;
+            double speed = 2 + leftKeyDown / 60.0;
             if (canMoveLeft(speed)) {
                 moveLeft(speed);
                 moving = true;
@@ -138,10 +139,10 @@ public class Player extends Physics
 
         if (onLadder()) {
             if (Greenfoot.isKeyDown("W")) {
-                setRelativeLocation(0, -5);
+                setRelativeLocation(0, -3);
             }
             if (Greenfoot.isKeyDown("S") && !onGround()) {
-                setRelativeLocation(0, 5);
+                setRelativeLocation(0, 3);
             }
         }
         if (Greenfoot.isKeyDown("X")) {
@@ -163,8 +164,10 @@ public class Player extends Physics
         }
     }
 
-    public void isTouchingObject()
-    {
+    /**
+     *Checks if the player is touching a lever and gives a popup based on that
+     */
+    private void isTouchingObject() {
         Actor lever = getOneIntersectingObject(Lever.class);
 
         if (lever != null)
@@ -181,7 +184,11 @@ public class Player extends Physics
             }
         }
     }
-    public void standingStill(){
+
+    /**
+     * Checks if the player is standing still and isnt on a ladder, if so sets the image to the player looking forward
+     */
+    private void standingStill(){
         if (!moving && !onLadder()){ //&& onGround() weg gehaalt --Michael
             setImage(front);
             atime = 0; //Reset animation timer
@@ -218,36 +225,31 @@ public class Player extends Physics
      * @param Direction     String of what direction the player is moving in to know which animations to use
      */
     private void animateMovement(String Direction){
-        atime=atime+1;
+        atime = atime+1;
+        if (atime>10) {atime=0;}
         if (Direction.equals("Right")){
             if (atime == 0) {setImage(walk1);}
-            else if (atime >= 10) {atime=0;}
             else if (atime == 5) {setImage(walk2);}
         }
         else if (Direction.equals("Left")){
             if (atime == 0) {setImage(walk1m);}
-            else if (atime >= 10) {atime=0;}
             else if (atime == 5) {setImage(walk2m);}
         }
         else if (Direction.equals("Jump")){
             if (atime == 0) {setImage(jump);}
-            else if (atime >= 10) {atime=0;}
             else if (atime == 5) {setImage(jump);}
         }
         else if (Direction.equals("Jumpm")){
             if (atime == 0) {setImage(jumpm);}
-            else if (atime >= 10) {atime=0;}
             else if (atime == 5) {setImage(jumpm);}
         }
         else if (Direction.equals("Ladder")){
             if (atime == 0) {setImage(climb1);}
-            else if (atime >= 10) {atime=0;}
             else if (atime == 5) {setImage(climb2);}
         }
         else if (Direction.equals("Death")) {
             setImage(deadimg);
             if (atime > 0 && atime < 10) {setRelativeLocation(0,-5); }
-            if (atime>10) {atime=0;}
         }
     }
 
