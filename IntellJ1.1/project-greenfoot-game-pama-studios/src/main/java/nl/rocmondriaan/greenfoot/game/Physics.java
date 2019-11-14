@@ -6,9 +6,12 @@ public class Physics extends Actor
 {
     double vSpeed = 0;
     double acceleration = 0.9;
+    int jtime;
 
     private double doubleX;
     private double doubleY;
+
+
 
     /**
      * Simple method to get the accurate X coordinate of the entity on the screen
@@ -201,6 +204,26 @@ public class Physics extends Actor
         return moveright;
     }
 
+
+    /**
+     * Check to see if a specific class is underneat the player, first checks in the middle then the left then right of
+     * the bottom of the image of the player
+     *
+     * @param classToCheck      A class to check if its underneat the player
+     * @return                  Returns the actor below you or null
+     */
+    private Actor getObjectBelowOfClass(Class classToCheck) {
+        Actor actor;
+        actor = getOneObjectAtOffset(0, getImage().getHeight() / 2 + (int) vSpeed + 1, classToCheck);
+        if (actor == null) {
+            actor = getOneObjectAtOffset(getImage().getWidth() / -4, getImage().getHeight() / 2 + (int) vSpeed + 1, classToCheck);
+        }
+        if (actor == null) {
+            actor = getOneObjectAtOffset(getImage().getWidth() / 4, getImage().getHeight() / 2 + (int) vSpeed + 1, classToCheck);
+        }
+        return actor;
+    }
+
     /**
      * Moves the player by speed pixels to the right, uses doubleX to maintain accuracy with subpixels
      *
@@ -219,6 +242,26 @@ public class Physics extends Actor
     void moveLeft(double speed)
     {
         setRelativeLocation(- speed,0);
+    }
+
+    void jumpPad(){
+        if (vSpeed >= 0) {
+            JumpPad jumpPad = (JumpPad) getObjectBelowOfClass(JumpPad.class);
+            if (jumpPad != null) {
+                jumpPad.jumpPad();
+                jtime = jtime + 1;
+                if (jtime <= 9) {
+                    this.vSpeed = 4;
+                }
+                if (jtime == 10) {
+                    this.vSpeed = 0;
+                    this.jump(25);
+                }
+                if (jtime >= 10) {
+                    jtime = 0;
+                }//Reset at frame 10
+            }
+        }
     }
 }
 

@@ -18,7 +18,6 @@ public class Player extends Physics
     private int atime;
     static boolean dead;
     private int dyingAnimation;
-    int jtime;
 
     //sizes for the images
     private int playerWidth = Options.blockSize;          //1 block
@@ -120,7 +119,7 @@ public class Player extends Physics
         if (Greenfoot.isKeyDown("escape")) {
             Greenfoot.setWorld(new LevelSelector(Globals.currentLevel));
         }
-        if (Greenfoot.isKeyDown("space") && !isTouching(JumpPad.class)) {
+        if (Greenfoot.isKeyDown("space")) {
             if (onGround()) {
                 spaceKeyDown = 0;
                 jump(15);
@@ -308,13 +307,6 @@ public class Player extends Physics
             }
             Levels.activeCheckpoint = checkpoint.getCheckpoint();
             checkpoint.active = true;
-        }
-    }
-    public void jumpPad(){
-        if(isTouching(JumpPad.class)){
-            jtime=jtime + 1;
-            if (jtime > 5) {jump(5);}
-            if (jtime>= 10) {jtime=0;}//Reset
         }
     }
 }
