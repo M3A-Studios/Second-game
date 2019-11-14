@@ -7,8 +7,6 @@ import greenfoot.GreenfootImage;
 public class Player extends Physics
 {
     private Actor popup;
-    private int imageWidth;
-    private int imageHeight;
     static int health = 6; //health amount
     private boolean started;
     private boolean moving;
@@ -18,7 +16,6 @@ public class Player extends Physics
     private int atime = 0;
     static boolean dead = false;
     private int dyingAnimation = 0;
-    private int skip;
 
     //sizes for the images
     private int playerWidth = Options.blockSize;          //1 block

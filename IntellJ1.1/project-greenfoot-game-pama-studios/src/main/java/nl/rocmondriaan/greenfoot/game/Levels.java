@@ -6,15 +6,18 @@ import greenfoot.World;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class Levels extends World
 {
+    static int activeCheckpoint = 1;
     private static int levelWidth; //width of the level in blocks
     private static int levelHeight; //height of the level in blocks
     private static int totalLayers; //total layers in tile map
-
+    private ArrayList<Integer> checkpointX = new ArrayList<Integer>();
+    private ArrayList<Integer> checkpointY = new ArrayList<Integer>();
     private Camera2 camera; //camera object initialized later at spawnCamera()
     private Actor player; //player object initialized later at renderMap()
 
@@ -57,20 +60,25 @@ public class Levels extends World
     
     //by default load level 1 if non is specified
     public Levels() {
-        this(1);
+        this(1, 0);
     }
-    
+    //if no checkpoint given load the level at start
+    public Levels(int level) {
+        this(level, 0);
+    }
     /**
      * Constructor method of the level worlds. Creates the screen based on Options.screenWidth and Options.screenHeight (see Options class)
      * world has a cellsize of 1 pixel and isn't bounded (bounded meaning we can spawn blocks past the screen border like say x -10 or x 5819291
      *
-     * @param level         pass on what level the game should be loading. based on this loads the file at
-     *                      the location (src/main/resources/tilemap/level" + level + ".tmx"). the file is expected
-     *                      to be a .tmx
+     * @param level             pass on what level the game should be loading. based on this loads the file at
+     *                          the location (src/main/resources/tilemap/level" + level + ".tmx"). the file is expected
+     *                          to be a .tmx
+     * @param activeCheckpoint  pass on what checkpoint the player should be spawning at. should be 0 for spawning at the start
      */
-    public Levels(int level) {
+    public Levels(int level, int activeCheckpoint) {
         super(Options.screenWidth, Options.screenHeight, 1, false); //render the screen with said screensize
 
+        this.activeCheckpoint = activeCheckpoint;
         //debug
         System.out.println("Loading Level: " + level);
 
@@ -83,12 +91,33 @@ public class Levels extends World
         Camera2.entityYOffset = 0;
 
         //getMap(level); //get the map of this level
-        renderMap(getMap(level), getPlayerLayer(level)); //spawn the map and player as said layer
+        getCheckpointLocations(level);
+        renderMap(getMap(level), getPlayerLayer(level), level); //spawn the map and player as said layer
         spawnCamera(getBackground(level)); //spawn the camera
         renderHUD(); //render the Heads Up Display (overlay like hearts and score)
-
     }
 
+    private void getCheckpointLocations(int level) {
+        if (level == 1) {
+            //Spawn location (checkpoint 0)
+            checkpointX.add(2);
+            checkpointY.add(9);
+            //Checkpoint 1
+            checkpointX.add(8);
+            checkpointY.add(9);
+            //Checkpoint 2
+            checkpointX.add(13);
+            checkpointY.add(5);
+        }
+
+    }
+    private void renderCheckpoints(int level) {
+        if (level == 1) {
+            Add(new Checkpoint(1, 168), checkpointX.get(1), checkpointY.get(1));
+            Add(new Checkpoint(2, 168), checkpointX.get(2), checkpointY.get(2));
+        }
+
+    }
     /**
      * Method used to get on what screenlayer the player should be spawned (screenlayers being the layers in Tiled)
      *
@@ -224,9 +253,10 @@ public class Levels extends World
      * @param worldMap          Expects a 2 dimensional array which holds all layers and their values. used to render the world
      * @param playerLayer       When the layer that is being rendered is equal to this the player gets added at the end of rendering this layer
      */
-    private void renderMap(int[][] worldMap, int playerLayer) {
+    private void renderMap(int[][] worldMap, int playerLayer, int level) {
         int width = -1;
         int height = 0;
+        boolean didCheckpoints = false;
         for (int layer = 0; layer < totalLayers; layer++) { //for loop to check all layers
             for (int position = 0; position < (levelWidth * levelHeight); position++) { //for loop to check all data within the layer
                 width++; //go right by one
@@ -279,9 +309,16 @@ public class Levels extends World
             width = -1;
             height = 0;
             //if the just rendered layer is the layer of the player then spawn the player here.
+            if ((layer - 1) >= 0 && layer == playerLayer - 1) {
+                renderCheckpoints(level); //render the checkpoints per level, hardcoded
+                didCheckpoints = true;
+            }
             if (layer == playerLayer) {
                 player = new Player();
-                addObject(player, Options.blockSize * 3/2, Options.blockSize * 9);
+                addObject(player, Options.blockSize * checkpointX.get(activeCheckpoint) - Options.blockSize / 2, Options.blockSize * checkpointY.get(activeCheckpoint));
+                if (!didCheckpoints) { //if not done last layer
+                    renderCheckpoints(level); //render the checkpoints per level, hardcoded
+                }
             }
         }
     }
