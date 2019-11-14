@@ -34,6 +34,7 @@ class Globals
     static Integer[] star = {188};
     static Integer[] bombs = {189,190};
     static Integer[] door = {213,214,215,216};
+    public static Integer[] jumpPad = {242,243};
 
 }
 

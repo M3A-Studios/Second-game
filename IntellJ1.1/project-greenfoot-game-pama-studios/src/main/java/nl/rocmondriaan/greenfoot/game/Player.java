@@ -18,11 +18,13 @@ public class Player extends Physics
     private int atime;
     static boolean dead;
     private int dyingAnimation;
+    int jtime;
+    static boolean dead = false;
 
     //sizes for the images
     private int playerWidth = Options.blockSize;          //1 block
     private int playerHeight = Options.blockSize * 3 / 2; //1.5 blocks
-    
+
     //Images 
     private GreenfootImage climb1 = new GreenfootImage("alienGreen_climb1.png");
     private GreenfootImage climb2 = new GreenfootImage("alienGreen_climb2.png");
@@ -118,7 +120,7 @@ public class Player extends Physics
         if (Greenfoot.isKeyDown("escape")) {
             Greenfoot.setWorld(new LevelSelector(Globals.currentLevel));
         }
-        if (Greenfoot.isKeyDown("space")) {
+        if (Greenfoot.isKeyDown("space") && !isTouching(JumpPad.class)) {
             if (onGround()) {
                 spaceKeyDown = 0;
                 jump(15);
@@ -306,6 +308,13 @@ public class Player extends Physics
             }
             Levels.activeCheckpoint = checkpoint.getCheckpoint();
             checkpoint.active = true;
+        }
+    }
+    public void jumpPad(){
+        if(isTouching(JumpPad.class)){
+            jtime=jtime + 1;
+            if (jtime > 5) {jump(5);}
+            if (jtime>= 10) {jtime=0;}//Reset
         }
     }
 }

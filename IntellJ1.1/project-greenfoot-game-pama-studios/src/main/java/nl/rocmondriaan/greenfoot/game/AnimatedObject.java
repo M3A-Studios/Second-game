@@ -9,9 +9,8 @@ public class AnimatedObject extends Blocks
 {
     private GreenfootImage Torch1 = new GreenfootImage("260.png");
     private GreenfootImage Torch2 = new GreenfootImage("261.png");
-    private GreenfootImage LeverLeft = new GreenfootImage("233.png");
-    private GreenfootImage LeverMiddle = new GreenfootImage("234.png");
-    private GreenfootImage LeverRight = new GreenfootImage("235.png");
+    private GreenfootImage jumppadDown = new GreenfootImage("250.png");
+    private GreenfootImage jumppadUp = new GreenfootImage("251.png");
     private int atime = 0; //Animation time
     int selectImage;
     private int timeTillNewParticle;
@@ -27,7 +26,8 @@ public class AnimatedObject extends Blocks
         changeImage();
         Torch1.scale((Options.blockSize),(Options.blockSize));
         Torch2.scale((Options.blockSize),(Options.blockSize));
-        LeverRight.scale((Options.blockSize),(Options.blockSize));
+        jumppadDown.scale((Options.blockSize),(Options.blockSize));
+        jumppadUp.scale((Options.blockSize),(Options.blockSize));
     }
 
 

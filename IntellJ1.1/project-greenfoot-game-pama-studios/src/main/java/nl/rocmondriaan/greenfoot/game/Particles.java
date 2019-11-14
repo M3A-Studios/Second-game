@@ -1,8 +1,6 @@
 package nl.rocmondriaan.greenfoot.game;
-
 import greenfoot.Actor;
 import greenfoot.GreenfootImage;
-
 import java.util.Random;
 
 public class Particles extends Actor {

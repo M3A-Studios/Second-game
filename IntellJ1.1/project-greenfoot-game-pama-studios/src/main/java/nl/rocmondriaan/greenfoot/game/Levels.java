@@ -318,6 +318,10 @@ public class Levels extends World
                     {
                         nextBlock = new Keys(worldMap[layer][position]);
                     }
+                    else if (check(Globals.jumpPad, worldMap[layer][position]))
+                    {
+                        nextBlock = new JumpPad(worldMap[layer][position]);
+                    }
                     else if (check(Globals.coins, worldMap[layer][position]))
                     {
                         nextBlock = new Coins(worldMap[layer][position]);
