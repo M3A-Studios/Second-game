@@ -19,7 +19,6 @@ public class Player extends Physics
     static boolean dead;
     private int dyingAnimation;
     int jtime;
-    static boolean dead = false;
 
     //sizes for the images
     private int playerWidth = Options.blockSize;          //1 block
@@ -88,6 +87,7 @@ public class Player extends Physics
             isTouchingObject();
             collectCoin();
             checkCheckpoint();
+            jumpPad();
         } else {
             deadAnimation();
         }
