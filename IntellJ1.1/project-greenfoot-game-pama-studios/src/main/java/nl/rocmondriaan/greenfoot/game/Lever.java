@@ -63,14 +63,14 @@ public class Lever extends Blocks
             rechts.scale((Options.blockSize),(Options.blockSize));
         }
     }
-    public boolean isLinks()
+    /*public boolean isLinks()
     {
         if()
         {
             return true;
         }
         return false;
-    }
+    }*/
 }
 
 
