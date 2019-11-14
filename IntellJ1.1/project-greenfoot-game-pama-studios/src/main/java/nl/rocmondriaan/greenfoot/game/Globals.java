@@ -9,11 +9,11 @@ class Globals
     static int worldWidth;
     static int worldHeight;
     static int levelsUnlocked = 15;
-    static int currentLevel;
+    static int currentLevel = 1;
 
     //Keep track of the coins and score
     static int levelCoinsCollected;
-    static int totalCoinsCollected;
+    static int totalCoinsCollected = 69;
 
     //Used in the levels and levelSelector class to know what ID is what kind of block with the check method there.
     static Integer[] platforms = {};

@@ -28,8 +28,8 @@ public class LevelSelector extends World
 
     //if no level argument is given will just call itself with level -1. this will be handled over in the one argument
     //constructor to make sure of what level you should spawn on (or just level 1)
-    LevelSelector() {
-         this(-1);
+    public LevelSelector() {
+        this(0);
     }
 
     /**
@@ -41,14 +41,15 @@ public class LevelSelector extends World
      *                      the player will load on the first level node, if 15 they will load on the 15th. spares you
      *                      a bit of walking when in later levels ;)
      */
-    LevelSelector(int level) {
+    public LevelSelector(int level) {
         super(Options.screenWidth, Options.screenHeight, 1, false); //render the screen with said screensize
-        if (level == -1) {
+        if (level < 1) {
             if (selectedLevel < 1) {
                 selectedLevel = 1;
             }
         } else {
             selectedLevel = level;
+            System.out.println(selectedLevel);
         }
 
         //reset camera position
@@ -62,6 +63,14 @@ public class LevelSelector extends World
         renderMap(getMap(), level, 4); //spawn the map and player as said layer
         renderLocks(); //render the locks over locked levels
         spawnCamera(); //spawn the camera
+        renderHud();
+    }
+    private void renderHud() {
+        addObject (new CoinsHUD(0), (int) (Options.blockSize * 0.5), (int) (Options.blockSize * 0.5));
+        addObject (new CoinsHUD(1), (int) (Options.blockSize * 1.25) , (int) (Options.blockSize * 0.5));
+        addObject (new CoinsHUD(2), (int) (Options.blockSize * 1.75) , (int) (Options.blockSize * 0.5));
+        addObject (new CoinsHUD(3), (int) (Options.blockSize * 2.25), (int) (Options.blockSize * 0.5));
+        addObject (new CoinsHUD(4), (int) (Options.blockSize * 2.75), (int) (Options.blockSize * 0.5));
     }
 
     /**

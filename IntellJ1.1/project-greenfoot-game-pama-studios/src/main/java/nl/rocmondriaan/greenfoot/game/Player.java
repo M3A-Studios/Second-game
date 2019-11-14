@@ -7,15 +7,15 @@ import greenfoot.GreenfootImage;
 public class Player extends Physics
 {
     private Actor popup;
-    static int health = 6; //health amount
+    static int health;
     private boolean started;
     private boolean moving;
     private double leftKeyDown;
     private double rightKeyDown;
     private double spaceKeyDown;
-    private int atime = 0;
-    static boolean dead = false;
-    private int dyingAnimation = 0;
+    private int atime;
+    static boolean dead;
+    private int dyingAnimation;
 
     //sizes for the images
     private int playerWidth = Options.blockSize;          //1 block
@@ -38,7 +38,12 @@ public class Player extends Physics
      * which is used in the first frame of act() to get the player's spawn location
      */
     Player() {
+        dead = false;
+        atime = 0;
+        dyingAnimation = 0;
+        health = 6;
         started = false;
+        Globals.levelCoinsCollected = 0;
 
         climb1.scale(playerWidth,playerHeight);
         climb2.scale(playerWidth,playerHeight);
@@ -78,9 +83,22 @@ public class Player extends Physics
             checkinput();
             isTouchingObject();
             collectCoin();
+            checkCheckpoint();
+        } else {
+            deadAnimation();
         }
     }
 
+    private void deadAnimation() {
+        if (dead) {
+            if (dyingAnimation < 200) {
+                animateMovement("Death");
+                dyingAnimation += 1;
+            } else {
+                Greenfoot.setWorld(new Levels(LevelSelector.getSelectedLevel(), Levels.activeCheckpoint));
+            }
+        }
+    }
     /**
      * Check for various player inputs
      *
@@ -148,19 +166,10 @@ public class Player extends Physics
         }
 
         if (deathCheck() && !dead) {
+            Particles beam = new Particles("beam");
+            getWorld().addObject(beam, getX(), getY());
             dead = true;
             dyingAnimation = 0;
-        }
-        if (dead) {
-            if (dyingAnimation < 300) {
-                dyingAnimation += 1;
-                Globals.levelCoinsCollected = 0; //Coins reset
-                System.out.println("You ded coins reset" ); //debug coins reset
-                Particles beam = new Particles("beam");
-                getWorld().addObject(beam, getX(), getY());
-                //} else {
-                //Greenfoot.setWorld(new Levels(LevelSelector.getSelectedLevel()));
-            }
         }
     }
 
@@ -260,30 +269,37 @@ public class Player extends Physics
      */
     private boolean deathCheck() {
         if (health == 0 || getY() == Options.screenHeight - 2) {
-            animateMovement("Death");
             return true;
         }
             return false;
     }
 
-    public void collectCoin() {
+    /**
+     * Checks if you are intersecting with a coin, if so it removes the coin and adds it to your levelCoinsCollected
+     */
+    private void collectCoin() {
         Coins coin = (Coins) getOneIntersectingObject(Coins.class);
         if (coin != null) {
             if (coin.CoinID == 166) {
                 Globals.levelCoinsCollected += 1;
-                System.out.println("Collected 1 coin, current coins now: " + Globals.levelCoinsCollected); //debug
-                //getWorld().removeObject(coin);
+                getWorld().removeObject(coin);
             }
             if (coin.CoinID == 168) {
                 Globals.levelCoinsCollected += 10;
-                System.out.println("Collected 10 coin, current coins now: " + Globals.levelCoinsCollected); //debug
                 getWorld().removeObject(coin);
             }
             if (coin.CoinID == 167) {
                 Globals.levelCoinsCollected += 20;
-                System.out.println("Collected 20 coin, current coins now: " + Globals.levelCoinsCollected); //debug
                 getWorld().removeObject(coin);
             }
+        }
+    }
+
+    private void checkCheckpoint() {
+        Checkpoint checkpoint = (Checkpoint) getOneIntersectingObject(Checkpoint.class);
+        if (checkpoint != null) {
+            Levels.activeCheckpoint = checkpoint.getCheckpoint();
+            checkpoint.active = true;
         }
     }
 }

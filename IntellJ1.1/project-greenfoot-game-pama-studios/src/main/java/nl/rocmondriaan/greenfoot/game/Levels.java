@@ -79,8 +79,6 @@ public class Levels extends World
         super(Options.screenWidth, Options.screenHeight, 1, false); //render the screen with said screensize
 
         this.activeCheckpoint = activeCheckpoint;
-        //debug
-        System.out.println("Loading Level: " + level);
 
         //reset camera
         Globals.worldHeight = 0;
@@ -104,25 +102,39 @@ public class Levels extends World
             checkpointX.add(2);
             checkpointY.add(9);
             //Checkpoint 1
-            checkpointX.add(8);
+            checkpointX.add(23);
             checkpointY.add(9);
-            //Checkpoint 2
-            checkpointX.add(13);
-            checkpointY.add(5);
+        } else if (level == 2) {
+            //Spawn location (checkpoint 0)
+            checkpointX.add(2);
+            checkpointY.add(20);
+        } else if (level == 3) {
+            //Spawn location (checkpoint 0)
+            checkpointX.add(2);
+            checkpointY.add(8);
+        } else {
+            //Spawn location (checkpoint 0)
+            checkpointX.add(2);
+            checkpointY.add(8);
         }
 
     }
-    private void renderCheckpoints(int level) {
-        if (level == 1) {
-            Add(new Checkpoint(1, 168), checkpointX.get(1), checkpointY.get(1));
-            Add(new Checkpoint(2, 168), checkpointX.get(2), checkpointY.get(2));
+    private void renderCheckpoints(String color) {
+        int flag = 168; //default blue
+        if (color.equals("Blue")) {
+            flag = 168;
         }
+        for (int i = 1; i < checkpointX.size(); i++) {
+            Add(new Checkpoint(i, flag), checkpointX.get(i) - 1, checkpointY.get(i));
+        }
+    }
 
     private void renderText(int level) {
         if (level == 1) {
 
         }
     }
+
     /**
      * Method used to get on what screenlayer the player should be spawned (screenlayers being the layers in Tiled)
      *
@@ -150,10 +162,10 @@ public class Levels extends World
         addObject (new Heart(2), Options.blockSize * 2, Options.blockSize);
         addObject (new Heart(3), Options.blockSize * 3, Options.blockSize);
         addObject(new Inventory(),Options.blockSize * 4, Options.blockSize);
-        addObject (new CoinsHUD(3), Options.blockSize , Options.blockSize * 2);
-        addObject (new CoinsHUD(2), Options.blockSize * 2 , Options.blockSize * 2);
-        addObject (new CoinsHUD(1), (int) (Options.blockSize * 2.5) , Options.blockSize * 2);
-        addObject (new CoinsHUD(0), Options.blockSize * 3, Options.blockSize * 2);
+        addObject (new CoinsHUD(0), Options.blockSize , Options.blockSize * 2);
+        addObject (new CoinsHUD(1), (int) (Options.blockSize * 1.75) , Options.blockSize * 2);
+        addObject (new CoinsHUD(2), (int) (Options.blockSize * 2.25) , Options.blockSize * 2);
+        addObject (new CoinsHUD(3), (int) (Options.blockSize * 2.75), Options.blockSize * 2);
     }
 
     /**
@@ -260,6 +272,12 @@ public class Levels extends World
      * @param playerLayer       When the layer that is being rendered is equal to this the player gets added at the end of rendering this layer
      */
     private void renderMap(int[][] worldMap, int playerLayer, int level) {
+        String checkpointColor;
+        if (level == 1 || level == 2 || level == 3) {
+            checkpointColor = "blue";
+        } else {
+            checkpointColor = "blue";
+        }
         int width = -1;
         int height = 0;
         boolean didCheckpoints = false;
@@ -277,9 +295,9 @@ public class Levels extends World
                     break;
                 }
                 placeBlock: {
-                    //check the ID thats at that point in the map against different types of blocks
+                    //check the ID that's at that point in the map against different types of blocks
                     //if no block matches it will simply not place anything there (empty tile, so air)
-                    Actor nextBlock;;
+                    Actor nextBlock;
                     if (check(Globals.nonSolids,worldMap[layer][position]))
                     {
                         nextBlock = new NonSolid(worldMap[layer][position]);
@@ -324,14 +342,14 @@ public class Levels extends World
             height = 0;
             //if the just rendered layer is the layer of the player then spawn the player here.
             if ((layer - 1) >= 0 && layer == playerLayer - 1) {
-                renderCheckpoints(level); //render the checkpoints per level, hardcoded
+                renderCheckpoints(checkpointColor); //render the checkpoints per level, hardcoded
                 didCheckpoints = true;
             }
             if (layer == playerLayer) {
                 player = new Player();
-                addObject(player, Options.blockSize * checkpointX.get(activeCheckpoint) - Options.blockSize / 2, Options.blockSize * checkpointY.get(activeCheckpoint));
+                addObject(player, Options.blockSize * (checkpointX.get(activeCheckpoint) - 1) + Options.blockSize / 2, Options.blockSize * (checkpointY.get(activeCheckpoint)) + Options.blockSize / 4);
                 if (!didCheckpoints) { //if not done last layer
-                    renderCheckpoints(level); //render the checkpoints per level, hardcoded
+                    renderCheckpoints(checkpointColor); //render the checkpoints per level, hardcoded
                 }
             }
         }

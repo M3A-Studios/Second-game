@@ -7,7 +7,7 @@ public class Checkpoint extends Actor {
 
     private int checkpoint;
     private int imageID;
-    private boolean active;
+    boolean active;
     private int activeStartImage;
     private int frame;
     private GreenfootImage inactiveImage;
