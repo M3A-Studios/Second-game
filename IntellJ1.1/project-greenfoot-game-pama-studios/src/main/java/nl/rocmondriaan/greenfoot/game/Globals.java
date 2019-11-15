@@ -14,6 +14,8 @@ class Globals
     //Keep track of the coins and score
     static int levelCoinsCollected;
     static int totalCoinsCollected = 69;
+    static int levelScore;
+    static int totalScore = 420;
 
     //Used in the levels and levelSelector class to know what ID is what kind of block with the check method there.
     static Integer[] platforms = {};
@@ -23,7 +25,7 @@ class Globals
     static Integer[] waters = {};
     static Integer[] spikes = {};
     static Integer[] checkpoints = {168,169,170,171,172,173,174,175,176,177,178,179};
-    static Integer[] finishFlag = {270, 271};
+    static Integer[] finishFlag = {270, 271,272};
     static Integer[] nonSolids = {215,216,269,260,217,218};
     static Integer[] animatedObjects = {252,253,254};
     static Integer[] ladder = {220,221};

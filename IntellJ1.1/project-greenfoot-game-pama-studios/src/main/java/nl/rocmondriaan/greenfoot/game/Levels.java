@@ -25,7 +25,7 @@ public class Levels extends World
      * Act method called every frame to scroll the camera as long as the death condition isn't met.
      */
     public void act() {
-        if (!Player.dead){
+        if (!Player.dead && !Player.won){
             scroll(); //scrolls the camera
         }
     }
@@ -148,7 +148,7 @@ public class Levels extends World
             case 2:
                 return 0;
             default:
-                return 3;
+                return 0;
         }
     }
 
@@ -162,10 +162,15 @@ public class Levels extends World
         addObject (new Heart(2), Options.blockSize * 2, Options.blockSize);
         addObject (new Heart(3), Options.blockSize * 3, Options.blockSize);
         addObject(new Inventory(),Options.blockSize * 4, Options.blockSize);
-        addObject (new CoinsHUD(0), Options.blockSize , Options.blockSize * 2);
-        addObject (new CoinsHUD(1), (int) (Options.blockSize * 1.75) , Options.blockSize * 2);
-        addObject (new CoinsHUD(2), (int) (Options.blockSize * 2.25) , Options.blockSize * 2);
-        addObject (new CoinsHUD(3), (int) (Options.blockSize * 2.75), Options.blockSize * 2);
+        addObject (new HUDNumber(0, "coin"), Options.blockSize , Options.blockSize * 2);
+        addObject (new HUDNumber(1, "coin"), (int) (Options.blockSize * 1.75) , Options.blockSize * 2);
+        addObject (new HUDNumber(2, "coin"), (int) (Options.blockSize * 2.25) , Options.blockSize * 2);
+        addObject (new HUDNumber(3, "coin"), (int) (Options.blockSize * 2.75), Options.blockSize * 2);
+        addObject (new HUDNumber(1, "score"), (int) (Options.blockSize * 17.5), (int) (Options.blockSize * 0.5));
+        addObject (new HUDNumber(2, "score"), (int) (Options.blockSize * 18), (int) (Options.blockSize * 0.5));
+        addObject (new HUDNumber(3, "score"), (int) (Options.blockSize * 18.5), (int) (Options.blockSize * 0.5));
+        addObject (new HUDNumber(4, "score"), (int) (Options.blockSize * 19), (int) (Options.blockSize * 0.5));
+        addObject (new HUDNumber(5, "score"), (int) (Options.blockSize * 19.5), (int) (Options.blockSize * 0.5));
     }
 
     /**
@@ -329,6 +334,9 @@ public class Levels extends World
                     else if (check(Globals.animatedObjects, worldMap[layer][position]))
                     {
                         nextBlock = new AnimatedObject(worldMap[layer][position]);
+                    }
+                    else if (check(Globals.finishFlag, worldMap[layer][position])) {
+                        nextBlock = new Flagpole((worldMap[layer][position]));
                     }
                     else if (worldMap[layer][position] != 0)
                     {
