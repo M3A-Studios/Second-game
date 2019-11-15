@@ -308,6 +308,10 @@ public class Levels extends World
                     {
                         nextBlock = new NonSolid(worldMap[layer][position]);
                     }
+                    else if (check(Globals.platforms, worldMap[layer][position]))
+                    {
+                        nextBlock = new Platform(worldMap[layer][position]);
+                    }
                     else if (check(Globals.ladder, worldMap[layer][position]))
                     {
                         nextBlock = new Ladder(worldMap[layer][position]);

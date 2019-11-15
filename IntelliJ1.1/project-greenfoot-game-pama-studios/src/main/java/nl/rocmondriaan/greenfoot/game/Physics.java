@@ -1,6 +1,7 @@
 package nl.rocmondriaan.greenfoot.game;
 
 import greenfoot.Actor;
+import javafx.application.Platform;
 
 public class Physics extends Actor
 {
@@ -110,6 +111,10 @@ public class Physics extends Actor
             if (vSpeed > 20) vSpeed = 20;
             setRelativeLocation(0,vSpeed);
         }
+        else if (willBumpHead())
+        {
+            vSpeed = 1;
+        }
         else
         {
             vSpeed = 0;
@@ -137,9 +142,38 @@ public class Physics extends Actor
      * @return          returns true or false based on if the player is hitting the ground (or just standing on it)
      */
     boolean onGround() {
-        return getOneObjectAtOffset(getImage().getWidth() / -2 + 1, getImage().getHeight() / 2 + (int) vSpeed + 1, Solid.class) != null ||
+        boolean onGround = false;
+        boolean insidePlatform = false;
+        boolean insidePlatform2 = false;
+        boolean insidePlatform3 = false;
+        if (getOneObjectAtOffset(getImage().getWidth() / -2 + 1, getImage().getHeight() / 2 + (int) vSpeed + 1, Solid.class) != null ||
                 getOneObjectAtOffset(0, getImage().getHeight() / 2 + (int) vSpeed + 1, Solid.class) != null ||
-                getOneObjectAtOffset(getImage().getWidth() / 2 - 1, getImage().getHeight() / 2 + (int) vSpeed + 1, Solid.class) != null;
+                getOneObjectAtOffset(getImage().getWidth() / 2 - 1, getImage().getHeight() / 2 + (int) vSpeed + 1, Solid.class) != null) {
+            onGround = true;
+        }
+        //Check if you're inside of a platform
+        Actor platformBelow = getOneObjectAtOffset(getImage().getWidth() / -2 + 1, getImage().getHeight() / 2 + (int) vSpeed + 1, nl.rocmondriaan.greenfoot.game.Platform.class); //check bottom left
+        Actor platformBelow2 = getOneObjectAtOffset(0, getImage().getHeight() / 2 + (int) vSpeed + 1, nl.rocmondriaan.greenfoot.game.Platform.class); //check bottom right
+        Actor platformBelow3 = getOneObjectAtOffset(getImage().getWidth() / 2 - 1, getImage().getHeight() / 2 + (int) vSpeed + 1, nl.rocmondriaan.greenfoot.game.Platform.class); //check bottom right
+        if (platformBelow != null) {
+            insidePlatform = (platformBelow.getY() - platformBelow.getImage().getHeight()/2 < getY() + getImage().getHeight()/2);
+        }
+        if (platformBelow2 != null) {
+            insidePlatform2 = (platformBelow2.getY() - platformBelow2.getImage().getHeight()/2 < getY() + getImage().getHeight()/2);
+        }
+        if (platformBelow3 != null) {
+            insidePlatform3 = (platformBelow3.getY() - platformBelow3.getImage().getHeight()/2 < getY() + getImage().getHeight()/2);
+        }
+        //check if you're on top of a platform
+        if (getOneObjectAtOffset(getImage().getWidth()/-2, (int) (getImage().getHeight()/2 + vSpeed + 1), nl.rocmondriaan.greenfoot.game.Platform.class) != null //get object at lower left pixel of object
+                || getOneObjectAtOffset(getImage().getWidth()/-2, (int) (getImage().getHeight()/2 + vSpeed + 1), nl.rocmondriaan.greenfoot.game.Platform.class) != null //get object at lower middle pixel of object
+                || getOneObjectAtOffset(getImage().getWidth()/2, (int) (getImage().getHeight()/2 + vSpeed + 1), nl.rocmondriaan.greenfoot.game.Platform.class) != null) { //get object at lower right pixel of object
+            //if your feet are on a platform but you're not inside one
+            if (!insidePlatform && !insidePlatform2 && !insidePlatform3) {
+                onGround = true;
+            }
+        }
+        return onGround;
     }
 
     /**
@@ -166,9 +200,7 @@ public class Physics extends Actor
             moveleft = false;
         Door door = (Door) getOneObjectAtOffset(getImage().getWidth() / -2 - (int) speed - 1, 0,  Door.class);
         if (door != null) {
-            if (door.opened) {
-                moveleft = true;
-            } else {
+            if (!door.opened) {
                 moveleft = false;
             }
         }
@@ -192,9 +224,7 @@ public class Physics extends Actor
             moveright = false;
         Door door = (Door) getOneObjectAtOffset(getImage().getWidth() / 2 + (int) speed + 1, 0, Door.class);
         if (door != null) {
-            if (door.opened) {
-                moveright = true;
-            } else {
+            if (!door.opened) {
                 moveright = false;
             }
         }

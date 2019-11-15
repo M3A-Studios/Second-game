@@ -18,7 +18,7 @@ class Globals
     static int totalScore = 420;
 
     //Used in the levels and levelSelector class to know what ID is what kind of block with the check method there.
-    static Integer[] platforms = {};
+    static Integer[] platforms = {66,67,68,69,84,85,86,87,102,103,104,105,120,121,122,123,138,139,140,141,156,157,158,159,208,209};
     static Integer[] slopeLefts = {};
     static Integer[] slopeRights = {};
     static Integer[] lavas = {};
@@ -26,7 +26,7 @@ class Globals
     static Integer[] spikes = {};
     static Integer[] checkpoints = {168,169,170,171,172,173,174,175,176,177,178,179};
     static Integer[] finishFlag = {270, 271,272};
-    static Integer[] nonSolids = {215,216,269,260,217,218};
+    static Integer[] nonSolids = {215,216,269,270,260,217,218};
     static Integer[] animatedObjects = {252,253,254};
     static Integer[] ladder = {220,221};
     static Integer[] lever = {225,226,227};
