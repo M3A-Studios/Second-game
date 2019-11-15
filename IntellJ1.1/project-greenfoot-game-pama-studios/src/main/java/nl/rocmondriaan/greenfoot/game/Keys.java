@@ -7,9 +7,10 @@ import greenfoot.GreenfootImage;
 
 public class Keys extends Actor
 {
-    GreenfootImage emptyKey = new GreenfootImage("HudEmpty.png");
-    GreenfootImage greenKey = new GreenfootImage("193.png");
-    GreenfootImage blueKey = new GreenfootImage("192.png");
+    static GreenfootImage blueKey = new GreenfootImage("185.png");
+    static GreenfootImage greenKey = new GreenfootImage("186.png");
+    static GreenfootImage redKey = new GreenfootImage("187.png");
+    static GreenfootImage yellowKey = new GreenfootImage("188.png");
 
     /**
      * This is the constructor that should be used in every tile
@@ -18,35 +19,48 @@ public class Keys extends Actor
      * @param ID refers to what the ID of the tile is, used for the image
      */
     Keys(int ID) {
-        greenKey.scale(Options.blockSize, Options.blockSize);
-        setImage(greenKey);
-        blueKey.scale(Options.blockSize, Options.blockSize);
-        setImage(blueKey);
+        if (ID == 185) {
+            blueKey.scale(Options.blockSize, Options.blockSize);
+            setImage(blueKey);
+        } else if (ID == 186) {
+            greenKey.scale(Options.blockSize, Options.blockSize);
+            setImage(greenKey);
+        } else if (ID == 187) {
+            redKey.scale(Options.blockSize, Options.blockSize);
+            setImage(redKey);
+        } else if (ID == 188) {
+            yellowKey.scale(Options.blockSize, Options.blockSize);
+            setImage(yellowKey);
+        }
     }
-
-
     public void act() {
-    pickUpKey();
-    renderKeyHud();
+        pickUpKey();
     }
     private void pickUpKey()
     {
         if(isTouching(Player.class))
         {
+            String itemToPickup = "nothing";
+            if(getImage() == blueKey)
+            {
+                itemToPickup = "blueKey";
+            }
             if(getImage() == greenKey)
             {
-                Player.inventoryItem = "Key";
-                Player.carryingObject = true;
-                System.out.print(greenKey);
+                itemToPickup = "greenKey";
             }
-
+            if(getImage() == redKey)
+            {
+                itemToPickup = "redKey";
+            }
+            if(getImage() == yellowKey)
+            {
+                itemToPickup = "yellowKey";
+            }
+            if (Player.inventoryItem.equals("") && !itemToPickup.equals("nothing")) {
+                Player.inventoryItem = itemToPickup;
+                getWorld().removeObject(this);
+            }
         }
-        else
-        {
-            Player.carryingObject = false;
-        }
-    }
-    private void renderKeyHud()
-    {
     }
 }

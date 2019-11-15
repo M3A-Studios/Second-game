@@ -12,7 +12,6 @@ public class Flagpole extends Actor {
     private GreenfootImage pole = new GreenfootImage("272.png");
 
     Flagpole(int ID) {
-        System.out.println(ID);
         waving1.scale(Options.blockSize, Options.blockSize);
         waving2.scale(Options.blockSize, Options.blockSize);
         pole.scale(Options.blockSize, Options.blockSize);

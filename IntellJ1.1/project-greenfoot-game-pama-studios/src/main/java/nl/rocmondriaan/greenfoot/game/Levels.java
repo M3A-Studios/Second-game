@@ -161,7 +161,8 @@ public class Levels extends World
         addObject (new Heart(1), Options.blockSize, Options.blockSize);
         addObject (new Heart(2), Options.blockSize * 2, Options.blockSize);
         addObject (new Heart(3), Options.blockSize * 3, Options.blockSize);
-        addObject(new Inventory(),Options.blockSize * 4, Options.blockSize);
+        addObject(new Inventory("panel"),Options.blockSize * 4, Options.blockSize);
+        addObject(new Inventory("item"),Options.blockSize * 4, Options.blockSize);
         addObject (new HUDNumber(0, "coin"), Options.blockSize , Options.blockSize * 2);
         addObject (new HUDNumber(1, "coin"), (int) (Options.blockSize * 1.75) , Options.blockSize * 2);
         addObject (new HUDNumber(2, "coin"), (int) (Options.blockSize * 2.25) , Options.blockSize * 2);

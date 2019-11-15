@@ -23,27 +23,30 @@ public class Particles extends Actor {
         random3 = rn.nextInt(3) + 1;
         timePassed += 1;
         if (type.equals("smoke")) {
+            setLocation(getX(), getY()-1);
             if (timePassed >= deathTime) {
                 fade();
             }
         }
-        if (type.equals("beam")) {
+        else if (type.equals("beam")) {
             if (timePassed >= deathTime) {
                 fadelong();
             }
         }
-        if (type == "confetti") {
+        else if (type.equals("confetti")) {
             setLocation(getX() - 2, getY() - 4); //Making it fly up
             if (timePassed >= deathTime) {
                 fade();
             }
         }
-        if (type == "confettim") { //This is mirrored
+        else if (type.equals("confettim")) { //This is mirrored
             setLocation(getX() + 2, getY() - 4); //Making it fly up
             if (timePassed >= deathTime) {
                 fade();
             }
         }
+        else { System.out.println(type); }
+
     }
 
     Particles(String type) {
@@ -69,7 +72,7 @@ public class Particles extends Actor {
         if (type.equals("beam")){
             setImage(beam);
         }
-        if (type == "confetti" || type == "confettim" ){
+        if (type.equals("confetti") || type.equals("confettim")){
             confetti();
         }
     }
@@ -86,6 +89,7 @@ public class Particles extends Actor {
         if (220 - deathFadeTime > 0) {
             this.getImage().setTransparency(220 - deathFadeTime);
         }
+        if (deathFadeTime >= 110) {deathFadeTime = 0; getWorld().removeObject(this); timePassed = 0;}
     }
     public void confetti(){
         setImage(confetti);
