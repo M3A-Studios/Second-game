@@ -11,7 +11,7 @@ public class Blocks extends Actor
      * @param ID        refers to what the ID of the tile is, used for the image
      */
     Blocks(int ID){
-        GreenfootImage image = new GreenfootImage ((ID + 7) + ".png");
+        GreenfootImage image = new GreenfootImage ((ID) + ".png");
         image.scale((Options.blockSize),(Options.blockSize)); //scale to the size of 1 block
         setImage(image);
     }

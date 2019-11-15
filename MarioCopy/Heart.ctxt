@@ -1,9 +1,0 @@
-#BlueJ class context
-comment0.target=Heart
-comment1.params=heart
-comment1.target=Heart(int)
-comment2.params=
-comment2.target=void\ renderHeart()
-comment3.params=
-comment3.target=void\ act()
-numComments=4

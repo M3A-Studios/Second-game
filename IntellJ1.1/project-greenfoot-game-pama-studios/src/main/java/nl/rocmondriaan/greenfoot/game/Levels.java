@@ -391,6 +391,6 @@ public class Levels extends World
      * @return          returns a true or false based on if the ID is in the array
      */
     private static boolean check(Integer[] array, int ID) {
-        return Arrays.asList(array).contains((ID - 1));
+        return Arrays.asList(array).contains(ID - 1);
     }
 }

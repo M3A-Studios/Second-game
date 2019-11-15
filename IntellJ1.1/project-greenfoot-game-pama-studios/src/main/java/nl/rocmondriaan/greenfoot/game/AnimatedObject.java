@@ -7,10 +7,10 @@ import java.util.Random;
 
 public class AnimatedObject extends Blocks
 {
-    private GreenfootImage Torch1 = new GreenfootImage("260.png");
-    private GreenfootImage Torch2 = new GreenfootImage("261.png");
-    private GreenfootImage jumppadDown = new GreenfootImage("250.png");
-    private GreenfootImage jumppadUp = new GreenfootImage("251.png");
+    private GreenfootImage Torch1 = new GreenfootImage("253.png");
+    private GreenfootImage Torch2 = new GreenfootImage("254.png");
+    private GreenfootImage jumppadDown = new GreenfootImage("243.png");
+    private GreenfootImage jumppadUp = new GreenfootImage("244.png");
     private int atime = 0; //Animation time
     int selectImage;
     private int timeTillNewParticle;

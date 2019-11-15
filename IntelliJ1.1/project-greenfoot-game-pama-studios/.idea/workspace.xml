@@ -1,0 +1,947 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0ca490f3-1b07-4c81-bb26-4d0915f20aea" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/java/nl/rocmondriaan/greenfoot/game/Flagpole.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/java/nl/rocmondriaan/greenfoot/game/Flagpole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/java/nl/rocmondriaan/greenfoot/game/Levels.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/java/nl/rocmondriaan/greenfoot/game/Levels.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/10.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/10.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/100.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/100.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/101.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/101.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/102.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/102.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/103.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/103.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/104.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/104.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/105.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/105.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/106.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/106.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/107.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/107.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/108.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/108.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/109.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/109.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/11.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/11.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/110.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/110.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/111.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/111.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/112.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/112.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/113.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/113.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/114.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/114.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/115.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/115.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/116.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/116.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/117.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/117.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/118.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/118.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/119.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/119.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/12.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/12.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/120.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/121.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/121.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/122.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/122.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/123.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/123.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/124.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/124.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/125.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/125.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/126.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/126.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/127.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/127.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/128.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/128.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/129.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/129.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/13.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/13.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/130.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/130.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/131.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/131.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/132.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/132.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/133.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/133.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/134.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/134.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/135.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/135.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/136.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/136.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/137.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/137.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/138.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/138.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/139.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/139.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/14.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/14.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/140.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/140.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/141.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/141.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/142.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/142.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/143.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/143.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/144.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/144.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/145.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/145.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/146.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/146.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/147.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/147.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/148.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/148.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/149.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/149.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/15.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/15.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/150.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/150.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/151.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/151.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/152.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/152.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/153.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/153.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/154.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/154.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/155.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/155.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/156.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/156.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/157.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/157.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/158.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/158.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/159.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/159.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/16.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/16.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/160.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/160.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/161.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/161.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/162.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/162.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/163.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/163.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/164.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/164.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/165.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/165.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/166.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/166.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/167.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/167.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/168.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/168.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/169.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/169.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/17.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/17.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/170.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/170.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/171.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/171.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/172.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/172.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/173.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/173.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/174.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/174.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/175.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/175.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/176.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/176.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/177.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/177.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/178.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/178.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/179.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/179.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/18.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/18.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/180.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/180.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/181.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/181.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/182.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/182.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/183.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/183.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/184.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/184.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/185.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/185.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/186.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/186.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/187.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/187.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/188.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/188.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/189.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/189.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/19.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/19.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/190.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/190.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/191.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/191.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/192.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/192.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/193.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/193.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/194.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/194.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/195.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/195.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/196.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/196.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/197.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/197.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/198.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/198.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/199.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/199.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/20.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/20.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/200.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/200.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/201.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/201.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/202.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/202.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/203.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/203.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/204.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/204.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/205.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/205.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/206.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/206.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/207.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/207.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/208.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/208.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/209.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/209.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/21.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/21.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/210.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/210.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/211.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/211.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/212.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/212.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/213.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/213.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/214.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/214.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/215.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/215.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/216.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/216.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/217.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/217.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/218.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/218.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/219.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/219.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/22.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/22.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/220.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/220.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/221.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/221.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/222.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/222.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/223.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/223.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/224.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/224.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/225.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/225.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/226.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/226.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/227.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/227.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/228.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/228.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/229.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/229.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/23.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/23.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/230.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/230.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/231.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/231.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/232.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/232.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/233.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/233.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/234.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/234.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/235.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/235.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/236.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/236.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/237.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/237.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/238.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/238.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/239.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/239.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/24.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/24.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/240.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/240.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/241.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/241.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/242.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/242.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/243.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/243.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/244.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/244.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/245.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/245.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/246.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/246.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/247.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/247.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/248.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/248.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/249.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/249.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/25.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/25.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/250.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/250.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/251.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/251.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/252.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/252.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/253.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/253.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/254.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/254.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/255.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/255.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/256.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/256.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/257.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/257.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/258.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/258.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/259.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/259.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/26.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/26.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/260.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/260.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/261.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/261.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/262.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/262.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/263.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/263.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/264.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/264.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/265.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/265.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/266.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/266.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/267.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/267.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/268.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/268.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/269.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/269.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/27.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/27.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/270.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/270.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/271.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/271.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/272.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/272.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/273.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/273.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/274.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/275.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/276.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/277.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/278.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/279.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/28.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/28.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/280.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/29.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/29.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/30.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/30.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/31.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/31.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/32.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/32.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/33.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/33.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/34.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/34.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/35.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/35.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/36.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/36.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/37.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/37.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/38.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/38.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/39.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/39.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/40.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/40.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/41.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/41.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/42.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/42.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/43.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/43.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/44.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/44.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/45.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/45.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/46.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/46.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/47.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/47.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/48.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/48.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/49.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/49.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/50.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/50.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/51.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/51.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/52.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/52.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/53.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/53.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/54.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/54.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/55.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/55.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/56.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/56.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/57.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/57.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/58.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/58.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/59.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/59.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/60.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/60.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/61.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/61.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/62.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/62.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/63.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/63.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/64.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/64.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/65.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/65.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/66.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/66.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/67.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/67.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/68.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/68.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/69.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/69.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/70.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/70.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/71.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/71.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/72.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/72.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/73.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/73.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/74.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/74.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/75.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/75.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/76.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/76.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/77.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/77.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/78.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/78.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/79.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/79.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/8.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/8.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/80.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/80.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/81.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/81.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/82.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/82.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/83.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/83.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/84.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/84.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/85.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/85.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/86.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/86.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/87.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/87.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/88.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/88.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/89.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/89.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/9.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/9.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/90.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/90.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/91.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/91.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/92.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/92.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/93.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/93.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/94.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/94.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/95.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/95.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/96.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/96.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/97.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/97.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/98.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/98.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/99.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/images/99.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/tilemap/level1.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/tilemap/level1.tmx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/tilemap/level2.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/tilemap/level2.tmx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/tilemap/level3.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/tilemap/level3.tmx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/tilemap/level4.tmx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/tilemap/spritesheet_handmade.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/tilemap/tilemap.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/tilemap/tilemap.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/tilemap/tilemap.tmx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/tilemap/tilesetv1.0.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/src/main/resources/tilemap/world.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/target/classes/META-INF/greenfoot-engine.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/target/classes/nl/rocmondriaan/greenfoot/game/Flagpole.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/target/classes/nl/rocmondriaan/greenfoot/game/Flagpole.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/target/classes/nl/rocmondriaan/greenfoot/game/Slime.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/target/classes/tilemap/level1.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/target/classes/tilemap/level1.tmx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/target/classes/tilemap/level2.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/target/classes/tilemap/level2.tmx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/target/classes/tilemap/level3.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/target/classes/tilemap/level3.tmx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/target/classes/tilemap/level4.tmx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/target/classes/tilemap/spritesheet_handmade.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/target/classes/tilemap/tilemap.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/target/classes/tilemap/tilemap.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/target/classes/tilemap/tilemap.tmx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/target/classes/tilemap/tilesetv1.0.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios/target/classes/tilemap/world.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/AnimatedObject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/AnimatedObject.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/AnimatedObject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/Blocks.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/Blocks.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/Blocks.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/Camera.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/Camera.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/Camera.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/Globals.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/Globals.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/Globals.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/Heart.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/Heart.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/Heart.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/Ladder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/Ladder.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/Ladder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/LevelSelector.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/LevelSelector.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/LevelSelector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/Levels.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/Levels.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/Levels.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/Lever.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/Lever.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/Lever.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/MapTile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/MapTile.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/MapTile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/NonSolid.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/NonSolid.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/NonSolid.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/Options.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/Options.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/Options.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/Physics.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/Physics.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/Physics.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/Player.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/Player.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/Player.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/README.TXT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/Solid.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/Solid.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/Solid.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/hs_err_pid11888.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/hs_err_pid14173.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/hs_err_pid2464.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/101.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/102.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/103.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/104.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/105.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/106.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/107.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/108.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/109.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/110.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/111.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/112.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/113.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/114.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/115.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/116.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/117.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/118.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/119.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/120.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/121.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/122.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/123.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/124.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/125.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/126.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/127.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/128.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/129.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/130.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/131.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/132.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/133.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/134.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/135.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/136.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/137.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/138.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/139.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/140.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/141.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/142.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/143.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/144.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/145.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/146.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/147.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/148.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/149.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/150.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/151.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/152.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/153.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/154.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/155.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/156.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/157.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/158.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/159.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/160.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/161.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/162.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/163.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/164.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/165.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/166.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/167.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/168.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/169.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/170.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/171.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/172.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/173.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/174.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/175.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/176.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/177.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/178.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/179.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/180.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/181.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/182.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/183.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/184.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/185.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/186.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/187.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/188.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/189.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/190.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/191.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/193.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/194.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/195.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/196.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/197.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/198.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/199.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/200.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/201.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/202.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/203.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/204.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/205.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/206.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/207.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/208.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/209.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/210.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/211.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/212.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/213.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/214.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/215.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/216.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/217.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/218.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/219.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/220.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/221.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/222.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/223.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/224.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/225.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/226.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/227.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/228.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/229.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/230.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/231.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/232.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/233.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/234.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/235.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/236.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/237.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/238.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/239.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/241.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/242.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/243.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/244.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/245.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/246.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/247.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/248.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/249.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/250.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/251.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/252.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/253.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/254.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/255.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/256.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/257.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/258.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/259.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/260.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/261.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/262.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/263.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/264.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/265.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/266.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/267.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/268.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/269.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/270.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/271.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/272.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/273.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/274.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/275.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/276.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/277.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/28.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/31.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/33.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/34.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/35.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/36.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/37.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/38.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/39.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/41.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/42.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/43.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/44.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/46.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/47.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/48.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/49.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/50.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/51.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/52.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/53.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/54.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/55.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/56.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/57.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/58.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/59.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/60.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/61.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/62.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/63.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/64.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/65.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/66.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/67.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/68.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/69.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/70.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/71.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/72.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/73.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/74.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/75.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/76.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/77.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/78.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/79.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/80.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/81.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/82.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/83.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/84.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/85.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/86.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/87.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/88.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/89.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/90.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/91.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/92.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/93.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/94.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/95.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/96.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/97.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/98.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/99.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/PAMA.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/Spritesheet_map.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/alienGreen_climb1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/alienGreen_climb2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/alienGreen_duck.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/alienGreen_front.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/alienGreen_hit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/alienGreen_jump.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/alienGreen_stand.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/alienGreen_swim1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/alienGreen_swim2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/alienGreen_walk1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/alienGreen_walk2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/camera.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/heartEmpty.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/heartFull.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/heartHalf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_001.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_002.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_003.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_004.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_005.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_006.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_007.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_008.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_009.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_010.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_011.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_012.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_013.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_014.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_015.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_016.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_017.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_018.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_019.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_020.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_021.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_022.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_023.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_024.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_025.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_026.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_027.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_028.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_029.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_030.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_031.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_032.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_033.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_034.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_035.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_036.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_037.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_038.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_039.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_040.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_041.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_042.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_043.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_044.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_045.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_046.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_047.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_048.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_049.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_050.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_051.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_052.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_053.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_054.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_055.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_056.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_057.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_058.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_059.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_060.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_061.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_062.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_063.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_064.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_065.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_066.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_067.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_068.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_069.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_070.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_071.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_072.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_073.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_074.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_075.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_076.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_077.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_078.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_079.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_080.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_081.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_082.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_083.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_084.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_085.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_086.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_087.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_088.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_089.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_090.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_091.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_092.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_093.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_094.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_095.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_096.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_097.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_098.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_099.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_101.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_102.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_103.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_104.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_105.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_106.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_107.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_108.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_109.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_110.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_111.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_112.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_113.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_114.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_115.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_116.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_117.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_118.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_119.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_120.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_121.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_122.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_123.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_124.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_125.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_126.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_127.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_128.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_129.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_130.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_131.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_132.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_133.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_134.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_135.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_136.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_137.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_138.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_139.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_140.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_141.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_142.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_143.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_144.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_145.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_146.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_147.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_148.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_149.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_150.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_151.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_152.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_153.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_154.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_155.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_156.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_157.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_158.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_159.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_160.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_161.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_162.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_163.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_164.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_165.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_166.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_167.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_168.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_169.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_170.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_171.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_172.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_173.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_174.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_175.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_176.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_177.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_178.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_179.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_180.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_181.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_182.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_183.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_184.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_185.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_186.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_187.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_188.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_189.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_190.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_191.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_193.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_194.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_195.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_196.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/mapTile_197.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/space1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/tilesetv1.0.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/images/wombat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/levels/level1.tmx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/levels/level2.tmx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/levels/level3.tmx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/levels/levelselector.tmx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/levels/spritesheet_handmade.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/levels/tilesetv1.0.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MarioCopy/project.greenfoot" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileColors">
+    <fileColor scope="Local Unit Tests" color="3A5841" />
+    <fileColor scope="Android Instrumented Tests" color="3A5841" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1THiQThC6r3Chx0VwW4qM0w7q7u" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../IntellJ1.1/project-greenfoot-game-pama-studios" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="nl.rocmondriaan.greenfoot.game" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="App" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="/opt/jdk1.8.0_221/jre" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="nl.rocmondriaan.greenfoot.App" />
+      <module name="greenfoot-engine" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0ca490f3-1b07-4c81-bb26-4d0915f20aea" name="Default Changelist" comment="" />
+      <created>1573123406025</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1573123406025</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>

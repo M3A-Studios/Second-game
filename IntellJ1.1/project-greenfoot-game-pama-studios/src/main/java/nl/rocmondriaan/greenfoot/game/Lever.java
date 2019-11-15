@@ -17,9 +17,9 @@ public class Lever extends Blocks
 
 
     // Lever Images
-    private GreenfootImage left = new GreenfootImage("233.png");
-    private GreenfootImage middle = new GreenfootImage ("234.png");
-    private GreenfootImage right = new GreenfootImage ("235.png");
+    private GreenfootImage left = new GreenfootImage("226.png");
+    private GreenfootImage middle = new GreenfootImage ("227.png");
+    private GreenfootImage right = new GreenfootImage ("228.png");
     /**
      * Calls for the constructor in Blocks.java to set the image of the tile
      *
@@ -47,7 +47,7 @@ public class Lever extends Blocks
     public void leverSys()
     {
 
-        if (Greenfoot.isKeyDown(Options.interact))
+        if (Greenfoot.isKeyDown(Options.interact)  && getOneIntersectingObject(Player.class) != null)
         {
             animationTimer ++;
             if (cooldownTimer <= 0)

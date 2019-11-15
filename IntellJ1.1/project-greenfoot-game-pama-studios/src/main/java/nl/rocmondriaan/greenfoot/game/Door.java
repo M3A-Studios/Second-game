@@ -10,10 +10,10 @@ public class Door extends Actor
     boolean opened;
     private int imageID;
 
-    private GreenfootImage topOpen = new GreenfootImage("224.png");
-    private GreenfootImage bottomOpen = new GreenfootImage("223.png");
-    private GreenfootImage topClosed = new GreenfootImage("222.png");
-    private GreenfootImage bottomClosed = new GreenfootImage("221.png");
+    private GreenfootImage topOpen = new GreenfootImage("217.png");
+    private GreenfootImage bottomOpen = new GreenfootImage("216.png");
+    private GreenfootImage topClosed = new GreenfootImage("215.png");
+    private GreenfootImage bottomClosed = new GreenfootImage("214.png");
 
     /**
      * This is the constructor that should be used in every tile

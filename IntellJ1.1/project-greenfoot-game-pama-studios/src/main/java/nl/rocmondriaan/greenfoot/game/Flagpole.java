@@ -7,15 +7,16 @@ public class Flagpole extends Actor {
 
     private String purpose;
     private int frame;
-    private GreenfootImage waving1 = new GreenfootImage("280.png");
-    private GreenfootImage waving2 = new GreenfootImage("177.png");
-    private GreenfootImage pole = new GreenfootImage("279.png");
+    private GreenfootImage waving1 = new GreenfootImage("273.png");
+    private GreenfootImage waving2 = new GreenfootImage("170.png");
+    private GreenfootImage pole = new GreenfootImage("272.png");
 
     Flagpole(int ID) {
+        System.out.println(ID);
         waving1.scale(Options.blockSize, Options.blockSize);
         waving2.scale(Options.blockSize, Options.blockSize);
         pole.scale(Options.blockSize, Options.blockSize);
-        if (ID == 272) {
+        if (ID == 273) {
             purpose = "top";
             setImage(waving1);
         } else {

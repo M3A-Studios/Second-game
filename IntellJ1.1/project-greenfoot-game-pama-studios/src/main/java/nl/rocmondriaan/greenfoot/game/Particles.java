@@ -22,13 +22,12 @@ public class Particles extends Actor {
         Random rn = new Random();
         random3 = rn.nextInt(3) + 1;
         timePassed += 1;
-        if (type == "smoke") {
-            setLocation(getX(), getY() - 1); //Making it fly up
+        if (type.equals("smoke")) {
             if (timePassed >= deathTime) {
                 fade();
             }
         }
-        if (type == "beam") {
+        if (type.equals("beam")) {
             if (timePassed >= deathTime) {
                 fadelong();
             }
@@ -49,7 +48,7 @@ public class Particles extends Actor {
 
     Particles(String type) {
         this.type = type;
-        if (type == "smoke"){
+        if (type.equals("smoke")){
             deathTime = 60; //How long to be destroyed yes it's randomised now
             if (random3 == 1){ //3 random images
                 setImage(smoke1);
@@ -67,7 +66,7 @@ public class Particles extends Actor {
                 smoke3.setTransparency(150);
             }
         }
-        if (type == "beam"){
+        if (type.equals("beam")){
             setImage(beam);
         }
         if (type == "confetti" || type == "confettim" ){
@@ -77,22 +76,16 @@ public class Particles extends Actor {
 
     public void fade(){ //Fade out en kill object
         deathFadeTime += 1;
-        if (deathFadeTime==10) {this.getImage().setTransparency(150);} //255 is solid en 0 is invisible
-        if (deathFadeTime==20) {this.getImage().setTransparency(125);}
-        if (deathFadeTime==30) {this.getImage().setTransparency(100);}
-        if (deathFadeTime==40) {this.getImage().setTransparency(50);}
-        if (deathFadeTime==50) {this.getImage().setTransparency(40);}
+        if (150 - deathFadeTime*2 > 0) {
+            this.getImage().setTransparency(150-deathFadeTime*2);
+        }
         if (deathFadeTime>=60) {deathFadeTime = 0; getWorld().removeObject(this); timePassed = 0;}
     }
     public void fadelong(){ //Fade out en kill object
         deathFadeTime += 1;
-        if (deathFadeTime==60) {this.getImage().setTransparency(125);}
-        if (deathFadeTime==90) {this.getImage().setTransparency(100);}
-        if (deathFadeTime==125) {this.getImage().setTransparency(70);}
-        if (deathFadeTime==150) {this.getImage().setTransparency(50);}
-        if (deathFadeTime==200) {this.getImage().setTransparency(40);}
-        if (deathFadeTime==250) {this.getImage().setTransparency(20);}
-        if (deathFadeTime>=300) {deathFadeTime = 0; getWorld().removeObject(this); timePassed = 0;}
+        if (220 - deathFadeTime > 0) {
+            this.getImage().setTransparency(220 - deathFadeTime);
+        }
     }
     public void confetti(){
         setImage(confetti);
