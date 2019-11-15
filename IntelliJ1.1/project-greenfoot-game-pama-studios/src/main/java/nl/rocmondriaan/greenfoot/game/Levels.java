@@ -324,9 +324,17 @@ public class Levels extends World
                     {
                         nextBlock = new Door(worldMap[layer][position], 1);
                     }
+                    else if (check(Globals.bombs, worldMap[layer][position]))
+                    {
+                        nextBlock = new Bomb(worldMap[layer][position]);
+                    }
                     else if (check(Globals.keys, worldMap[layer][position]))
                     {
                         nextBlock = new Keys(worldMap[layer][position]);
+                    }
+                    else if (check(Globals.breakableBlocks, worldMap[layer][position]))
+                    {
+                        nextBlock = new BreakableBlocks(worldMap[layer][position]);
                     }
                     else if (check(Globals.jumpPad, worldMap[layer][position]))
                     {

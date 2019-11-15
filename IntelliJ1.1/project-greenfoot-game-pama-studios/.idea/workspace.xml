@@ -6,13 +6,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba1bcf62-7402-4243-aac5-ddaa6f49cb8b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Platform.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Bomb.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/BreakableBlocks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Globals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Globals.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Levels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Levels.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Physics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Physics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Particles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Particles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/PopUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/PopUp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/tilemap/level1.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tilemap/level1.tmx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/tilemap/tileset-IntelliJ.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tilemap/tileset-IntelliJ.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Globals.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Globals.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Levels.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Levels.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Particles.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Particles.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/PopUp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/PopUp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tilemap/level1.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tilemap/level1.tmx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +58,7 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Bomberman.gfar" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />

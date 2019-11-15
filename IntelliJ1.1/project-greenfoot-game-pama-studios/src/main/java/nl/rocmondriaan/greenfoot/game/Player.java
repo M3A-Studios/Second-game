@@ -23,6 +23,7 @@ public class Player extends Physics
     private int dyingAnimation;
     static boolean won;
     private int endingAnimation;
+    private String holding; //Michael
 
     //sizes for the images
     private int playerWidth = Options.blockSize;          //1 block
@@ -53,6 +54,7 @@ public class Player extends Physics
         won = false;
         endingAnimation = 0;
         Globals.levelCoinsCollected = 0;
+        holding = ""; //Michael
 
         climb1.scale(playerWidth,playerHeight);
         climb2.scale(playerWidth,playerHeight);
@@ -95,6 +97,8 @@ public class Player extends Physics
             checkCheckpoint();
             jumpPad();
             checkFlagpole();
+            holdObject(); //Michael
+            dropObject(); //Michael
         } else if (won) {
             updateGravity();
             winAnimation();
@@ -203,7 +207,10 @@ public class Player extends Physics
                 popup = new PopUp(Options.interact);
             }
             getWorld().addObject(popup, lever.getX(), lever.getY() - Options.blockSize * 2);
-
+            if(Greenfoot.isKeyDown("e")){ //Sets image if key down
+                popup.getImage().scale((int) (Options.blockSize * 1.2), (int) (Options.blockSize * 1.2));
+            }else{ popup.getImage().scale((int) (Options.blockSize * 1.4), (int) (Options.blockSize * 1.4)); }
+            //Sets to normal size if not down
         } else {
             if (popup != null) {
                 getWorld().removeObject(popup);
@@ -360,5 +367,35 @@ public class Player extends Physics
         int randomX = rn.nextInt(40) - 9;
         getWorld().addObject(torchFlameL, 30 + randomX, Options.screenHeight);
         getWorld().addObject(torchFlameR, (Options.screenWidth - 30) - randomX, Options.screenHeight);
+    }
+
+    private void holdObject(){ //Michael
+        moveToPlayer();
+        if(Greenfoot.isKeyDown(Options.interact)){
+            if(isTouching(Bomb.class) && holding == ""){
+                //getWorld().removeObject(getOneIntersectingObject(Bomb.class));
+                //getWorld().addObject(new Bomb(190), this.getX(), this.getY());
+                Actor bomb = getOneIntersectingObject(Bomb.class);
+                bomb.setLocation(this.getX(), this.getY());
+                holding = "Bomb";
+            }
+        }
+    }
+
+    private void dropObject(){ //Michael
+        moveToPlayer();
+        if(Greenfoot.isKeyDown("q")){ //Should be drop key in options
+            if(holding == "Bomb") {
+                holding = "";
+                Actor bomb = getOneIntersectingObject(Bomb.class);
+                bomb.setLocation(this.getX(), this.getY());
+            }
+        }
+    }
+    public void moveToPlayer() {
+        if (holding == "Bomb") {
+            Actor bomb = getOneIntersectingObject(Bomb.class);
+            bomb.setLocation(this.getX(), this.getY());
+        }
     }
 }
