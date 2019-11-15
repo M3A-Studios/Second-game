@@ -5,6 +5,7 @@ import greenfoot.Greenfoot;
 import greenfoot.GreenfootImage;
 
 import java.util.List;
+import java.util.Random;
 
 public class Player extends Physics
 {
@@ -98,6 +99,7 @@ public class Player extends Physics
             isTouchingObject();
             collectCoin();
             jumpPad();
+            winConfetti();
         } else {
             deadAnimation();
         }
@@ -348,5 +350,13 @@ public class Player extends Physics
             Globals.totalScore += Globals.levelScore;
             Greenfoot.setWorld(new LevelSelector(LevelSelector.getSelectedLevel()));
         }
+    }
+    private void winConfetti(){
+        Particles torchFlameL = new Particles("confettim");
+        Particles torchFlameR = new Particles("confetti");
+        Random rn = new Random();
+        int randomX = rn.nextInt(40) - 9;
+        getWorld().addObject(torchFlameL, 30 + randomX, Options.screenHeight);
+        getWorld().addObject(torchFlameR, (Options.screenWidth - 30) - randomX, Options.screenHeight);
     }
 }
