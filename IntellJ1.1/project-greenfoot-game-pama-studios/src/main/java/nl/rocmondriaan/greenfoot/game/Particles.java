@@ -8,19 +8,22 @@ public class Particles extends Actor {
     private GreenfootImage smoke2 = new GreenfootImage("WhiteSmoke2.png");
     private GreenfootImage smoke3 = new GreenfootImage("WhiteSmoke3.png");
     private GreenfootImage beam = new GreenfootImage("BeamVanAllah.png");
+    private GreenfootImage confetti = new GreenfootImage("confetti.png");
+    private GreenfootImage confettim = new GreenfootImage("confetti.png");
 
-    Random rn = new Random();
-    private int random3 = rn.nextInt(3) + 1; //Randomly 1-3
-    private int randomImage = random3;
+    private int random3;
+    private int random2;
     private int deathFadeTime;
     private int deathTime;
     private int timePassed;
     private String type;
 
     public void act() {
-        setLocation(getX(), getY() - 1); //Making it fly up
+        Random rn = new Random();
+        random3 = rn.nextInt(3) + 1;
         timePassed += 1;
         if (type == "smoke") {
+            setLocation(getX(), getY() - 1); //Making it fly up
             if (timePassed >= deathTime) {
                 fade();
             }
@@ -30,18 +33,30 @@ public class Particles extends Actor {
                 fadelong();
             }
         }
+        if (type == "confetti") {
+            setLocation(getX() - 2, getY() - 4); //Making it fly up
+            if (timePassed >= deathTime) {
+                fade();
+            }
+        }
+        if (type == "confettim") { //This is mirrored
+            setLocation(getX() + 2, getY() - 4); //Making it fly up
+            if (timePassed >= deathTime) {
+                fade();
+            }
+        }
     }
 
     Particles(String type) {
         this.type = type;
         if (type == "smoke"){
             deathTime = 60; //How long to be destroyed yes it's randomised now
-            if (randomImage == 1){ //3 random images
+            if (random3 == 1){ //3 random images
                 setImage(smoke1);
                 smoke1.scale((Options.blockSize) / 3,(Options.blockSize) / 3);
                 smoke1.setTransparency(150);
             }
-            else if (randomImage == 2) {
+            else if (random3 == 2) {
                 setImage(smoke2);
                 smoke2.scale((Options.blockSize) / 3,(Options.blockSize) / 3);
                 smoke2.setTransparency(150);
@@ -54,7 +69,9 @@ public class Particles extends Actor {
         }
         if (type == "beam"){
             setImage(beam);
-            beam.setTransparency(150);
+        }
+        if (type == "confetti" || type == "confettim" ){
+            confetti();
         }
     }
 
@@ -76,5 +93,9 @@ public class Particles extends Actor {
         if (deathFadeTime==200) {this.getImage().setTransparency(40);}
         if (deathFadeTime==250) {this.getImage().setTransparency(20);}
         if (deathFadeTime>=300) {deathFadeTime = 0; getWorld().removeObject(this); timePassed = 0;}
+    }
+    public void confetti(){
+        setImage(confetti);
+        confetti.scale((Options.blockSize) * 4, (Options.blockSize) * 4);
     }
 }

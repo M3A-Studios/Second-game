@@ -5,6 +5,7 @@ import greenfoot.Greenfoot;
 import greenfoot.GreenfootImage;
 
 import java.util.List;
+import java.util.Random;
 
 public class Player extends Physics
 {
@@ -17,6 +18,11 @@ public class Player extends Physics
     private double spaceKeyDown;
     static String inventoryItem = "";
     static boolean carryingObject = false;
+    private int atime;
+    static boolean dead;
+    private int dyingAnimation;
+    static boolean won;
+    private int endingAnimation;
 
     //sizes for the images
     private int playerWidth = Options.blockSize;          //1 block
@@ -44,6 +50,8 @@ public class Player extends Physics
         dyingAnimation = 0;
         health = 6;
         started = false;
+        won = false;
+        endingAnimation = 0;
         Globals.levelCoinsCollected = 0;
 
         climb1.scale(playerWidth,playerHeight);
@@ -75,7 +83,7 @@ public class Player extends Physics
             setDoubleY(getY());
         }
         //execute normal gameplay as long as the player is alive
-        if (!deathCheck()) {
+        if (!deathCheck() && !won) {
             entityOffset(); //make it immune to camera scrolling
             updateGravity();
             walkingAnim();
@@ -86,6 +94,14 @@ public class Player extends Physics
             collectCoin();
             checkCheckpoint();
             jumpPad();
+            checkFlagpole();
+        } else if (won) {
+            updateGravity();
+            winAnimation();
+            isTouchingObject();
+            collectCoin();
+            jumpPad();
+            winConfetti();
         } else {
             deadAnimation();
         }
@@ -307,5 +323,42 @@ public class Player extends Physics
             Levels.activeCheckpoint = checkpoint.getCheckpoint();
             checkpoint.active = true;
         }
+    }
+    private void checkFlagpole() {
+        Flagpole flagpole = (Flagpole) getOneIntersectingObject(Flagpole.class);
+        if (flagpole != null) {
+            won = true;
+        }
+    }
+    private void winAnimation() {
+        endingAnimation ++;
+        if (endingAnimation < 200) {
+            if (onGround()) {
+                if (canMoveRight(5) || (getX() + getImage().getWidth()/2 + 10) > Options.screenWidth) {
+                    moveRight(5);
+                    moving = true;
+                    animateMovement("Right");
+                    if (getX() - getImage().getWidth() > Options.screenWidth) {
+                        endingAnimation = 999;
+                    }
+                }
+            }
+            else if (isTouching(Flagpole.class)){
+                if (vSpeed > 5)
+                    vSpeed = 5;
+            }
+        } else {
+            Globals.totalCoinsCollected += Globals.levelCoinsCollected;
+            Globals.totalScore += Globals.levelScore;
+            Greenfoot.setWorld(new LevelSelector(LevelSelector.getSelectedLevel()));
+        }
+    }
+    private void winConfetti(){
+        Particles torchFlameL = new Particles("confettim");
+        Particles torchFlameR = new Particles("confetti");
+        Random rn = new Random();
+        int randomX = rn.nextInt(40) - 9;
+        getWorld().addObject(torchFlameL, 30 + randomX, Options.screenHeight);
+        getWorld().addObject(torchFlameR, (Options.screenWidth - 30) - randomX, Options.screenHeight);
     }
 }

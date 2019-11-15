@@ -66,11 +66,18 @@ public class LevelSelector extends World
         renderHud();
     }
     private void renderHud() {
-        addObject (new CoinsHUD(0), (int) (Options.blockSize * 0.5), (int) (Options.blockSize * 0.5));
-        addObject (new CoinsHUD(1), (int) (Options.blockSize * 1.25) , (int) (Options.blockSize * 0.5));
-        addObject (new CoinsHUD(2), (int) (Options.blockSize * 1.75) , (int) (Options.blockSize * 0.5));
-        addObject (new CoinsHUD(3), (int) (Options.blockSize * 2.25), (int) (Options.blockSize * 0.5));
-        addObject (new CoinsHUD(4), (int) (Options.blockSize * 2.75), (int) (Options.blockSize * 0.5));
+        addObject (new HUDNumber(0, "coin"), (int) (Options.blockSize * 0.5), (int) (Options.blockSize * 0.5));
+        addObject (new HUDNumber(1, "coin"), (int) (Options.blockSize * 1.25) , (int) (Options.blockSize * 0.5));
+        addObject (new HUDNumber(2, "coin"), (int) (Options.blockSize * 1.75) , (int) (Options.blockSize * 0.5));
+        addObject (new HUDNumber(3, "coin"), (int) (Options.blockSize * 2.25), (int) (Options.blockSize * 0.5));
+        addObject (new HUDNumber(4, "coin"), (int) (Options.blockSize * 2.75), (int) (Options.blockSize * 0.5));
+        addObject (new HUDNumber(1, "score"), (int) (Options.blockSize * 16.5), (int) (Options.blockSize * 0.5));
+        addObject (new HUDNumber(2, "score"), (int) (Options.blockSize * 17), (int) (Options.blockSize * 0.5));
+        addObject (new HUDNumber(3, "score"), (int) (Options.blockSize * 17.5), (int) (Options.blockSize * 0.5));
+        addObject (new HUDNumber(4, "score"), (int) (Options.blockSize * 18), (int) (Options.blockSize * 0.5));
+        addObject (new HUDNumber(5, "score"), (int) (Options.blockSize * 18.5), (int) (Options.blockSize * 0.5));
+        addObject (new HUDNumber(6, "score"), (int) (Options.blockSize * 19), (int) (Options.blockSize * 0.5));
+        addObject (new HUDNumber(7, "score"), (int) (Options.blockSize * 19.5), (int) (Options.blockSize * 0.5));
     }
 
     /**
