@@ -15,9 +15,8 @@ public class Player extends Physics
     private double leftKeyDown;
     private double rightKeyDown;
     private double spaceKeyDown;
-    private int atime;
-    static boolean dead;
-    private int dyingAnimation;
+    static String inventoryItem = "";
+    static boolean carryingObject = false;
 
     //sizes for the images
     private int playerWidth = Options.blockSize;          //1 block

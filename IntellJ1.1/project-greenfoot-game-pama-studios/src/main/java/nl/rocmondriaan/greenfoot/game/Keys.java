@@ -1,18 +1,15 @@
 package nl.rocmondriaan.greenfoot.game;
 
 import com.sun.xml.internal.bind.v2.model.core.ID;
+import greenfoot.Actor;
 import greenfoot.Greenfoot;
 import greenfoot.GreenfootImage;
 
-public class Keys extends Blocks
+public class Keys extends Actor
 {
-
-    boolean carryingObject = false;
-
-    private int greenID = 2;
-
     GreenfootImage emptyKey = new GreenfootImage("HudEmpty.png");
     GreenfootImage greenKey = new GreenfootImage("193.png");
+    GreenfootImage blueKey = new GreenfootImage("192.png");
 
     /**
      * This is the constructor that should be used in every tile
@@ -21,7 +18,10 @@ public class Keys extends Blocks
      * @param ID refers to what the ID of the tile is, used for the image
      */
     Keys(int ID) {
-        super(ID);
+        greenKey.scale(Options.blockSize, Options.blockSize);
+        setImage(greenKey);
+        blueKey.scale(Options.blockSize, Options.blockSize);
+        setImage(blueKey);
     }
 
 
@@ -33,12 +33,17 @@ public class Keys extends Blocks
     {
         if(isTouching(Player.class))
         {
-            getWorld().removeObject(this);
-            carryingObject = true;
+            if(getImage() == greenKey)
+            {
+                Player.inventoryItem = "Key";
+                Player.carryingObject = true;
+                System.out.print(greenKey);
+            }
+
         }
         else
         {
-            carryingObject = false;
+            Player.carryingObject = false;
         }
     }
     private void renderKeyHud()
