@@ -47,7 +47,7 @@ public class Lever extends Blocks
     public void leverSys()
     {
 
-        if (Greenfoot.isKeyDown(Options.interact))
+        if (Greenfoot.isKeyDown(Options.interact)  && getOneIntersectingObject(Player.class) != null)
         {
             animationTimer ++;
             if (cooldownTimer <= 0)
