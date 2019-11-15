@@ -5,8 +5,8 @@ import java.util.Random;
 
 
 public class JumpPad extends Blocks {
-    private GreenfootImage jumppadDown = new GreenfootImage("250.png");
-    private GreenfootImage jumppadUp = new GreenfootImage("251.png");
+    private GreenfootImage jumppadDown = new GreenfootImage("242.png");
+    private GreenfootImage jumppadUp = new GreenfootImage("243.png");
 
     JumpPad(int ID){
         super(ID);

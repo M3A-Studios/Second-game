@@ -16,13 +16,13 @@ public class Checkpoint extends Actor {
 
     Checkpoint(int checkpoint, int ID) {
         if (ID == 168 || ID == 169 || ID == 170) {
-            imageID = 178;
+            imageID = 171;
         } else if (ID == 171 || ID == 172 || ID == 173) {
-            imageID = 181;
+            imageID = 174;
         } else if (ID == 174 || ID == 175 || ID == 176) {
-            imageID = 184;
+            imageID = 177;
         } else if (ID == 177 || ID == 178 || ID == 179) {
-            imageID = 187;
+            imageID = 180;
         }
         inactiveImage = new GreenfootImage(imageID + ".png");
         activeImage1 = new GreenfootImage((imageID - 2) + ".png");
