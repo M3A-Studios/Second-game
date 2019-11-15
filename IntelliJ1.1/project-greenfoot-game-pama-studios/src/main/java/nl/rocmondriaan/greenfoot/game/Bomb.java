@@ -74,7 +74,6 @@ public class Bomb extends Blocks {
         else if (atime == 175){setImage(bomb2);}
     }
     public void fadelong(){ //Fade out en kill object
-        System.out.println(fadeTime);
         if (255 - fadeTime > 0) {
             this.getImage().setTransparency(255 - fadeTime);
         }

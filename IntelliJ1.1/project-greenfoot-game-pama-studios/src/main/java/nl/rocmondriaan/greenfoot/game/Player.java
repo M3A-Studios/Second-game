@@ -379,23 +379,36 @@ public class Player extends Physics
                 bomb.setLocation(this.getX(), this.getY());
                 holding = "Bomb";
             }
+            if(isTouching(JumpPad.class) && holding == ""){
+                Actor JumpPad = getOneIntersectingObject(JumpPad.class);
+                JumpPad.setLocation(this.getX(), this.getY());
+                holding = "JumpPad";
+            }
         }
     }
-
     private void dropObject(){ //Michael
         moveToPlayer();
         if(Greenfoot.isKeyDown("q")){ //Should be drop key in options
             if(holding == "Bomb") {
                 holding = "";
                 Actor bomb = getOneIntersectingObject(Bomb.class);
-                bomb.setLocation(this.getX(), this.getY());
+                bomb.setLocation(this.getX(), this.getY() + 17);
+            }
+            if(holding == "JumpPad") {
+                holding = "";
+                Actor JumpPad = getOneIntersectingObject(JumpPad.class);
+                JumpPad.setLocation(this.getX(), this.getY() + 17);
             }
         }
     }
     public void moveToPlayer() {
+        Actor JumpPad = getOneIntersectingObject(JumpPad.class); //Make this only see the object that you hold
+        Actor bomb = getOneIntersectingObject(Bomb.class); //Make this only see the object that you hold
         if (holding == "Bomb") {
-            Actor bomb = getOneIntersectingObject(Bomb.class);
             bomb.setLocation(this.getX(), this.getY());
+        }
+        if (holding == "JumpPad") {
+            JumpPad.setLocation(this.getX(), this.getY());
         }
     }
 }
