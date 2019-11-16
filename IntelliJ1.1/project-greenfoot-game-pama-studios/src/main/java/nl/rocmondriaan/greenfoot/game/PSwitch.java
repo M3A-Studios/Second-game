@@ -6,6 +6,8 @@ public class PSwitch extends Blocks
 {
         private GreenfootImage pSwitchDown = new GreenfootImage("275.png");
         private GreenfootImage pSwitchUp = new GreenfootImage("274.png");
+        private GreenfootImage bcoin = new GreenfootImage("166.png");
+        private GreenfootImage box = new GreenfootImage("195.png");
         double eventTimer = 600;
     /**
      * This is the constructor that should be used in every tile
@@ -16,18 +18,22 @@ public class PSwitch extends Blocks
     PSwitch(int ID) {
         super(ID);
         System.out.print(ID);
-        pSwitchDown.scale(Options.blockSize, Options.blockSize);
-        setImage(pSwitchUp);
-        pSwitchUp.scale(Options.blockSize, Options.blockSize);
+        if (ID == 275)
+        {
+            pSwitchUp.scale(Options.blockSize, Options.blockSize);
+            setImage(pSwitchUp);
+            pSwitchDown.scale(Options.blockSize, Options.blockSize);
+        }
+        bcoin.scale(Options.blockSize,Options.blockSize);
     }
 
     public void act()
     {
-        jumpPad();
+        Switch();
         Event();
     }
 
-        void jumpPad() {
+        void Switch() {
 
             if (isTouching(Player.class))
             {
@@ -39,7 +45,8 @@ public class PSwitch extends Blocks
             if (getImage() == pSwitchDown && eventTimer > 0)
             {
                 eventTimer --;
-                System.out.print("Event time!" + "," + eventTimer);
+                System.out.print("Event time!" + ", ");
+
             }
         }
 }
