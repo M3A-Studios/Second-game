@@ -10,8 +10,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.concurrent.locks.Lock;
 
-public class Player extends Physics
-{
+public class Player extends Physics {
     private Actor popup;
     static int health;
     private boolean started;
@@ -26,7 +25,7 @@ public class Player extends Physics
     private int dyingAnimation;
     static boolean won;
     private int endingAnimation;
-    private String holding; //Michael
+    static String holding; //Michael
     static String itemToDrop;
     static int dropCooldown = 60;
     static int pickUpCooldown;
@@ -63,17 +62,18 @@ public class Player extends Physics
         endingAnimation = 0;
         Globals.levelCoinsCollected = 0;
         holding = ""; //Michael
+        inventoryItem = "";
 
-        climb1.scale(playerWidth,playerHeight);
-        climb2.scale(playerWidth,playerHeight);
-        front.scale(playerWidth,playerHeight);
-        jump.scale(playerWidth,playerHeight);
-        jumpm.scale(playerWidth,playerHeight);
-        deadimg.scale(playerWidth,playerHeight);
-        walk1.scale(playerWidth,playerHeight);
-        walk2.scale(playerWidth,playerHeight);
-        walk1m.scale(playerWidth,playerHeight);
-        walk2m.scale(playerWidth,playerHeight);
+        climb1.scale(playerWidth, playerHeight);
+        climb2.scale(playerWidth, playerHeight);
+        front.scale(playerWidth, playerHeight);
+        jump.scale(playerWidth, playerHeight);
+        jumpm.scale(playerWidth, playerHeight);
+        deadimg.scale(playerWidth, playerHeight);
+        walk1.scale(playerWidth, playerHeight);
+        walk2.scale(playerWidth, playerHeight);
+        walk1m.scale(playerWidth, playerHeight);
+        walk2m.scale(playerWidth, playerHeight);
         walk1m.mirrorHorizontally();
         walk2m.mirrorHorizontally();
         jumpm.mirrorHorizontally();
@@ -130,24 +130,23 @@ public class Player extends Physics
             }
         }
     }
-    private void cooldowns()
-    {
-        if (pickUpCooldown > 0)
-        {
-            pickUpCooldown --;
+
+    private void cooldowns() {
+        if (pickUpCooldown > 0) {
+            pickUpCooldown--;
         }
-        if (dropCooldown > 0)
-        {
-            dropCooldown --;
+        if (dropCooldown > 0) {
+            dropCooldown--;
         }
     }
+
     /**
      * Check for various player inputs
-     *
+     * <p>
      * escape = back to level selector
-     *
+     * <p>
      * these keys still need to be put into options as rn only interact is dynamic and the rest is hardcoded
-     *
+     * <p>
      * jumpkey = jump
      * leftkey = moving left
      * rightkey = moving right
@@ -214,58 +213,56 @@ public class Player extends Physics
             dyingAnimation = 0;
         }
 
-        if(Greenfoot.isKeyDown(Options.dropItem))
-        {
+        if (Greenfoot.isKeyDown(Options.dropItem)) {
             Inventory();
         }
     }
 
-    public void Inventory()
-    {
+    public void Inventory() {
         itemToDrop = inventoryItem;
 
-            switch (itemToDrop)
-            {
-                case (""):
-                    break;
-                case("greenKey"):
-                    Keys greenKey = new Keys(186);
-                    getWorld().addObject(greenKey,getX(),getY());
-                    inventoryItem = "";
-                    break;
-                case("blueKey"):
-                    Keys blueKey = new Keys(185);
-                    getWorld().addObject(blueKey,getX(),getY());
-                    inventoryItem = "";
-                    break;
-                case("yellowKey"):
-                    Keys yellowKey= new Keys(188);
-                    getWorld().addObject(yellowKey,getX(),getY());
-                    inventoryItem = "";
-                    break;
-                case("redKey"):
-                    Keys redKey= new Keys(187);
-                    getWorld().addObject(redKey,getX(),getY());
-                    inventoryItem = "";
-                    break;
-            }
+        switch (itemToDrop) {
+            case (""):
+                break;
+            case ("greenKey"):
+                Keys greenKey = new Keys(186);
+                getWorld().addObject(greenKey, getX(), getY());
+                inventoryItem = "";
+                break;
+            case ("blueKey"):
+                Keys blueKey = new Keys(185);
+                getWorld().addObject(blueKey, getX(), getY());
+                inventoryItem = "";
+                break;
+            case ("yellowKey"):
+                Keys yellowKey = new Keys(188);
+                getWorld().addObject(yellowKey, getX(), getY());
+                inventoryItem = "";
+                break;
+            case ("redKey"):
+                Keys redKey = new Keys(187);
+                getWorld().addObject(redKey, getX(), getY());
+                inventoryItem = "";
+                break;
+        }
     }
 
     /**
-     *Checks if the player is touching a lever and gives a popup based on that
+     * Checks if the player is touching a lever and gives a popup based on that
      */
     private void isTouchingObject() {
         Actor lever = getOneIntersectingObject(Lever.class);
 
-        if (lever != null)
-        {
+        if (lever != null) {
             if (popup == null) {
                 popup = new PopUp(Options.interact);
             }
             getWorld().addObject(popup, lever.getX(), lever.getY() - Options.blockSize * 2);
-            if(Greenfoot.isKeyDown("e")){ //Sets image if key down
+            if (Greenfoot.isKeyDown("e")) { //Sets image if key down
                 popup.getImage().scale((int) (Options.blockSize * 1.2), (int) (Options.blockSize * 1.2));
-            }else{ popup.getImage().scale((int) (Options.blockSize * 1.4), (int) (Options.blockSize * 1.4)); }
+            } else {
+                popup.getImage().scale((int) (Options.blockSize * 1.4), (int) (Options.blockSize * 1.4));
+            }
             //Sets to normal size if not down
         } else {
             if (popup != null) {
@@ -278,8 +275,8 @@ public class Player extends Physics
     /**
      * Checks if the player is standing still and isnt on a ladder, if so sets the image to the player looking forward
      */
-    private void standingStill(){
-        if (!moving && !onLadder()){ //&& onGround() weg gehaalt --Michael
+    private void standingStill() {
+        if (!moving && !onLadder()) { //&& onGround() weg gehaalt --Michael
             setImage(front);
             atime = 0; //Reset animation timer
         }
@@ -289,21 +286,20 @@ public class Player extends Physics
     /**
      * Checks what animation should be played and based on that calls animateMovement with said animation
      */
-    private void walkingAnim(){
-        if (!onLadder() && Greenfoot.isKeyDown("d") && onGround()){
+    private void walkingAnim() {
+        if (!onLadder() && Greenfoot.isKeyDown("d") && onGround()) {
             animateMovement("Right");
         }
-        if (!onLadder() && Greenfoot.isKeyDown("a") && onGround()){
+        if (!onLadder() && Greenfoot.isKeyDown("a") && onGround()) {
             animateMovement("Left");
         }
-        if (onLadder() && Greenfoot.isKeyDown("w") || onLadder() && Greenfoot.isKeyDown("s")){
+        if (onLadder() && Greenfoot.isKeyDown("w") || onLadder() && Greenfoot.isKeyDown("s")) {
             animateMovement("Ladder");
         }
-        if (!onLadder() && Greenfoot.isKeyDown("space") && !onGround()){ //start
-            if (Greenfoot.isKeyDown("a")){
+        if (!onLadder() && Greenfoot.isKeyDown("space") && !onGround()) { //start
+            if (Greenfoot.isKeyDown("a")) {
                 animateMovement("Jumpm");
-            }
-            else if (Greenfoot.isKeyDown("d")){
+            } else if (Greenfoot.isKeyDown("d")) {
                 animateMovement("Jump");
             }
         }
@@ -312,47 +308,61 @@ public class Player extends Physics
     /**
      * Handles animations for the character
      *
-     * @param Direction     String of what direction the player is moving in to know which animations to use
+     * @param Direction String of what direction the player is moving in to know which animations to use
      */
-    private void animateMovement(String Direction){
-        atime = atime+1;
-        if (atime>10) {atime=0;}
-        if (Direction.equals("Right")){
-            if (atime == 0) {setImage(walk1);}
-            else if (atime == 5) {setImage(walk2);}
+    private void animateMovement(String Direction) {
+        atime = atime + 1;
+        if (atime > 10) {
+            atime = 0;
         }
-        else if (Direction.equals("Left")){
-            if (atime == 0) {setImage(walk1m);}
-            else if (atime == 5) {setImage(walk2m);}
-        }
-        else if (Direction.equals("Jump")){
-            if (atime == 0) {setImage(jump);}
-            else if (atime == 5) {setImage(jump);}
-        }
-        else if (Direction.equals("Jumpm")){
-            if (atime == 0) {setImage(jumpm);}
-            else if (atime == 5) {setImage(jumpm);}
-        }
-        else if (Direction.equals("Ladder")){
-            if (atime == 0) {setImage(climb1);}
-            else if (atime == 5) {setImage(climb2);}
-        }
-        else if (Direction.equals("Death")) {
+        if (Direction.equals("Right")) {
+            if (atime == 0) {
+                setImage(walk1);
+            } else if (atime == 5) {
+                setImage(walk2);
+            }
+        } else if (Direction.equals("Left")) {
+            if (atime == 0) {
+                setImage(walk1m);
+            } else if (atime == 5) {
+                setImage(walk2m);
+            }
+        } else if (Direction.equals("Jump")) {
+            if (atime == 0) {
+                setImage(jump);
+            } else if (atime == 5) {
+                setImage(jump);
+            }
+        } else if (Direction.equals("Jumpm")) {
+            if (atime == 0) {
+                setImage(jumpm);
+            } else if (atime == 5) {
+                setImage(jumpm);
+            }
+        } else if (Direction.equals("Ladder")) {
+            if (atime == 0) {
+                setImage(climb1);
+            } else if (atime == 5) {
+                setImage(climb2);
+            }
+        } else if (Direction.equals("Death")) {
             setImage(deadimg);
-            if (atime > 0 && atime < 10) {setRelativeLocation(0,-5); }
+            if (atime > 0 && atime < 10) {
+                setRelativeLocation(0, -5);
+            }
         }
     }
 
     /**
      * Simple method to check if the health has reached zero or if the player has fallen into the void
      *
-     * @return      returns true or false, true being that the player has died
+     * @return returns true or false, true being that the player has died
      */
     private boolean deathCheck() {
         if (health == 0 || getY() == Options.screenHeight - 2) {
             return true;
         }
-            return false;
+        return false;
     }
 
     /**
@@ -380,24 +390,26 @@ public class Player extends Physics
         Checkpoint checkpoint = (Checkpoint) getOneIntersectingObject(Checkpoint.class);
         if (checkpoint != null) {
             List<Checkpoint> allCheckpoints = (List<Checkpoint>) (getWorld().getObjects(Checkpoint.class));
-            for(Checkpoint currentcheckpoint : allCheckpoints) {
+            for (Checkpoint currentcheckpoint : allCheckpoints) {
                 currentcheckpoint.active = false;
             }
             Levels.activeCheckpoint = checkpoint.getCheckpoint();
             checkpoint.active = true;
         }
     }
+
     private void checkFlagpole() {
         Flagpole flagpole = (Flagpole) getOneIntersectingObject(Flagpole.class);
         if (flagpole != null) {
             won = true;
         }
     }
+
     private void winAnimation() {
-        endingAnimation ++;
+        endingAnimation++;
         if (endingAnimation < 200) {
             if (onGround()) {
-                if (canMoveRight(5) || (getX() + getImage().getWidth()/2 + 10) > Options.screenWidth) {
+                if (canMoveRight(5) || (getX() + getImage().getWidth() / 2 + 10) > Options.screenWidth) {
                     moveRight(5);
                     moving = true;
                     animateMovement("Right");
@@ -405,8 +417,7 @@ public class Player extends Physics
                         endingAnimation = 999;
                     }
                 }
-            }
-            else if (isTouching(Flagpole.class)){
+            } else if (isTouching(Flagpole.class)) {
                 if (vSpeed > 5)
                     vSpeed = 5;
             }
@@ -416,7 +427,8 @@ public class Player extends Physics
             Greenfoot.setWorld(new LevelSelector(LevelSelector.getSelectedLevel()));
         }
     }
-    private void winConfetti(){
+
+    private void winConfetti() {
         Particles torchFlameL = new Particles("confettim");
         Particles torchFlameR = new Particles("confetti");
         Random rn = new Random();
@@ -425,46 +437,70 @@ public class Player extends Physics
         getWorld().addObject(torchFlameR, (Options.screenWidth - 30) - randomX, Options.screenHeight);
     }
 
+
     private void holdObject(){ //Michael
-        moveToPlayer();
+        moveToPlayer(); //Moves holding object
         if(Greenfoot.isKeyDown(Options.interact)){
-            if(isTouching(Bomb.class) && holding == ""){
-                //getWorld().removeObject(getOneIntersectingObject(Bomb.class));
-                //getWorld().addObject(new Bomb(190), this.getX(), this.getY());
-                Actor bomb = getOneIntersectingObject(Bomb.class);
-                bomb.setLocation(this.getX(), this.getY());
-                holding = "Bomb";
+            if(isTouching(Bomb.class) && holding.equals("")){
+                Bomb bomb = (Bomb) getOneIntersectingObject(Bomb.class);
+                if (bomb != null) {
+                    if (!bomb.holding && !bomb.dropped) {
+                        bomb.holding = true;
+                        holding = "Bomb";
+                    }
+                }
             }
-            if(isTouching(JumpPad.class) && holding == ""){
-                Actor JumpPad = getOneIntersectingObject(JumpPad.class);
-                JumpPad.setLocation(this.getX(), this.getY());
-                holding = "JumpPad";
+            if(isTouching(JumpPad.class) && holding.equals("")){
+                JumpPad jumppad = (JumpPad) getOneIntersectingObject(JumpPad.class);
+                if (jumppad != null) {
+                    if (!jumppad.holding) {
+                        jumppad.holding = true;
+                        jumppad.setLocation(this.getX(), this.getY());
+                        holding = "JumpPad";
+                    }
+                }
             }
         }
     }
     private void dropObject(){ //Michael
-        moveToPlayer();
-        if(Greenfoot.isKeyDown("q")){ //Should be drop key in options
+        if(Greenfoot.isKeyDown(Options.dropObject)){ //Should be drop key in options
             if(holding == "Bomb") {
-                holding = "";
-                Actor bomb = getOneIntersectingObject(Bomb.class);
-                bomb.setLocation(this.getX(), this.getY() + 17);
+                Bomb bomb = (Bomb) getOneIntersectingObject(Bomb.class);
+                if (bomb != null) {
+                    if (bomb.holding) {
+                        holding = "";
+                        bomb.holding = false;
+                        bomb.setLocation(this.getX(), this.getY() + 17);
+                        bomb.dropped = true;
+                    }
+                }
             }
             if(holding == "JumpPad") {
-                holding = "";
-                Actor JumpPad = getOneIntersectingObject(JumpPad.class);
-                JumpPad.setLocation(this.getX(), this.getY() + 17);
+                JumpPad jumppad = (JumpPad) getOneIntersectingObject(JumpPad.class);
+                if (jumppad != null) {
+                    if (jumppad.holding) {
+                        holding = "";
+                        jumppad.setLocation(this.getX(), this.getY() + 17);
+                        jumppad.holding = false;
+                    }
+                }
             }
         }
     }
     public void moveToPlayer() {
-        Actor JumpPad = getOneIntersectingObject(JumpPad.class); //Make this only see the object that you hold
-        Actor bomb = getOneIntersectingObject(Bomb.class); //Make this only see the object that you hold
-        if (holding == "Bomb") {
-            bomb.setLocation(this.getX(), this.getY());
-        }
-        if (holding == "JumpPad") {
-            JumpPad.setLocation(this.getX(), this.getY());
+        if(Player.holding.length() > 0){
+            Bomb bomb = (Bomb) getOneIntersectingObject(Bomb.class); //Make this only see the object that you hold
+            if (bomb != null) {
+                if (bomb.holding && !bomb.dropped) {
+                    bomb.setLocation(this.getX(), this.getY());
+                }
+            }
+            JumpPad jumppad = (JumpPad) getOneIntersectingObject(JumpPad.class); //Make this only see the object that you hold
+            if (jumppad != null) {
+                if (jumppad.holding) {
+                    jumppad.setLocation(this.getX(), this.getY());
+                }
+            }
         }
     }
 }

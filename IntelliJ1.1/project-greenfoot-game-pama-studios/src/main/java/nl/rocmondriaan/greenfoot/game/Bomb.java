@@ -11,15 +11,17 @@ public class Bomb extends Blocks {
     private int selectImage;
     private int atime;
     private int fadeTime = 0;
-    static boolean dropped;
-    static boolean spamfire = false;
-    static boolean ignited;
+    boolean dropped;
+    boolean spamfire = false;
+    boolean ignited;
+    boolean holding;
 
     Bomb(int ID){
         super(ID);
         selectImage = ID;
         dropped = false;
         ignited = false;
+        holding = false;
     }
 
     public void act(){
@@ -29,11 +31,23 @@ public class Bomb extends Blocks {
         explode2.scale(Options.blockSize * 2 , Options.blockSize * 2);
         explode3.scale(Options.blockSize, Options.blockSize);
 
-        if (isTouching(Player.class) && (Greenfoot.isKeyDown("q"))){ //temp bomb should be trown
-            dropped = true; //Condition true to blow it up
-        }
         if (spamfire){
-            lit();
+            if (atime == 50){lit();}
+            else if (atime == 60){lit();}
+            else if (atime == 70){lit();}
+            else if (atime == 80){lit();}
+            else if (atime == 90){lit();}
+            else if (atime == 100){lit();}
+            else if (atime == 110){lit();}
+            else if (atime == 120){lit();}
+            else if (atime == 130){lit();}
+            else if (atime == 140){lit();}
+            else if (atime == 150){lit();}
+            else if (atime == 160){lit();}
+            else if (atime == 170){lit();}
+            else if (atime == 180){lit();}
+            else if (atime == 190){lit();}
+            else if (atime == 200){lit();}
         }
         checkDropped();
     }
@@ -45,10 +59,11 @@ public class Bomb extends Blocks {
                 atime++;
                 changeimg();
                 if (atime == 50) {spamfire = true;}
-                else if (atime == 150){spamfire = false;}
-                else if (atime >= 200 && atime < 300){Explode();}
-                if (atime >= 200 && atime < 280){fadeTime += 1; fadelong(); }
-                else if (atime > 281){getWorld().removeObject(this);}
+                else if (atime == 200){spamfire = false;}
+                else if (atime >= 225 && atime < 300){Explode();}
+                if (atime >= 250 && atime < 300){deleteshit();}
+                if (atime >= 200 && atime < 300){fadeTime += 1; fadelong(); }
+                else if (atime > 301){getWorld().removeObject(this);}
             }
         }
     }
@@ -61,7 +76,6 @@ public class Bomb extends Blocks {
         if (atime == 200){setImage(explode);}
         else if (atime == 225){setImage(explode2);}
         else if (atime > 250){setImage(explode3);}
-        deleteshit();
     }
 
     public void changeimg(){

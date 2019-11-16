@@ -284,20 +284,22 @@ public class Physics extends Actor
 
     void jumpPad(){
         if (vSpeed >= 0) {
-            JumpPad jumpPad = (JumpPad) getObjectBelowOfClass(JumpPad.class);
-            if (jumpPad != null) {
-                jumpPad.jumpPad();
-                jtime = jtime + 1;
-                if (jtime <= 9) {
-                    this.vSpeed = 4;
+                JumpPad jumpPad = (JumpPad) getObjectBelowOfClass(JumpPad.class);
+                if (jumpPad != null) {
+                    if (!jumpPad.holding){
+                    jumpPad.jumpPad();
+                    jtime = jtime + 1;
+                    if (jtime <= 9) {
+                        this.vSpeed = 4;
+                    }
+                    if (jtime == 10) {
+                        this.vSpeed = 0;
+                        this.jump(25);
+                    }
+                    if (jtime >= 10) {
+                        jtime = 0;
+                    }//Reset at frame 10
                 }
-                if (jtime == 10) {
-                    this.vSpeed = 0;
-                    this.jump(25);
-                }
-                if (jtime >= 10) {
-                    jtime = 0;
-                }//Reset at frame 10
             }
         }
     }
