@@ -30,14 +30,22 @@ public class Inventory extends Player
             setLocation(startX, startY);
         }
         if (purpose.equals("item")) {
-            if (Player.inventoryItem.equals("blueKey")) {
-                setImage(Keys.blueKey);
-            } else if (Player.inventoryItem.equals("greenKey")) {
-                setImage(Keys.greenKey);
-            } else if (Player.inventoryItem.equals("redKey")) {
-                setImage(Keys.redKey);
-            } else if (Player.inventoryItem.equals("yellowKey")) {
-                setImage(Keys.yellowKey);
+            switch (Player.inventoryItem) {
+                case "blueKey":
+                    setImage(Keys.blueKey);
+                    break;
+                case "greenKey":
+                    setImage(Keys.greenKey);
+                    break;
+                case "redKey":
+                    setImage(Keys.redKey);
+                    break;
+                case "yellowKey":
+                    setImage(Keys.yellowKey);
+                    break;
+                default:
+                    setImage(inventory);
+                    break;
             }
         }
     }

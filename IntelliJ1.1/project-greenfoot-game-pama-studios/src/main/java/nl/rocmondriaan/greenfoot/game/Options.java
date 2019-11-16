@@ -7,4 +7,5 @@ public class Options
     static int screenWidth = screenHeight / 9 * 16;
     static int blockSize = screenWidth / 20;
     static String interact = "E";
+    static String dropItem = "Q";
 }

@@ -1,11 +1,14 @@
 package nl.rocmondriaan.greenfoot.game;
 
+import com.sun.xml.internal.bind.v2.model.core.ID;
 import greenfoot.Actor;
 import greenfoot.Greenfoot;
 import greenfoot.GreenfootImage;
 
+import java.security.Key;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.locks.Lock;
 
 public class Player extends Physics
 {
@@ -24,6 +27,11 @@ public class Player extends Physics
     static boolean won;
     private int endingAnimation;
     private String holding; //Michael
+    static String itemToDrop;
+    static int dropCooldown = 60;
+    static int pickUpCooldown;
+    static String lastItem;
+
 
     //sizes for the images
     private int playerWidth = Options.blockSize;          //1 block
@@ -99,6 +107,7 @@ public class Player extends Physics
             checkFlagpole();
             holdObject(); //Michael
             dropObject(); //Michael
+            cooldowns();
         } else if (won) {
             updateGravity();
             winAnimation();
@@ -119,6 +128,17 @@ public class Player extends Physics
             } else {
                 Greenfoot.setWorld(new Levels(LevelSelector.getSelectedLevel(), Levels.activeCheckpoint));
             }
+        }
+    }
+    private void cooldowns()
+    {
+        if (pickUpCooldown > 0)
+        {
+            pickUpCooldown --;
+        }
+        if (dropCooldown > 0)
+        {
+            dropCooldown --;
         }
     }
     /**
@@ -193,6 +213,42 @@ public class Player extends Physics
             dead = true;
             dyingAnimation = 0;
         }
+
+        if(Greenfoot.isKeyDown(Options.dropItem))
+        {
+            Inventory();
+        }
+    }
+
+    public void Inventory()
+    {
+        itemToDrop = inventoryItem;
+
+            switch (itemToDrop)
+            {
+                case (""):
+                    break;
+                case("greenKey"):
+                    Keys greenKey = new Keys(186);
+                    getWorld().addObject(greenKey,getX(),getY());
+                    inventoryItem = "";
+                    break;
+                case("blueKey"):
+                    Keys blueKey = new Keys(185);
+                    getWorld().addObject(blueKey,getX(),getY());
+                    inventoryItem = "";
+                    break;
+                case("yellowKey"):
+                    Keys yellowKey= new Keys(188);
+                    getWorld().addObject(yellowKey,getX(),getY());
+                    inventoryItem = "";
+                    break;
+                case("redKey"):
+                    Keys redKey= new Keys(187);
+                    getWorld().addObject(redKey,getX(),getY());
+                    inventoryItem = "";
+                    break;
+            }
     }
 
     /**

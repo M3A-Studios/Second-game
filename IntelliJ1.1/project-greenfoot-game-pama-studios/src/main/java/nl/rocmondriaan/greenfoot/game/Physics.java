@@ -198,6 +198,10 @@ public class Physics extends Actor
                 getOneObjectAtOffset(getImage().getWidth() / -2 - (int) speed - 1, 0,  Solid.class) != null ||
                 getOneObjectAtOffset(getImage().getWidth() / -2 - (int) speed - 1, getImage().getHeight() / 2 - 1,  Solid.class) != null)
             moveleft = false;
+        if (getOneObjectAtOffset(getImage().getWidth() / -2 - (int) speed - 1, getImage().getHeight() / -2, LockedBlocks.class) != null ||
+                getOneObjectAtOffset(getImage().getWidth() / -2 - (int) speed - 1, 0,  LockedBlocks.class) != null ||
+                getOneObjectAtOffset(getImage().getWidth() / -2 - (int) speed - 1, getImage().getHeight() / 2 - 1,  LockedBlocks.class) != null)
+            moveleft = false;
         Door door = (Door) getOneObjectAtOffset(getImage().getWidth() / -2 - (int) speed - 1, 0,  Door.class);
         if (door != null) {
             if (!door.opened) {
@@ -221,6 +225,10 @@ public class Physics extends Actor
         if (getOneObjectAtOffset(getImage().getWidth() / 2 + (int) speed + 1, getImage().getHeight() / -2, Solid.class) != null ||
                 getOneObjectAtOffset(getImage().getWidth() / 2 + (int) speed + 1, 0, Solid.class) != null ||
                 getOneObjectAtOffset(getImage().getWidth() / 2 + (int) speed + 1, getImage().getHeight() / 2 - 1, Solid.class) != null)
+            moveright = false;
+        if (getOneObjectAtOffset(getImage().getWidth() / 2 - (int) speed + 1, getImage().getHeight() / -2, LockedBlocks.class) != null ||
+                getOneObjectAtOffset(getImage().getWidth() / 2 - (int) speed + 1, 0,  LockedBlocks.class) != null ||
+                getOneObjectAtOffset(getImage().getWidth() / 2 - (int) speed + 1, getImage().getHeight() / 2 - 1,  LockedBlocks.class) != null)
             moveright = false;
         Door door = (Door) getOneObjectAtOffset(getImage().getWidth() / 2 + (int) speed + 1, 0, Door.class);
         if (door != null) {

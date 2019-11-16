@@ -351,6 +351,12 @@ public class Levels extends World
                     else if (check(Globals.finishFlag, worldMap[layer][position])) {
                         nextBlock = new Flagpole((worldMap[layer][position]));
                     }
+                    else if (check(Globals.lockedBlocks, worldMap[layer][position])) {
+                        nextBlock = new LockedBlocks((worldMap[layer][position]));
+                    }
+                    else if (check(Globals.pswitch, worldMap[layer][position])) {
+                        nextBlock = new PSwitch((worldMap[layer][position]));
+                    }
                     else if (worldMap[layer][position] != 0)
                     {
                         nextBlock = new Solid(worldMap[layer][position]);
