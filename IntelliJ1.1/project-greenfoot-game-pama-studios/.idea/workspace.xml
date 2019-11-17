@@ -7,16 +7,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7c4615df-7eab-44ce-b708-99aaf69c1c72" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Bomb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Bomb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Globals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Globals.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/LockedBlocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/LockedBlocks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/229.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/229.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/230.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/230.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/231.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/231.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/232.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/232.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/tilemap/level1.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tilemap/level1.tmx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/tilemap/tileset-IntelliJ.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tilemap/tileset-IntelliJ.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Bomb.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Bomb.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
