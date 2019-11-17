@@ -3,13 +3,15 @@ import greenfoot.Actor;
 import greenfoot.GreenfootImage;
 
 
-public class JumpPad extends Blocks {
+public class JumpPad extends Physics {
     private GreenfootImage jumppadDown = new GreenfootImage("243.png");
     private GreenfootImage jumppadUp = new GreenfootImage("244.png");
     boolean holding;
 
     JumpPad(int ID){
-        super(ID);
+        GreenfootImage image = new GreenfootImage ((ID) + ".png");
+        image.scale((Options.blockSize),(Options.blockSize)); //scale to the size of 1 block
+        setImage(image);
         jumppadDown.scale((Options.blockSize),(Options.blockSize));
         jumppadUp.scale((Options.blockSize),(Options.blockSize));
         setImage(jumppadUp);
@@ -17,12 +19,16 @@ public class JumpPad extends Blocks {
     }
 
     public void act(){
-        if (!isTouching(Player.class)) {
+        setDoubleX(getX());
+        setDoubleY(getY());
+        if (isTouching(Player.class) || isTouching(Bomb.class) || isTouching(JumpPad.class)) {
+            setImage(jumppadDown);
+        } else if (getImage() != jumppadUp){
             setImage(jumppadUp);
         }
-    }
-
-    void jumpPad() {
-        setImage(jumppadDown);
+        if (!holding) {
+            updateGravity();
+            jumpPad();
+        }
     }
 }

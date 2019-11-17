@@ -45,38 +45,29 @@ public class LockedBlocks extends Blocks
         }
 
     }
-
-    public void act()
+    void unlockBlock()
     {
-        CheckBlock();
-    }
-
-    public void CheckBlock()
-    {
-        if(isTouching(Player.class))
+        String blockToRemove = "";
+        if(getImage() == blueBlock && Inventory.inventoryItem.equals("blueKey"))
         {
-            String blockToRemove = "";
-            if(getImage() == blueBlock && Inventory.inventoryItem.equals("blueKey"))
-            {
-                blockToRemove = "blueBlock";
-            }
-            if(getImage() == greenBlock && Inventory.inventoryItem.equals("greenKey"))
-            {
-                blockToRemove = "greenBlock";
-            }
-            if(getImage() == redBlock && Inventory.inventoryItem.equals("redKey") )
-            {
-                blockToRemove = "redBlock";
-            }
-            if(getImage() == yellowBlock && Inventory.inventoryItem.equals("yellowKey"))
-            {
-                blockToRemove = "yellowBlock";
-            }
-            if (!Player.inventoryItem.equals("") && !blockToRemove.equals(""))
-            {
-                getWorld().removeObject(this);
-                Inventory.inventoryItem = "";
-            }
+            blockToRemove = "blueBlock";
+        }
+        if(getImage() == greenBlock && Inventory.inventoryItem.equals("greenKey"))
+        {
+            blockToRemove = "greenBlock";
+        }
+        if(getImage() == redBlock && Inventory.inventoryItem.equals("redKey") )
+        {
+            blockToRemove = "redBlock";
+        }
+        if(getImage() == yellowBlock && Inventory.inventoryItem.equals("yellowKey"))
+        {
+            blockToRemove = "yellowBlock";
+        }
+        if (!Player.inventoryItem.equals("") && !blockToRemove.equals(""))
+        {
+            getWorld().removeObject(this);
+            Inventory.inventoryItem = "";
         }
     }
 }
