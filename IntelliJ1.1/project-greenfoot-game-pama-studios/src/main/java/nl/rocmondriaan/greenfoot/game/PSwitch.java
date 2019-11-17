@@ -1,12 +1,12 @@
 package nl.rocmondriaan.greenfoot.game;
 
+import greenfoot.Actor;
 import greenfoot.GreenfootImage;
 
 public class PSwitch extends Blocks
 {
         private GreenfootImage pSwitchDown = new GreenfootImage("275.png");
         private GreenfootImage pSwitchUp = new GreenfootImage("274.png");
-        private GreenfootImage bcoin = new GreenfootImage("166.png");
         private GreenfootImage box = new GreenfootImage("195.png");
         double eventTimer = 600;
     /**
@@ -24,7 +24,13 @@ public class PSwitch extends Blocks
             setImage(pSwitchUp);
             pSwitchDown.scale(Options.blockSize, Options.blockSize);
         }
-        bcoin.scale(Options.blockSize,Options.blockSize);
+        if (ID == 195)
+        {
+            box.scale(Options.blockSize, Options.blockSize);
+            setImage(box);
+        }
+
+
     }
 
     public void act()
@@ -35,18 +41,26 @@ public class PSwitch extends Blocks
 
         void Switch() {
 
-            if (isTouching(Player.class))
+            if (getImage() == pSwitchUp && isTouching(Player.class))
             {
                 setImage(pSwitchDown);
             }
         }
+
         void Event()
         {
             if (getImage() == pSwitchDown && eventTimer > 0)
             {
                 eventTimer --;
-                System.out.print("Event time!" + ", ");
+                if(getImage() == box)
+                {
+                    Coins coin = (Coins) getOneIntersectingObject(Coins.class);
+                    if (coin.CoinID == 166) {
+                        Globals.levelCoinsCollected += 1;
+                        getWorld().addObject(coin, 100,200);
+                    }
 
+                }
             }
         }
 }
