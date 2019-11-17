@@ -119,7 +119,6 @@ public class Player extends Physics {
             deadAnimation();
         }
     }
-
     private void deadAnimation() {
         if (dead) {
             if (dyingAnimation < 200) {

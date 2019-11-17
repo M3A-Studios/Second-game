@@ -1,7 +1,7 @@
 package nl.rocmondriaan.greenfoot.game;
 import greenfoot.*;
 
-public class Bomb extends Blocks {
+public class Bomb extends Physics {
     static GreenfootImage bomb = new GreenfootImage("190.png");
     static GreenfootImage bomb2 = new GreenfootImage("191.png");
     static GreenfootImage explode = new GreenfootImage("explosion00.png");
@@ -17,37 +17,29 @@ public class Bomb extends Blocks {
     boolean holding;
 
     Bomb(int ID){
-        super(ID);
+        GreenfootImage image = new GreenfootImage ((ID) + ".png");
+        image.scale((Options.blockSize),(Options.blockSize)); //scale to the size of 1 block
+        setImage(image);
         selectImage = ID;
         dropped = false;
         ignited = false;
         holding = false;
-    }
-
-    public void act(){
         bomb.scale(Options.blockSize, Options.blockSize);
         bomb2.scale(Options.blockSize, Options.blockSize);
         explode.scale(Options.blockSize * 3 , Options.blockSize * 3);
         explode2.scale(Options.blockSize * 2 , Options.blockSize * 2);
         explode3.scale(Options.blockSize, Options.blockSize);
+    }
 
+    public void act(){
+        setDoubleX(getX());
+        setDoubleY(getY());
+        if (!holding && atime < 200) {
+            updateGravity();
+            jumpPad();
+        }
         if (spamfire){
-            if (atime == 50){lit();}
-            else if (atime == 60){lit();}
-            else if (atime == 70){lit();}
-            else if (atime == 80){lit();}
-            else if (atime == 90){lit();}
-            else if (atime == 100){lit();}
-            else if (atime == 110){lit();}
-            else if (atime == 120){lit();}
-            else if (atime == 130){lit();}
-            else if (atime == 140){lit();}
-            else if (atime == 150){lit();}
-            else if (atime == 160){lit();}
-            else if (atime == 170){lit();}
-            else if (atime == 180){lit();}
-            else if (atime == 190){lit();}
-            else if (atime == 200){lit();}
+            if (atime >= 50 && atime <= 200 && atime % 10 == 0) {lit();}
         }
         checkDropped();
     }
@@ -60,7 +52,7 @@ public class Bomb extends Blocks {
                 changeimg();
                 if (atime == 50) {spamfire = true;}
                 else if (atime == 200){spamfire = false;}
-                else if (atime >= 225 && atime < 300){Explode();}
+                if (atime >= 200 && atime < 300){Explode();}
                 if (atime >= 250 && atime < 300){deleteshit();}
                 if (atime >= 200 && atime < 300){fadeTime += 1; fadelong(); }
                 else if (atime > 301){getWorld().removeObject(this);}
@@ -79,13 +71,10 @@ public class Bomb extends Blocks {
     }
 
     public void changeimg(){
-        if (atime == 25) {setImage(bomb2);}
-        else if (atime == 50){setImage(bomb);}
-        else if (atime == 75){setImage(bomb2);}
-        else if (atime == 100){setImage(bomb);}
-        else if (atime == 125){setImage(bomb2);}
-        else if (atime == 150){setImage(bomb);}
-        else if (atime == 175){setImage(bomb2);}
+        if (atime >= 25 && atime <= 175) {
+            if (atime % 50 == 25) {setImage(bomb2);}
+            if (atime % 50 == 0) {setImage(bomb);}
+        }
     }
     public void fadelong(){ //Fade out en kill object
         if (255 - fadeTime > 0) {

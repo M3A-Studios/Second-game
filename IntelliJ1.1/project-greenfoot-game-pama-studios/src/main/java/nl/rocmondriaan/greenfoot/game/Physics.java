@@ -151,6 +151,20 @@ public class Physics extends Actor
                 getOneObjectAtOffset(getImage().getWidth() / 2 - 1, getImage().getHeight() / 2 + (int) vSpeed + 1, Solid.class) != null) {
             onGround = true;
         }
+        LockedBlocks lockedBlock = null;
+        lockedBlock = (LockedBlocks) getOneObjectAtOffset(getImage().getWidth() / -2 + 1, getImage().getHeight() / 2 + (int) vSpeed + 1, LockedBlocks.class);
+        if (lockedBlock == null) {
+            lockedBlock = (LockedBlocks) getOneObjectAtOffset(0, getImage().getHeight() / 2 + (int) vSpeed + 1, LockedBlocks.class);
+        }
+        if (lockedBlock == null) {
+            lockedBlock = (LockedBlocks) getOneObjectAtOffset(getImage().getWidth() / 2 - 1, getImage().getHeight() / 2 + (int) vSpeed + 1, LockedBlocks.class);
+        }
+        if (lockedBlock != null) {
+            lockedBlock.unlockBlock();
+        }
+        if (lockedBlock != null) {
+            onGround = true;
+        }
         //Check if you're inside of a platform
         Actor platformBelow = getOneObjectAtOffset(getImage().getWidth() / -2 + 1, getImage().getHeight() / 2 + (int) vSpeed + 1, nl.rocmondriaan.greenfoot.game.Platform.class); //check bottom left
         Actor platformBelow2 = getOneObjectAtOffset(0, getImage().getHeight() / 2 + (int) vSpeed + 1, nl.rocmondriaan.greenfoot.game.Platform.class); //check bottom right
@@ -178,12 +192,31 @@ public class Physics extends Actor
 
     /**
      * Checks if in the next frame the player will hit his head against a solid block above him.
+     *
      * @return
      */
     private boolean willBumpHead(){
-        return getOneObjectAtOffset(getImage().getWidth() / -2, getImage().getHeight() / -2 + (int) vSpeed, Solid.class) != null ||
+        boolean willHitSolid = false;
+        boolean willHitLock = false;
+        willHitSolid = getOneObjectAtOffset(getImage().getWidth() / -2, getImage().getHeight() / -2 + (int) vSpeed, Solid.class) != null ||
                 getOneObjectAtOffset(getImage().getWidth() / 2, getImage().getHeight() / -2 + (int) vSpeed, Solid.class) != null ||
                 getOneObjectAtOffset(0, getImage().getHeight() / -2 + (int) vSpeed, Solid.class) != null;
+
+        LockedBlocks lockedBlock = null;
+        lockedBlock = (LockedBlocks) getOneObjectAtOffset(getImage().getWidth() / -2, getImage().getHeight() / -2 + (int) vSpeed, LockedBlocks.class);
+        if (lockedBlock == null) {
+            lockedBlock = (LockedBlocks) getOneObjectAtOffset(getImage().getWidth() / 2, getImage().getHeight() / -2 + (int) vSpeed, LockedBlocks.class);
+        }
+        if (lockedBlock == null) {
+            lockedBlock = (LockedBlocks) getOneObjectAtOffset(0, getImage().getHeight() / -2 + (int) vSpeed, LockedBlocks.class);
+        }
+        if (lockedBlock != null) {
+            lockedBlock.unlockBlock();
+        }
+        if (lockedBlock != null) {
+            willHitLock = true;
+        }
+        return (willHitSolid || willHitLock);
     }
 
     /**
@@ -198,10 +231,22 @@ public class Physics extends Actor
                 getOneObjectAtOffset(getImage().getWidth() / -2 - (int) speed - 1, 0,  Solid.class) != null ||
                 getOneObjectAtOffset(getImage().getWidth() / -2 - (int) speed - 1, getImage().getHeight() / 2 - 1,  Solid.class) != null)
             moveleft = false;
-        if (getOneObjectAtOffset(getImage().getWidth() / -2 - (int) speed - 1, getImage().getHeight() / -2, LockedBlocks.class) != null ||
-                getOneObjectAtOffset(getImage().getWidth() / -2 - (int) speed - 1, 0,  LockedBlocks.class) != null ||
-                getOneObjectAtOffset(getImage().getWidth() / -2 - (int) speed - 1, getImage().getHeight() / 2 - 1,  LockedBlocks.class) != null)
+        //check for locked block
+        LockedBlocks lockedBlock = null;
+        lockedBlock = (LockedBlocks) getOneObjectAtOffset(getImage().getWidth() / -2 - (int) speed - 1, getImage().getHeight() / -2, LockedBlocks.class);
+        if (lockedBlock == null) {
+            lockedBlock = (LockedBlocks) getOneObjectAtOffset(getImage().getWidth() / -2 - (int) speed - 1, 0, LockedBlocks.class);
+        }
+        if (lockedBlock == null) {
+            lockedBlock = (LockedBlocks) getOneObjectAtOffset(getImage().getWidth() / -2 - (int) speed - 1, getImage().getHeight() / 2 - 1, LockedBlocks.class);
+        }
+        if (lockedBlock != null) {
+            lockedBlock.unlockBlock();
+        }
+        if (lockedBlock != null) {
             moveleft = false;
+        }
+        //end check for lockblock
         Door door = (Door) getOneObjectAtOffset(getImage().getWidth() / -2 - (int) speed - 1, 0,  Door.class);
         if (door != null) {
             if (!door.opened) {
@@ -226,10 +271,22 @@ public class Physics extends Actor
                 getOneObjectAtOffset(getImage().getWidth() / 2 + (int) speed + 1, 0, Solid.class) != null ||
                 getOneObjectAtOffset(getImage().getWidth() / 2 + (int) speed + 1, getImage().getHeight() / 2 - 1, Solid.class) != null)
             moveright = false;
-        if (getOneObjectAtOffset(getImage().getWidth() / 2 - (int) speed + 1, getImage().getHeight() / -2, LockedBlocks.class) != null ||
-                getOneObjectAtOffset(getImage().getWidth() / 2 - (int) speed + 1, 0,  LockedBlocks.class) != null ||
-                getOneObjectAtOffset(getImage().getWidth() / 2 - (int) speed + 1, getImage().getHeight() / 2 - 1,  LockedBlocks.class) != null)
+        //check for locked block
+        LockedBlocks lockedBlock = null;
+        lockedBlock = (LockedBlocks) getOneObjectAtOffset(getImage().getWidth() / 2 - (int) speed + 1, getImage().getHeight() / -2, LockedBlocks.class);
+        if (lockedBlock == null) {
+            lockedBlock = (LockedBlocks) getOneObjectAtOffset(getImage().getWidth() / 2 - (int) speed + 1, 0, LockedBlocks.class);
+        }
+        if (lockedBlock == null) {
+            lockedBlock = (LockedBlocks) getOneObjectAtOffset(getImage().getWidth() / 2 - (int) speed + 1, getImage().getHeight() / 2 - 1, LockedBlocks.class);
+        }
+        if (lockedBlock != null) {
+            lockedBlock.unlockBlock();
+        }
+        if (lockedBlock != null) {
             moveright = false;
+        }
+        //end check for lockblock
         Door door = (Door) getOneObjectAtOffset(getImage().getWidth() / 2 + (int) speed + 1, 0, Door.class);
         if (door != null) {
             if (!door.opened) {
@@ -252,12 +309,12 @@ public class Physics extends Actor
      */
     private Actor getObjectBelowOfClass(Class classToCheck) {
         Actor actor;
-        actor = getOneObjectAtOffset(0, getImage().getHeight() / 2 + (int) vSpeed + 1, classToCheck);
+        actor = getOneObjectAtOffset(0, getImage().getHeight() / 2 + 1, classToCheck);
         if (actor == null) {
-            actor = getOneObjectAtOffset(getImage().getWidth() / -4, getImage().getHeight() / 2 + (int) vSpeed + 1, classToCheck);
+            actor = getOneObjectAtOffset(getImage().getWidth() / -4, getImage().getHeight() / 2 + 1, classToCheck);
         }
         if (actor == null) {
-            actor = getOneObjectAtOffset(getImage().getWidth() / 4, getImage().getHeight() / 2 + (int) vSpeed + 1, classToCheck);
+            actor = getOneObjectAtOffset(getImage().getWidth() / 4, getImage().getHeight() / 2 + 1, classToCheck);
         }
         return actor;
     }
@@ -284,13 +341,16 @@ public class Physics extends Actor
 
     void jumpPad(){
         if (vSpeed >= 0) {
-                JumpPad jumpPad = (JumpPad) getObjectBelowOfClass(JumpPad.class);
-                if (jumpPad != null) {
-                    if (!jumpPad.holding){
-                    jumpPad.jumpPad();
+            JumpPad jumpPad = (JumpPad) getObjectBelowOfClass(JumpPad.class);
+            if (jumpPad != null) {
+                if (!jumpPad.holding){
                     jtime = jtime + 1;
                     if (jtime <= 9) {
-                        this.vSpeed = 4;
+                        if (jumpPad.vSpeed >= 0) {
+                            vSpeed = jumpPad.vSpeed + 4;
+                        } else {
+                            this.vSpeed = jumpPad.vSpeed;
+                        }
                     }
                     if (jtime == 10) {
                         this.vSpeed = 0;
