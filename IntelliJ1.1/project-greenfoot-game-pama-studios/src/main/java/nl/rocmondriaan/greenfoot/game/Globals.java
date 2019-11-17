@@ -38,7 +38,7 @@ class Globals
     static Integer[] bombs = {189,190};
     static Integer[] door = {213,214,215,216};
     static Integer[] jumpPad = {242,243};
-    static Integer[] lockedBlocks = {228,229,230,231};
+    static Integer[] lockedBlocks = {228,229,230,231,274,275,276,277};
     static Integer[] pswitch = {273,274};
     static Integer[] breakableBlocks = {192,193,194,195,196,197,198,199,200,201,202,203,204,205,206,207};
 

@@ -53,7 +53,7 @@ public class Bomb extends Physics {
                 if (atime == 50) {spamfire = true;}
                 else if (atime == 200){spamfire = false;}
                 if (atime >= 200 && atime < 300){Explode();}
-                if (atime >= 250 && atime < 300){deleteshit();}
+                if (atime >= 200 && atime < 250){deleteshit();}
                 if (atime >= 200 && atime < 300){fadeTime += 1; fadelong(); }
                 else if (atime > 301){getWorld().removeObject(this);}
             }
