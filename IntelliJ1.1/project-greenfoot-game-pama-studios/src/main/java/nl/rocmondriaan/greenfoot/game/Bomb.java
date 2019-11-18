@@ -61,7 +61,7 @@ public class Bomb extends Physics {
     }
     public void lit(){
         Particles Bomb = new Particles("fire");
-        getWorld().addObject(Bomb, this.getX() - 20, this.getY() -30);
+        getWorld().addObject(Bomb, this.getX() - (int) (Options.blockSize / 64.0 * 20), this.getY() -(int) (Options.blockSize / 64.0 * 30));
     }
 
     public void Explode(){

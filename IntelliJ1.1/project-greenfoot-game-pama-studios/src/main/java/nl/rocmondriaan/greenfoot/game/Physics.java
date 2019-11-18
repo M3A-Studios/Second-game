@@ -13,9 +13,6 @@ public class Physics extends Actor
 
     private double doubleX;
     private double doubleY;
-
-
-
     /**
      * Simple method to get the accurate X coordinate of the entity on the screen
      *
@@ -65,8 +62,6 @@ public class Physics extends Actor
         doubleY = y;
         setLocation((int) doubleX, (int) doubleY);
     }
-
-
     /**
      * Method that changes the position of the object only slightly, instead of hardcoding the position it simply
      * takes the current position in doubleX and doubleY and adds to it. so moving 3 up would be (0, -3) to change
@@ -76,12 +71,12 @@ public class Physics extends Actor
      * @param y         expects a double Y value to move the object along the y-axis
      */
     void setRelativeLocation(double x, double y) {
-        doubleX = doubleX + x;
-        doubleY = doubleY + y;
+        double scaledX = Options.blockSize / 64.0 * x;
+        double scaledY = Options.blockSize / 64.0 * y;
+        doubleX = doubleX + scaledX;
+        doubleY = doubleY + scaledY;
         setLocation((int) doubleX, (int) doubleY);
     }
-
-
     /**
      * Simple little method to keep the doubleX and doubleY updated of objects that get scrolled by the camera
      * to make sure no bugs happen (like things not moving properly). Should be used in the act method of every object
@@ -91,17 +86,13 @@ public class Physics extends Actor
         doubleX = doubleX + Camera2.entityXOffset;
         doubleY = doubleY + Camera2.entityYOffset;
     }
-
-    //OWO
-    //
-    //SHOULD DEFINITELY BE CHANGED TO ACTUALLY WORK DYNAMICALLY WITH THE SCREENSIZES AND NOT BE BASED ON PIXELS
-    //
-    //OWO
+    /**
+     * @param height
+     */
     void jump(double height) {
         setRelativeLocation(0, - 1);
         vSpeed = vSpeed - height;
     }
-
     /**
      * Checks if the player is gonna hit the ground, will bump its head or is on a ladder
      * if so it will set your vertical movement to zero, if not it will update the gravity
@@ -122,8 +113,6 @@ public class Physics extends Actor
             vSpeed = 0;
         }
     }
-
-
     /**
      * Checks if the player is currently on a ladder or not
      *
@@ -250,13 +239,14 @@ public class Physics extends Actor
         Door door = (Door) getOneObjectAtOffset(getImage().getWidth() / -2 - (int) speed - 1, 0,  Door.class);
         if (door != null) {
             if (!door.opened) {
-                moveleft = false;
+                return false;
             }
         }
-        if (doubleX - speed < getImage().getWidth() / 2.0) {
-            moveleft = false;
+        //check out of the world
+        if (doubleX - checkSpeed < getImage().getWidth() / 2.0) {
+            return false;
         }
-        return moveleft;
+        return true;
     }
 
     /**
@@ -267,9 +257,9 @@ public class Physics extends Actor
      */
     boolean canMoveRight(double speed){
         boolean moveright = true;
-        if (getOneObjectAtOffset(getImage().getWidth() / 2 + (int) speed + 1, getImage().getHeight() / -2, Solid.class) != null ||
+        if (getOneObjectAtOffset(getImage().getWidth() / 2 + (int) speed + 1, getImage().getHeight() / -2 + 2, Solid.class) != null ||
                 getOneObjectAtOffset(getImage().getWidth() / 2 + (int) speed + 1, 0, Solid.class) != null ||
-                getOneObjectAtOffset(getImage().getWidth() / 2 + (int) speed + 1, getImage().getHeight() / 2 - 1, Solid.class) != null)
+                getOneObjectAtOffset(getImage().getWidth() / 2 + (int) speed + 1, getImage().getHeight() / 2 - 2, Solid.class) != null)
             moveright = false;
 
         LockedBlocks lockBlock1 = (LockedBlocks) getOneObjectAtOffset(getImage().getWidth() / 2 + (int) speed + 1, getImage().getHeight() / -2, LockedBlocks.class);
@@ -302,6 +292,8 @@ public class Physics extends Actor
         }
         return moveright;
     }
+
+
 
 
     /**
@@ -366,7 +358,7 @@ public class Physics extends Actor
                     }
                     if (jtime >= 10) {
                         jtime = 0;
-                    }//Reset at frame 10
+                    }
                 }
             }
         }

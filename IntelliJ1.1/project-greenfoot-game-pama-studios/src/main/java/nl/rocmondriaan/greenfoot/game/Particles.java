@@ -3,7 +3,7 @@ import greenfoot.Actor;
 import greenfoot.GreenfootImage;
 import java.util.Random;
 
-public class Particles extends Actor {
+public class Particles extends Physics {
     private GreenfootImage smoke1 = new GreenfootImage("WhiteSmoke1.png");
     private GreenfootImage smoke2 = new GreenfootImage("WhiteSmoke2.png");
     private GreenfootImage smoke3 = new GreenfootImage("WhiteSmoke3.png");
@@ -17,13 +17,20 @@ public class Particles extends Actor {
     private int deathTime;
     private int timePassed;
     private String type;
+    private boolean started = false;
 
     public void act() {
+        if (!started) {
+            setDoubleX(getX());
+            setDoubleY(getY());
+            started = true;
+        }
+        entityOffset();
         Random rn = new Random();
         random3 = rn.nextInt(3) + 1;
         timePassed += 1;
         if (type.equals("smoke")) {
-            setLocation(getX(), getY()-1); //Making it fly up
+            setRelativeLocation(0, -1); //Making it fly up
             if (timePassed >= deathTime) {
                 fade();
             }
@@ -34,19 +41,19 @@ public class Particles extends Actor {
             }
         }
         else if (type.equals("confetti")) {
-            setLocation(getX() - 2, getY() - 4); //Making it fly up
+            setRelativeLocation(-2, -4); //Making it fly up
             if (timePassed >= deathTime) {
                 fade();
             }
         }
         else if (type.equals("confettim")) { //This is mirrored
-            setLocation(getX() + 2, getY() - 4); //Making it fly up
+            setRelativeLocation(2, -4); //Making it fly up
             if (timePassed >= deathTime) {
                 fade();
             }
         }
         else if (type.equals("fire")) {
-            setLocation(getX(), getY()-1); //Making it fly up
+            setRelativeLocation(0, -1); //Making it fly up
             if (timePassed >= deathTime) {
                 fade();
             }
@@ -60,15 +67,16 @@ public class Particles extends Actor {
             smoke();
         }
         if (type.equals("beam")){
+            beam.scale(Options.blockSize * 2, Options.screenHeight * 2);
             setImage(beam);
         }
         if (type.equals("confetti") || type.equals("confettim")){
-            setImage(confetti);
             confetti.scale((Options.blockSize) * 4, (Options.blockSize) * 4);
+            setImage(confetti);
         }
         if (type.equals("fire")){
-            setImage(fire);
             fire.scale((Options.blockSize) / 3, (Options.blockSize) / 3);
+            setImage(fire);
         }
     }
 
@@ -84,7 +92,7 @@ public class Particles extends Actor {
         if (220 - deathFadeTime > 0) {
             this.getImage().setTransparency(220 - deathFadeTime);
         }
-        if (deathFadeTime >= 110) {deathFadeTime = 0; getWorld().removeObject(this); timePassed = 0;}
+        if (deathFadeTime >= 220) {deathFadeTime = 0; getWorld().removeObject(this); timePassed = 0;}
     }
     public void smoke(){
         deathTime = 60; //How long to be destroyed yes it's randomised now
