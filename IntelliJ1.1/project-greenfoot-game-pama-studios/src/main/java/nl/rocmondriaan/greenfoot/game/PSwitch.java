@@ -54,10 +54,11 @@ public class PSwitch extends Blocks
                 eventTimer --;
                 if(getImage() == box)
                 {
+
                     Coins coin = (Coins) getOneIntersectingObject(Coins.class);
-                    if (coin.CoinID == 166) {
-                        Globals.levelCoinsCollected += 1;
-                        getWorld().addObject(coin, 100,200);
+                    if (coin.CoinID == 166)
+                    {
+
                     }
 
                 }

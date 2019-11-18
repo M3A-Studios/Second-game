@@ -57,10 +57,14 @@ public class Keys extends Actor
             {
                 itemToPickup = "yellowKey";
             }
-            if (Player.inventoryItem.equals("") && !itemToPickup.equals("nothing") && Player.pickUpCooldown == 0) {
-                Player.inventoryItem = itemToPickup;
-                getWorld().removeObject(this);
-                Player.pickUpCooldown = 120;
+            if (!Player.lastDroppedItem.equals(itemToPickup) || Player.lastItemCD <= 0) {
+                if (Player.inventoryItem.equals("") && !itemToPickup.equals("nothing") && Player.pickUpCooldown == 0)
+                {
+                    Player.inventoryItem = itemToPickup;
+                    getWorld().removeObject(this);
+                    Player.pickUpCooldown = 120;
+                }
+                Player.lastItemCD = 30;
             }
         }
     }

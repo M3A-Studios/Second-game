@@ -13,6 +13,8 @@ public class LockedBlocks extends Blocks
     static GreenfootImage greenBlock = new GreenfootImage("230.png");
     static GreenfootImage redBlock = new GreenfootImage("231.png");
     static GreenfootImage yellowBlock = new GreenfootImage("232.png");
+    static boolean canUnlock;
+
 
     /**
      * This is the constructor that should be used in every tile
@@ -20,6 +22,11 @@ public class LockedBlocks extends Blocks
      *
      * @param ID refers to what the ID of the tile is, used for the image
      */
+
+    public void act()
+    {
+    }
+
     LockedBlocks(int ID)
     {
         super(ID);
@@ -47,10 +54,13 @@ public class LockedBlocks extends Blocks
     }
     void unlockBlock()
     {
+        canUnlock = false;
         String blockToRemove = "";
+
         if(getImage() == blueBlock && Inventory.inventoryItem.equals("blueKey"))
         {
             blockToRemove = "blueBlock";
+            canUnlock = true;
         }
         if(getImage() == greenBlock && Inventory.inventoryItem.equals("greenKey"))
         {

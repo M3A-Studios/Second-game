@@ -18,8 +18,8 @@ public class Player extends Physics {
     private double leftKeyDown;
     private double rightKeyDown;
     private double spaceKeyDown;
-    static String inventoryItem = "";
-    static boolean carryingObject = false;
+    static String inventoryItem;
+    static boolean carryingObject;
     private int atime;
     static boolean dead;
     private int dyingAnimation;
@@ -29,7 +29,8 @@ public class Player extends Physics {
     static String itemToDrop;
     static int dropCooldown = 60;
     static int pickUpCooldown;
-    static String lastItem;
+    static String lastDroppedItem;
+    static int lastItemCD = 30;
 
 
     //sizes for the images
@@ -63,6 +64,9 @@ public class Player extends Physics {
         Globals.levelCoinsCollected = 0;
         holding = ""; //Michael
         inventoryItem = "";
+        lastDroppedItem = "";
+        carryingObject = false;
+
 
         climb1.scale(playerWidth, playerHeight);
         climb2.scale(playerWidth, playerHeight);
@@ -136,6 +140,10 @@ public class Player extends Physics {
         }
         if (dropCooldown > 0) {
             dropCooldown--;
+        }
+        if (lastItemCD > 0)
+        {
+            lastItemCD --;
         }
     }
 
@@ -219,7 +227,9 @@ public class Player extends Physics {
 
     public void Inventory() {
         itemToDrop = inventoryItem;
-
+        if (!inventoryItem.equals("")) {
+            lastDroppedItem = inventoryItem;
+        }
         switch (itemToDrop) {
             case (""):
                 break;
