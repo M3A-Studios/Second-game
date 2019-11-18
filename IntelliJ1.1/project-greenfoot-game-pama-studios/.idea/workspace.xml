@@ -5,7 +5,46 @@
     <option name="CUSTOM_SCOPE_NAME" value="game package scope" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c4615df-7eab-44ce-b708-99aaf69c1c72" name="Default Changelist" comment="" />
+    <list default="true" id="7c4615df-7eab-44ce-b708-99aaf69c1c72" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Slime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Slime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/19.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/19.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/20.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/20.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/21.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/21.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/22.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/22.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/23.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/23.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/24.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/24.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/25.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/25.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/26.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/26.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/27.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/27.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/31.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/31.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/32.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/32.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/33.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/33.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/34.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/34.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/35.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/35.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/36.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/36.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/37.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/37.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/38.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/38.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/39.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/39.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/40.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/40.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/41.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/41.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/42.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/42.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/43.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/43.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/44.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/44.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/45.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/45.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/46.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/46.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/47.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/47.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/48.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/48.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/49.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/49.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/50.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/50.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/51.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/51.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/52.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/52.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/53.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/53.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/54.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/54.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/55.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/55.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/56.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/56.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/57.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/57.png" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
