@@ -307,16 +307,20 @@ public class Physics extends Actor
      * @param classToCheck      A class to check if its underneat the player
      * @return                  Returns the actor below you or null
      */
-    private Actor getObjectBelowOfClass(Class classToCheck) {
-        Actor actor;
-        actor = getOneObjectAtOffset(0, getImage().getHeight() / 2 + 1, classToCheck);
-        if (actor == null) {
-            actor = getOneObjectAtOffset(getImage().getWidth() / -4, getImage().getHeight() / 2 + 1, classToCheck);
+    public Actor getObjectBelowOfClass(Class classToCheck) {
+        if (vSpeed >= 0) {
+            Actor actor;
+            actor = getOneObjectAtOffset(0, getImage().getHeight() / 2 + 1, classToCheck);
+            if (actor == null) {
+                actor = getOneObjectAtOffset(getImage().getWidth() / -4, getImage().getHeight() / 2 + 1, classToCheck);
+            }
+            if (actor == null) {
+                actor = getOneObjectAtOffset(getImage().getWidth() / 4, getImage().getHeight() / 2 + 1, classToCheck);
+            }
+            return actor;
+        } else {
+            return null;
         }
-        if (actor == null) {
-            actor = getOneObjectAtOffset(getImage().getWidth() / 4, getImage().getHeight() / 2 + 1, classToCheck);
-        }
-        return actor;
     }
 
     /**

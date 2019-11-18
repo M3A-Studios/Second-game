@@ -112,6 +112,9 @@ public class Levels extends World
             //Spawn location (checkpoint 0)
             checkpointX.add(2);
             checkpointY.add(8);
+        } else if (level == 4) {
+            checkpointX.add(2);
+            checkpointY.add(15);
         } else {
             //Spawn location (checkpoint 0)
             checkpointX.add(2);
@@ -339,6 +342,10 @@ public class Levels extends World
                     else if (check(Globals.jumpPad, worldMap[layer][position]))
                     {
                         nextBlock = new JumpPad(worldMap[layer][position]);
+                    }
+                    else if (check(Globals.slime, worldMap[layer][position]))
+                    {
+                        nextBlock = new Slime(worldMap[layer][position]);
                     }
                     else if (check(Globals.coins, worldMap[layer][position]))
                     {

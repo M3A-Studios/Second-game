@@ -41,7 +41,7 @@ class Globals
     static Integer[] lockedBlocks = {228,229,230,231,274,275,276,277};
     static Integer[] pswitch = {273,274};
     static Integer[] breakableBlocks = {192,193,194,195,196,197,198,199,200,201,202,203,204,205,206,207};
-
+    static Integer[] slime = {36,37,38,39,40,41,42,43,44,45,46,47};
 }
 
 

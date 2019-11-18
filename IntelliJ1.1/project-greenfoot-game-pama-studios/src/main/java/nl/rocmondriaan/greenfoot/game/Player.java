@@ -31,6 +31,8 @@ public class Player extends Physics {
     static int dropCooldown = 60;
     static int pickUpCooldown;
     static String lastItem;
+    private boolean canTakeDmg;
+    private int deathTimer;
 
 
     //sizes for the images
@@ -64,6 +66,7 @@ public class Player extends Physics {
         Globals.levelCoinsCollected = 0;
         holding = ""; //Michael
         inventoryItem = "";
+        canTakeDmg = true;
 
         climb1.scale(playerWidth, playerHeight);
         climb2.scale(playerWidth, playerHeight);
@@ -94,7 +97,15 @@ public class Player extends Physics {
             setDoubleY(getY());
         }
         //execute normal gameplay as long as the player is alive
-        if (!deathCheck() && !won) {
+        if (!dead) {
+            if (deathCheck()) {
+                dead = true;
+                Particles beam = new Particles("beam");
+                getWorld().addObject(beam, getX(), getY());
+                dyingAnimation = 0;
+            }
+        }
+        if (!dead && !won) {
             entityOffset(); //make it immune to camera scrolling
             updateGravity();
             walkingAnim();
@@ -109,6 +120,8 @@ public class Player extends Physics {
             holdObject(); //Michael
             dropObject(); //Michael
             cooldowns();
+            Slime();
+            deathTimer();
         } else if (won) {
             updateGravity();
             winAnimation();
@@ -121,14 +134,12 @@ public class Player extends Physics {
         }
     }
     private void deadAnimation() {
-        if (dead) {
             if (dyingAnimation < 200) {
                 animateMovement("Death");
                 dyingAnimation += 1;
             } else {
                 Greenfoot.setWorld(new Levels(LevelSelector.getSelectedLevel(), Levels.activeCheckpoint));
             }
-        }
     }
 
     private void cooldowns() {
@@ -206,12 +217,7 @@ public class Player extends Physics {
             health = health - 1;
         }
 
-        if (deathCheck() && !dead) {
-            Particles beam = new Particles("beam");
-            getWorld().addObject(beam, getX(), getY());
-            dead = true;
-            dyingAnimation = 0;
-        }
+
 
         if (Greenfoot.isKeyDown(Options.dropItem)) {
             Inventory();
@@ -359,10 +365,7 @@ public class Player extends Physics {
      * @return returns true or false, true being that the player has died
      */
     private boolean deathCheck() {
-        if (health == 0 || getY() == Options.screenHeight - 2) {
-            return true;
-        }
-        return false;
+        return health <= 0 || getY() == Options.screenHeight - 2;
     }
 
     /**
@@ -500,6 +503,37 @@ public class Player extends Physics {
                 if (jumppad.holding) {
                     jumppad.setLocation(this.getX(), this.getY());
                 }
+            }
+        }
+    }
+
+    private void Slime(){
+        Slime slime = (Slime) getObjectBelowOfClass(Slime.class);
+        Slime slimedmg = (Slime) getOneIntersectingObject(Slime.class);
+        if (slime != null) {
+            if (!slime.dead) {
+                slime.dead = true;
+                vSpeed = 0;
+                jump(20);
+            }
+        }
+        if(slimedmg != null){
+            if (!slimedmg.dead){
+                if(canTakeDmg) {
+                    Player.health -= 0.5;
+                    canTakeDmg = false;
+                }
+            }
+        }
+    }
+    private void deathTimer(){
+        if(!canTakeDmg){
+        deathTimer++;
+        System.out.println(deathTimer);
+            if (deathTimer > 20) {
+                System.out.println("Takedmg");
+                canTakeDmg = true;
+                deathTimer = 0;
             }
         }
     }
