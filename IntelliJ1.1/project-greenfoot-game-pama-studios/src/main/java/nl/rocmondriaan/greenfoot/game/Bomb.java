@@ -85,7 +85,7 @@ public class Bomb extends Physics {
         Player player = (Player) getOneIntersectingObject(Player.class); //Make this only see the object that you hold
         if (player != null) {
             if(player.canTakeDmg){
-                player.health -= 2;
+                Player.health -= 2;
                 player.canTakeDmg = false;
             }
         }
