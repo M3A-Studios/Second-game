@@ -40,6 +40,7 @@ public class Slime extends Physics
             setDoubleX(getX());
             setDoubleY(getY());
             startingX = getX();
+            setNewLocation(getDoubleX(), getDoubleY() - getImage().getHeight());
         }
         updateGravity();
         entityOffset();

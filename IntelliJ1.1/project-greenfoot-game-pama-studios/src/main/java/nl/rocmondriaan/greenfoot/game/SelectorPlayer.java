@@ -52,16 +52,16 @@ public class SelectorPlayer extends Physics {
             String direction = movingDir[index];
             switch (direction) {
                 case "up":
-                    setRelativeLocation(0, -(double) Options.blockSize / framesPerBlock);
+                    setRelativeLocation(0, -64.0 / framesPerBlock);
                     break;
                 case "down":
-                    setRelativeLocation(0, (double) Options.blockSize / framesPerBlock);
+                    setRelativeLocation(0, 64.0 / framesPerBlock);
                     break;
                 case "left":
-                    setRelativeLocation(-(double) Options.blockSize / framesPerBlock, 0);
+                    setRelativeLocation(-64.0 / framesPerBlock, 0);
                     break;
                 case "right":
-                    setRelativeLocation((double) Options.blockSize / framesPerBlock, 0);
+                    setRelativeLocation(64.0 / framesPerBlock, 0);
                     break;
                 default:
                     System.out.println("Not moving any direction, nani"); //debug for when no direction is properly given

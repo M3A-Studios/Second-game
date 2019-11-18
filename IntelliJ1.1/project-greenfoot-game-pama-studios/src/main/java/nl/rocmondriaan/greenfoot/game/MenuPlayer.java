@@ -41,7 +41,7 @@ public class MenuPlayer extends Physics {
     public void act() {
         if (!started) {
             started = true;
-            setNewLocation(Options.blockSize * -1, (int) (Options.blockSize * 5.95));
+            setNewLocation(Options.blockSize * -1, (int) (Options.blockSize * 6.01));
         }
         frame ++; //count frames
         if (frame % 13 == 0 || frame == 1) { //if first frame or frame is a multiplier of 13 it changes images
@@ -73,11 +73,11 @@ public class MenuPlayer extends Physics {
         }
         //hardcoded bs that simply does the whole animation of the guy in the background
         if (frame < 100) {
-            setRelativeLocation(Options.blockSize / 64.0 * 3,0);
+            setRelativeLocation(3,0);
         } else if (frame < 140) {
-            setRelativeLocation(Options.blockSize / 64.0 * 3,Options.blockSize / 64.0 * 3);
+            setRelativeLocation(3,3);
         } else if (frame < 200) {
-            setRelativeLocation(Options.blockSize / 64.0 * 3,0);
+            setRelativeLocation(3,0);
         } else if (frame == 200) {
             vSpeed = 0;
             jump(20);
@@ -85,22 +85,22 @@ public class MenuPlayer extends Physics {
             vSpeed = vSpeed + acceleration;
             if (vSpeed > 20) vSpeed = 20;
             setRelativeLocation(0, vSpeed);
-            setRelativeLocation(Options.blockSize / 64.0 * 3, 0);
+            setRelativeLocation(3, 0);
         } else if (frame == 244) {
-            setRelativeLocation(Options.blockSize / 64.0 * 3, Options.blockSize / 64.0 * 8);
+            setRelativeLocation(3, 8);
         } else if (frame < 280) {
-            setRelativeLocation( Options.blockSize / 64.0 * 3,0);
+            setRelativeLocation( 3,0);
         } else if (frame < 360) {
-            setRelativeLocation(Options.blockSize / 64.0 * 3, -Options.blockSize / 64.0 * 3);
+            setRelativeLocation(3, -3);
         } else if (frame > 500) {
-            setNewLocation(Options.blockSize * -1, (int) (Options.blockSize * 5.95));
+            setNewLocation(Options.blockSize * -1, (int) (Options.blockSize * 6.01));
             frame = 0;
             color ++;
             if (color >= 4) {
                 color = 0;
             }
         } else {
-            setRelativeLocation(Options.blockSize / 64.0 * 3, 0);
+            setRelativeLocation(3, 0);
         }
     }
 }
