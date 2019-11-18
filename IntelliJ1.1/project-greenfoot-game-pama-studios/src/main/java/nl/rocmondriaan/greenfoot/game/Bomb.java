@@ -34,7 +34,7 @@ public class Bomb extends Physics {
     public void act(){
         setDoubleX(getX());
         setDoubleY(getY());
-        if (!holding && atime < 200) {
+        if (!holding && atime < 200 || Player.dead) {
             updateGravity();
             jumpPad();
         }
@@ -51,9 +51,9 @@ public class Bomb extends Physics {
                 atime++;
                 changeimg();
                 if (atime == 50) {spamfire = true;}
-                else if (atime == 200){spamfire = false;}
+                else if (atime == 200){spamfire = false; dmgPlayer();}
                 if (atime >= 200 && atime < 300){Explode();}
-                if (atime >= 200 && atime < 250){deleteshit();}
+                if (atime >= 200 && atime < 250){deleteBlocks();}
                 if (atime >= 200 && atime < 300){fadeTime += 1; fadelong(); }
                 else if (atime > 301){getWorld().removeObject(this);}
             }
@@ -81,7 +81,16 @@ public class Bomb extends Physics {
             this.getImage().setTransparency(255 - fadeTime);
         }
     }
-    public void deleteshit() {
+    public void dmgPlayer(){
+        Player player = (Player) getOneIntersectingObject(Player.class); //Make this only see the object that you hold
+        if (player != null) {
+            if(player.canTakeDmg){
+                player.health -= 2;
+                player.canTakeDmg = false;
+            }
+        }
+    }
+    public void deleteBlocks() {
         getWorld().removeObjects(getObjectsInRange(Options.blockSize * 3,BreakableBlocks.class));
     }
 }

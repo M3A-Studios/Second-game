@@ -31,7 +31,7 @@ public class Player extends Physics {
     static int dropCooldown = 60;
     static int pickUpCooldown;
     static String lastItem;
-    private boolean canTakeDmg;
+    static boolean canTakeDmg;
     private int deathTimer;
     static String lastDroppedItem;
     static int lastItemCD = 30;

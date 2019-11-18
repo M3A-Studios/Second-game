@@ -26,7 +26,7 @@ public class JumpPad extends Physics {
         } else if (getImage() != jumppadUp){
             setImage(jumppadUp);
         }
-        if (!holding) {
+        if (!holding || Player.dead) {
             updateGravity();
             jumpPad();
         }
