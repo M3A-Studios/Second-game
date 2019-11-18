@@ -11,6 +11,7 @@ import java.util.Random;
 import java.util.concurrent.locks.Lock;
 
 public class Player extends Physics {
+    //
     private Actor popup;
     static int health;
     private boolean started;
