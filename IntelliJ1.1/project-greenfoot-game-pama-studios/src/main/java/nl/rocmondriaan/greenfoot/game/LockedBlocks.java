@@ -36,7 +36,8 @@ public class LockedBlocks extends Blocks
             blueBlock.scale(Options.blockSize, Options.blockSize);
             setImage(blueBlock);
         }
-        if (ID == 232) {
+        if (ID == 232)
+        {
             yellowBlock.scale(Options.blockSize, Options.blockSize);
             setImage(yellowBlock);
         }
@@ -50,7 +51,6 @@ public class LockedBlocks extends Blocks
             redBlock.scale(Options.blockSize, Options.blockSize);
             setImage(redBlock);
         }
-
     }
     void unlockBlock()
     {
