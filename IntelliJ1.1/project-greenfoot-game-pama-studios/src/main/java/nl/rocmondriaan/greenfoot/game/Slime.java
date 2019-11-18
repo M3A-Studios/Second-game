@@ -13,7 +13,7 @@ public class Slime extends Physics
     static GreenfootImage blueSlimeM = new GreenfootImage("40.png");
     static GreenfootImage blueSlimeDead = new GreenfootImage("37.png");
     private int slimeWidth = (int) (Options.blockSize / 1.1);          //1 block
-    private int slimeHeight = (int) (Options.blockSize / 1.1); //1.5 blocks
+    private int slimeHeight = (int) (Options.blockSize / 2); //1.5 blocks
 
     static int movementRange = 4;
     private double speed = 2.5;
