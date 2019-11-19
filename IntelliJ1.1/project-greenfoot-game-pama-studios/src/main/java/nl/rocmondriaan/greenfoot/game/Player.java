@@ -223,8 +223,8 @@ public class Player extends Physics {
                 setRelativeLocation(0, 3);
             }
         }
-        if (Greenfoot.isKeyDown("X")) {
-            health = health - 1;
+        if (Greenfoot.isKeyDown("k")) {
+            health = health - 6;
         }
 
 
@@ -481,7 +481,7 @@ public class Player extends Physics {
     }
     private void dropObject(){ //Michael
         if(Greenfoot.isKeyDown(Options.dropObject)){ //Should be drop key in options
-            if(holding == "Bomb") {
+            if(holding.equals("Bomb")) {
                 Bomb bomb = (Bomb) getOneIntersectingObject(Bomb.class);
                 if (bomb != null) {
                     if (bomb.holding) {
@@ -492,7 +492,7 @@ public class Player extends Physics {
                     }
                 }
             }
-            if(holding == "JumpPad") {
+            if(holding.equals("JumpPad")) {
                 JumpPad jumppad = (JumpPad) getOneIntersectingObject(JumpPad.class);
                 if (jumppad != null) {
                     if (jumppad.holding) {
@@ -524,7 +524,7 @@ public class Player extends Physics {
     private void deathTimer(){ //Adds delay to taking dmg
         if(!canTakeDmg){
             deathTimer++;
-            if (deathTimer > 20) {
+            if (deathTimer > 40) {
                 canTakeDmg = true;
                 deathTimer = 0;
             }
