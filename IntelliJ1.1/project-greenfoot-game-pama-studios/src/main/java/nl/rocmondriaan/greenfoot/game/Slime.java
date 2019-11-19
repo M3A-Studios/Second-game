@@ -12,6 +12,7 @@ public class Slime extends Physics
     static GreenfootImage blueSlime = new GreenfootImage("40.png");
     static GreenfootImage blueSlimeM = new GreenfootImage("40.png");
     static GreenfootImage blueSlimeDead = new GreenfootImage("37.png");
+    static GreenfootImage blueSlimeDeadM = new GreenfootImage("37.png");
     private int slimeWidth = (int) (Options.blockSize / 1.1);          //1 block
     private int slimeHeight = (int) (Options.blockSize / 2); //1.5 blocks
 
@@ -25,12 +26,15 @@ public class Slime extends Physics
 
     Slime(int ID) {
         if (!isMirrored) {
+            blueSlimeDeadM.mirrorHorizontally();
+            blueSlimeDeadM.scale(slimeWidth,slimeHeight);
             blueSlimeM.mirrorHorizontally();
             blueSlimeM.scale(slimeWidth, slimeHeight);
             isMirrored = true;
         }
         blueSlime.scale(slimeWidth,slimeHeight);
         blueSlimeDead.scale(slimeWidth,slimeHeight);
+        setImage(blueSlime);
         dead = false;
     }
 
@@ -50,7 +54,13 @@ public class Slime extends Physics
         if (dead){
             aTime ++;
             if (aTime >= 0){
-                setImage(blueSlimeDead);
+                if(isMovingLeft){
+
+                    setImage(blueSlimeDead);
+                }
+                else if(!isMovingLeft){
+                    setImage(blueSlimeDead);
+                }
             }
             if( aTime == 50){
                 getWorld().removeObject(this);

@@ -103,13 +103,11 @@ public class Player extends Physics {
             setDoubleY(getY());
         }
         //execute normal gameplay as long as the player is alive
-        if (!dead) {
-            if (deathCheck()) {
-                dead = true;
-                Particles beam = new Particles("beam");
-                getWorld().addObject(beam, getX(), getY());
-                dyingAnimation = 0;
-            }
+        if (!dead && deathCheck() && !won) {
+            dead = true;
+            Particles beam = new Particles("beam");
+            getWorld().addObject(beam, getX(), getY());
+            dyingAnimation = 0;
         }
         if (!dead && !won) {
             entityOffset(); //make it immune to camera scrolling
@@ -129,23 +127,25 @@ public class Player extends Physics {
             takeDmg();
             deathTimer();
         } else if (won) {
-            updateGravity();
             winAnimation();
             isTouchingObject();
             collectCoin();
             jumpPad();
             winConfetti();
+            updateGravity();
         } else {
             deadAnimation();
         }
     }
     private void deadAnimation() {
+        if (!won) {
             if (dyingAnimation < 200) {
                 animateMovement("Death");
                 dyingAnimation += 1;
             } else {
                 Greenfoot.setWorld(new Levels(LevelSelector.getSelectedLevel(), Levels.activeCheckpoint));
             }
+        }
     }
 
     private void cooldowns() {
@@ -366,7 +366,9 @@ public class Player extends Physics {
         } else if (Direction.equals("Death")) {
             setImage(deadimg);
             if (atime > 0 && atime < 10) {
-                setRelativeLocation(0, -5);
+                if (getX() - getImage().getWidth()/2 < Options.screenWidth) {
+                    setRelativeLocation(0, -5);
+                }
             }
         }
     }
@@ -426,13 +428,15 @@ public class Player extends Physics {
         endingAnimation++;
         if (endingAnimation < 200) {
             if (onGround()) {
-                if (canMoveRight(5) || (getX() + getImage().getWidth() / 2 + 10) > Options.screenWidth) {
+                if (canMoveRight(5) || getX() - getImage().getWidth()/2 < Options.screenWidth) {
                     moveRight(5);
                     moving = true;
                     animateMovement("Right");
                     if (getX() - getImage().getWidth() > Options.screenWidth) {
                         endingAnimation = 999;
                     }
+                } else {
+                    System.out.println("Out of bounds");
                 }
             } else if (isTouching(Flagpole.class)) {
                 if (vSpeed > 5)
