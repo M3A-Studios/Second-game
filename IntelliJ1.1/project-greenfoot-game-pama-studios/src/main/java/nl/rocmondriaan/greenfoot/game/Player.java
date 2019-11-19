@@ -522,9 +522,7 @@ public class Player extends Physics {
     private void deathTimer(){ //Adds delay to taking dmg
         if(!canTakeDmg){
             deathTimer++;
-            System.out.println(deathTimer);
             if (deathTimer > 20) {
-                System.out.println("Takedmg");
                 canTakeDmg = true;
                 deathTimer = 0;
             }
@@ -565,7 +563,6 @@ public class Player extends Physics {
 
     private void spikes(){
         if (isTouching(Spikes.class)){
-            System.out.println("test");
             if(canTakeDmg) {
                 Player.health -= 0.5;
                 canTakeDmg = false;
