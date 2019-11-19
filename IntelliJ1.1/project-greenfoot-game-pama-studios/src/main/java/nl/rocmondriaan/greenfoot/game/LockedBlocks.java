@@ -4,6 +4,7 @@ import com.sun.xml.internal.bind.v2.model.core.ID;
 import greenfoot.Actor;
 import greenfoot.GreenfootImage;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.locks.Lock;
 
@@ -17,8 +18,9 @@ public class LockedBlocks extends Blocks
     private static GreenfootImage redBlock = new GreenfootImage("231.png");
     private static GreenfootImage yellowBlock = new GreenfootImage("232.png");
     private String extend = "";
-    private int frame = 0;
-    private boolean delayed;
+    private static int frame = 0;
+    private String blockType;
+    static List<LockedBlocks> blocksToUnlock = new ArrayList<LockedBlocks>();
 
     LockedBlocks(int ID) {
         super(ID);
@@ -57,13 +59,28 @@ public class LockedBlocks extends Blocks
         }
     }
 
+    public void act() {
+        frame ++;
+        if (frame >= 50) {
+            frame = 0;
+            List<LockedBlocks> executing = new ArrayList<LockedBlocks>(blocksToUnlock);
+            blocksToUnlock.clear();
+            for (LockedBlocks lockedBlock : executing) {
+                if (lockedBlock != null) {
+                    lockedBlock.unlockExtendedBlock(lockedBlock.blockType);
+                }
+            }
+        }
+    }
     private void unlockExtendedBlock(String blockType) {
         List lockedBlocks = getObjectsInRange(Options.blockSize, LockedBlocks.class);
         getWorld().removeObject(this);
         for (Object lockedBlock : lockedBlocks) {
-            if (lockedBlock instanceof LockedBlocks) {
-                if (((LockedBlocks) lockedBlock).extend.equals(blockType)) {
-                    ((LockedBlocks) lockedBlock).unlockExtendedBlock(blockType);
+            LockedBlocks block = (LockedBlocks) lockedBlock;
+            if (block != null) {
+                if (block.extend.equals(blockType)) {
+                    block.blockType = blockType;
+                    blocksToUnlock.add(block);
                 }
             }
         }

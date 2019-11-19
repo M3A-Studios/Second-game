@@ -6,6 +6,7 @@ import greenfoot.Greenfoot;
 import greenfoot.GreenfootImage;
 
 import java.security.Key;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.locks.Lock;
@@ -70,6 +71,7 @@ public class Player extends Physics {
         lastDroppedItem = "";
         carryingObject = false;
         canTakeDmg = true;
+        LockedBlocks.blocksToUnlock = new ArrayList<LockedBlocks>();
 
 
         climb1.scale(playerWidth, playerHeight);
