@@ -14,9 +14,9 @@ class Globals
 
     //Keep track of the coins and score
     static int levelCoinsCollected;
-    static int totalCoinsCollected = 69;
+    static int totalCoinsCollected;
     static int levelScore;
-    static int totalScore = 420;
+    static int totalScore;
 
     //Used in the levels and levelSelector class to know what ID is what kind of block with the check method there.
     static Integer[] platforms = {66,67,68,69,84,85,86,87,102,103,104,105,120,121,122,123,138,139,140,141,156,157,158,159,208,209};

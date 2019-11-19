@@ -385,17 +385,18 @@ public class Player extends Physics {
     private void collectCoin() {
         Coins coin = (Coins) getOneIntersectingObject(Coins.class);
         if (coin != null) {
+            getWorld().removeObject(coin);
             if (coin.CoinID == 166) {
                 Globals.levelCoinsCollected += 1;
-                getWorld().removeObject(coin);
+                Globals.levelScore += 10;
             }
             if (coin.CoinID == 168) {
                 Globals.levelCoinsCollected += 10;
-                getWorld().removeObject(coin);
+                Globals.levelScore += 100;
             }
             if (coin.CoinID == 167) {
                 Globals.levelCoinsCollected += 20;
-                getWorld().removeObject(coin);
+                Globals.levelScore += 200;
             }
         }
     }
@@ -414,8 +415,9 @@ public class Player extends Physics {
 
     private void checkFlagpole() {
         Flagpole flagpole = (Flagpole) getOneIntersectingObject(Flagpole.class);
-        if (flagpole != null) {
+        if (flagpole != null && !won) {
             won = true;
+            Globals.levelScore += 1000;
         }
     }
 
