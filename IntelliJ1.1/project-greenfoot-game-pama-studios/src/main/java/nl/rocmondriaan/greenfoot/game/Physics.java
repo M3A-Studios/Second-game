@@ -274,6 +274,10 @@ public class Physics extends Actor
                 canMoveLeft = false;
             }
         }
+        Actor block = getOneObjectAtOffset(getImage().getWidth()/-2 - (int) Math.ceil(speed), getImage().getHeight() / 2 + Options.blockSize / 2, Solid.class);
+        if (block == null) {
+            canMoveLeft = false;
+        }
         //check out of the world
         if (doubleX - (int) Math.ceil(speed) < getImage().getWidth() / 2.0) {
             canMoveLeft = false;
@@ -339,7 +343,10 @@ public class Physics extends Actor
                 canMoveRight = false;
             }
         }
-
+        Actor block = getOneObjectAtOffset(getImage().getWidth()/2 + (int) Math.ceil(speed), getImage().getHeight() / 2 + Options.blockSize / 2, Solid.class);
+        if (block == null) {
+            canMoveRight = false;
+        }
         if (doubleX - (int) Math.ceil(speed) > Globals.worldWidth - getImage().getWidth() / 2.0) {
             canMoveRight = false;
         }
