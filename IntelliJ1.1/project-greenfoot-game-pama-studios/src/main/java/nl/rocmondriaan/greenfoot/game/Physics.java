@@ -5,6 +5,9 @@ import javafx.application.Platform;
 
 import java.util.concurrent.locks.Lock;
 
+/**
+ *
+ */
 public class Physics extends Actor
 {
     double vSpeed = 0;
@@ -86,6 +89,7 @@ public class Physics extends Actor
         doubleX = doubleX + Camera2.entityXOffset;
         doubleY = doubleY + Camera2.entityYOffset;
     }
+
     /**
      * @param height
      */
@@ -93,6 +97,14 @@ public class Physics extends Actor
         setRelativeLocation(0, - 1);
         vSpeed = vSpeed - height;
     }
+
+    /**
+     * @param height
+     */
+    void jumpExtend(double height) {
+        vSpeed = vSpeed - height;
+    }
+
     /**
      * Checks if the player is gonna hit the ground, will bump its head or is on a ladder
      * if so it will set your vertical movement to zero, if not it will update the gravity

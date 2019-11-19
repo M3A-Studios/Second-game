@@ -185,7 +185,7 @@ public class Player extends Physics {
                 spaceKeyDown += 1;
                 if (spaceKeyDown < 60) {
                     if (vSpeed < 0) {
-                        jump(0.15);
+                        jumpExtend(0.15);
                     }
                 }
             }
@@ -376,7 +376,7 @@ public class Player extends Physics {
      * @return returns true or false, true being that the player has died
      */
     private boolean deathCheck() {
-        return health <= 0 || getY() == Options.screenHeight - 2;
+        return health <= 0 || getY() >= Options.screenHeight - 2;
     }
 
     /**
