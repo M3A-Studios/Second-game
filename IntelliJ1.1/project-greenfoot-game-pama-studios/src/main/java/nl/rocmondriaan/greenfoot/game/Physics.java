@@ -258,6 +258,28 @@ public class Physics extends Actor
         }
         return canMoveLeft;
     }
+    boolean canEntityMoveLeft(double speed){
+        boolean canMoveLeft = true;
+        if (getOneObjectAtOffset(getImage().getWidth() / -2 - (int) Math.ceil(speed), getImage().getHeight() / -2 + 2, Solid.class) != null ||
+                getOneObjectAtOffset(getImage().getWidth() / -2 - (int) Math.ceil(speed), 0,  Solid.class) != null ||
+                getOneObjectAtOffset(getImage().getWidth() / -2 - (int) Math.ceil(speed), getImage().getHeight() / 2 - 2,  Solid.class) != null)
+            canMoveLeft = false;
+        if (getOneObjectAtOffset(getImage().getWidth() / -2 - (int) Math.ceil(speed), getImage().getHeight() / -2 - 2, LockedBlocks.class) != null ||
+                getOneObjectAtOffset(getImage().getWidth() / -2 - (int) Math.ceil(speed), 0, LockedBlocks.class) != null ||
+                getOneObjectAtOffset(getImage().getWidth() / -2 - (int) Math.ceil(speed), getImage().getHeight() / 2 + 2, LockedBlocks.class) != null)
+            canMoveLeft = false;
+        Door door = (Door) getOneObjectAtOffset(getImage().getWidth() / -2 - (int) Math.ceil(speed), 0,  Door.class);
+        if (door != null) {
+            if (!door.opened) {
+                canMoveLeft = false;
+            }
+        }
+        //check out of the world
+        if (doubleX - (int) Math.ceil(speed) < getImage().getWidth() / 2.0) {
+            canMoveLeft = false;
+        }
+        return canMoveLeft;
+    }
 
     /**
      * Checks if the player will be inside of a solid block in the next frame, takes a double to see the movement of the next frame
@@ -295,6 +317,30 @@ public class Physics extends Actor
             }
         }
         if (doubleX - (int) Math.ceil(speed) > Options.screenWidth - getImage().getWidth() / 2.0) {
+            canMoveRight = false;
+        }
+        return canMoveRight;
+    }
+    boolean canEntityMoveRight(double speed){
+        boolean canMoveRight = true;
+        if (getOneObjectAtOffset(getImage().getWidth() / 2 + (int) Math.ceil(speed), getImage().getHeight() / -2 + 2, Solid.class) != null ||
+                getOneObjectAtOffset(getImage().getWidth() / 2 + (int) Math.ceil(speed), 0, Solid.class) != null ||
+                getOneObjectAtOffset(getImage().getWidth() / 2 + (int) Math.ceil(speed), getImage().getHeight() / 2 - 2, Solid.class) != null)
+            canMoveRight = false;
+        if (getOneObjectAtOffset(getImage().getWidth() / 2 + (int) Math.ceil(speed), getImage().getHeight() / -2 + 2, LockedBlocks.class) != null ||
+                getOneObjectAtOffset(getImage().getWidth() / 2 + (int) Math.ceil(speed), 0, LockedBlocks.class) != null ||
+                getOneObjectAtOffset(getImage().getWidth() / 2 + (int) Math.ceil(speed), getImage().getHeight() / 2 - 2, LockedBlocks.class) != null)
+        {
+            canMoveRight = false;
+        }
+        Door door = (Door) getOneObjectAtOffset(getImage().getWidth() / 2 + (int) Math.ceil(speed), 0, Door.class);
+        if (door != null) {
+            if (!door.opened) {
+                canMoveRight = false;
+            }
+        }
+
+        if (doubleX - (int) Math.ceil(speed) > Globals.worldWidth - getImage().getWidth() / 2.0) {
             canMoveRight = false;
         }
         return canMoveRight;

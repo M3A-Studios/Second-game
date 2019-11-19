@@ -50,7 +50,6 @@ public class Slime extends Physics
         if (dead){
             aTime ++;
             if (aTime >= 0){
-                System.out.println("Dead");
                 setImage(blueSlimeDead);
             }
             if( aTime == 50){
@@ -60,7 +59,7 @@ public class Slime extends Physics
     }
     private void moving(){
         if (isMovingLeft) {
-            if (canMoveLeft(speed)) {
+            if (canEntityMoveLeft(speed)) {
                 moveLeft(speed);
                 setImage(blueSlime);
             } else {
@@ -68,7 +67,7 @@ public class Slime extends Physics
             }
         }
         if (!isMovingLeft) {
-            if (canMoveRight(speed)) {
+            if (canEntityMoveRight(speed)) {
                 moveRight(speed);
                 setImage(blueSlimeM);
             } else {
