@@ -6,15 +6,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c4615df-7eab-44ce-b708-99aaf69c1c72" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Lava.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Spikes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Globals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Globals.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/LockedBlocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/LockedBlocks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Physics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Physics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Levels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Levels.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/tilemap/level1.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tilemap/level1.tmx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/tilemap/level3.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tilemap/level3.tmx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Physics.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Physics.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/tilemap/level2.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tilemap/level2.tmx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/greenfoot-engine.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/161.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/images/161.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Globals.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Globals.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Levels.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Levels.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tilemap/level2.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tilemap/level2.tmx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tilemap/tileset-IntelliJ.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tilemap/tileset-IntelliJ.tsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,7 +58,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />

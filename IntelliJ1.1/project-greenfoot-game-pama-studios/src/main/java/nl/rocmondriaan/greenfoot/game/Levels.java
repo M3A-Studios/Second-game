@@ -347,6 +347,10 @@ public class Levels extends World
                     {
                         nextBlock = new Slime(worldMap[layer][position]);
                     }
+                    else if (check(Globals.lavas, worldMap[layer][position]))
+                    {
+                        nextBlock = new Lava(worldMap[layer][position]);
+                    }
                     else if (check(Globals.coins, worldMap[layer][position]))
                     {
                         nextBlock = new Coins(worldMap[layer][position]);
@@ -354,6 +358,10 @@ public class Levels extends World
                     else if (check(Globals.animatedObjects, worldMap[layer][position]))
                     {
                         nextBlock = new AnimatedObject(worldMap[layer][position]);
+                    }
+                    else if (check(Globals.spikes, worldMap[layer][position]))
+                    {
+                        nextBlock = new Spikes(worldMap[layer][position]);
                     }
                     else if (check(Globals.finishFlag, worldMap[layer][position])) {
                         nextBlock = new Flagpole((worldMap[layer][position]));

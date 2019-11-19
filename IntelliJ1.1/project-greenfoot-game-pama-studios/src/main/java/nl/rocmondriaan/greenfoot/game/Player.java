@@ -26,11 +26,10 @@ public class Player extends Physics {
     private int dyingAnimation;
     static boolean won;
     private int endingAnimation;
-    static String holding; //Michael
+    static String holding;
     static String itemToDrop;
     static int dropCooldown = 60;
     static int pickUpCooldown;
-    static String lastItem;
     static boolean canTakeDmg;
     private int deathTimer;
     static String lastDroppedItem;
@@ -122,10 +121,10 @@ public class Player extends Physics {
             checkCheckpoint();
             jumpPad();
             checkFlagpole();
-            holdObject(); //Michael
-            dropObject(); //Michael
+            holdObject();
+            dropObject();
             cooldowns();
-            Slime();
+            takeDmg();
             deathTimer();
         } else if (won) {
             updateGravity();
@@ -162,11 +161,11 @@ public class Player extends Physics {
 
     /**
      * Check for various player inputs
-     * <p>
+     *
      * escape = back to level selector
-     * <p>
+     *
      * these keys still need to be put into options as rn only interact is dynamic and the rest is hardcoded
-     * <p>
+     *
      * jumpkey = jump
      * leftkey = moving left
      * rightkey = moving right
@@ -520,6 +519,24 @@ public class Player extends Physics {
         }
     }
 
+    private void deathTimer(){ //Adds delay to taking dmg
+        if(!canTakeDmg){
+            deathTimer++;
+            System.out.println(deathTimer);
+            if (deathTimer > 20) {
+                System.out.println("Takedmg");
+                canTakeDmg = true;
+                deathTimer = 0;
+            }
+        }
+    }
+
+    private void takeDmg(){
+        Slime();
+        Lava();
+        spikes();
+    }
+
     private void Slime(){
         Slime slime = (Slime) getObjectBelowOfClass(Slime.class);
         Slime slimedmg = (Slime) getOneIntersectingObject(Slime.class);
@@ -539,14 +556,19 @@ public class Player extends Physics {
             }
         }
     }
-    private void deathTimer(){
-        if(!canTakeDmg){
-        deathTimer++;
-        System.out.println(deathTimer);
-            if (deathTimer > 20) {
-                System.out.println("Takedmg");
-                canTakeDmg = true;
-                deathTimer = 0;
+
+    private void Lava(){
+        if (isTouching(Lava.class)){
+            Player.health = 0;
+        }
+    }
+
+    private void spikes(){
+        if (isTouching(Spikes.class)){
+            System.out.println("test");
+            if(canTakeDmg) {
+                Player.health -= 0.5;
+                canTakeDmg = false;
             }
         }
     }
