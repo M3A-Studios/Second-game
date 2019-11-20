@@ -25,7 +25,6 @@ class Globals
     static Integer[] lavas = {222,223,224};
     static Integer[] waters = {};
     static Integer[] spikes = {261,262,263,264};
-    static Integer[] checkpoints = {168,169,170,171,172,173,174,175,176,177,178,179};
     static Integer[] finishFlag = {270, 271,272};
     static Integer[] nonSolids = {210,211,212,215,216,217,218,219,232,233,234,235,236,237,238,239,240,269,270,260,265,266,267,268};
     static Integer[] animatedObjects = {252,253,254};

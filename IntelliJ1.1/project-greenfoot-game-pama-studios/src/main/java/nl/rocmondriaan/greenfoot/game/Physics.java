@@ -399,10 +399,6 @@ public class Physics extends Actor
         }
         return canMoveRight;
     }
-
-
-
-
     /**
      * Check to see if a specific class is underneat the player, first checks in the middle then the left then right of
      * the bottom of the image of the player

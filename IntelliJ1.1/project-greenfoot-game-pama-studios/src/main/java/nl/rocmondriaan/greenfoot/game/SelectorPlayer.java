@@ -17,7 +17,16 @@ public class SelectorPlayer extends Physics {
      * Simply sets the image and scales it
      */
     SelectorPlayer() {
-        GreenfootImage image = new GreenfootImage ("mapTile_136.png");
+        GreenfootImage image;
+        if (Options.player1Color.equals("Blue")) {
+            image = new GreenfootImage("mapTile_137.png");
+        } else if (Options.player1Color.equals("Pink")) {
+            image = new GreenfootImage("mapTile_153.png");
+        } else if (Options.player1Color.equals("Yellow")) {
+            image = new GreenfootImage("mapTile_154.png");
+        } else {
+            image = new GreenfootImage("mapTile_136.png");
+        }
         image.scale((Options.blockSize),(Options.blockSize));
         setImage(image);
     }
@@ -39,6 +48,10 @@ public class SelectorPlayer extends Physics {
         checkInput(); //check for user input
         if (moving) { //if player is supposed to be in an animation
             move(); //move the player
+        }
+        if (Greenfoot.isKeyDown("escape")) {
+            //save to save file
+            Greenfoot.setWorld(new Menu());
         }
     }
 

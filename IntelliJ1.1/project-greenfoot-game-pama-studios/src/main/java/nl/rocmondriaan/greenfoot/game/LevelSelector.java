@@ -49,7 +49,6 @@ public class LevelSelector extends World
             }
         } else {
             selectedLevel = level;
-            System.out.println(selectedLevel);
         }
 
         //reset camera position
