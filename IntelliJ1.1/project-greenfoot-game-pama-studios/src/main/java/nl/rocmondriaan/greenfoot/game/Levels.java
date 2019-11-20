@@ -315,6 +315,14 @@ public class Levels extends World
                     {
                         nextBlock = new Platform(worldMap[layer][position]);
                     }
+                    else if (check(Globals.slopeLefts, worldMap[layer][position]))
+                    {
+                        nextBlock = new SlopeLeft(worldMap[layer][position]);
+                    }
+                    else if (check(Globals.slopeRights, worldMap[layer][position]))
+                    {
+                        nextBlock = new SlopeRight(worldMap[layer][position]);
+                    }
                     else if (check(Globals.ladder, worldMap[layer][position]))
                     {
                         nextBlock = new Ladder(worldMap[layer][position]);

@@ -55,7 +55,6 @@ public class Slime extends Physics
             aTime ++;
             if (aTime >= 0){
                 if(isMovingLeft){
-
                     setImage(blueSlimeDead);
                 }
                 else if(!isMovingLeft){

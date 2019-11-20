@@ -3,6 +3,7 @@ package nl.rocmondriaan.greenfoot.game;
 import greenfoot.Actor;
 import javafx.application.Platform;
 
+import java.sql.SQLOutput;
 import java.util.concurrent.locks.Lock;
 
 /**
@@ -151,6 +152,9 @@ public class Physics extends Actor
                 getOneObjectAtOffset(getImage().getWidth() / 2, getImage().getHeight() / 2 + (int) Math.ceil(vSpeed), Solid.class) != null) {
             onGround = true;
         }
+        if (onSlope()) {
+            onGround = true;
+        }
         //Check if you're inside of a platform
         boolean insidePlatform = false;
         boolean insidePlatform2 = false;
@@ -216,6 +220,41 @@ public class Physics extends Actor
         return (willHitLock || willHitSolid);
     }
 
+    private boolean isOnSlopeLeft() {
+        SlopeLeft slope;
+        slope = (SlopeLeft) getOneObjectAtOffset(-getImage().getWidth() / 2, getImage().getHeight() / 2 + (int) Math.ceil(vSpeed) - 2, SlopeLeft.class);
+        if (slope != null) {
+            int slopeX = slope.getX() + slope.getImage().getWidth()/2;
+            int slopeY = slope.getY() + slope.getImage().getHeight()/2;
+            int height = Options.blockSize - ((getX() + getImage().getWidth()/2) - slopeX);
+            int clip = ((getY() + getImage().getHeight()/2) - (slopeY - height));
+            if (slopeY - height <= getY() + getImage().getHeight()/2 + (int) Math.ceil(vSpeed)) {
+                setRelativeLocation(0, -clip);
+                return true;
+            }
+            return false;
+        }
+        return false;
+    }
+    private boolean isOnSlopeRight() {
+        SlopeRight slope;
+        slope = (SlopeRight) getOneObjectAtOffset(getImage().getWidth() / 2, getImage().getHeight() / 2 + (int) Math.ceil(vSpeed) - 2, SlopeRight.class);
+        if (slope != null) {
+            int slopeX = slope.getX() - slope.getImage().getWidth()/2;
+            int slopeY = slope.getY() + slope.getImage().getHeight()/2;
+            int height = (getX() + getImage().getWidth()/2) - slopeX;
+            int clip = ((getY() + getImage().getHeight()/2) - (slopeY - height));
+            if (slopeY - height <= getY() + getImage().getHeight()/2 + (int) Math.ceil(vSpeed)) {
+                setRelativeLocation(0, -clip);
+                return true;
+            }
+            return false;
+        }
+        return false;
+    }
+    private boolean onSlope() {
+        return (isOnSlopeLeft() || isOnSlopeRight());
+    }
     /**
      * Checks if the player will be inside of a solid block in the next frame, takes a double to see the movement of the next frame
      *
@@ -224,6 +263,10 @@ public class Physics extends Actor
      */
     boolean canMoveLeft(double speed){
         boolean canMoveLeft = true;
+        //if youre on a slope u move 1 pixel up cuz reasonse
+        if (getOneObjectAtOffset(getImage().getWidth()/-2 + 1, getImage().getHeight()/2 + 2, SlopeRight.class) != null) {
+            setRelativeLocation(0, -1);
+        }
         if (getOneObjectAtOffset(getImage().getWidth() / -2 - (int) Math.ceil(speed), getImage().getHeight() / -2 + 2, Solid.class) != null ||
                 getOneObjectAtOffset(getImage().getWidth() / -2 - (int) Math.ceil(speed), 0,  Solid.class) != null ||
                 getOneObjectAtOffset(getImage().getWidth() / -2 - (int) Math.ceil(speed), getImage().getHeight() / 2 - 2,  Solid.class) != null)
@@ -279,7 +322,7 @@ public class Physics extends Actor
             canMoveLeft = false;
         }
         //check out of the world
-        if (doubleX - (int) Math.ceil(speed) < getImage().getWidth() / 2.0) {
+        if (doubleX - (int) Math.ceil(speed) < getImage().getWidth() / 2.0 - Camera2.scrolledX) {
             canMoveLeft = false;
         }
         return canMoveLeft;
@@ -293,6 +336,10 @@ public class Physics extends Actor
      */
     boolean canMoveRight(double speed){
         boolean canMoveRight = true;
+        //if youre on a slope u move 1 pixel up cuz reasons
+        if (getOneObjectAtOffset(getImage().getWidth()/2 - 1, getImage().getHeight()/2 + 2, SlopeRight.class) != null) {
+            setRelativeLocation(0, -1);
+        }
         if (getOneObjectAtOffset(getImage().getWidth() / 2 + (int) Math.ceil(speed), getImage().getHeight() / -2 + 2, Solid.class) != null ||
                 getOneObjectAtOffset(getImage().getWidth() / 2 + (int) Math.ceil(speed), 0, Solid.class) != null ||
                 getOneObjectAtOffset(getImage().getWidth() / 2 + (int) Math.ceil(speed), getImage().getHeight() / 2 - 2, Solid.class) != null)

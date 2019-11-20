@@ -20,14 +20,14 @@ class Globals
 
     //Used in the levels and levelSelector class to know what ID is what kind of block with the check method there.
     static Integer[] platforms = {66,67,68,69,84,85,86,87,102,103,104,105,120,121,122,123,138,139,140,141,156,157,158,159,208,209};
-    static Integer[] slopeLefts = {};
-    static Integer[] slopeRights = {};
+    static Integer[] slopeLefts = {70,88,106,124,142,160};
+    static Integer[] slopeRights = {71,89,107,125,143,161};
     static Integer[] lavas = {222,223,224};
     static Integer[] waters = {};
     static Integer[] spikes = {261,262,263,264};
     static Integer[] checkpoints = {168,169,170,171,172,173,174,175,176,177,178,179};
     static Integer[] finishFlag = {270, 271,272};
-    static Integer[] nonSolids = {215,216,269,270,260,217,218,238,239,240,241};
+    static Integer[] nonSolids = {210,211,212,215,216,217,218,219,232,233,234,235,236,237,238,239,240,269,270,260,265,266,267,268};
     static Integer[] animatedObjects = {252,253,254};
     static Integer[] ladder = {220,221};
     static Integer[] lever = {225,226,227};

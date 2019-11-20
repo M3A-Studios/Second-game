@@ -66,6 +66,7 @@ public class Player extends Physics {
         won = false;
         endingAnimation = 0;
         Globals.levelCoinsCollected = 0;
+        Globals.levelScore = 0;
         holding = ""; //Michael
         inventoryItem = "";
         lastDroppedItem = "";
@@ -445,6 +446,9 @@ public class Player extends Physics {
         } else {
             Globals.totalCoinsCollected += Globals.levelCoinsCollected;
             Globals.totalScore += Globals.levelScore;
+            if (Globals.currentLevel == Globals.levelsUnlocked) {
+                Globals.levelsUnlocked ++;
+            }
             Greenfoot.setWorld(new LevelSelector(LevelSelector.getSelectedLevel()));
         }
     }
