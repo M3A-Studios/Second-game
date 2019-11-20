@@ -188,7 +188,7 @@ public class Player extends Physics {
                 spaceKeyDown += 1;
                 if (spaceKeyDown < 60) {
                     if (vSpeed < 0) {
-                        jumpExtend(0.15);
+                        jumpExtend(0.22);
                     }
                 }
             }
