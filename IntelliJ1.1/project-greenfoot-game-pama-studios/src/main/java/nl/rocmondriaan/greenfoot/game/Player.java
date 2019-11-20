@@ -42,16 +42,16 @@ public class Player extends Physics {
     private int playerHeight = Options.blockSize * 3 / 2; //1.5 blocks
 
     //Images 
-    private GreenfootImage climb1 = new GreenfootImage("alienGreen_climb1.png");
-    private GreenfootImage climb2 = new GreenfootImage("alienGreen_climb2.png");
-    private GreenfootImage front = new GreenfootImage("alienGreen_front.png");
-    private GreenfootImage deadimg = new GreenfootImage("alienGreen_dead.png");
-    private GreenfootImage walk1 = new GreenfootImage("alienGreen_walk1.png");
-    private GreenfootImage walk2 = new GreenfootImage("alienGreen_walk2.png");
-    private GreenfootImage walk1m = new GreenfootImage("alienGreen_walk1.png");
-    private GreenfootImage walk2m = new GreenfootImage("alienGreen_walk2.png");
-    private GreenfootImage jump = new GreenfootImage("alienGreen_jump.png");
-    private GreenfootImage jumpm = new GreenfootImage("alienGreen_jump.png");
+    private GreenfootImage climb1 = new GreenfootImage("alien" + Options.player1Color + "_climb1.png");
+    private GreenfootImage climb2 = new GreenfootImage("alien" + Options.player1Color + "_climb2.png");
+    private GreenfootImage front = new GreenfootImage("alien" + Options.player1Color + "_front.png");
+    private GreenfootImage deadimg = new GreenfootImage("alienGreen_dead.png"); //no death images for other aliens
+    private GreenfootImage walk1 = new GreenfootImage("alien" + Options.player1Color + "_walk1.png");
+    private GreenfootImage walk2 = new GreenfootImage("alien" + Options.player1Color + "_walk2.png");
+    private GreenfootImage walk1m = new GreenfootImage("alien" + Options.player1Color + "_walk1.png");
+    private GreenfootImage walk2m = new GreenfootImage("alien" + Options.player1Color + "_walk2.png");
+    private GreenfootImage jump = new GreenfootImage("alien" + Options.player1Color + "_jump.png");
+    private GreenfootImage jumpm = new GreenfootImage("alien" + Options.player1Color + "_jump.png");
 
     /**
      * Constructor method used to simply size the images and set it, also sets started to false
@@ -177,6 +177,7 @@ public class Player extends Physics {
      */
     private void checkinput() {
         if (Greenfoot.isKeyDown("escape")) {
+            //save to save file
             Greenfoot.setWorld(new LevelSelector(Globals.currentLevel));
         }
         if (Greenfoot.isKeyDown("space")) {

@@ -32,7 +32,8 @@ public class MenuContinue extends Actor {
         //check for if clicked on
         if (Greenfoot.mouseClicked(this))
         {
-            //action to take when clicked
+            //LOAD SAVE FILE
+            Greenfoot.setWorld(new LevelSelector(LevelSelector.getSelectedLevel()));
         }
         //check if hovering over the button
         MouseInfo mouse = Greenfoot.getMouseInfo();

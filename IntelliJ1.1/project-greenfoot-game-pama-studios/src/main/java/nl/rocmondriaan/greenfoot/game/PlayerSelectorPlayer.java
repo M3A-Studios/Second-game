@@ -7,33 +7,31 @@ import greenfoot.MouseInfo;
 
 import java.util.List;
 
-public class MenuNewGame extends Actor {
+public class PlayerSelectorPlayer extends Actor {
 
     private int normalWidth;
     private int normalHeight;
     private boolean overObject = false;
+    private String color;
 
-    /**
-     * Simply sets the image, scales it and sets what the dimensions of the default image are to the end result
-     */
-    MenuNewGame() {
-        GreenfootImage image = new GreenfootImage("MenuNewGame.png");
-        image.scale((Options.blockSize) * 6, (Options.blockSize) * 3 / 2);
+    PlayerSelectorPlayer(String color) {
+        GreenfootImage image = new GreenfootImage("alien" + color + "_front.png");
+        image.scale(Options.blockSize * 2, Options.blockSize * 3);
         setImage(image);
-
+        this.color = color;
         normalWidth = image.getWidth();
         normalHeight = image.getHeight();
     }
 
-    /**
-     * Act method being executed every frame, checks for if player clicked on the button to execute code
-     * also checks for hovering and if so makes the image 10% bigger
-     */
     public void act() {
         //check for if clicked on
         if (Greenfoot.mouseClicked(this))
         {
-            Greenfoot.setWorld(new PlayerSelectorScreen());
+            LevelSelector.setSelectedLevel(1);
+            Globals.levelCoinsCollected = 0;
+            //Globals.levelsUnlocked = 1;
+            Options.player1Color = this.color;
+            Greenfoot.setWorld(new LevelSelector());
         }
         //check if hovering over the button
         MouseInfo mouse = Greenfoot.getMouseInfo();
@@ -59,4 +57,6 @@ public class MenuNewGame extends Actor {
             }
         }
     }
+
+
 }
