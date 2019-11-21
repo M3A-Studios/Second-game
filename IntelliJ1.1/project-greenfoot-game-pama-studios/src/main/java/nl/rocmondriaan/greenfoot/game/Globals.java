@@ -10,6 +10,7 @@ class Globals
     static int worldWidth;
     static int worldHeight;
     static int levelsUnlocked = 15;
+    static int currentLevel = 5;
 
     //Keep track of the coins and score
     static int levelCoinsCollected;

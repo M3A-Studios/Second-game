@@ -115,6 +115,9 @@ public class Levels extends World
         } else if (level == 4) {
             checkpointX.add(2);
             checkpointY.add(15);
+        } else if (level == 5) {
+            checkpointX.add(2);
+            checkpointY.add(15);
         } else {
             //Spawn location (checkpoint 0)
             checkpointX.add(2);

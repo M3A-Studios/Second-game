@@ -91,6 +91,8 @@ public class Camera2 extends Actor
         return scrolledX;
     }
 
+    /*Bo From The 4 Musketeers was here <3*/
+
     /**
      * Method used to get the cameraOffset (how far it has scrolled)
      * Remember that the accurate world cords of an object is getY() + getScrolledY() (and same for X)
