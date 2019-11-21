@@ -3,6 +3,7 @@ package nl.rocmondriaan.greenfoot.game;
 import greenfoot.Actor;
 import greenfoot.GreenfootImage;
 import greenfoot.World;
+import sun.security.krb5.internal.crypto.Des;
 
 import java.io.File;
 import java.io.IOException;
@@ -91,6 +92,9 @@ public class Levels extends World
         //getMap(level); //get the map of this level
         getCheckpointLocations(level);
         renderMap(getMap(level), getPlayerLayer(level), level); //spawn the map and player as said layer
+        if (level >= 7 && level <= 9) {
+            addObject(new DesertStorm(), 0, Options.screenHeight);
+        }
         renderText(level);
         spawnCamera(getBackground(level)); //spawn the camera
         renderHUD(); //render the Heads Up Display (overlay like hearts and score)
@@ -199,9 +203,19 @@ public class Levels extends World
      */
     private static GreenfootImage getBackground(int level) {
         //currently has no case in this because we only have one background.. will update later
-        GreenfootImage background;
-        background = new GreenfootImage("background.png");
-        return background;
+        String file;
+        if (level <= 3) {
+            file = "background.png";
+        } else if (level <= 6) {
+            file = "backgroundColorFall.png";
+        } else if (level <= 9) {
+            file = "backgroundColorDesert.png";
+        } else if (level <= 12) {
+            file = "backgroundForest.png";
+        } else {
+            file = "backgroundColorGrass.png";
+        }
+        return new GreenfootImage(file);
     }
 
     /**

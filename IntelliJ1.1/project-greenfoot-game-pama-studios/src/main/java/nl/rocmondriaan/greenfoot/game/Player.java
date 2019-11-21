@@ -70,7 +70,7 @@ public class Player extends Physics {
         endingAnimation = 0;
         Globals.levelCoinsCollected = 0;
         Globals.levelScore = 0;
-        holding = ""; //Michael
+        holding = "";
         inventoryItem = "";
         lastDroppedItem = "";
         carryingObject = false;
@@ -116,6 +116,7 @@ public class Player extends Physics {
         if (!dead && !won) {
             entityOffset(); //fix camera scrolling issues
             updateGravity();
+            updateWind();
             checkinput();
             standingStill();
             checkinput();
@@ -138,6 +139,16 @@ public class Player extends Physics {
             updateGravity();
         } else {
             deadAnimation();
+        }
+    }
+    private void updateWind() {
+
+        if (DesertStorm.moving && isTouching(DesertStorm.class)) {
+            if (DesertStorm.movingLeft) {
+                if (canMoveLeft(1)) moveLeft(1);
+            } else {
+                if (canMoveRight(1)) moveRight(1);
+            }
         }
     }
     private void deadAnimation() {
