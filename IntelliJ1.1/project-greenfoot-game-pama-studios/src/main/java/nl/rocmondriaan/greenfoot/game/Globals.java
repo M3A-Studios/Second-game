@@ -9,12 +9,8 @@ class Globals
     //Keep track of some world related variables
     static int worldWidth;
     static int worldHeight;
-<<<<<<< Updated upstream
     static int levelsUnlocked = 15;
-=======
-    static int levelsUnlocked = 5;
     static int currentLevel = 5;
->>>>>>> Stashed changes
 
     //Keep track of the coins and score
     static int levelCoinsCollected;
