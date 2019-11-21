@@ -6,13 +6,10 @@ class Globals
     //Holds some basic values, should eventually be moved but eh :shrug:
     //To match png -1
 
-    //Encryption key for save file
-    static String key = "dAtAbAsE98765432"; // 128 bit key
-
     //Keep track of some world related variables
     static int worldWidth;
     static int worldHeight;
-    static int levelsUnlocked = 2;
+    static int levelsUnlocked = 15;
 
     //Keep track of the coins and score
     static int levelCoinsCollected;

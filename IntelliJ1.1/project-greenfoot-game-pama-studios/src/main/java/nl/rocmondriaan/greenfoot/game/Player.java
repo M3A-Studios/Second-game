@@ -12,7 +12,9 @@ import java.util.Random;
 import java.util.concurrent.locks.Lock;
 
 public class Player extends Physics {
-    //
+
+    private int player;
+
     private Actor popup;
     static int health;
     private boolean started;
@@ -22,7 +24,7 @@ public class Player extends Physics {
     private double spaceKeyDown;
     static String inventoryItem;
     static boolean carryingObject;
-    private int atime;
+    private double atime;
     static boolean dead;
     private int dyingAnimation;
     static boolean won;
@@ -57,7 +59,8 @@ public class Player extends Physics {
      * Constructor method used to simply size the images and set it, also sets started to false
      * which is used in the first frame of act() to get the player's spawn location
      */
-    Player() {
+    Player(int player) {
+        this.player = player;
         dead = false;
         atime = 0;
         dyingAnimation = 0;
@@ -111,9 +114,8 @@ public class Player extends Physics {
             dyingAnimation = 0;
         }
         if (!dead && !won) {
-            entityOffset(); //make it immune to camera scrolling
+            entityOffset(); //fix camera scrolling issues
             updateGravity();
-            walkingAnim();
             checkinput();
             standingStill();
             checkinput();
@@ -176,8 +178,8 @@ public class Player extends Physics {
      * interact = interact with object
      */
     private void checkinput() {
+        moving = false;
         if (Greenfoot.isKeyDown("escape")) {
-            //save to save file
             Greenfoot.setWorld(new LevelSelector(LevelSelector.getSelectedLevel()));
         }
         if (Greenfoot.isKeyDown("space")) {
@@ -192,45 +194,54 @@ public class Player extends Physics {
                     }
                 }
             }
+
+            if (!onLadder() && !onGround()) { //start
+                if ((Greenfoot.isKeyDown(Options.player1Left) && player == 1) || (Greenfoot.isKeyDown(Options.player2Left) && player == 2)) {
+                    animateMovement("Jumpm");
+                } else if ((Greenfoot.isKeyDown(Options.player1Right) && player == 1) || (Greenfoot.isKeyDown(Options.player2Right) && player == 2)) {
+                    animateMovement("Jump");
+                }
+            }
         }
-        moving = false;
-        if (Greenfoot.isKeyDown("d") && (!Greenfoot.isKeyDown("a"))) { //&& (!Greenfoot.isKeyDown("a")) toegevoegd voor links rechts bug
+        if ((Greenfoot.isKeyDown(Options.player1Right) && !Greenfoot.isKeyDown(Options.player1Left) && player == 1)
+                || (Greenfoot.isKeyDown(Options.player2Right) && (!Greenfoot.isKeyDown(Options.player2Left) && player == 2))) {
             rightKeyDown += 1;
             if (rightKeyDown > 60) rightKeyDown = 60;
             double speed = 2 + rightKeyDown / 60.0;
             if (canMoveRight(speed)) {
                 moveRight(speed);
                 moving = true;
+                if (onGround()) animateMovement("Right");
             }
         } else {
             rightKeyDown = 0;
         }
-        if (Greenfoot.isKeyDown("a") && (!Greenfoot.isKeyDown("d"))) { //&& (!Greenfoot.isKeyDown("d")) toegevoegd voor links rechts bug
+        if ((Greenfoot.isKeyDown(Options.player1Left) && !Greenfoot.isKeyDown(Options.player1Right) && player == 1)
+                || (Greenfoot.isKeyDown(Options.player2Left) && (!Greenfoot.isKeyDown(Options.player2Right) && player == 2))) {
             leftKeyDown += 1;
             if (leftKeyDown > 60) leftKeyDown = 60;
             double speed = 2 + leftKeyDown / 60.0;
             if (canMoveLeft(speed)) {
                 moveLeft(speed);
                 moving = true;
+                if (onGround()) animateMovement("Left");
             }
         } else {
             leftKeyDown = 0;
         }
-
         if (onLadder()) {
-            if (Greenfoot.isKeyDown("W")) {
+            if ((Greenfoot.isKeyDown(Options.player1Up) && player == 1) || (Greenfoot.isKeyDown(Options.player2Up) && player == 2)) {
                 setRelativeLocation(0, -3);
+                animateMovement("Ladder");
             }
-            if (Greenfoot.isKeyDown("S") && !onGround()) {
+            if (((Greenfoot.isKeyDown(Options.player1Down) && player == 1) || (Greenfoot.isKeyDown(Options.player2Down) && player == 2)) && !onGround()) {
                 setRelativeLocation(0, 3);
+                animateMovement("Ladder");
             }
         }
         if (Greenfoot.isKeyDown("k")) {
             health = health - 6;
         }
-
-
-
         if (Greenfoot.isKeyDown(Options.dropItem)) {
             Inventory();
         }
@@ -278,7 +289,7 @@ public class Player extends Physics {
                 popup = new PopUp(Options.interact);
             }
             getWorld().addObject(popup, lever.getX(), lever.getY() - Options.blockSize * 2);
-            if (Greenfoot.isKeyDown("e")) { //Sets image if key down
+            if (Greenfoot.isKeyDown(Options.interact)) { //Sets image if key down
                 popup.getImage().scale((int) (Options.blockSize * 1.2), (int) (Options.blockSize * 1.2));
             } else {
                 popup.getImage().scale((int) (Options.blockSize * 1.4), (int) (Options.blockSize * 1.4));
@@ -304,34 +315,13 @@ public class Player extends Physics {
 
 
     /**
-     * Checks what animation should be played and based on that calls animateMovement with said animation
-     */
-    private void walkingAnim() {
-        if (!onLadder() && Greenfoot.isKeyDown("d") && onGround()) {
-            animateMovement("Right");
-        }
-        if (!onLadder() && Greenfoot.isKeyDown("a") && onGround()) {
-            animateMovement("Left");
-        }
-        if (onLadder() && Greenfoot.isKeyDown("w") || onLadder() && Greenfoot.isKeyDown("s")) {
-            animateMovement("Ladder");
-        }
-        if (!onLadder() && Greenfoot.isKeyDown("space") && !onGround()) { //start
-            if (Greenfoot.isKeyDown("a")) {
-                animateMovement("Jumpm");
-            } else if (Greenfoot.isKeyDown("d")) {
-                animateMovement("Jump");
-            }
-        }
-    }
-
-    /**
      * Handles animations for the character
      *
      * @param Direction String of what direction the player is moving in to know which animations to use
      */
     private void animateMovement(String Direction) {
-        atime = atime + 1;
+
+        atime = atime + 0.25;
         if (atime > 10) {
             atime = 0;
         }

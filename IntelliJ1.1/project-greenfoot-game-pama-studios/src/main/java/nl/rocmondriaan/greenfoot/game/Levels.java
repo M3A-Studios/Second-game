@@ -400,7 +400,7 @@ public class Levels extends World
                 didCheckpoints = true;
             }
             if (layer == playerLayer) {
-                player = new Player();
+                player = new Player(1);
                 addObject(player, Options.blockSize * (checkpointX.get(activeCheckpoint) - 1) + Options.blockSize / 2, Options.blockSize * (checkpointY.get(activeCheckpoint)) + Options.blockSize / 4);
                 if (!didCheckpoints) { //if not done last layer
                     renderCheckpoints(checkpointColor); //render the checkpoints per level, hardcoded

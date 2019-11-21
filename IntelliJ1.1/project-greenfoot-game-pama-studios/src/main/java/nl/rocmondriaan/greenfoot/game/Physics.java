@@ -96,7 +96,7 @@ public class Physics extends Actor
      */
     void jump(double height) {
         setRelativeLocation(0, - 1);
-        vSpeed = vSpeed - height;
+        vSpeed = -height;
     }
 
     /**

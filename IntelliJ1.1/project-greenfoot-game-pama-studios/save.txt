@@ -1,6 +1,19 @@
 Player1Color:Pink
-LevelsUnlocked:2
-SelectedLevel:1
+Player2Color:Blue
+ScreenHeight:720
+Player1LeftButton:A
+Player1UpButton:W
+Player1DownButton:S
+Player1RightButton:D
+Player2LeftButton:left
+Player2UpButton:up
+Player2DownButton:down
+Player2RightButton:right
+InteractButton:E
+DropItemButton:Q
+DropObjectButton:Z
+LevelsUnlocked:15
+SelectedLevel:3
 Coins:0
 Score:0
 

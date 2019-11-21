@@ -1,8 +1,9 @@
 package nl.rocmondriaan.greenfoot.game;
 
+import greenfoot.Actor;
 import greenfoot.GreenfootImage;
 
-public class Inventory extends Player
+public class Inventory extends Actor
 {
     private GreenfootImage inventory = new GreenfootImage("glassPanel.png");
     private String purpose;

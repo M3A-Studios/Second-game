@@ -90,19 +90,19 @@ public class LockedBlocks extends Blocks
     {
         String blockToRemove = "";
 
-        if(getImage() == blueBlock && Inventory.inventoryItem.equals("blueKey"))
+        if(getImage() == blueBlock && Player.inventoryItem.equals("blueKey"))
         {
             blockToRemove = "blueBlock";
         }
-        if(getImage() == greenBlock && Inventory.inventoryItem.equals("greenKey"))
+        if(getImage() == greenBlock && Player.inventoryItem.equals("greenKey"))
         {
             blockToRemove = "greenBlock";
         }
-        if(getImage() == redBlock && Inventory.inventoryItem.equals("redKey") )
+        if(getImage() == redBlock && Player.inventoryItem.equals("redKey") )
         {
             blockToRemove = "redBlock";
         }
-        if(getImage() == yellowBlock && Inventory.inventoryItem.equals("yellowKey"))
+        if(getImage() == yellowBlock && Player.inventoryItem.equals("yellowKey"))
         {
             blockToRemove = "yellowBlock";
         }
@@ -110,7 +110,7 @@ public class LockedBlocks extends Blocks
         {
             frame = 0;
             unlockExtendedBlock(blockToRemove);
-            Inventory.inventoryItem = "";
+            Player.inventoryItem = "";
         }
     }
 }
