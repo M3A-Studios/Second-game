@@ -50,7 +50,7 @@ public class SelectorPlayer extends Physics {
             move(); //move the player
         }
         if (Greenfoot.isKeyDown("escape")) {
-            //save to save file
+            Saver.saveGame(); //save the game when going to the main menu
             Greenfoot.setWorld(new Menu());
         }
     }
@@ -215,8 +215,8 @@ public class SelectorPlayer extends Physics {
                 }
             }
             if (Greenfoot.isKeyDown("enter") || Greenfoot.isKeyDown("space")) {
+                Saver.saveGame(); //save the game when going into a level
                 Greenfoot.setWorld(new Levels(LevelSelector.getSelectedLevel()));
-                Globals.currentLevel = LevelSelector.getSelectedLevel();
             }
             if (movingTo != LevelSelector.getSelectedLevel() && movingTo <= Globals.levelsUnlocked && movingDir != null) {
                 moving = true;

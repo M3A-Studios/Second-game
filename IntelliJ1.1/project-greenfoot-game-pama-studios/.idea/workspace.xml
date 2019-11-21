@@ -6,8 +6,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c4615df-7eab-44ce-b708-99aaf69c1c72" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Saver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Globals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Globals.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/LevelSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/LevelSelector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/MenuContinue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/MenuContinue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/MenuNewGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/MenuNewGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/PlayerSelectorPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/PlayerSelectorPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/SelectorPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/SelectorPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Globals.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Globals.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/LevelSelector.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/LevelSelector.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/MenuContinue.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/MenuContinue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/MenuNewGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/MenuNewGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/PlayerSelectorPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/PlayerSelectorPlayer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/SelectorPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/SelectorPlayer.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,6 +59,7 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="/media/michael/Files/JavaQuizmasterGit/JavaQuizmasterM" />
     <property name="project.structure.last.edited" value="Project" />

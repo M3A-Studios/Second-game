@@ -63,6 +63,8 @@ public class LevelSelector extends World
         renderLocks(); //render the locks over locked levels
         spawnCamera(); //spawn the camera
         renderHud();
+
+        Saver.saveGame(); //save the game when loading the level selector (so also after every level)
     }
     private void renderHud() {
         addObject (new HUDNumber(0, "coin"), (int) (Options.blockSize * 0.5), (int) (Options.blockSize * 0.5));

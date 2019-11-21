@@ -1,0 +1,6 @@
+Player1Color:Pink
+LevelsUnlocked:2
+SelectedLevel:1
+Coins:0
+Score:0
+

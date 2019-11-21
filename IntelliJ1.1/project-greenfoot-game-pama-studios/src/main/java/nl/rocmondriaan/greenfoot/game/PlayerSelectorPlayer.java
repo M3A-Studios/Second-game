@@ -27,12 +27,6 @@ public class PlayerSelectorPlayer extends Actor {
         //check for if clicked on
         if (Greenfoot.mouseClicked(this))
         {
-            LevelSelector.setSelectedLevel(1);
-            Globals.levelCoinsCollected = 0;
-            Globals.totalCoinsCollected = 0;
-            Globals.totalScore = 0;
-            Globals.levelScore = 0;
-            //Globals.levelsUnlocked = 1;
             Options.player1Color = this.color;
             Greenfoot.setWorld(new LevelSelector());
         }

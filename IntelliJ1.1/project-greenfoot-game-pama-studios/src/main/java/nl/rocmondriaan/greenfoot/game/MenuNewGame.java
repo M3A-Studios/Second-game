@@ -33,6 +33,13 @@ public class MenuNewGame extends Actor {
         //check for if clicked on
         if (Greenfoot.mouseClicked(this))
         {
+            Saver.createSave();
+            LevelSelector.setSelectedLevel(1);
+            Globals.levelCoinsCollected = 0;
+            Globals.totalCoinsCollected = 0;
+            Globals.totalScore = 0;
+            Globals.levelScore = 0;
+            //Globals.levelsUnlocked = 1;
             Greenfoot.setWorld(new PlayerSelectorScreen());
         }
         //check if hovering over the button

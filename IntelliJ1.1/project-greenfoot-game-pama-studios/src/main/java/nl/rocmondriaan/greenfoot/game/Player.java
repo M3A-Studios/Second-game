@@ -178,7 +178,7 @@ public class Player extends Physics {
     private void checkinput() {
         if (Greenfoot.isKeyDown("escape")) {
             //save to save file
-            Greenfoot.setWorld(new LevelSelector(Globals.currentLevel));
+            Greenfoot.setWorld(new LevelSelector(LevelSelector.getSelectedLevel()));
         }
         if (Greenfoot.isKeyDown("space")) {
             if (onGround()) {
@@ -447,7 +447,7 @@ public class Player extends Physics {
         } else {
             Globals.totalCoinsCollected += Globals.levelCoinsCollected;
             Globals.totalScore += Globals.levelScore;
-            if (Globals.currentLevel == Globals.levelsUnlocked) {
+            if (LevelSelector.getSelectedLevel() == Globals.levelsUnlocked) {
                 Globals.levelsUnlocked ++;
             }
             Greenfoot.setWorld(new LevelSelector(LevelSelector.getSelectedLevel()));
