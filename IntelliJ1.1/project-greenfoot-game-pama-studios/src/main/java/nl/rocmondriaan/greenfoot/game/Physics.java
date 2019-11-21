@@ -1,5 +1,6 @@
 package nl.rocmondriaan.greenfoot.game;
 
+import com.sun.org.apache.bcel.internal.generic.INSTANCEOF;
 import greenfoot.Actor;
 import javafx.application.Platform;
 
@@ -181,12 +182,21 @@ public class Physics extends Actor
             }
         }
         //Check if you're on top of Locked block
-        LockedBlocks lockBlock1 = (LockedBlocks) getOneObjectAtOffset(getImage().getWidth() / -2 + 1, getImage().getHeight() / 2 + (int) Math.ceil(vSpeed), LockedBlocks.class);
-        if (lockBlock1 != null) { lockBlock1.unlockBlock(); }
-        LockedBlocks lockBlock2 = (LockedBlocks) getOneObjectAtOffset(0, getImage().getHeight() / 2 + (int) Math.ceil(vSpeed), LockedBlocks.class);
-        if (lockBlock2 != null) { lockBlock2.unlockBlock(); }
-        LockedBlocks lockBlock3 = (LockedBlocks) (getOneObjectAtOffset(getImage().getWidth() / 2 - 1, getImage().getHeight() / 2 + (int) Math.ceil(vSpeed), LockedBlocks.class));
-        if (lockBlock3 != null) { lockBlock3.unlockBlock(); }
+
+        if (this instanceof Player) {
+            LockedBlocks lockBlock1 = (LockedBlocks) getOneObjectAtOffset(getImage().getWidth() / -2 + 1, getImage().getHeight() / 2 + (int) Math.ceil(vSpeed), LockedBlocks.class);
+            if (lockBlock1 != null) {
+                lockBlock1.unlockBlock();
+            }
+            LockedBlocks lockBlock2 = (LockedBlocks) getOneObjectAtOffset(0, getImage().getHeight() / 2 + (int) Math.ceil(vSpeed), LockedBlocks.class);
+            if (lockBlock2 != null) {
+                lockBlock2.unlockBlock();
+            }
+            LockedBlocks lockBlock3 = (LockedBlocks) (getOneObjectAtOffset(getImage().getWidth() / 2 - 1, getImage().getHeight() / 2 + (int) Math.ceil(vSpeed), LockedBlocks.class));
+            if (lockBlock3 != null) {
+                lockBlock3.unlockBlock();
+            }
+        }
 
         if (getOneObjectAtOffset(getImage().getWidth() / -2 + 1, getImage().getHeight() / 2 + (int) Math.ceil(vSpeed), LockedBlocks.class) != null ||
                 getOneObjectAtOffset(0, getImage().getHeight() / 2 + (int) Math.ceil(vSpeed), LockedBlocks.class) != null ||
@@ -208,12 +218,21 @@ public class Physics extends Actor
                 getOneObjectAtOffset(getImage().getWidth() / 2, getImage().getHeight() / -2 + (int) Math.floor(vSpeed), Solid.class) != null ||
                 getOneObjectAtOffset(0, getImage().getHeight() / -2 + (int) Math.floor(vSpeed), Solid.class) != null;
         //check for locked block
-        LockedBlocks lockBlock1 = (LockedBlocks) getOneObjectAtOffset(getImage().getWidth() / -2, getImage().getHeight() / -2 + (int) Math.floor(vSpeed), LockedBlocks.class);
-        if (lockBlock1 != null) { lockBlock1.unlockBlock(); }
-        LockedBlocks lockBlock2 = (LockedBlocks) getOneObjectAtOffset(getImage().getWidth() / 2, getImage().getHeight() / -2 + (int) Math.floor(vSpeed), LockedBlocks.class);
-        if (lockBlock2 != null) { lockBlock2.unlockBlock(); }
-        LockedBlocks lockBlock3 = (LockedBlocks) getOneObjectAtOffset(0, getImage().getHeight() / -2 + (int) Math.floor(vSpeed), LockedBlocks.class);
-        if (lockBlock3 != null) { lockBlock3.unlockBlock(); }
+
+        if (this instanceof Player) {
+            LockedBlocks lockBlock1 = (LockedBlocks) getOneObjectAtOffset(getImage().getWidth() / -2, getImage().getHeight() / -2 + (int) Math.floor(vSpeed), LockedBlocks.class);
+            if (lockBlock1 != null) {
+                lockBlock1.unlockBlock();
+            }
+            LockedBlocks lockBlock2 = (LockedBlocks) getOneObjectAtOffset(getImage().getWidth() / 2, getImage().getHeight() / -2 + (int) Math.floor(vSpeed), LockedBlocks.class);
+            if (lockBlock2 != null) {
+                lockBlock2.unlockBlock();
+            }
+            LockedBlocks lockBlock3 = (LockedBlocks) getOneObjectAtOffset(0, getImage().getHeight() / -2 + (int) Math.floor(vSpeed), LockedBlocks.class);
+            if (lockBlock3 != null) {
+                lockBlock3.unlockBlock();
+            }
+        }
         willHitLock = (getOneObjectAtOffset(getImage().getWidth() / -2, getImage().getHeight() / -2 + (int) Math.floor(vSpeed), LockedBlocks.class) != null ||
                 getOneObjectAtOffset(getImage().getWidth() / 2, getImage().getHeight() / -2 + (int) Math.floor(vSpeed), LockedBlocks.class) != null ||
                 getOneObjectAtOffset(0, getImage().getHeight() / -2 + (int) Math.floor(vSpeed), LockedBlocks.class) != null);
@@ -272,15 +291,20 @@ public class Physics extends Actor
                 getOneObjectAtOffset(getImage().getWidth() / -2 - (int) Math.ceil(speed), getImage().getHeight() / 2 - 2,  Solid.class) != null)
             canMoveLeft = false;
         //check for locked block
-        LockedBlocks lockBlock1 = (LockedBlocks) getOneObjectAtOffset(getImage().getWidth() / -2 + (int) Math.ceil(speed), getImage().getHeight() / -2 + 2, LockedBlocks.class);
-        if (lockBlock1 != null) {
-            lockBlock1.unlockBlock();
-        }LockedBlocks lockBlock2 = (LockedBlocks) getOneObjectAtOffset(getImage().getWidth() / -2 - (int) Math.ceil(speed), 0, LockedBlocks.class);
-        if (lockBlock2 != null) {
-            lockBlock2.unlockBlock();
-        }LockedBlocks lockBlock3 = (LockedBlocks) getOneObjectAtOffset(getImage().getWidth() / -2 - (int) Math.ceil(speed), getImage().getHeight() / 2 - 2, LockedBlocks.class);
-        if (lockBlock3 != null) {
-            lockBlock3.unlockBlock();
+
+        if (this instanceof Player) {
+            LockedBlocks lockBlock1 = (LockedBlocks) getOneObjectAtOffset(getImage().getWidth() / -2 + (int) Math.ceil(speed), getImage().getHeight() / -2 + 2, LockedBlocks.class);
+            if (lockBlock1 != null) {
+                lockBlock1.unlockBlock();
+            }
+            LockedBlocks lockBlock2 = (LockedBlocks) getOneObjectAtOffset(getImage().getWidth() / -2 - (int) Math.ceil(speed), 0, LockedBlocks.class);
+            if (lockBlock2 != null) {
+                lockBlock2.unlockBlock();
+            }
+            LockedBlocks lockBlock3 = (LockedBlocks) getOneObjectAtOffset(getImage().getWidth() / -2 - (int) Math.ceil(speed), getImage().getHeight() / 2 - 2, LockedBlocks.class);
+            if (lockBlock3 != null) {
+                lockBlock3.unlockBlock();
+            }
         }
         if (getOneObjectAtOffset(getImage().getWidth() / -2 - (int) Math.ceil(speed), getImage().getHeight() / -2 - 2, LockedBlocks.class) != null ||
                 getOneObjectAtOffset(getImage().getWidth() / -2 - (int) Math.ceil(speed), 0, LockedBlocks.class) != null ||
@@ -345,15 +369,19 @@ public class Physics extends Actor
                 getOneObjectAtOffset(getImage().getWidth() / 2 + (int) Math.ceil(speed), getImage().getHeight() / 2 - 2, Solid.class) != null)
             canMoveRight = false;
 
-        LockedBlocks lockBlock1 = (LockedBlocks) getOneObjectAtOffset(getImage().getWidth() / 2 + (int) Math.ceil(speed), getImage().getHeight() / -2 + 2, LockedBlocks.class);
-        if (lockBlock1 != null) {
-            lockBlock1.unlockBlock();
-        }LockedBlocks lockBlock2 = (LockedBlocks) getOneObjectAtOffset(getImage().getWidth() / 2 + (int) Math.ceil(speed), 0, LockedBlocks.class);
-        if (lockBlock2 != null) {
-            lockBlock2.unlockBlock();
-        }LockedBlocks lockBlock3 = (LockedBlocks) getOneObjectAtOffset(getImage().getWidth() / 2 + (int) Math.ceil(speed), getImage().getHeight() / 2 - 2, LockedBlocks.class);
-        if (lockBlock3 != null) {
-            lockBlock3.unlockBlock();
+        if (this instanceof Player) {
+            LockedBlocks lockBlock1 = (LockedBlocks) getOneObjectAtOffset(getImage().getWidth() / 2 + (int) Math.ceil(speed), getImage().getHeight() / -2 + 2, LockedBlocks.class);
+            if (lockBlock1 != null) {
+                lockBlock1.unlockBlock();
+            }
+            LockedBlocks lockBlock2 = (LockedBlocks) getOneObjectAtOffset(getImage().getWidth() / 2 + (int) Math.ceil(speed), 0, LockedBlocks.class);
+            if (lockBlock2 != null) {
+                lockBlock2.unlockBlock();
+            }
+            LockedBlocks lockBlock3 = (LockedBlocks) getOneObjectAtOffset(getImage().getWidth() / 2 + (int) Math.ceil(speed), getImage().getHeight() / 2 - 2, LockedBlocks.class);
+            if (lockBlock3 != null) {
+                lockBlock3.unlockBlock();
+            }
         }
         if (getOneObjectAtOffset(getImage().getWidth() / 2 + (int) Math.ceil(speed), getImage().getHeight() / -2 + 2, LockedBlocks.class) != null ||
                 getOneObjectAtOffset(getImage().getWidth() / 2 + (int) Math.ceil(speed), 0, LockedBlocks.class) != null ||

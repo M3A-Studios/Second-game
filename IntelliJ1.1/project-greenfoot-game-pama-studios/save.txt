@@ -1,4 +1,4 @@
-Player1Color:Pink
+Player1Color:Blue
 Player2Color:Blue
 ScreenHeight:720
 Player1LeftButton:A
@@ -13,7 +13,7 @@ InteractButton:E
 DropItemButton:Q
 DropObjectButton:Z
 LevelsUnlocked:15
-SelectedLevel:1
+SelectedLevel:5
 Coins:0
 Score:0
 

@@ -122,7 +122,7 @@ public class Slime extends Physics {
             }
             if (pinkJump == 30) {
                 if (onGround()) {
-                    jump(30);
+                    jump(15);
                 }
                 pinkJump = 0;
             }
