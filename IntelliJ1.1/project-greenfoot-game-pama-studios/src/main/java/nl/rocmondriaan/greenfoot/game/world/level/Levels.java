@@ -12,7 +12,7 @@ import nl.rocmondriaan.greenfoot.game.hud.Inventory;
 import nl.rocmondriaan.greenfoot.game.GameLogic;
 import nl.rocmondriaan.greenfoot.game.entities.Player;
 import nl.rocmondriaan.greenfoot.game.entities.enemies.Slime;
-import nl.rocmondriaan.greenfoot.game.world.Camera;
+import nl.rocmondriaan.greenfoot.game.Camera;
 
 import java.io.File;
 import java.io.IOException;

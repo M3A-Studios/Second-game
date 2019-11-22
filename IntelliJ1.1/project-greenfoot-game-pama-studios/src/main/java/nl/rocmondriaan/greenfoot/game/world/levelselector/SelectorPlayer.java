@@ -5,7 +5,7 @@ import greenfoot.GreenfootImage;
 import nl.rocmondriaan.greenfoot.game.Globals;
 import nl.rocmondriaan.greenfoot.game.Options;
 import nl.rocmondriaan.greenfoot.game.Saver;
-import nl.rocmondriaan.greenfoot.game.world.Camera;
+import nl.rocmondriaan.greenfoot.game.Camera;
 import nl.rocmondriaan.greenfoot.game.Physics;
 import nl.rocmondriaan.greenfoot.game.world.level.Levels;
 import nl.rocmondriaan.greenfoot.game.world.menu.Menu;

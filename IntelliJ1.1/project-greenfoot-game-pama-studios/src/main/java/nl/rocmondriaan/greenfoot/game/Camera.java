@@ -1,4 +1,4 @@
-package nl.rocmondriaan.greenfoot.game.world;
+package nl.rocmondriaan.greenfoot.game;
 
 import greenfoot.Actor;
 import greenfoot.GreenfootImage;

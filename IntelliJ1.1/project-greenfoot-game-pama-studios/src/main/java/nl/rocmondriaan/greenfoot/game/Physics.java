@@ -9,7 +9,6 @@ import nl.rocmondriaan.greenfoot.game.blocks.special.Door;
 import nl.rocmondriaan.greenfoot.game.blocks.special.JumpPad;
 import nl.rocmondriaan.greenfoot.game.blocks.special.LockedBlocks;
 import nl.rocmondriaan.greenfoot.game.entities.Player;
-import nl.rocmondriaan.greenfoot.game.world.Camera;
 
 /**
  *

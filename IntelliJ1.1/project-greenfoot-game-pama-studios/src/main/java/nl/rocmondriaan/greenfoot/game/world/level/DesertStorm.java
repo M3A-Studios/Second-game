@@ -3,7 +3,7 @@ package nl.rocmondriaan.greenfoot.game.world.level;
 import greenfoot.GreenfootImage;
 import nl.rocmondriaan.greenfoot.game.Options;
 import nl.rocmondriaan.greenfoot.game.Physics;
-import nl.rocmondriaan.greenfoot.game.world.Camera;
+import nl.rocmondriaan.greenfoot.game.Camera;
 
 public class DesertStorm extends Physics {
 

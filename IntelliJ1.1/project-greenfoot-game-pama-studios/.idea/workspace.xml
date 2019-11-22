@@ -6,111 +6,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c4615df-7eab-44ce-b708-99aaf69c1c72" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/GameLogic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/blocks/normal/Spikes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/world/level/Background.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/save.txt" beforeDir="false" afterPath="$PROJECT_DIR$/save.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/AnimatedObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/blocks/special/AnimatedObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Blocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/blocks/Blocks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Bomb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/blocks/special/Bomb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/BreakableBlocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/blocks/special/BreakableBlocks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Camera2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/world/Camera.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Checkpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/blocks/special/Checkpoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Coins.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/blocks/normal/Coins.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/DesertStorm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/world/level/DesertStorm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Door.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/blocks/special/Door.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Flagpole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/blocks/special/Flagpole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Globals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Globals.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/HUDNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/hud/HUDNumber.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Heart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/hud/Heart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/hud/Inventory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/JumpPad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/blocks/special/JumpPad.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Keys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/blocks/special/Keys.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Ladder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/blocks/normal/Ladder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Lava.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/blocks/normal/Lava.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/LevelLock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/world/levelselector/LevelLock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/LevelSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/world/levelselector/LevelSelector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Levels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/world/level/Levels.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Lever.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/blocks/special/Lever.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/LockedBlocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/blocks/special/LockedBlocks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/MapTile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/blocks/normal/MapTile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/world/menu/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/MenuContinue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/world/menu/MenuContinue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/MenuExit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/world/menu/MenuExit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/MenuLogo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/world/menu/MenuLogo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/MenuNewGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/world/menu/MenuNewGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/MenuPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/world/menu/MenuPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/NonSolid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/blocks/normal/NonSolid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Options.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Options.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/PSwitch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/blocks/special/PSwitch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Particles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Particles.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Physics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Physics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Platform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/blocks/normal/Platform.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/entities/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/PlayerSelectorPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/world/menu/PlayerSelectorPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/PlayerSelectorScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/world/menu/PlayerSelectorScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/PopUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/hud/PopUp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Saver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Saver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/SelectorPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/world/levelselector/SelectorPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Slime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/entities/enemies/Slime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/SlopeLeft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/blocks/normal/SlopeLeft.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/SlopeRight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/blocks/normal/SlopeRight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Solid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/blocks/normal/Solid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Spikes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/standalone.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/standalone.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/tilemap/level11.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tilemap/level11.tmx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/tilemap/level7.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tilemap/level7.tmx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/AnimatedObject.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Blocks.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Bomb.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/BreakableBlocks.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Camera2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Checkpoint.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Coins.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/DesertStorm.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Door.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Flagpole.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Globals.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/HUDNumber.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Heart.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Inventory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/JumpPad.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Keys.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Ladder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Lava.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/LevelLock.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/LevelSelector.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Levels.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Lever.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/LockedBlocks.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/MapTile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Menu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/MenuContinue.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/MenuExit.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/MenuLogo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/MenuNewGame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/MenuPlayer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/NonSolid.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Options.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/PSwitch.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Particles.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Physics.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Platform.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Player.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/PlayerSelectorPlayer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/PlayerSelectorScreen.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/PopUp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Saver.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/SelectorPlayer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Slime.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/SlopeLeft.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/SlopeRight.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Solid.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Spikes.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/standalone.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/standalone.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tilemap/level11.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tilemap/level11.tmx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tilemap/level7.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tilemap/level7.tmx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/world/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Camera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/world/level/DesertStorm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/world/level/DesertStorm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/world/level/Levels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/world/level/Levels.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/world/levelselector/LevelSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/world/levelselector/LevelSelector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/world/levelselector/SelectorPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/world/levelselector/SelectorPlayer.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -159,8 +60,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="nl.rocmondriaan.greenfoot.game.blocks.normal" />
       <recent name="nl.rocmondriaan.greenfoot.game" />
+      <recent name="nl.rocmondriaan.greenfoot.game.blocks.normal" />
     </key>
   </component>
   <component name="RunDashboard">

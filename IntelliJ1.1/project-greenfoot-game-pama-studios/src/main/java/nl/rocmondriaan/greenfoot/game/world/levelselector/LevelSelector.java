@@ -6,7 +6,7 @@ import greenfoot.World;
 import nl.rocmondriaan.greenfoot.game.*;
 import nl.rocmondriaan.greenfoot.game.blocks.normal.MapTile;
 import nl.rocmondriaan.greenfoot.game.hud.HUDNumber;
-import nl.rocmondriaan.greenfoot.game.world.Camera;
+import nl.rocmondriaan.greenfoot.game.Camera;
 
 import java.io.File;
 import java.io.IOException;
