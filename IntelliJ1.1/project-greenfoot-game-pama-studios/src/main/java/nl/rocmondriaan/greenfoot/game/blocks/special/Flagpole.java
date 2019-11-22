@@ -1,0 +1,40 @@
+package nl.rocmondriaan.greenfoot.game.blocks.special;
+
+import greenfoot.Actor;
+import greenfoot.GreenfootImage;
+import nl.rocmondriaan.greenfoot.game.Options;
+
+public class Flagpole extends Actor {
+
+    private String purpose;
+    private int frame;
+    private GreenfootImage waving1 = new GreenfootImage("273.png");
+    private GreenfootImage waving2 = new GreenfootImage("170.png");
+    private GreenfootImage pole = new GreenfootImage("272.png");
+
+    public Flagpole(int ID) {
+        waving1.scale(Options.blockSize, Options.blockSize);
+        waving2.scale(Options.blockSize, Options.blockSize);
+        pole.scale(Options.blockSize, Options.blockSize);
+        if (ID == 273) {
+            purpose = "top";
+            setImage(waving1);
+        } else {
+            purpose = "pole";
+            setImage(pole);
+        }
+    }
+
+    public void act() {
+        if (purpose.equals("top")) {
+            frame++;
+            if (frame == 1) {
+                setImage(waving1);
+            } else if (frame == 15) {
+                setImage(waving2);
+            } else if (frame >= 30) {
+                frame = 0;
+            }
+        }
+    }
+}

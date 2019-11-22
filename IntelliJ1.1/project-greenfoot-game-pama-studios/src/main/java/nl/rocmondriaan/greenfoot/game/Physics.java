@@ -1,19 +1,23 @@
 package nl.rocmondriaan.greenfoot.game;
 
-import com.sun.org.apache.bcel.internal.generic.INSTANCEOF;
 import greenfoot.Actor;
-import javafx.application.Platform;
-
-import java.sql.SQLOutput;
-import java.util.concurrent.locks.Lock;
+import nl.rocmondriaan.greenfoot.game.blocks.normal.Ladder;
+import nl.rocmondriaan.greenfoot.game.blocks.normal.SlopeLeft;
+import nl.rocmondriaan.greenfoot.game.blocks.normal.SlopeRight;
+import nl.rocmondriaan.greenfoot.game.blocks.normal.Solid;
+import nl.rocmondriaan.greenfoot.game.blocks.special.Door;
+import nl.rocmondriaan.greenfoot.game.blocks.special.JumpPad;
+import nl.rocmondriaan.greenfoot.game.blocks.special.LockedBlocks;
+import nl.rocmondriaan.greenfoot.game.entities.Player;
+import nl.rocmondriaan.greenfoot.game.world.Camera;
 
 /**
  *
  */
 public class Physics extends Actor
 {
-    double vSpeed = 0;
-    double acceleration = 0.9;
+    protected double vSpeed = 0;
+    protected double acceleration = 0.9;
     int jtime;
 
     private double doubleX;
@@ -39,7 +43,7 @@ public class Physics extends Actor
      *
      * @param x             expects a double for what to set doubleX to
      */
-    void setDoubleX(double x) {
+    protected void setDoubleX(double x) {
         doubleX = x;
     }
 
@@ -50,7 +54,7 @@ public class Physics extends Actor
      *
      * @param y             expects a double for what to set doubleY to
      */
-    void setDoubleY(double y) {
+    protected void setDoubleY(double y) {
         doubleY = y;
     }
 
@@ -62,7 +66,7 @@ public class Physics extends Actor
      * @param x         excepts a double X value to set the entity to
      * @param y         expects a double Y value to set the entity to
      */
-    void setNewLocation(double x, double y) {
+    protected void setNewLocation(double x, double y) {
         doubleX = x;
         doubleY = y;
         setLocation((int) doubleX, (int) doubleY);
@@ -75,7 +79,7 @@ public class Physics extends Actor
      * @param x         expects a double X value to move the object along the x-axis
      * @param y         expects a double Y value to move the object along the y-axis
      */
-    void setRelativeLocation(double x, double y) {
+    protected void setRelativeLocation(double x, double y) {
         double scaledX = Options.blockSize / 64.0 * x;
         double scaledY = Options.blockSize / 64.0 * y;
         doubleX = doubleX + scaledX;
@@ -87,15 +91,15 @@ public class Physics extends Actor
      * to make sure no bugs happen (like things not moving properly). Should be used in the act method of every object
      * that extends physics, has no arguments
      */
-    void entityOffset() {
-        doubleX = doubleX + Camera2.entityXOffset;
-        doubleY = doubleY + Camera2.entityYOffset;
+    protected void entityOffset() {
+        doubleX = doubleX + Camera.entityXOffset;
+        doubleY = doubleY + Camera.entityYOffset;
     }
 
     /**
      * @param height
      */
-    void jump(double height) {
+    protected void jump(double height) {
         setRelativeLocation(0, - 1);
         vSpeed = -height;
     }
@@ -103,7 +107,7 @@ public class Physics extends Actor
     /**
      * @param height
      */
-    void jumpExtend(double height) {
+    protected void jumpExtend(double height) {
         vSpeed = vSpeed - height;
     }
 
@@ -111,7 +115,7 @@ public class Physics extends Actor
      * Checks if the player is gonna hit the ground, will bump its head or is on a ladder
      * if so it will set your vertical movement to zero, if not it will update the gravity
      */
-    void updateGravity() {
+    protected void updateGravity() {
         if(!onGround() && !willBumpHead() && !onLadder())
         {
             vSpeed = vSpeed + acceleration;
@@ -132,7 +136,7 @@ public class Physics extends Actor
      *
      * @return      returns true or false based on if the player is on a ladder or not
      */
-    boolean onLadder() {
+    protected boolean onLadder() {
         if (getOneObjectAtOffset(0, -1 + getImage().getHeight() / 2 + (int) Math.floor(vSpeed), Ladder.class) != null) {
             return getOneObjectAtOffset(0, -1 + (int) Math.floor(vSpeed), Ladder.class) != null;
         } else {
@@ -146,7 +150,7 @@ public class Physics extends Actor
      *
      * @return          returns true or false based on if the player is hitting the ground (or just standing on it)
      */
-    boolean onGround() {
+    protected boolean onGround() {
         boolean onGround = false;
         if (getOneObjectAtOffset(getImage().getWidth() / -2, getImage().getHeight() / 2 + (int) Math.ceil(vSpeed), Solid.class) != null ||
                 getOneObjectAtOffset(0, getImage().getHeight() / 2 + (int) Math.ceil(vSpeed), Solid.class) != null ||
@@ -160,9 +164,9 @@ public class Physics extends Actor
         boolean insidePlatform = false;
         boolean insidePlatform2 = false;
         boolean insidePlatform3 = false;
-        Actor platformBelow = getOneObjectAtOffset(getImage().getWidth() / -2 + 1, getImage().getHeight() / 2 + (int) Math.ceil(vSpeed), nl.rocmondriaan.greenfoot.game.Platform.class); //check bottom left
-        Actor platformBelow2 = getOneObjectAtOffset(0, getImage().getHeight() / 2 + (int) Math.ceil(vSpeed), nl.rocmondriaan.greenfoot.game.Platform.class); //check bottom right
-        Actor platformBelow3 = getOneObjectAtOffset(getImage().getWidth() / 2 - 1, getImage().getHeight() / 2 + (int) Math.ceil(vSpeed), nl.rocmondriaan.greenfoot.game.Platform.class); //check bottom right
+        Actor platformBelow = getOneObjectAtOffset(getImage().getWidth() / -2 + 1, getImage().getHeight() / 2 + (int) Math.ceil(vSpeed), nl.rocmondriaan.greenfoot.game.blocks.normal.Platform.class); //check bottom left
+        Actor platformBelow2 = getOneObjectAtOffset(0, getImage().getHeight() / 2 + (int) Math.ceil(vSpeed), nl.rocmondriaan.greenfoot.game.blocks.normal.Platform.class); //check bottom right
+        Actor platformBelow3 = getOneObjectAtOffset(getImage().getWidth() / 2 - 1, getImage().getHeight() / 2 + (int) Math.ceil(vSpeed), nl.rocmondriaan.greenfoot.game.blocks.normal.Platform.class); //check bottom right
         if (platformBelow != null) {
             insidePlatform = (platformBelow.getY() - platformBelow.getImage().getHeight()/2 < getY() + getImage().getHeight()/2);
         }
@@ -173,9 +177,9 @@ public class Physics extends Actor
             insidePlatform3 = (platformBelow3.getY() - platformBelow3.getImage().getHeight()/2 < getY() + getImage().getHeight()/2);
         }
         //check if you're on top of a platform
-        if (getOneObjectAtOffset(getImage().getWidth()/-2, (int) (getImage().getHeight()/2 + (int) Math.ceil(vSpeed)), nl.rocmondriaan.greenfoot.game.Platform.class) != null //get object at lower left pixel of object
-                || getOneObjectAtOffset(0, (int) (getImage().getHeight()/2 + (int) Math.ceil(vSpeed)), nl.rocmondriaan.greenfoot.game.Platform.class) != null //get object at lower middle pixel of object
-                || getOneObjectAtOffset(getImage().getWidth()/2, (int) (getImage().getHeight()/2 + (int) Math.ceil(vSpeed)), nl.rocmondriaan.greenfoot.game.Platform.class) != null) { //get object at lower right pixel of object
+        if (getOneObjectAtOffset(getImage().getWidth()/-2, (int) (getImage().getHeight()/2 + (int) Math.ceil(vSpeed)), nl.rocmondriaan.greenfoot.game.blocks.normal.Platform.class) != null //get object at lower left pixel of object
+                || getOneObjectAtOffset(0, (int) (getImage().getHeight()/2 + (int) Math.ceil(vSpeed)), nl.rocmondriaan.greenfoot.game.blocks.normal.Platform.class) != null //get object at lower middle pixel of object
+                || getOneObjectAtOffset(getImage().getWidth()/2, (int) (getImage().getHeight()/2 + (int) Math.ceil(vSpeed)), nl.rocmondriaan.greenfoot.game.blocks.normal.Platform.class) != null) { //get object at lower right pixel of object
             //if your feet are on a platform but you're not inside one
             if (!insidePlatform && !insidePlatform2 && !insidePlatform3) {
                 onGround = true;
@@ -280,7 +284,7 @@ public class Physics extends Actor
      * @param speed         how far it should check to the left of you to see if you get into a block or not.
      * @return              returns true or false based on if you can move to the left or not
      */
-    boolean canMoveLeft(double speed){
+    protected boolean canMoveLeft(double speed){
         boolean canMoveLeft = true;
         //if youre on a slope u move 1 pixel up cuz reasonse
         if (getOneObjectAtOffset(getImage().getWidth()/-2 + 1, getImage().getHeight()/2 + 2, SlopeRight.class) != null) {
@@ -325,7 +329,7 @@ public class Physics extends Actor
         }
         return canMoveLeft;
     }
-    boolean canEntityMoveLeft(double speed){
+    protected boolean canEntityMoveLeft(double speed){
         boolean canMoveLeft = true;
         if (getOneObjectAtOffset(getImage().getWidth() / -2 - (int) Math.ceil(speed), getImage().getHeight() / -2 + 2, Solid.class) != null ||
                 getOneObjectAtOffset(getImage().getWidth() / -2 - (int) Math.ceil(speed), 0,  Solid.class) != null ||
@@ -346,7 +350,7 @@ public class Physics extends Actor
             canMoveLeft = false;
         }
         //check out of the world
-        if (doubleX - (int) Math.ceil(speed) < getImage().getWidth() / 2.0 - Camera2.scrolledX) {
+        if (doubleX - (int) Math.ceil(speed) < getImage().getWidth() / 2.0 - Camera.scrolledX) {
             canMoveLeft = false;
         }
         return canMoveLeft;
@@ -358,7 +362,7 @@ public class Physics extends Actor
      * @param speed         how far it should check to the right of you to see if you get into a block or not.
      * @return              returns true or false based on if you can move to the right or not
      */
-    boolean canMoveRight(double speed){
+    protected boolean canMoveRight(double speed){
         boolean canMoveRight = true;
         //if youre on a slope u move 1 pixel up cuz reasons
         if (getOneObjectAtOffset(getImage().getWidth()/2 - 1, getImage().getHeight()/2 + 2, SlopeRight.class) != null) {
@@ -400,7 +404,7 @@ public class Physics extends Actor
         }
         return canMoveRight;
     }
-    boolean canEntityMoveRight(double speed){
+    protected boolean canEntityMoveRight(double speed){
         boolean canMoveRight = true;
         if (getOneObjectAtOffset(getImage().getWidth() / 2 + (int) Math.ceil(speed), getImage().getHeight() / -2 + 2, Solid.class) != null ||
                 getOneObjectAtOffset(getImage().getWidth() / 2 + (int) Math.ceil(speed), 0, Solid.class) != null ||
@@ -434,7 +438,7 @@ public class Physics extends Actor
      * @param classToCheck      A class to check if its underneat the player
      * @return                  Returns the actor below you or null
      */
-    Actor getObjectBelowOfClass(Class classToCheck) {
+    protected Actor getObjectBelowOfClass(Class classToCheck) {
         if (vSpeed >= 0) {
             Actor actor;
             actor = getOneObjectAtOffset(0, getImage().getHeight() / 2 + 1, classToCheck);
@@ -455,7 +459,7 @@ public class Physics extends Actor
      *
      * @param speed         how far the player should move to the right
      */
-    void moveRight(double speed)
+    protected void moveRight(double speed)
     {
         setRelativeLocation(speed,0);
     }
@@ -465,12 +469,12 @@ public class Physics extends Actor
      *
      * @param speed         how far the player should move to the left
      */
-    void moveLeft(double speed)
+    protected void moveLeft(double speed)
     {
         setRelativeLocation(- speed,0);
     }
 
-    void jumpPad(){
+    protected void jumpPad(){
         if (vSpeed >= 0) {
             JumpPad jumpPad = (JumpPad) getObjectBelowOfClass(JumpPad.class);
             if (jumpPad != null) {

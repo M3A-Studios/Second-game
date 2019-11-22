@@ -1,14 +1,16 @@
 package nl.rocmondriaan.greenfoot.game;
 
+import nl.rocmondriaan.greenfoot.game.world.levelselector.LevelSelector;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-class Saver {
+public class Saver {
 
-    static void createSave() {
+    public static void createSave() {
         BufferedWriter file = null;
         try {
             file = new BufferedWriter(new FileWriter("save.txt"));
@@ -26,7 +28,7 @@ class Saver {
         }
     }
 
-    static void saveGame() {
+    public static void saveGame() {
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter("save.txt"));
 
@@ -59,7 +61,7 @@ class Saver {
         }
     }
 
-    static void loadGame() {
+    public static void loadGame() {
         File readFile = new File("save.txt"); //set what file to read
         if (!readFile.exists()) {
             createSave();

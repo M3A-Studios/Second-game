@@ -1,6 +1,6 @@
 package nl.rocmondriaan.greenfoot.game;
-import greenfoot.Actor;
 import greenfoot.GreenfootImage;
+
 import java.util.Random;
 
 public class Particles extends Physics {
@@ -12,7 +12,6 @@ public class Particles extends Physics {
     private GreenfootImage fire = new GreenfootImage("fire01.png"); //need new fire image
 
     private int random3;
-    private int random2;
     private int deathFadeTime;
     private int deathTime;
     private int timePassed;
@@ -61,7 +60,7 @@ public class Particles extends Physics {
         else { System.out.println(type); }
     }
 
-    Particles(String type) {
+    public Particles(String type) {
         this.type = type;
         if (type.equals("smoke")){
             smoke();
@@ -80,21 +79,21 @@ public class Particles extends Physics {
         }
     }
 
-    public void fade(){ //Fade out en kill object
+    private void fade(){ //Fade out en kill object
         deathFadeTime += 1;
         if (150 - deathFadeTime*2 > 0) {
             this.getImage().setTransparency(150-deathFadeTime*2);
         }
         if (deathFadeTime>=60) {deathFadeTime = 0; getWorld().removeObject(this); timePassed = 0;}
     }
-    public void fadelong(){ //Fade out en kill object
+    private void fadelong(){ //Fade out en kill object
         deathFadeTime += 1;
         if (220 - deathFadeTime > 0) {
             this.getImage().setTransparency(220 - deathFadeTime);
         }
         if (deathFadeTime >= 220) {deathFadeTime = 0; getWorld().removeObject(this); timePassed = 0;}
     }
-    public void smoke(){
+    private void smoke(){
         deathTime = 60; //How long to be destroyed yes it's randomised now
         if (random3 == 1){ //3 random images
             setImage(smoke1);
