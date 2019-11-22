@@ -1,7 +1,15 @@
 package nl.rocmondriaan.greenfoot.game;
 
+import com.sun.org.apache.bcel.internal.generic.INSTANCEOF;
 import greenfoot.Actor;
+import javafx.application.Platform;
 
+import java.sql.SQLOutput;
+import java.util.concurrent.locks.Lock;
+
+/**
+ *
+ */
 public class Physics extends Actor
 {
     double vSpeed = 0;

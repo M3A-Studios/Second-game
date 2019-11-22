@@ -5,16 +5,7 @@
     <option name="CUSTOM_SCOPE_NAME" value="game package scope" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c4615df-7eab-44ce-b708-99aaf69c1c72" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/DesertStorm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/save.txt" beforeDir="false" afterPath="$PROJECT_DIR$/save.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Levels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Levels.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/rocmondriaan/greenfoot/game/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/greenfoot-engine.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Levels.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Levels.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/rocmondriaan/greenfoot/game/Player.class" afterDir="false" />
-    </list>
+    <list default="true" id="7c4615df-7eab-44ce-b708-99aaf69c1c72" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +44,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Test/Second-game/IntelliJ1.1/project-greenfoot-game-pama-studios" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
