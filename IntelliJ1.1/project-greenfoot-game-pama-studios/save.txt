@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-Player1Color:Blue
-=======
-Player1Color:Green
->>>>>>> Development
+Player1Color:Pink
 Player2Color:Blue
 ScreenHeight:720
 Player1LeftButton:A
@@ -17,13 +13,7 @@ InteractButton:E
 DropItemButton:Q
 DropObjectButton:Z
 LevelsUnlocked:15
-<<<<<<< HEAD
-SelectedLevel:7
-Coins:22
-Score:1220
-=======
-SelectedLevel:6
-Coins:719
-Score:8190
->>>>>>> Development
+SelectedLevel:1
+Coins:0
+Score:0
 

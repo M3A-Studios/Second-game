@@ -63,7 +63,7 @@
           </excludes>
           <archive>
             <manifest>
-              <mainClass>nl.rocmondriaan.greenfoot.App</mainClass>
+              <mainClass>App</mainClass>
             </manifest>
           </archive>
         </configuration>
@@ -73,7 +73,7 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>nl.rocmondriaan.greenfoot.App</mainClass>
+              <mainClass>App</mainClass>
             </manifest>
           </archive>
           <descriptorRefs>
