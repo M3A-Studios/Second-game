@@ -157,6 +157,8 @@ public class Levels extends World
                 return 3;
             case 2:
                 return 0;
+            case 5:
+                return 3;
             default:
                 return 0;
         }
