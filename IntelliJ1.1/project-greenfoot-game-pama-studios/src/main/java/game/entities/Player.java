@@ -59,6 +59,10 @@ public class Player extends Physics {
     private GreenfootImage walk2m;
     private GreenfootImage jump;
     private GreenfootImage jumpm;
+    private GreenfootImage hit;
+    private GreenfootImage hitm;
+    private String knockbackDirection;
+
 
     /**
      * Constructor method used to simply size the images and set it, also sets started to false
@@ -101,7 +105,9 @@ public class Player extends Physics {
         walk2m = new GreenfootImage("alien" + color+ "_walk2.png");
         jump = new GreenfootImage("alien" + color+ "_jump.png");
         jumpm = new GreenfootImage("alien" + color+ "_jump.png");
-        
+        hit = new GreenfootImage("alien" + color+ "_hit.png");
+        hitm = new GreenfootImage("alien" + color+ "_hit.png");
+
         climb1.scale(playerWidth, playerHeight);
         climb2.scale(playerWidth, playerHeight);
         front.scale(playerWidth, playerHeight);
@@ -112,6 +118,9 @@ public class Player extends Physics {
         walk2.scale(playerWidth, playerHeight);
         walk1m.scale(playerWidth, playerHeight);
         walk2m.scale(playerWidth, playerHeight);
+        hit.scale(playerWidth, playerHeight);
+        hitm.scale(playerWidth, playerHeight);
+        hitm.mirrorHorizontally();
         walk1m.mirrorHorizontally();
         walk2m.mirrorHorizontally();
         jumpm.mirrorHorizontally();
@@ -554,17 +563,35 @@ public class Player extends Physics {
         }
     }
 
-    private void dmgTimer(){ //Adds delay to taking dmg needtomakeflicker
+    private void dmgTimer(){ //Adds delay to taking dmg
+        if(canTakeDmg){ getImage().setTransparency(255); }
         if(!canTakeDmg){
             dmgTimer++;
-            if (dmgTimer == 10){this.getImage().setTransparency(50);}
-            else if (dmgTimer == 20){this.getImage().setTransparency(255);}
-            else if (dmgTimer == 30){this.getImage().setTransparency(50);}
-            else if (dmgTimer == 40){this.getImage().setTransparency(255);}
-            else if (dmgTimer > 50) {
+            if (dmgTimer == 10){this.getImage().setTransparency(50); jump(5);}
+            if (dmgTimer > 10 && dmgTimer < 40){knockBack();}
+            if (dmgTimer == 20){this.getImage().setTransparency(255);}
+            if (dmgTimer == 30){this.getImage().setTransparency(50);}
+            if (dmgTimer == 40){this.getImage().setTransparency(255);}
+            if (dmgTimer == 50){this.getImage().setTransparency(50);}
+            if (dmgTimer > 60) {
+                this.getImage().setTransparency(255);
                 canTakeDmg = true;
                 dmgTimer = 0;
             }
+        }
+    }
+
+    private void knockBack(){
+        if (knockbackDirection.equals("right")) {
+            if (canMoveRight(3)) {
+                moveRight(3);
+            }
+            this.setImage(hitm);
+        } else{
+            if (canMoveLeft(3)) {
+                moveLeft(3);
+            }
+            this.setImage(hit);
         }
     }
 
@@ -588,6 +615,11 @@ public class Player extends Physics {
             if (!slimedmg.dead){
                 if(canTakeDmg) {
                     Player.health -= 0.5;
+                    if (getX() < slimedmg.getX()) {
+                        knockbackDirection = "left";
+                    } else {
+                        knockbackDirection = "right";
+                    }
                     canTakeDmg = false;
                 }
             }
@@ -601,9 +633,15 @@ public class Player extends Physics {
     }
 
     private void spikes(){
+        Spikes spikes = (Spikes) getOneIntersectingObject(Spikes.class);
         if (isTouching(Spikes.class)){
             if(canTakeDmg) {
                 Player.health -= 0.5;
+                if (getX() < spikes.getX()) {
+                    knockbackDirection = "left";
+                } else {
+                    knockbackDirection = "right";
+                }
                 canTakeDmg = false;
             }
         }

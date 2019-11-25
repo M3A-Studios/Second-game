@@ -437,7 +437,7 @@ public class Physics extends Actor
      * @return                  Returns the actor below you or null
      */
     protected Actor getObjectBelowOfClass(Class classToCheck) {
-        if (vSpeed >= 0) {
+        if (vSpeed > 0) {
             Actor actor;
             actor = getOneObjectAtOffset(0, getImage().getHeight() / 2 + 1, classToCheck);
             if (actor == null) {
