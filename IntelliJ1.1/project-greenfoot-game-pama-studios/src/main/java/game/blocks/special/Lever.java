@@ -9,23 +9,32 @@ import game.blocks.Blocks;
 
 import java.util.List;
 
-public class Lever extends Blocks
-{
-    // Animation and cd timers
+/**
+ *
+ */
+public class Lever extends Blocks {
+
+    /** ID of the lever to link it to the door, if doorID and leverID are the same they are affected by eachother */
     int leverID = 1;
+    /** Cooldown timer for when the lever can be switched */
     private int cooldownTimer = 0;
+    /** Timer for the animation of the lever being switched over */
     private int animationTimer;
+    /** Boolean for if the lever is currently activated or not */
     boolean isSwitched;
-
-
-    // Lever Images
+    /** Image for when the lever is inactive */
     private GreenfootImage left = new GreenfootImage("226.png");
+    /** Image for when the lever is in the middle */
     private GreenfootImage middle = new GreenfootImage ("227.png");
+    /** Image for when the lever is active */
     private GreenfootImage right = new GreenfootImage ("228.png");
+
     /**
-     * Calls for the constructor in Blocks.java to set the image of the tile
+     * Calls for the constructor in Blocks.java to set the image of the tile.
+     * All of these images will be 1x1 in the grid. (Options.blockSize * Options.blockSize)
      *
-     * @param ID    ID used to get what image this block should use
+     * @param ID    used to get what file should be displayed as the image of this object
+     * @see Blocks#Blocks(int)
      */
     public Lever(int ID, int leverID) {
         super(ID);
@@ -35,6 +44,9 @@ public class Lever extends Blocks
         right.scale((Options.blockSize),(Options.blockSize));
     }
 
+    /**
+     * Act method that gets called every frame to update the lever animation and system as well as handle the cooldown
+     */
     public void act()
     {
         // Methods for Lever Anim en sys.
@@ -47,7 +59,7 @@ public class Lever extends Blocks
         }
 
     }
-    public void leverSys()
+    private void leverSys()
     {
 
         if (Greenfoot.isKeyDown(Options.interact)  && getOneIntersectingObject(Player.class) != null)
@@ -68,36 +80,27 @@ public class Lever extends Blocks
             }
         }
     }
-    public void leverAnim()
-    {
-
-        if (!isSwitched)
-        {
-            if (animationTimer== 30)
-        {
-            setImage(middle);
-        }
-            if (animationTimer== 60)
-            {
+    private void leverAnim() {
+        if (!isSwitched) {
+            if (animationTimer== 30) {
+                setImage(middle);
+            }
+            if (animationTimer== 60) {
                 setImage(right);
                 switchdoor("open");
             }
         }
-
-        if (isSwitched)
-        {
-            if (animationTimer== 30)
-            {
+        if (isSwitched) {
+            if (animationTimer== 30){
                 setImage(middle);
             }
-            if (animationTimer== 60)
-            {
+            if (animationTimer== 60){
                 setImage(left);
                 switchdoor("closed");
             }
         }
-
     }
+
     private void switchdoor(String switchTo) {
         //find all door objects into an array
         List<Door> deuren = (List<Door>) (getWorld().getObjects(Door.class));

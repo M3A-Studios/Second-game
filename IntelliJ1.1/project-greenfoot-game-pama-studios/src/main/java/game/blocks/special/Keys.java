@@ -5,16 +5,21 @@ import greenfoot.GreenfootImage;
 import game.Options;
 import game.entities.Player;
 
-public class Keys extends Actor
-{
+/**
+ *
+ */
+public class Keys extends Actor {
+    /** The image for the blue key */
     public static GreenfootImage blueKey = new GreenfootImage("185.png");
+    /** The image for the green key */
     public static GreenfootImage greenKey = new GreenfootImage("186.png");
+    /** The image for the red key */
     public static GreenfootImage redKey = new GreenfootImage("187.png");
+    /** The image for the yellow key */
     public static GreenfootImage yellowKey = new GreenfootImage("188.png");
 
     /**
-     * This is the constructor that should be used in every tile
-     * All tiles should simply extend Blocks and call Super with the ID
+     * Scales and sets the image of the key
      *
      * @param ID refers to what the ID of the tile is, used for the image
      */
@@ -33,9 +38,17 @@ public class Keys extends Actor
             setImage(yellowKey);
         }
     }
+
+    /**
+     * Calls up pickUpKey every frame to check if the player is touching it
+     */
     public void act() {
         pickUpKey();
     }
+
+    /**
+     * Checks if the key is touching a player object and if so goes into their inventory if empty
+     */
     private void pickUpKey()
     {
         Player player = (Player) getOneIntersectingObject(Player.class);

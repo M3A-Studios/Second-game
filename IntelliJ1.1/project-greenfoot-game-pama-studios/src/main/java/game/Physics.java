@@ -342,10 +342,8 @@ public class Physics extends Actor
             }
         }
         Actor block = getOneObjectAtOffset(getImage().getWidth()/-2 - (int) Math.ceil(speed), getImage().getHeight() / 2 + Options.blockSize / 2, Solid.class);
-        if (block == null) {
-            canMoveLeft = false;
-        }Actor platform = getOneObjectAtOffset(getImage().getWidth()/-2 - (int) Math.ceil(speed), getImage().getHeight() / 2 + Options.blockSize / 2, Platform.class);
-        if (platform== null) {
+        Actor platform = getOneObjectAtOffset(getImage().getWidth()/-2 - (int) Math.ceil(speed), getImage().getHeight() / 2 + Options.blockSize / 2, Platform.class);
+        if (block == null && platform == null) {
             canMoveLeft = false;
         }
         //check out of the world
@@ -422,11 +420,8 @@ public class Physics extends Actor
             }
         }
         Actor block = getOneObjectAtOffset(getImage().getWidth()/2 + (int) Math.ceil(speed), getImage().getHeight() / 2 + Options.blockSize / 2, Solid.class);
-        if (block == null) {
-            canMoveRight = false;
-        }
         Actor platform = getOneObjectAtOffset(getImage().getWidth()/2 - (int) Math.ceil(speed), getImage().getHeight() / 2 + Options.blockSize / 2, Platform.class);
-        if (platform== null) {
+        if (block == null && platform == null) {
             canMoveRight = false;
         }
         if (doubleX - (int) Math.ceil(speed) > Globals.worldWidth - getImage().getWidth() / 2.0) {

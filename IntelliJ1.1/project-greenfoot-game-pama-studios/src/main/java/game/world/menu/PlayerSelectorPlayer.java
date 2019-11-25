@@ -30,6 +30,9 @@ public class PlayerSelectorPlayer extends Actor {
         if (Greenfoot.mouseClicked(this))
         {
             Options.player1Color = this.color;
+            if (color.equals("Blue")) {
+                Options.player2Color = "Pink";
+            }
             Greenfoot.setWorld(new LevelSelector());
         }
         //check if hovering over the button
