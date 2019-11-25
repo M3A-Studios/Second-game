@@ -39,7 +39,7 @@ public class Player extends Physics {
     private int dropCooldown = 60;
     public int pickUpCooldown;
     public boolean canTakeDmg;
-    private int deathTimer;
+    private int dmgTimer;
     public String lastDroppedItem;
     public int lastItemCD = 30;
 
@@ -134,7 +134,7 @@ public class Player extends Physics {
             dropObject();
             cooldowns();
             takeDmg();
-            deathTimer();
+            dmgTimer();
         } else if (won) {
             winAnimation();
             isTouchingObject();
@@ -532,12 +532,17 @@ public class Player extends Physics {
         }
     }
 
-    private void deathTimer(){ //Adds delay to taking dmg
+    private void dmgTimer(){ //Adds delay to taking dmg needtomakeflicker
+        System.out.println(dmgTimer);
         if(!canTakeDmg){
-            deathTimer++;
-            if (deathTimer > 40) {
+            dmgTimer++;
+            if (dmgTimer == 10){this.getImage().setTransparency(50);}
+            else if (dmgTimer == 20){this.getImage().setTransparency(255);}
+            else if (dmgTimer == 30){this.getImage().setTransparency(50);}
+            else if (dmgTimer == 40){this.getImage().setTransparency(255);}
+            else if (dmgTimer > 50) {
                 canTakeDmg = true;
-                deathTimer = 0;
+                dmgTimer = 0;
             }
         }
     }
