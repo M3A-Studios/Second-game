@@ -555,7 +555,6 @@ public class Player extends Physics {
     }
 
     private void dmgTimer(){ //Adds delay to taking dmg needtomakeflicker
-        System.out.println(dmgTimer);
         if(!canTakeDmg){
             dmgTimer++;
             if (dmgTimer == 10){this.getImage().setTransparency(50);}
