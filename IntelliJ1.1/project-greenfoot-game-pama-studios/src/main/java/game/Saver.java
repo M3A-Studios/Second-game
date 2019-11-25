@@ -40,10 +40,14 @@ public class Saver {
                     + "\nPlayer1UpButton:" + Options.player1Up
                     + "\nPlayer1DownButton:" + Options.player1Down
                     + "\nPlayer1RightButton:" + Options.player1Right
+                    + "\nPlayer1JumpButton:" + Options.player1Jump
+
                     + "\nPlayer2LeftButton:" + Options.player2Left
                     + "\nPlayer2UpButton:" + Options.player2Up
                     + "\nPlayer2DownButton:" + Options.player2Down
                     + "\nPlayer2RightButton:" + Options.player2Right
+                    + "\nPlayer2JumpButton:" + Options.player2Jump
+
                     + "\nInteractButton:" + Options.interact
                     + "\nDropItemButton:" + Options.dropItem
                     + "\nDropObjectButton:" + Options.dropObject
@@ -106,6 +110,9 @@ public class Saver {
             else if (line.contains("Player1RightButton:")) {
                 line = line.replaceAll("Player1RightButton:","");
                 Options.player1Right = line;
+            } else if (line.contains("Player1JumpButton:")) {
+                line = line.replaceAll("Player1JumpButton:","");
+                Options.player1Jump = line;
             }
             else if (line.contains("Player2LeftButton:")) {
                 line = line.replaceAll("Player2LeftButton:","");
@@ -122,6 +129,9 @@ public class Saver {
             else if (line.contains("Player2RightButton:")) {
                 line = line.replaceAll("Player2RightButton:","");
                 Options.player2Right = line;
+            } else if (line.contains("Player2JumpButton:")) {
+                line = line.replaceAll("Player2JumpButton:","");
+                Options.player2Jump = line;
             }
             else if (line.contains("InteractButton:")) {
                 line = line.replaceAll("InteractButton:", "");

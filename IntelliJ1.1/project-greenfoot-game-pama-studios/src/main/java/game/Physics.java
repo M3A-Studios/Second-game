@@ -1,10 +1,7 @@
 package game;
 
+import game.blocks.normal.*;
 import greenfoot.Actor;
-import game.blocks.normal.Ladder;
-import game.blocks.normal.SlopeLeft;
-import game.blocks.normal.SlopeRight;
-import game.blocks.normal.Solid;
 import game.blocks.special.Door;
 import game.blocks.special.JumpPad;
 import game.blocks.special.LockedBlocks;
@@ -347,6 +344,9 @@ public class Physics extends Actor
         Actor block = getOneObjectAtOffset(getImage().getWidth()/-2 - (int) Math.ceil(speed), getImage().getHeight() / 2 + Options.blockSize / 2, Solid.class);
         if (block == null) {
             canMoveLeft = false;
+        }Actor platform = getOneObjectAtOffset(getImage().getWidth()/-2 - (int) Math.ceil(speed), getImage().getHeight() / 2 + Options.blockSize / 2, Platform.class);
+        if (platform== null) {
+            canMoveLeft = false;
         }
         //check out of the world
         if (doubleX - (int) Math.ceil(speed) < getImage().getWidth() / 2.0 - Camera.scrolledX) {
@@ -423,6 +423,10 @@ public class Physics extends Actor
         }
         Actor block = getOneObjectAtOffset(getImage().getWidth()/2 + (int) Math.ceil(speed), getImage().getHeight() / 2 + Options.blockSize / 2, Solid.class);
         if (block == null) {
+            canMoveRight = false;
+        }
+        Actor platform = getOneObjectAtOffset(getImage().getWidth()/2 - (int) Math.ceil(speed), getImage().getHeight() / 2 + Options.blockSize / 2, Platform.class);
+        if (platform== null) {
             canMoveRight = false;
         }
         if (doubleX - (int) Math.ceil(speed) > Globals.worldWidth - getImage().getWidth() / 2.0) {
