@@ -5,15 +5,17 @@ Player1LeftButton:A
 Player1UpButton:W
 Player1DownButton:S
 Player1RightButton:D
+Player1JumpButton:space
 Player2LeftButton:left
 Player2UpButton:up
 Player2DownButton:down
 Player2RightButton:right
+Player2JumpButton:control
 InteractButton:E
 DropItemButton:Q
 DropObjectButton:Z
 LevelsUnlocked:15
-SelectedLevel:1
-Coins:0
-Score:0
+SelectedLevel:3
+Coins:140
+Score:7400
 
