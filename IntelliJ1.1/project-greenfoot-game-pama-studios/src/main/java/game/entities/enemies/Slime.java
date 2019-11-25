@@ -7,17 +7,25 @@ import game.Physics;
 public class Slime extends Physics {
     static boolean isMirrored = false;
     static GreenfootImage blueSlime = new GreenfootImage("40.png");
+    static GreenfootImage blueSlime2 = new GreenfootImage("39.png");
     static GreenfootImage blueSlimeM = new GreenfootImage("40.png");
+    static GreenfootImage blueSlime2M = new GreenfootImage("39.png");
     static GreenfootImage blueSlimeDead = new GreenfootImage("37.png");
     static GreenfootImage blueSlimeDeadM = new GreenfootImage("37.png");
     //install blue slime immages
     static GreenfootImage pinkSlime = new GreenfootImage("48.png");
     static GreenfootImage pinkSlimeM = new GreenfootImage("48.png");
+    static GreenfootImage pinkSlime2 = new GreenfootImage("47.png");
+    static GreenfootImage pinkSlime2M = new GreenfootImage("47.png");
     static GreenfootImage pinkSlimeDead = new GreenfootImage("45.png");
     static GreenfootImage pinkSlimeDeadM = new GreenfootImage("45.png");
+    static GreenfootImage pinkSlimeJump = new GreenfootImage("46.png");
+    static GreenfootImage pinkSlimeJumpM = new GreenfootImage("46.png");
     //install pink slime immages
     static GreenfootImage greenSlime = new GreenfootImage("44.png");
     static GreenfootImage greenSlimeM = new GreenfootImage("44.png");
+    static GreenfootImage greenSlime2 = new GreenfootImage("43.png");
+    static GreenfootImage greenSlime2M = new GreenfootImage("43.png");
     static GreenfootImage greenSlimeDead = new GreenfootImage("41.png");
     static GreenfootImage greenSlimeDeadM = new GreenfootImage("41.png");
     //install green slime immages
@@ -31,6 +39,7 @@ public class Slime extends Physics {
     private boolean started = false;
     public boolean dead;
     int aTime = 0;
+    int maTime = 0;
     private int pinkJump = 0;
     private String color;
 
@@ -45,19 +54,29 @@ public class Slime extends Physics {
             pinkSlimeDeadM.scale(slimeWidth, slimeHeight);
             pinkSlimeM.mirrorHorizontally();
             pinkSlimeM.scale(slimeWidth, slimeHeight);
+            pinkSlime2M.mirrorHorizontally();
+            pinkSlime2M.scale(slimeWidth, slimeHeight);
+            pinkSlimeJumpM.mirrorHorizontally();
+            pinkSlimeJumpM.scale(slimeWidth, slimeHeight);
             //pink slime moving animation
             greenSlimeDeadM.mirrorHorizontally();
             greenSlimeDeadM.scale(slimeWidth, slimeHeight);
             greenSlimeM.mirrorHorizontally();
             greenSlimeM.scale(slimeWidth, slimeHeight);
+            greenSlime2M.mirrorHorizontally();
+            greenSlime2M.scale(slimeWidth, slimeHeight);
             isMirrored = true;
             //green slime moving animation
         }
         blueSlime.scale(slimeWidth, slimeHeight);//blue slime scale
+        blueSlime2.scale(slimeWidth, slimeHeight);
         blueSlimeDead.scale(slimeWidth, slimeHeight);
         pinkSlime.scale(slimeWidth, slimeHeight);//pink slime scale
+        pinkSlime2.scale(slimeWidth, slimeHeight);
         pinkSlimeDead.scale(slimeWidth, slimeHeight);
+        pinkSlimeJump.scale(slimeWidth, slimeHeight / 2);
         greenSlime.scale(slimeWidth, slimeHeight);//green slime scale
+        greenSlime2.scale(slimeWidth, slimeHeight);
         greenSlimeDead.scale(slimeWidth, slimeHeight);
 
         //looking for slime
@@ -119,6 +138,7 @@ public class Slime extends Physics {
 
     //slime abilities
     private void moving() {
+        maTime++;
         if (color.equals("pink")) {
             if (onGround()) {
                 pinkJump++;
@@ -135,11 +155,17 @@ public class Slime extends Physics {
             if (canEntityMoveLeft(speed) || (canMoveLeft(speed) && color.equals("pink"))) {
                 moveLeft(speed);
                 if (color.equals("pink")) {
-                    setImage(pinkSlime);
+                    if(maTime > 0 && maTime < 10) {setImage(pinkSlime);}
+                    else if(maTime == 20) {setImage(pinkSlime2);}
+                    if(maTime > 30) {maTime = 0;}
                 } else if (color.equals("green")) {
-                    setImage(greenSlime);
+                    if(maTime > 0 && maTime < 10) {setImage(greenSlime);}
+                    else if(maTime == 20) {setImage(greenSlime2);}
+                    if(maTime > 30) {maTime = 0;}
                 } else {
-                    setImage(blueSlime);
+                    if(maTime > 0 && maTime < 10) {setImage(blueSlime);}
+                    else if(maTime == 20) {setImage(blueSlime2);}
+                    if(maTime > 30) {maTime = 0;}
                 }
             } else {
                 isMovingLeft = false;
@@ -150,11 +176,17 @@ public class Slime extends Physics {
             if (canEntityMoveRight(speed) || (canMoveRight(speed) && color.equals("pink"))) {
                 moveRight(speed);
                 if (color.equals("pink")) {
-                    setImage(pinkSlimeM);
+                    if(maTime > 0 && maTime < 10) {setImage(pinkSlimeM);}
+                    else if(maTime == 20) {setImage(pinkSlime2M);}
+                    if(maTime > 30) {maTime = 0;}
                 } else if (color.equals("green")) {
-                    setImage(greenSlimeM);
+                    if(maTime > 0 && maTime < 10) {setImage(greenSlimeM);}
+                    else if(maTime == 20) {setImage(greenSlime2M);}
+                    if(maTime > 30) {maTime = 0;}
                 } else {
-                    setImage(blueSlimeM);
+                    if(maTime > 0 && maTime < 10) {setImage(blueSlimeM);}
+                    else if(maTime == 20) {setImage(blueSlime2M);}
+                    if(maTime > 30) {maTime = 0;}
                 }
             } else {
                 isMovingLeft = true;

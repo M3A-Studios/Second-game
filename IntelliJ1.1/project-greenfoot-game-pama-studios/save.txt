@@ -1,5 +1,5 @@
-Player1Color:Blue
-Player2Color:Pink
+Player1Color:Green
+Player2Color:Blue
 ScreenHeight:720
 Player1LeftButton:A
 Player1UpButton:W
