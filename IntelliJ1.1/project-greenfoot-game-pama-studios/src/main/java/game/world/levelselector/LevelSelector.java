@@ -14,14 +14,18 @@ import java.util.Scanner;
 
 public class LevelSelector extends World
 {
+    /** The currently selected level */
     private static int selectedLevel;
+    /** The width of the world in tiles */
     private static int levelWidth;
+    /** The height of the world in tiles */
     private static int levelHeight;
-    private static int totalLayers; //total layers in tile map
-    private static GreenfootImage background = new GreenfootImage("background.png");;
-
-    private Camera camera; //camera object created later at spawnCamera()
-    private Actor selectorPlayer; //player object created later at renderMap()
+    /** The total amount of layers in the world */
+    private static int totalLayers;
+    /** The camera object, initialized later in spawnCamera() */
+    private Camera camera;
+    /** The player object, initialized later in renderMap() */
+    private Actor selectorPlayer;
 
     /**
      * Act method called every frame to scroll the camera as long as the death condition isn't met.
@@ -30,8 +34,12 @@ public class LevelSelector extends World
         scroll(); //scroll the camera
     }
 
-    //if no level argument is given will just call itself with level -1. this will be handled over in the one argument
-    //constructor to make sure of what level you should spawn on (or just level 1)
+
+    /**
+     * Constructor for the levelSelector without a level given up, Will start a new levelSelector at level 0
+     *
+     * @see #LevelSelector(int)
+     */
     public LevelSelector() {
         this(0);
     }
@@ -70,6 +78,11 @@ public class LevelSelector extends World
 
         Saver.saveGame(); //save the game when loading the level selector (so also after every level)
     }
+
+    /**
+     * Method for rendering the Heads Up Display (HUD) or well. the overlay, things like hearts, score,
+     * etc. Really only just makes objects and places them
+     */
     private void renderHud() {
         addObject (new HUDNumber(0, "coin"), (int) (Options.blockSize * 0.5), (int) (Options.blockSize * 0.5));
         addObject (new HUDNumber(1, "coin"), (int) (Options.blockSize * 1.25) , (int) (Options.blockSize * 0.5));

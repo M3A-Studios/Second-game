@@ -50,8 +50,8 @@ public class Lever extends Blocks {
     public void act()
     {
         // Methods for Lever Anim en sys.
-        leverAnim();
-        leverSys();
+        leverAnimation();
+        leverSystem();
 
         //Timer
         if (cooldownTimer > 0) {
@@ -59,28 +59,30 @@ public class Lever extends Blocks {
         }
 
     }
-    private void leverSys()
-    {
 
-        if (Greenfoot.isKeyDown(Options.interact)  && getOneIntersectingObject(Player.class) != null)
-        {
+    /**
+     * Method for switching the lever when holding down the interact button
+     */
+    private void leverSystem() {
+        if (Greenfoot.isKeyDown(Options.interact)  && getOneIntersectingObject(Player.class) != null) {
             animationTimer ++;
-            if (cooldownTimer <= 0)
-            {
+            if (cooldownTimer <= 0) {
                 animationTimer = 0;
                 cooldownTimer = 100;
                 if (getImage() == left) {
-
                     isSwitched = false;
                 }
-                if (getImage() == right)
-                {
+                if (getImage() == right) {
                     isSwitched = true;
                 }
             }
         }
     }
-    private void leverAnim() {
+
+    /**
+     * Method to update the image when it's being switched around
+     */
+    private void leverAnimation() {
         if (!isSwitched) {
             if (animationTimer== 30) {
                 setImage(middle);
@@ -101,6 +103,11 @@ public class Lever extends Blocks {
         }
     }
 
+    /**
+     * Method to switch all doors to whatever switchto says
+     *
+     * @param switchTo      What state the doors should be switched to, open or closed
+     */
     private void switchdoor(String switchTo) {
         //find all door objects into an array
         List<Door> deuren = (List<Door>) (getWorld().getObjects(Door.class));

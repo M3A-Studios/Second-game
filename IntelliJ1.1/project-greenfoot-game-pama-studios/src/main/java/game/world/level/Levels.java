@@ -24,14 +24,22 @@ import java.util.Scanner;
 
 public class Levels extends World
 {
+    /** What checkpoint is currently active in the world */
     public static int activeCheckpoint = 1;
-    private static int levelWidth; //width of the level in blocks
-    private static int levelHeight; //height of the level in blocks
-    private static int totalLayers; //total layers in tile map
+    /** The total width of the entire level in tiles */
+    private static int levelWidth;
+    /** The total height of the entire level in tiles */
+    private static int levelHeight;
+    /** The total amount of layers this world has */
+    private static int totalLayers;
+    /** Arraylist for all the checkpoint X locations */
     private ArrayList<Integer> checkpointX = new ArrayList<Integer>();
+    /** Arraylist for all the checkpoint Y locations */
     private ArrayList<Integer> checkpointY = new ArrayList<Integer>();
-    private Camera camera; //camera object initialized later at spawnCamera()
-    private Actor player; //player object initialized later at renderMap()
+    /** The camera object, initialized later in spawnCamera() */
+    private Camera camera;
+    /** The player object, initialized later in renderMap() */
+    private Actor player;
 
     /**
      * Act method called every frame to scroll the camera as long as the death condition isn't met.
@@ -47,6 +55,8 @@ public class Levels extends World
      * only moves when set barrier is crossed to create a deadzone in the center that doesn't scroll
      * this makes the camera a bit nicer as it isn't as annoying
      * might want to add a bit of drag later to this.
+     * <p>
+     * Only
      *
      * loX (low X)  = barrier left of center
      * hiX (high X) = barrier right of center
@@ -86,12 +96,25 @@ public class Levels extends World
         if (highestY > hiY) dsy = highestY-hiY;
         camera.scroll(dsx, dsy); //scroll the camera
     }
-    
-    //by default load level 1 if non is specified
+
+
+    /**
+     * Constructor to call {@link #Levels(int, int)} with level 1, checkpoint 0 for when no checkpoint or level is passed along
+     *
+     * @see #Levels(int, int)
+     */
     public Levels() {
         this(1, 0);
     }
-    //if no checkpoint given load the level at start
+
+    /**
+     * Constructor for if no checkpoint is given up
+     *
+     * @param level           pass on what level the game should be loading. based on this loads the file at
+     *                        the location (src/main/resources/tilemap/level" + level + ".tmx"). the file is expected
+     *                        to be a .tmx
+     * @see #Levels(int, int)
+     */
     public Levels(int level) {
         this(level, 0);
     }
@@ -132,6 +155,11 @@ public class Levels extends World
         addObject(new GameLogic(), -64, -64); //add gamelogic object off the map, we want to use it's act method for counters etc like lockedblocks chain
     }
 
+    /**
+     * Gets all the checkpoint locations and adds them to {@link #checkpointX} and {@link #checkpointY}
+     *
+     * @param level     the level to get the checkpoints off
+     */
     private void getCheckpointLocations(int level) {
         if (level == 1) {
             //Spawn location (checkpoint 0)
@@ -165,8 +193,13 @@ public class Levels extends World
             checkpointX.add(2);
             checkpointY.add(8);
         }
-
     }
+
+    /**
+     * Renders the checkpoints in the world
+     *
+     * @param color   The color the flag should be
+     */
     private void renderCheckpoints(String color) {
         int flag = 168; //default blue
         if (color.equals("Blue")) {
@@ -177,6 +210,11 @@ public class Levels extends World
         }
     }
 
+    /**
+     * Renders the text in the world
+     *
+     * @param level     The level of which the text should be rendered
+     */
     private void renderText(int level) {
         if (level == 1) {
 
@@ -206,7 +244,6 @@ public class Levels extends World
      * Method for rendering the Heads Up Display (HUD) or well. the overlay, things like hearts, score,
      * items in inventory etc. Really only just makes objects and places them
      */
-
     private void renderHUD() {
         addObject (new Heart(1), Options.blockSize, Options.blockSize);
         addObject (new Heart(2), Options.blockSize * 2, Options.blockSize);

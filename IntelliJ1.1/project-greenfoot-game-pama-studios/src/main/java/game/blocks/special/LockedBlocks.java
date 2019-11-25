@@ -10,17 +10,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class LockedBlocks extends Blocks
-{
+public class LockedBlocks extends Blocks {
+    /** The image for the blue locked block */
     private static GreenfootImage blueBlock = new GreenfootImage("229.png");
+    /** The image for the green locked block */
     private static GreenfootImage greenBlock = new GreenfootImage("230.png");
+    /** The image for the red locked block */
     private static GreenfootImage redBlock = new GreenfootImage("231.png");
+    /** The image for the yellow locked block */
     private static GreenfootImage yellowBlock = new GreenfootImage("232.png");
+    /** Value for what color the block extends so if a block of that color next to it gets unlocked this unlocks */
     private String extend = "";
-    private static int frame = 0;
+    /** Value for if the block has a lock or not */
     private String blockType;
+    /** List of all blocks that need to be unlocked in the next frame */
     public static List<LockedBlocks> blocksToUnlock = new ArrayList<LockedBlocks>();
 
+    /**
+     * Constructor to set the image and what block it extends
+     *
+     * @param ID    ID to identify what kind of block it is
+     */
     public LockedBlocks(int ID) {
         super(ID);
         if (ID ==  276) {
@@ -58,6 +68,9 @@ public class LockedBlocks extends Blocks
         }
     }
 
+    /**
+     * Act method getting called every frame to check if it should unlock nearby blocks
+     */
     public void act() {
         if (GameLogic.lockFrame >= 15) {
             GameLogic.lockFrame = 0;
@@ -70,6 +83,12 @@ public class LockedBlocks extends Blocks
             }
         }
     }
+
+    /**
+     * Unlocks the nearby blocks of the selected blockType
+     *
+     * @param blockType     The color of block it should unlock
+     */
     private void unlockExtendedBlock(String blockType) {
         List lockedBlocks = getObjectsInRange(Options.blockSize, LockedBlocks.class);
         getWorld().removeObject(this);
@@ -84,6 +103,9 @@ public class LockedBlocks extends Blocks
         }
     }
 
+    /**
+     * Unlocks a block and makes a new list of all blocks to unlock in the next frames
+     */
     public void unlockBlock()
     {
         String blockToRemove = "";
@@ -101,7 +123,6 @@ public class LockedBlocks extends Blocks
             blockToRemove = "yellowBlock";
         }
         if (!Player.inventoryItem.equals("") && !blockToRemove.equals("")) {
-            frame = 0;
             unlockExtendedBlock(blockToRemove);
             Player.inventoryItem = "";
         }

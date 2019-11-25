@@ -5,17 +5,23 @@ import game.Options;
 import game.blocks.Blocks;
 import game.entities.Player;
 
-public class PSwitch extends Blocks
-{
-        private GreenfootImage pSwitchDown = new GreenfootImage("275.png");
-        private GreenfootImage pSwitchUp = new GreenfootImage("274.png");
-        private GreenfootImage box = new GreenfootImage("195.png");
-        double eventTimer = 600;
+public class PSwitch extends Blocks {
+
+    /** The image for when the pSwitch is down */
+    private GreenfootImage pSwitchDown = new GreenfootImage("275.png");
+    /** The image for when the pSwitch is up */
+    private GreenfootImage pSwitchUp = new GreenfootImage("274.png");
+    /** The image for the block that will change into coins */
+    private GreenfootImage box = new GreenfootImage("195.png");
+    /** How long an event should last in frames */
+    double eventTimer = 600;
+
     /**
-     * This is the constructor that should be used in every tile
-     * All tiles should simply extend Blocks and call Super with the ID
+     * Calls for the constructor in Blocks.java to set the image of the tile.
+     * All of these images will be 1x1 in the grid. (Options.blockSize * Options.blockSize)
      *
-     * @param ID refers to what the ID of the tile is, used for the image
+     * @param ID    used to get what file should be displayed as the image of this object
+     * @see Blocks#Blocks(int)
      */
     public PSwitch(int ID) {
         super(ID);
@@ -35,6 +41,9 @@ public class PSwitch extends Blocks
 
     }
 
+    /**
+     * Simple act method getting called every frame to
+     */
     public void act()
     {
         Switch();
