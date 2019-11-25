@@ -103,6 +103,14 @@ public class Physics extends Actor
     /**
      * @param height
      */
+    protected void fly(double height) {
+        setRelativeLocation(0, - 4);
+        vSpeed = - height;
+    }
+
+    /**
+     * @param height
+     */
     protected void jumpExtend(double height) {
         vSpeed = vSpeed - height;
     }

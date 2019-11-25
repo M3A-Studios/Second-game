@@ -1,5 +1,6 @@
 package game.world.level;
 
+import game.entities.enemies.Bee;
 import greenfoot.Actor;
 import greenfoot.GreenfootImage;
 import greenfoot.World;
@@ -408,6 +409,10 @@ public class Levels extends World
                     else if (check(Globals.slime, worldMap[layer][position]))
                     {
                         nextBlock = new Slime(worldMap[layer][position]);
+                    }
+                    else if (check(Globals.bee, worldMap[layer][position]))
+                    {
+                        nextBlock = new Bee(worldMap[layer][position]);
                     }
                     else if (check(Globals.lavas, worldMap[layer][position]))
                     {

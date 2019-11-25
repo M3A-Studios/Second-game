@@ -40,6 +40,7 @@ public class Globals
     public static Integer[] lockedBlocks = {228,229,230,231,275,276,277,278};
     public static Integer[] breakableBlocks = {192,193,194,195,196,197,198,199,200,201,202,203,204,205,206,207};
     public static Integer[] slime = {36,37,38,39,40,41,42,43,44,45,46,47};
+    public static Integer[] bee = {3,4,5};
     public static Integer[] pswitch = {273,274,194}; //273 and 274 is the power switch, the rest of je IDs change when the switch is turned on.
 }
 
