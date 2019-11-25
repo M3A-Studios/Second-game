@@ -17,14 +17,14 @@ public class Coins extends Blocks {
     public Coins(int ID){
         super(ID);
         switch(ID) {
-            case 165:
-                this.value = 1;
-                break;
             case 166:
-                this.value = 10;
+                this.value = 1; //bronze
                 break;
             case 167:
-                this.value = 20;
+                this.value = 20; //gold
+                break;
+            case 168:
+                this.value = 10; //silver
                 break;
             default:
         }

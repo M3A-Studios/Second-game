@@ -66,20 +66,20 @@ public class Player extends Physics {
      */
     public Player(int player) {
         this.player = player;
-        dead = false;
-        animationTimer = 0;
-        dyingAnimation = 0;
-        health = 6;
-        started = false;
-        won = false;
-        endingAnimation = 0;
+        this.animationTimer = 0;
+        this.dyingAnimation = 0;
+        this.started = false;
+        this.endingAnimation = 0;
         Globals.levelCoinsCollected = 0;
         Globals.levelScore = 0;
-        holding = "";
-        inventoryItem = "";
-        lastDroppedItem = "";
-        canTakeDmg = true;
+        this.holding = "";
+        this.lastDroppedItem = "";
+        this.canTakeDmg = true;
         LockedBlocks.blocksToUnlock = new ArrayList<LockedBlocks>();
+        inventoryItem = "";
+        health = 6;
+        won = false;
+        dead = false;
 
 
         climb1.scale(playerWidth, playerHeight);
@@ -119,6 +119,7 @@ public class Player extends Physics {
         }
         if (!dead && !won) {
             entityOffset(); //fix camera scrolling issues
+            checkForSecondPlayer();
             updateGravity();
             updateWind();
             checkinput();
@@ -144,6 +145,9 @@ public class Player extends Physics {
         } else {
             deadAnimation();
         }
+    }
+    private void checkForSecondPlayer() {
+
     }
     private void updateWind() {
 
@@ -494,7 +498,7 @@ public class Player extends Physics {
                     if (bomb.holding) {
                         holding = "";
                         bomb.holding = false;
-                        bomb.setLocation(this.getX(), this.getY() + 17);
+                        bomb.setLocation(this.getX(), this.getY());
                         bomb.dropped = true;
                     }
                 }
@@ -504,7 +508,7 @@ public class Player extends Physics {
                 if (jumppad != null) {
                     if (jumppad.holding) {
                         holding = "";
-                        jumppad.setLocation(this.getX(), this.getY() + 17);
+                        jumppad.setLocation(this.getX(), this.getY());
                         jumppad.holding = false;
                     }
                 }

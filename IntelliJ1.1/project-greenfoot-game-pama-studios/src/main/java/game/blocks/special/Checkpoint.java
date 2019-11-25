@@ -27,13 +27,25 @@ public class Checkpoint extends Actor {
      * @param ID            used to know what images should be used for the checkpoint.
      */
     public Checkpoint(int checkpoint, int ID) {
-        int imageID = 171; //by default be blue
-        if (ID == 171 || ID == 172 || ID == 173) { //check for green
-            imageID = 174;
-        } else if (ID == 174 || ID == 175 || ID == 176) { //check for red
-            imageID = 177;
-        } else if (ID == 177 || ID == 178 || ID == 179) { //check for yellow
-            imageID = 180;
+        int imageID;
+        switch(ID) {
+            case 171:
+            case 172:
+            case 173:
+                imageID = 174; //check green
+                break;
+            case 174:
+            case 175:
+            case 176:
+                imageID = 177; //check red
+                break;
+            case 177:
+            case 178:
+            case 179:
+                imageID = 180; //check yellow
+                break;
+            default:
+                imageID = 171; //default blue
         }
         activeImage1 = new GreenfootImage((imageID - 2) + ".png");
         activeImage2 = new GreenfootImage((imageID - 1) + ".png");
