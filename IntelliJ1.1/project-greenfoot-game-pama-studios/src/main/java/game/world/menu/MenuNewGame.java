@@ -11,10 +11,16 @@ import game.world.levelselector.LevelSelector;
 
 import java.util.List;
 
+/**
+ * The new game button in the main menu
+ */
 public class MenuNewGame extends Actor {
 
+    /** The default width of the button */
     private int normalWidth;
+    /** The default height of the button */
     private int normalHeight;
+    /** Boolean for if the mouse is hovering over a continue object */
     private boolean overObject = false;
 
     /**
@@ -30,7 +36,7 @@ public class MenuNewGame extends Actor {
     }
 
     /**
-     * Act method being executed every frame, checks for if player clicked on the button to execute code
+     * Act method being executed every frame, checks for if player clicked on the button to go to the player selector
      * also checks for hovering and if so makes the image 10% bigger
      */
     public void act() {

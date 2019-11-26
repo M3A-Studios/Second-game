@@ -97,7 +97,6 @@ public class Levels extends World
         camera.scroll(dsx, dsy); //scroll the camera
     }
 
-
     /**
      * Constructor to call {@link #Levels(int, int)} with level 1, checkpoint 0 for when no checkpoint or level is passed along
      *
@@ -118,6 +117,7 @@ public class Levels extends World
     public Levels(int level) {
         this(level, 0);
     }
+
     /**
      * Constructor method of the level worlds. Creates the screen based on Options.screenWidth and Options.screenHeight (see Options class)
      * world has a cellsize of 1 pixel and isn't bounded (bounded meaning we can spawn blocks past the screen border like say x -10 or x 5819291

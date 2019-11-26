@@ -10,14 +10,24 @@ import game.Physics;
 import game.world.level.Levels;
 import game.world.menu.Menu;
 
+/**
+ * The character of the user in the level selector world
+ */
 public class SelectorPlayer extends Physics {
 
+    /** How many blocks the player has to move in total during the animation */
     private int animationBlocks;
+    /** Frames needed to move a total of 1 block in the animation, lowering this means faster animation */
     private int framesPerBlock = 20;
+    /** How many frames have so far been animated for the animation when walking to another level*/
     private int animatedTime;
+    /** What level the player is moving to so we can correct the positioning once they have arrived */
     private int movingTo = 1;
+    /** An array holding the movements of the animation, they get handled one by one to properly animated the player */
     private String[] movingDir;
+    /** Boolean for if the player is currently moving or not, we don't want any inputs while being animated */
     private boolean moving;
+    /** Boolean for if this is the first frame of the world for some position fixes regarding Physics */
     private boolean started = false;
 
     /**
@@ -38,11 +48,10 @@ public class SelectorPlayer extends Physics {
         setImage(image);
     }
 
-
     /**
      * Act method gets executed every frame, first frame it will get the start locations for physics
      *
-     * checks for some input and then moves
+     * checks for some inputs regarding movement or quiting the game.
      */
     public void act() {
         //if just started sets the coordinates for the physics
@@ -101,6 +110,11 @@ public class SelectorPlayer extends Physics {
 
     /**
      * Big hardcoded check for input and what level you're on, used to get the movement that needs to be done for move()
+     * the array values are equal to what direction the player has to move in every block in the animation, can be as
+     * long as you want to,
+     * <p>
+     * Valid inputs: right, left, up, down.
+     * Any other inputs will output an error and not move the player
      */
     private void checkInput() {
         if (!moving) {

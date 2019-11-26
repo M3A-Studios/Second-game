@@ -8,8 +8,41 @@
     <list default="true" id="7c4615df-7eab-44ce-b708-99aaf69c1c72" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/save.txt" beforeDir="false" afterPath="$PROJECT_DIR$/save.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Camera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/DesertStorm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/DesertStorm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/GameLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/GameLogic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Globals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Globals.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Options.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Options.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Saver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Saver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/blocks/special/Coins.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/blocks/special/Coins.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/entities/enemies/Slime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/entities/enemies/Slime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/tilemap/level2.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tilemap/level2.tmx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/world/level/Background.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/world/level/Background.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/world/level/Levels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/world/level/Levels.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/world/levelselector/LevelLock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/world/levelselector/LevelLock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/world/levelselector/LevelSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/world/levelselector/LevelSelector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/world/levelselector/SelectorPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/world/levelselector/SelectorPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/world/menu/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/world/menu/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/world/menu/MenuContinue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/world/menu/MenuContinue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/world/menu/MenuExit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/world/menu/MenuExit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/world/menu/MenuLogo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/world/menu/MenuLogo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/world/menu/MenuNewGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/world/menu/MenuNewGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/world/menu/MenuPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/world/menu/MenuPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/world/menu/PlayerSelectorPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/world/menu/PlayerSelectorPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/world/menu/PlayerSelectorScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/world/menu/PlayerSelectorScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/tilemap/level1.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tilemap/level1.tmx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/world/level/Background.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/world/level/Background.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/world/level/Levels.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/world/level/Levels.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/world/levelselector/LevelLock.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/world/levelselector/LevelLock.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/world/levelselector/LevelSelector.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/world/levelselector/LevelSelector.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/world/levelselector/SelectorPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/world/levelselector/SelectorPlayer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/world/menu/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/world/menu/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/world/menu/MenuContinue.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/world/menu/MenuContinue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/world/menu/MenuExit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/world/menu/MenuExit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/world/menu/MenuLogo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/world/menu/MenuLogo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/world/menu/MenuNewGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/world/menu/MenuNewGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/world/menu/MenuPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/world/menu/MenuPlayer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/world/menu/PlayerSelectorPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/world/menu/PlayerSelectorPlayer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/world/menu/PlayerSelectorScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/world/menu/PlayerSelectorScreen.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

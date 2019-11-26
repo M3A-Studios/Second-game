@@ -1,8 +1,13 @@
 package game;
 
+/**
+ * Options is a class containing a lot of options that are decided by the player, These options are only the defaults
+ * and a player can change them at any time when in the level selector world by opening up the option menu.
+ * <p>
+ * Holds things like the color of the player, Controls & Screensize
+ */
 public class Options
 {
-    //just some variables that should be options the player can change in the menu
     public static String player1Color = "Green";
     public static String player2Color = "Blue";
 

@@ -9,13 +9,25 @@ import game.world.levelselector.LevelSelector;
 
 import java.util.List;
 
+/**
+ *
+ */
 public class PlayerSelectorPlayer extends Actor {
 
+    /** The default width of the button */
     private int normalWidth;
+    /** The default height of the button */
     private int normalHeight;
+    /** Boolean for if the mouse is hovering over a continue object */
     private boolean overObject = false;
+    /** The color of this object, being Green, Blue, Pink or Yellow */
     private String color;
 
+    /**
+     * Simply sets the image and the default sizes
+     *
+     * @param color     What color alien it should display
+     */
     PlayerSelectorPlayer(String color) {
         GreenfootImage image = new GreenfootImage("alien" + color + "_front.png");
         image.scale(Options.blockSize * 2, Options.blockSize * 3);
@@ -25,6 +37,10 @@ public class PlayerSelectorPlayer extends Actor {
         normalHeight = image.getHeight();
     }
 
+    /**
+     * Act method being executed every frame, checks for if player clicked on the button to start a new game
+     * also checks for hovering and if so makes the image 10% bigger
+     */
     public void act() {
         //check for if clicked on
         if (Greenfoot.mouseClicked(this))

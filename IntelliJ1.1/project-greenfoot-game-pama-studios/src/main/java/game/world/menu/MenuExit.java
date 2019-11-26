@@ -8,11 +8,17 @@ import game.Options;
 
 import java.util.List;
 
+/**
+ * This is the exit button on the main menu screen
+ */
 public class MenuExit extends Actor
 {
 
+    /** The default width of the button */
     private int normalWidth;
+    /** The default height of the button */
     private int normalHeight;
+    /** Boolean for if the mouse is hovering over a continue object */
     private boolean overObject = false;
 
     /**
@@ -26,6 +32,10 @@ public class MenuExit extends Actor
         normalHeight = image.getHeight();
     }
 
+    /**
+     * Act method being executed every frame, checks for if player clicked on the button to quit the game
+     * also checks for hovering and if so makes the image 10% bigger
+     */
     public void act() {
         //check for if clicked on
         if (Greenfoot.mouseClicked(this))

@@ -6,13 +6,17 @@ import game.Physics;
 
 public class Slime extends Physics {
     static boolean isMirrored = false;
+    //Menu slime images
+    static GreenfootImage menuSlimeAlive = new GreenfootImage("40.png");
+    static GreenfootImage menuSlimeDead = new GreenfootImage("37.png");
+    //install blue slime immages
     static GreenfootImage blueSlime = new GreenfootImage("40.png");
     static GreenfootImage blueSlime2 = new GreenfootImage("39.png");
     static GreenfootImage blueSlimeM = new GreenfootImage("40.png");
     static GreenfootImage blueSlime2M = new GreenfootImage("39.png");
     static GreenfootImage blueSlimeDead = new GreenfootImage("37.png");
     static GreenfootImage blueSlimeDeadM = new GreenfootImage("37.png");
-    //install blue slime immages
+    //install pink slime immages
     static GreenfootImage pinkSlime = new GreenfootImage("48.png");
     static GreenfootImage pinkSlimeM = new GreenfootImage("48.png");
     static GreenfootImage pinkSlime2 = new GreenfootImage("47.png");
@@ -21,16 +25,16 @@ public class Slime extends Physics {
     static GreenfootImage pinkSlimeDeadM = new GreenfootImage("45.png");
     static GreenfootImage pinkSlimeJump = new GreenfootImage("46.png");
     static GreenfootImage pinkSlimeJumpM = new GreenfootImage("46.png");
-    //install pink slime immages
+    //install green slime immages
     static GreenfootImage greenSlime = new GreenfootImage("44.png");
     static GreenfootImage greenSlimeM = new GreenfootImage("44.png");
     static GreenfootImage greenSlime2 = new GreenfootImage("43.png");
     static GreenfootImage greenSlime2M = new GreenfootImage("43.png");
     static GreenfootImage greenSlimeDead = new GreenfootImage("41.png");
     static GreenfootImage greenSlimeDeadM = new GreenfootImage("41.png");
-    //install green slime immages
-    private int slimeWidth = (int) (Options.blockSize / 1.1);  //1 block
-    private int slimeHeight = (int) (Options.blockSize / 2); //1.5 blocks
+
+    private int slimeWidth = 64;
+    private int slimeHeight = 32;
 
     static int movementRange = 4;
     private int startingX;
@@ -42,43 +46,54 @@ public class Slime extends Physics {
     int maTime = 0;
     private int pinkJump = 0;
     private String color;
+    private boolean isMenuSlime;
 
     public Slime(int ID) {
-        if (!isMirrored) {
-            blueSlimeDeadM.mirrorHorizontally();
-            blueSlimeDeadM.scale(slimeWidth, slimeHeight);
-            blueSlimeM.mirrorHorizontally();
-            blueSlimeM.scale(slimeWidth, slimeHeight);
-            //blue slime moving animation
-            pinkSlimeDeadM.mirrorHorizontally();
-            pinkSlimeDeadM.scale(slimeWidth, slimeHeight);
-            pinkSlimeM.mirrorHorizontally();
-            pinkSlimeM.scale(slimeWidth, slimeHeight);
-            pinkSlime2M.mirrorHorizontally();
-            pinkSlime2M.scale(slimeWidth, slimeHeight);
-            pinkSlimeJumpM.mirrorHorizontally();
-            pinkSlimeJumpM.scale(slimeWidth, slimeHeight);
-            //pink slime moving animation
-            greenSlimeDeadM.mirrorHorizontally();
-            greenSlimeDeadM.scale(slimeWidth, slimeHeight);
-            greenSlimeM.mirrorHorizontally();
-            greenSlimeM.scale(slimeWidth, slimeHeight);
-            greenSlime2M.mirrorHorizontally();
-            greenSlime2M.scale(slimeWidth, slimeHeight);
-            isMirrored = true;
-            //green slime moving animation
-        }
+        this(ID, false);
+    }
+
+    public Slime(int ID, boolean menuSlime) {
+        this.isMenuSlime = menuSlime;
         blueSlime.scale(slimeWidth, slimeHeight);//blue slime scale
         blueSlime2.scale(slimeWidth, slimeHeight);
         blueSlimeDead.scale(slimeWidth, slimeHeight);
+        blueSlimeDeadM.scale(slimeWidth, slimeHeight);
+        blueSlime2M.scale(slimeWidth, slimeHeight);
+        blueSlimeM.scale(slimeWidth, slimeHeight);
+
         pinkSlime.scale(slimeWidth, slimeHeight);//pink slime scale
         pinkSlime2.scale(slimeWidth, slimeHeight);
         pinkSlimeDead.scale(slimeWidth, slimeHeight);
         pinkSlimeJump.scale(slimeWidth, slimeHeight / 2);
+        pinkSlimeDeadM.scale(slimeWidth, slimeHeight);
+        pinkSlimeM.scale(slimeWidth, slimeHeight);
+        pinkSlime2M.scale(slimeWidth, slimeHeight);
+        pinkSlimeJumpM.scale(slimeWidth, slimeHeight);
+
         greenSlime.scale(slimeWidth, slimeHeight);//green slime scale
         greenSlime2.scale(slimeWidth, slimeHeight);
         greenSlimeDead.scale(slimeWidth, slimeHeight);
+        greenSlimeDeadM.scale(slimeWidth, slimeHeight);
+        greenSlimeM.scale(slimeWidth, slimeHeight);
+        greenSlime2M.scale(slimeWidth, slimeHeight);
 
+
+        if (!isMirrored) {
+            blueSlimeDeadM.mirrorHorizontally();
+            blueSlimeM.mirrorHorizontally();
+            blueSlime2M.mirrorHorizontally();
+            //blue slime moving animation
+            pinkSlimeDeadM.mirrorHorizontally();
+            pinkSlimeM.mirrorHorizontally();
+            pinkSlime2M.mirrorHorizontally();
+            pinkSlimeJumpM.mirrorHorizontally();
+            //pink slime moving animation
+            greenSlimeDeadM.mirrorHorizontally();
+            greenSlimeM.mirrorHorizontally();
+            greenSlime2M.mirrorHorizontally();
+            isMirrored = true;
+            //green slime moving animation
+        }
         //looking for slime
         if (ID >= 45 && ID <= 48) {
             setImage(pinkSlime);
@@ -90,6 +105,11 @@ public class Slime extends Physics {
         } else {
             setImage(blueSlime);
             color = "blue";
+        }
+        if (menuSlime) {
+            menuSlimeAlive.scale(slimeWidth * 2,slimeHeight * 2);
+            menuSlimeDead.scale(slimeWidth * 2,slimeHeight * 2);
+            setImage(menuSlimeAlive);
         }
         dead = false;
     }
@@ -103,30 +123,36 @@ public class Slime extends Physics {
             startingX = getX();
             setNewLocation(getDoubleX(), getDoubleY() - getImage().getHeight());
         }
-        updateGravity();
-        if (!dead) {
-            moving();
+        if (!isMenuSlime) {
+            updateGravity();
+            if (!dead) {
+                moving();
+            }
         }
         //show slime dead animation
         if (dead) {
             aTime++;
-            if (aTime >= 0) {
-                if (isMovingLeft) {
-                    if (color.equals("pink")) {
-                        setImage(pinkSlimeDead);
-                    } else if (color.equals("green")) {
-                        setImage(greenSlimeDead);
-                    } else {
-                        setImage(blueSlimeDead);
+            if (aTime <= 3) {
+                if (!isMenuSlime) {
+                    if (isMovingLeft) {
+                        if (color.equals("pink")) {
+                            setImage(pinkSlimeDead);
+                        } else if (color.equals("green")) {
+                            setImage(greenSlimeDead);
+                        } else {
+                            setImage(blueSlimeDead);
+                        }
+                    } else if (!isMovingLeft) {
+                        if (color.equals("pink")) {
+                            setImage(pinkSlimeDeadM);
+                        } else if (color.equals("green")) {
+                            setImage(greenSlimeDeadM);
+                        } else {
+                            setImage(blueSlimeDeadM);
+                        }
                     }
-                } else if (!isMovingLeft) {
-                    if (color.equals("pink")) {
-                        setImage(pinkSlimeDeadM);
-                    } else if (color.equals("green")) {
-                        setImage(greenSlimeDeadM);
-                    } else {
-                        setImage(blueSlimeDeadM);
-                    }
+                } else {
+                    setImage(menuSlimeDead);
                 }
             }
             //removing slime

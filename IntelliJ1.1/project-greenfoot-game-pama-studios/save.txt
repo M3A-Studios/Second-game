@@ -16,6 +16,6 @@ DropItemButton:Q
 DropObjectButton:Z
 LevelsUnlocked:15
 SelectedLevel:1
-Coins:0
-Score:0
+Coins:11
+Score:1110
 

@@ -1,5 +1,10 @@
 package game;
 
+/**
+ * Globals is a class containing a lot of options that are game sided, These options should only be changed by the
+ * developers and are never accesible to the player. Also holds some key information that multiple classes need
+ * access to like worldWidth, Height, LevelsUnlocked, Coins, Score etc.
+ */
 public class Globals
 {
     //Simply a class used to store values that should be accessible across the entire game

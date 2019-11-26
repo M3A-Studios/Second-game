@@ -1,10 +1,17 @@
 package game.world.menu;
 
+import game.Globals;
+import game.blocks.special.Coins;
+import game.entities.enemies.Slime;
 import greenfoot.GreenfootImage;
 import game.Options;
 import game.Physics;
 
+/**
+ * The player object walking in the back of the main menu as part of the overall animation.
+ */
 public class MenuPlayer extends Physics {
+
     //set all the images for walking & jumping
     private GreenfootImage greenWalk1 = new GreenfootImage("alienGreen_walk1.png");
     private GreenfootImage greenWalk2 = new GreenfootImage("alienGreen_walk2.png");
@@ -37,7 +44,7 @@ public class MenuPlayer extends Physics {
     }
 
     /**
-     * Act method being executed every frame, first frame will set the proper location of the alien in the memory
+     * Act method being executed every frame, first frame will set the proper location of the alien in the physics
      * For the rest simply counts the frames to apply the right image and move the player around in the animation
      */
     public void act() {
@@ -45,6 +52,11 @@ public class MenuPlayer extends Physics {
             started = true;
             setNewLocation(Options.blockSize * -1, (int) (Options.blockSize * 6.01));
         }
+
+        collectCoin();
+        slime();
+
+        //Animation
         frame ++; //count frames
         if (frame % 13 == 0 || frame == 1) { //if first frame or frame is a multiplier of 13 it changes images
             if (color == 0) {
@@ -78,31 +90,55 @@ public class MenuPlayer extends Physics {
             setRelativeLocation(3,0);
         } else if (frame < 140) {
             setRelativeLocation(3,3);
-        } else if (frame < 200) {
+        } else if (frame < 160) {
             setRelativeLocation(3,0);
-        } else if (frame == 200) {
+        } else if (frame == 160) {
             vSpeed = 0;
             jump(20);
-        } else if (frame <= 243) {
+        } else if (frame <= 226) {
             vSpeed = vSpeed + acceleration;
             if (vSpeed > 20) vSpeed = 20;
             setRelativeLocation(0, vSpeed);
             setRelativeLocation(3, 0);
-        } else if (frame == 244) {
+        } else if (frame == 227) {
             setRelativeLocation(3, 8);
         } else if (frame < 280) {
             setRelativeLocation( 3,0);
         } else if (frame < 360) {
             setRelativeLocation(3, -3);
-        } else if (frame > 500) {
+        } else if (frame > 500) { //Reset the animation
             setNewLocation(Options.blockSize * -1, (int) (Options.blockSize * 6.01));
             frame = 0;
             color ++;
             if (color >= 4) {
                 color = 0;
             }
+            getWorld().addObject(new Coins(166, true), Options.blockSize * 13, (int) (Options.blockSize * 7));
+            getWorld().addObject(new Coins(168, true), Options.blockSize * 15, (int) (Options.blockSize * 5));
+            getWorld().addObject(new Coins(167, true), Options.blockSize * 17, (int) (Options.blockSize * 3));
+            getWorld().addObject(new Slime(40, true), (int) (Options.blockSize * 8.5), (int) (Options.blockSize * 9.8));
         } else {
             setRelativeLocation(3, 0);
+        }
+    }
+
+    /**
+     * Checks if you are intersecting with a coin, if so it removes the coin
+     */
+    private void collectCoin() {
+        Coins coin = (Coins) getOneIntersectingObject(Coins.class);
+        if (coin != null) {
+            getWorld().removeObject(coin);
+        }
+    }
+    private void slime() {
+        Slime slime = (Slime) getObjectBelowOfClass(Slime.class);
+        if (slime != null) {
+            if (!slime.dead) {
+                slime.dead = true;
+                vSpeed = 0;
+                jump(10);
+            }
         }
     }
 }

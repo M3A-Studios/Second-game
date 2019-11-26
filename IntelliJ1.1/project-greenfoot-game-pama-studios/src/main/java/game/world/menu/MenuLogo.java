@@ -4,8 +4,11 @@ import greenfoot.Actor;
 import greenfoot.GreenfootImage;
 import game.Options;
 
-class MenuLogo extends Actor
-{
+/**
+ * MenuLogo is simply the Pama logo that we use in the main menu.
+ */
+class MenuLogo extends Actor {
+
     /**
      * Simply sets the image, scales it and sets it to that
      */

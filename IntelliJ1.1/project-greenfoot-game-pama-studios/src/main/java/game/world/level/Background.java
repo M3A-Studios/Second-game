@@ -6,6 +6,9 @@ import greenfoot.Actor;
 import greenfoot.GreenfootImage;
 import game.Options;
 
+/**
+ * The Background class is to handle the background image of the world
+ */
 public class Background extends Actor {
 
     /** What level this background object is being made for */

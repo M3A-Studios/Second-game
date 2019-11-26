@@ -6,18 +6,20 @@ import greenfoot.World;
 
 public class Camera extends Actor
 {
+    /** Values of how far the camera has scrolled so far for X and Y */
     public static int scrolledX, scrolledY;
+    /** Values for how much entities should update their doubleX and doubleY to correct for scrolling, done for EntityOffset() */
     public static int entityXOffset, entityYOffset;
+    /** The width and height of the entire world */
     private int wide, high;
+    /** What world the camera should be active in */
     private World world;
-    private GreenfootImage background;
 
     /**
      * Constructor for the Camera, used to make the camera
      * Scroll is used at the end to instantly put it in the right place
      *
      * @param activeWorld     expects a Greenfoot.World, used to set what world it should be in
-     * @param backgroundImage set what background will be looped, height will be adjusted to world height, keep that in mind
      * @param width           int value for the total world width
      * @param height          int value for the total world height
      */
@@ -59,7 +61,7 @@ public class Camera extends Actor
             actor.setLocation(actor.getX()-dsx, actor.getY()-dsy);
         }
     }
-    //getter method to see how far the world has scrolled to get a better representation of the real X cooridnate (getX() + getScrolledX() is the new accurate X, same for Y)
+
     /**
      * Method used to get the cameraOffset (how far it has scrolled)
      * Remember that the accurate world cords of an object is getX() + getScrolledX() (and same for Y)

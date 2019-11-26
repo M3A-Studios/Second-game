@@ -5,12 +5,21 @@ import game.Options;
 import game.Physics;
 import game.Camera;
 
+/**
+ *
+ */
 public class DesertStorm extends Physics {
 
+    /** Boolean value for if the storm is going left or right */
     public static boolean movingLeft = true;
+    /** Boolean value for if the storm is currently moving or not */
     public static boolean moving = false;
+    /** Counts what frame of the animation we're on */
     private static int frame = 0;
 
+    /**
+     * Constructor method, sets the image and base values for movement and animation
+     */
     public DesertStorm() {
         GreenfootImage image = new GreenfootImage ("100.png");
         image.scale(Options.screenWidth * 2, Options.screenHeight);
@@ -20,6 +29,11 @@ public class DesertStorm extends Physics {
         movingLeft = true;
         frame = 0;
     }
+
+    /**
+     * Act method being called every frame to update the location and count the animation for when the storm should
+     * start and switch directions etc.
+     */
     public void act() {
         entityOffset();
         frame ++;

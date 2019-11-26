@@ -12,6 +12,9 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 
+/**
+ * The level selector world for the player to chose what level to play
+ */
 public class LevelSelector extends World
 {
     /** The currently selected level */
@@ -33,7 +36,6 @@ public class LevelSelector extends World
     public void act() {
         scroll(); //scroll the camera
     }
-
 
     /**
      * Constructor for the levelSelector without a level given up, Will start a new levelSelector at level 0
