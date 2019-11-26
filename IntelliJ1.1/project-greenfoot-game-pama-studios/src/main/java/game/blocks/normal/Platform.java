@@ -42,7 +42,7 @@ public class Platform extends Blocks {
 
     /**
      * Act method getting called every frame, checks using {@link #started} for the first frame and corrects the
-     * positioning of the object if true
+     * positioning of the object if true, this is done because platforms spawn too low after rescaling the image
      *
      * @see #started
      */

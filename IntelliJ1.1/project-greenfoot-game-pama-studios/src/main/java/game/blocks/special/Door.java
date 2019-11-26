@@ -7,8 +7,7 @@ import game.Options;
 /**
  *
  */
-public class Door extends Actor
-{
+public class Door extends Actor {
     /** ID of the door to link it to the lever, if doorID and leverID are the same they are affected by eachother */
     int doorID;
     /** Boolean for if the door is open or not, open doors can be walked through */
@@ -16,9 +15,13 @@ public class Door extends Actor
     /** The ID of what image the door is currently using */
     private int imageID;
 
+    /** The image for the top part of the door when it's open */
     private GreenfootImage topOpen = new GreenfootImage("217.png");
+    /** The image for the bottom part of the door when it's open */
     private GreenfootImage bottomOpen = new GreenfootImage("216.png");
+    /** The image for the top part of the door when it's closed */
     private GreenfootImage topClosed = new GreenfootImage("215.png");
+    /** The image for the bottom part of the door when it's closed */
     private GreenfootImage bottomClosed = new GreenfootImage("214.png");
 
     /**
@@ -54,6 +57,7 @@ public class Door extends Actor
             opened = true;
         }
     }
+
     /**
      * Sets the door images to the open varients and sets {@link #opened} to true
      */
@@ -68,11 +72,11 @@ public class Door extends Actor
         }
         opened = true;
     }
+
     /**
      * Sets the door images to closed varients and sets {@link #opened} to false
      */
-    void close()
-    {
+    void close() {
         if (imageID == 217) {
             setImage(topClosed);
             imageID = 215;

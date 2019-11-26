@@ -6,18 +6,29 @@ import game.world.levelselector.LevelSelector;
 import game.Options;
 import game.Physics;
 
-public class HUDNumber extends Physics
-{
-    private boolean started = false; //gets checked first frame to get the startX and startY
-    private int startX;
-    private int startY;
+/**
+ *
+ */
+public class HUDNumber extends Physics {
+    /** gets checked first frame to get the startX and startY */
+    private boolean started = false;
+    /** Initial starting coordinates of the heart */
+    private int startX, startY;
+    /** What position this number is in the hud, positions being like 123,456 */
     private int position;
+    /** Array that will hold the images for all the numbers */
     private GreenfootImage[] images = new GreenfootImage[10];
+    /** The value of this number in the HUD */
     private String value = "0";
-    private String coins;
+    /** The purpose of the HUD number, if it should be a "coin" or "score" counter */
     private String purpose;
-    private int start;
 
+    /**
+     * Constructor for the HUD Numbers which simply sets the images
+     *
+     * @param position      What position in the number this number is (123,456)
+     * @param purpose       What the purpose of this number is ("coin" or "score")
+     */
     public HUDNumber(int position, String purpose) {
         this.purpose = purpose;
         this.position = position;
@@ -32,6 +43,10 @@ public class HUDNumber extends Physics
             }
         }
     }
+
+    /**
+     * Renders the images for all the numbers
+     */
     private void renderImages() {
         for(int i = 0; i <= 9; i++) {
            images[i] = new GreenfootImage("hud" + i + ".png");
@@ -39,6 +54,10 @@ public class HUDNumber extends Physics
         }
     }
 
+    /**
+     * Updates the number to what it should be according to the coins or score (whatever it purpose is) and also
+     * updates it's position to always be located where it started on the screen
+     */
     public void act() {
         if (!started) {
             startX = getX();
@@ -47,6 +66,8 @@ public class HUDNumber extends Physics
         } else {
             setLocation(startX, startY);
             if (position != 0) {
+                String coins;
+                int start;
                 if (purpose.equals("coin")) {
                     if (getWorld() instanceof LevelSelector) {
                         coins = Integer.toString(Globals.totalCoinsCollected);

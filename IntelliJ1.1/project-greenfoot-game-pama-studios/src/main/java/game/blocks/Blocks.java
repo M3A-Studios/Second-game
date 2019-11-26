@@ -3,8 +3,11 @@ package game.blocks;
 import greenfoot.*;
 import game.Options;
 
-public class Blocks extends Actor
-{
+/**
+ *
+ */
+public class Blocks extends Actor {
+
     /**
      * This is the constructor that should be used in every tile
      * All tiles should simply extend Blocks and call Super with the ID

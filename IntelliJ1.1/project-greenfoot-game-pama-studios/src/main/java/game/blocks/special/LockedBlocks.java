@@ -11,6 +11,7 @@ import java.util.List;
 
 
 public class LockedBlocks extends Blocks {
+
     /** The image for the blue locked block */
     private static GreenfootImage blueBlock = new GreenfootImage("229.png");
     /** The image for the green locked block */

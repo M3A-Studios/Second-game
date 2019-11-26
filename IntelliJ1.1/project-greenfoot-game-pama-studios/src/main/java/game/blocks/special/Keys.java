@@ -9,6 +9,7 @@ import game.entities.Player;
  *
  */
 public class Keys extends Actor {
+
     /** The image for the blue key */
     public static GreenfootImage blueKey = new GreenfootImage("185.png");
     /** The image for the green key */

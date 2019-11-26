@@ -5,15 +5,23 @@ import greenfoot.GreenfootImage;
 import game.Options;
 import game.entities.Player;
 
-public class Heart extends Actor
-{
-    private int heart; //set to what heart this is, so what health it should look at (heart 1 will be full at 2 or more hp and half at 1)
-    private boolean started = false; //gets checked first frame to get the startX and startY
-    private int startX; //gets set to where the heart was placed initially
-    private int startY; //gets set to where the heart was placed initially
-    private GreenfootImage half = new GreenfootImage("heartHalf.png"); //half-full image
-    private GreenfootImage full = new GreenfootImage("heartFull.png"); //full image
-    private GreenfootImage empty = new GreenfootImage("heartEmpty.png"); //empty image
+/**
+ *
+ */
+public class Heart extends Actor {
+
+    /** set to what heart this is, so what health it should look at (heart 1 will be full at 2 or more hp and half at 1) */
+    private int heart;
+    /** gets checked first frame to get the startX and startY */
+    private boolean started = false;
+    /** Initial starting coordinates of the heart */
+    private int startX, startY;
+    /** Image for when the heart is half full */
+    private GreenfootImage half = new GreenfootImage("heartHalf.png");
+    /** Image for when the heart is full */
+    private GreenfootImage full = new GreenfootImage("heartFull.png");
+    /** Image for when the heart is empty */
+    private GreenfootImage empty = new GreenfootImage("heartEmpty.png");
 
     /**
      * Constructor, the value given here is which spot it takes
@@ -22,8 +30,7 @@ public class Heart extends Actor
      *
      * @param heart         give which heart this is, 1 would be the last heart
      */
-    public Heart(int heart)
-    {
+    public Heart(int heart) {
         this.heart = heart;
         half.scale((Options.blockSize),(Options.blockSize));
         full.scale((Options.blockSize),(Options.blockSize));

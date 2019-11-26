@@ -14,11 +14,11 @@ public class Flagpole extends Actor {
     /** Animation timer to see when to switch between {@link #waving1} and {@link #waving2} */
     private int frame;
     /** The first image in the waving flag animation */
-    private GreenfootImage waving1 = new GreenfootImage("273.png");
+    private static GreenfootImage waving1 = new GreenfootImage("273.png");
     /** The second image in the waving flag animation */
-    private GreenfootImage waving2 = new GreenfootImage("170.png");
+    private static GreenfootImage waving2 = new GreenfootImage("170.png");
     /** The image for the pole of the flagpole */
-    private GreenfootImage pole = new GreenfootImage("272.png");
+    private static GreenfootImage pole = new GreenfootImage("272.png");
 
     /**
      * Sets the image and the {@link #purpose} of the flagpole part

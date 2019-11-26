@@ -28,6 +28,7 @@ public class JumpPad extends Physics {
         setImage(jumppadUp);
         holding = false;
     }
+
     /**
      * Act method to keep the spring working fine with physics and compress when something is touching it
      * also keeps the gravity going.

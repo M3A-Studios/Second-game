@@ -8,9 +8,8 @@ import game.Particles;
 import java.util.Random;
 
 
-public class AnimatedObject extends Blocks
-{
-    //Images for animations
+public class AnimatedObject extends Blocks {
+
     /** The first image for the torch animation */
     private static GreenfootImage Torch1 = new GreenfootImage("253.png");
     /** The second image for the torch animation */

@@ -7,6 +7,7 @@ import game.blocks.Blocks;
  * canMoveLeft(double speed) or canMoveRight(double speed) are used, also used for willBumpHead() and onGround().
  */
 public class Solid extends Blocks {
+
     /**
      * Calls for the constructor in Blocks.java to set the image of the tile.
      * All of these images will be 1x1 in the grid. (Options.blockSize * Options.blockSize)

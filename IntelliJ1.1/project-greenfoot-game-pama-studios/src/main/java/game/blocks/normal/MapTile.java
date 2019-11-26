@@ -9,6 +9,7 @@ import game.Options;
  * do absolutely nothing anywhere.
  */
 public class MapTile extends Actor {
+
     /**
      * Gets an ID to use for what image the tile should be, tiles are 1by1 as in Options.blockSize x Options.blockSize
      *

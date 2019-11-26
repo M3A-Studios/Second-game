@@ -7,6 +7,7 @@ import game.blocks.Blocks;
  * top right and bottom left of the block and otherwise are not treated as being on ground
  */
 public class SlopeRight extends Blocks {
+
     /**
      * Calls for the constructor in Blocks.java to set the image of the tile.
      * All of these images will be 1x1 in the grid. (Options.blockSize * Options.blockSize)
