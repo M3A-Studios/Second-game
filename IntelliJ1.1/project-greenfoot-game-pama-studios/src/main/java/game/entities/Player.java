@@ -98,7 +98,7 @@ public class Player extends Physics {
         climb1 = new GreenfootImage("alien" + color+ "_climb1.png");
         climb2 = new GreenfootImage("alien" + color+ "_climb2.png");
         front = new GreenfootImage("alien" + color+ "_front.png");
-        deadimg = new GreenfootImage("alienGreen_dead.png"); //no death images for other aliens
+        deadimg = new GreenfootImage("alien" + color + "_dead.png");
         walk1 = new GreenfootImage("alien" + color+ "_walk1.png");
         walk2 = new GreenfootImage("alien" + color+ "_walk2.png");
         walk1m = new GreenfootImage("alien" + color+ "_walk1.png");
