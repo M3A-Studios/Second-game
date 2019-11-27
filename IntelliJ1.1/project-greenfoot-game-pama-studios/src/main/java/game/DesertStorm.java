@@ -21,9 +21,9 @@ public class DesertStorm extends Physics {
      * Constructor method, sets the image and base values for movement and animation
      */
     public DesertStorm() {
-        GreenfootImage image = new GreenfootImage ("100.png");
-        image.scale(Options.screenWidth * 2, Options.screenHeight);
-        image.setTransparency(100);
+        GreenfootImage image = new GreenfootImage ("desertstorm.png");
+        image.scale(Options.screenWidth * 4, Options.screenHeight * 4);
+        image.setTransparency(200);
         setImage(image);
         moving = false;
         movingLeft = true;

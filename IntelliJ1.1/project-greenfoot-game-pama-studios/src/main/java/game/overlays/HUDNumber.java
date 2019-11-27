@@ -20,6 +20,8 @@ public class HUDNumber extends Physics {
     private GreenfootImage[] images = new GreenfootImage[10];
     /** The value of this number in the HUD */
     private String value = "0";
+    private String coins;
+    private String star;
     /** The purpose of the HUD number, if it should be a "coin" or "score" counter */
     private String purpose;
 
@@ -40,6 +42,11 @@ public class HUDNumber extends Physics {
                 GreenfootImage coinImage = new GreenfootImage("hudCoin.png");
                 coinImage.scale(Options.blockSize, Options.blockSize);
                 setImage(coinImage);
+            }
+            if (purpose.equals("star")) {
+                GreenfootImage starImage = new GreenfootImage("189.png");
+                starImage.scale(Options.blockSize, Options.blockSize);
+                setImage(starImage);
             }
         }
     }
@@ -94,7 +101,20 @@ public class HUDNumber extends Physics {
                     if (position >= start) {
                         value = strArray[position - start];
                     }
-
+                }
+                else if (purpose.equals("star")) {
+                    if (getWorld() instanceof LevelSelector) {
+                        star = Integer.toString(Globals.totalStarsCollected);
+                        start = 1;
+                    } else {
+                        star = Integer.toString(Globals.levelStarsCollected);
+                        start = 2;
+                    }
+                    String[] strArray = star.split("");
+                    start = start - strArray.length + 1;
+                    if (position >= start) {
+                        value = strArray[position - start];
+                    }
                 }
                 setImage(images[Integer.parseInt(value)]);
             }

@@ -1,7 +1,11 @@
 package game;
 
-import game.blocks.normal.*;
+import game.blocks.special.SwitchBlock;
 import greenfoot.Actor;
+import game.blocks.normal.Ladder;
+import game.blocks.normal.SlopeLeft;
+import game.blocks.normal.SlopeRight;
+import game.blocks.normal.Solid;
 import game.blocks.special.Door;
 import game.blocks.special.JumpPad;
 import game.blocks.special.LockedBlocks;
@@ -12,6 +16,7 @@ import game.entities.Player;
  */
 public class Physics extends Actor
 {
+    public static boolean willHitSwitch;
     protected double vSpeed = 0;
     protected double acceleration = 0.9;
     private int jtime;
@@ -103,14 +108,6 @@ public class Physics extends Actor
     /**
      * @param height
      */
-    protected void fly(double height) {
-        setRelativeLocation(0, - 4);
-        vSpeed = - height;
-    }
-
-    /**
-     * @param height
-     */
     protected void jumpExtend(double height) {
         vSpeed = vSpeed - height;
     }
@@ -126,10 +123,6 @@ public class Physics extends Actor
             if (vSpeed > 20) vSpeed = 20;
             setRelativeLocation(0,vSpeed);
         }
-        else if (willBumpHead())
-        {
-            vSpeed = 1;
-        }
         else
         {
             vSpeed = 0;
@@ -141,11 +134,7 @@ public class Physics extends Actor
      * @return      returns true or false based on if the player is on a ladder or not
      */
     protected boolean onLadder() {
-        if (getOneObjectAtOffset(0, -1 + getImage().getHeight() / 2 + (int) Math.floor(vSpeed), Ladder.class) != null) {
-            return getOneObjectAtOffset(0, -1 + (int) Math.floor(vSpeed), Ladder.class) != null;
-        } else {
-            return false;
-        }
+        return getOneObjectAtOffset(0, -1 + (int) Math.floor(vSpeed), Ladder.class) != null;
     }
 
     /**
@@ -161,7 +150,17 @@ public class Physics extends Actor
                 getOneObjectAtOffset(getImage().getWidth() / 2, getImage().getHeight() / 2 + (int) Math.ceil(vSpeed), Solid.class) != null) {
             onGround = true;
         }
-        if (onSlope()) {
+        if (getOneObjectAtOffset(getImage().getWidth() / -2, getImage().getHeight() / 2 + (int) Math.ceil(vSpeed), SwitchBlock.class) != null ||
+                getOneObjectAtOffset(0, getImage().getHeight() / 2 + (int) Math.ceil(vSpeed), SwitchBlock.class) != null ||
+                getOneObjectAtOffset(getImage().getWidth() / 2, getImage().getHeight() / 2 + (int) Math.ceil(vSpeed), SwitchBlock.class) != null)
+        {
+            if (SwitchBlock.isSolid) {
+                onGround = true;
+            }
+        }
+
+        if (onSlope())
+        {
             onGround = true;
         }
         //Check if you're inside of a platform
@@ -244,7 +243,39 @@ public class Physics extends Actor
         willHitLock = (getOneObjectAtOffset(getImage().getWidth() / -2, getImage().getHeight() / -2 + (int) Math.floor(vSpeed), LockedBlocks.class) != null ||
                 getOneObjectAtOffset(getImage().getWidth() / 2, getImage().getHeight() / -2 + (int) Math.floor(vSpeed), LockedBlocks.class) != null ||
                 getOneObjectAtOffset(0, getImage().getHeight() / -2 + (int) Math.floor(vSpeed), LockedBlocks.class) != null);
-        return (willHitLock || willHitSolid);
+        //SWITCHES
+        boolean willHitSwitch = false;
+        SwitchBlock switchBlock1 = (SwitchBlock) getOneObjectAtOffset(getImage().getWidth() / -2, getImage().getHeight() / -2 + (int) Math.floor(vSpeed), SwitchBlock.class);
+        if (switchBlock1 != null) {
+            if (switchBlock1.purpose.equals("block")) {
+                willHitSwitch = true;
+            }else {
+                switchBlock1.switchBlock();
+                willHitSolid = true;
+            }
+        }
+        SwitchBlock switchBlock2 = (SwitchBlock) getOneObjectAtOffset(getImage().getWidth() / 2, getImage().getHeight() / -2 + (int) Math.floor(vSpeed), SwitchBlock.class);
+        if (switchBlock2 != null) {
+            if (switchBlock2.purpose.equals("block")) {
+                willHitSwitch = true;
+            }else {
+                switchBlock2.switchBlock();
+                willHitSolid = true;
+            }
+        }
+        SwitchBlock switchBlock3 = (SwitchBlock) getOneObjectAtOffset(0, getImage().getHeight() / -2 + (int) Math.floor(vSpeed), SwitchBlock.class);
+        if (switchBlock3 != null) {
+            if (switchBlock3.purpose.equals("block")) {
+                willHitSwitch = true;
+            } else {
+                switchBlock3.switchBlock();
+                willHitSolid = true;
+            }
+        }
+        //
+
+
+        return (willHitLock || willHitSolid || (willHitSwitch && SwitchBlock.isSolid));
     }
 
     private boolean isOnSlopeLeft() {
@@ -297,7 +328,16 @@ public class Physics extends Actor
         if (getOneObjectAtOffset(getImage().getWidth() / -2 - (int) Math.ceil(speed), getImage().getHeight() / -2 + 2, Solid.class) != null ||
                 getOneObjectAtOffset(getImage().getWidth() / -2 - (int) Math.ceil(speed), 0,  Solid.class) != null ||
                 getOneObjectAtOffset(getImage().getWidth() / -2 - (int) Math.ceil(speed), getImage().getHeight() / 2 - 2,  Solid.class) != null)
-            canMoveLeft = false;
+        { canMoveLeft = false; }
+
+        if (getOneObjectAtOffset(getImage().getWidth() / -2 - (int) Math.ceil(speed), getImage().getHeight() / -2 + 2, SwitchBlock.class) != null ||
+                getOneObjectAtOffset(getImage().getWidth() / -2 - (int) Math.ceil(speed), 0, SwitchBlock.class) != null ||
+                getOneObjectAtOffset(getImage().getWidth() / -2 - (int) Math.ceil(speed), getImage().getHeight() / 2 - 2, SwitchBlock.class) != null)
+        {
+            if (SwitchBlock.isSolid) {
+                canMoveLeft = false;
+            }
+        }
         //check for locked block
 
         if (this instanceof Player) {
@@ -350,8 +390,7 @@ public class Physics extends Actor
             }
         }
         Actor block = getOneObjectAtOffset(getImage().getWidth()/-2 - (int) Math.ceil(speed), getImage().getHeight() / 2 + Options.blockSize / 2, Solid.class);
-        Actor platform = getOneObjectAtOffset(getImage().getWidth()/-2 - (int) Math.ceil(speed), getImage().getHeight() / 2 + Options.blockSize / 2, Platform.class);
-        if (block == null && platform == null) {
+        if (block == null) {
             canMoveLeft = false;
         }
         //check out of the world
@@ -375,8 +414,15 @@ public class Physics extends Actor
         }
         if (getOneObjectAtOffset(getImage().getWidth() / 2 + (int) Math.ceil(speed), getImage().getHeight() / -2 + 2, Solid.class) != null ||
                 getOneObjectAtOffset(getImage().getWidth() / 2 + (int) Math.ceil(speed), 0, Solid.class) != null ||
-                getOneObjectAtOffset(getImage().getWidth() / 2 + (int) Math.ceil(speed), getImage().getHeight() / 2 - 2, Solid.class) != null)
+                getOneObjectAtOffset(getImage().getWidth() / 2 + (int) Math.ceil(speed), getImage().getHeight() / 2 - 2, Solid.class) != null) {
             canMoveRight = false;
+        }
+        if (getOneObjectAtOffset(getImage().getWidth() / 2 + (int) Math.ceil(speed), getImage().getHeight() / -2 + 2, SwitchBlock.class) != null ||
+                getOneObjectAtOffset(getImage().getWidth() / 2 + (int) Math.ceil(speed), 0, SwitchBlock.class) != null ||
+                getOneObjectAtOffset(getImage().getWidth() / 2 + (int) Math.ceil(speed), getImage().getHeight() / 2 - 2, SwitchBlock.class) != null)
+            if (SwitchBlock.isSolid) {
+                canMoveRight = false;
+            }
 
         if (this instanceof Player) {
             LockedBlocks lockBlock1 = (LockedBlocks) getOneObjectAtOffset(getImage().getWidth() / 2 + (int) Math.ceil(speed), getImage().getHeight() / -2 + 2, LockedBlocks.class);
@@ -428,8 +474,7 @@ public class Physics extends Actor
             }
         }
         Actor block = getOneObjectAtOffset(getImage().getWidth()/2 + (int) Math.ceil(speed), getImage().getHeight() / 2 + Options.blockSize / 2, Solid.class);
-        Actor platform = getOneObjectAtOffset(getImage().getWidth()/2 - (int) Math.ceil(speed), getImage().getHeight() / 2 + Options.blockSize / 2, Platform.class);
-        if (block == null && platform == null) {
+        if (block == null) {
             canMoveRight = false;
         }
         if (doubleX - (int) Math.ceil(speed) > Globals.worldWidth - getImage().getWidth() / 2.0) {
@@ -445,7 +490,7 @@ public class Physics extends Actor
      * @return                  Returns the actor below you or null
      */
     protected Actor getObjectBelowOfClass(Class classToCheck) {
-        if (vSpeed > 0) {
+        if (vSpeed >= 0) {
             Actor actor;
             actor = getOneObjectAtOffset(0, getImage().getHeight() / 2 + 1, classToCheck);
             if (actor == null) {

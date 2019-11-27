@@ -41,6 +41,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="greenfoot-engine" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -109,7 +112,7 @@
   </component>
   <component name="RunManager">
     <configuration name="App" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="/opt/jdk1.8.0_221" />
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="App" />
       <module name="greenfoot-engine" />

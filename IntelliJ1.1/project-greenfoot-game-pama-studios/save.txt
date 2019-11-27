@@ -5,23 +5,18 @@ Player1LeftButton:A
 Player1UpButton:W
 Player1DownButton:S
 Player1RightButton:D
-Player1JumpButton:space
 Player2LeftButton:left
 Player2UpButton:up
 Player2DownButton:down
 Player2RightButton:right
-Player2JumpButton:control
 InteractButton:E
 DropItemButton:Q
 DropObjectButton:Z
 LevelsUnlocked:15
-<<<<<<< Updated upstream
 SelectedLevel:1
 Coins:11
 Score:1110
-=======
 SelectedLevel:6
 Coins:421
 Score:5210
->>>>>>> Stashed changes
 

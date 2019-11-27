@@ -1,5 +1,8 @@
 package game.blocks.special;
 
+import com.sun.xml.internal.bind.v2.model.core.ID;
+import game.blocks.normal.BreakableBlocks;
+import greenfoot.Actor;
 import greenfoot.GreenfootImage;
 import game.Options;
 import game.blocks.Blocks;
@@ -16,6 +19,7 @@ public class PSwitch extends Blocks {
     /** How long an event should last in frames */
     double eventTimer = 600;
 
+        private boolean isActive = false;
     /**
      * Calls for the constructor in Blocks.java to set the image of the tile.
      * All of these images will be 1x1 in the grid. (Options.blockSize * Options.blockSize)
@@ -25,8 +29,7 @@ public class PSwitch extends Blocks {
      */
     public PSwitch(int ID) {
         super(ID);
-        System.out.print(ID);
-        if (ID == 275)
+        if (ID == 274)
         {
             pSwitchUp.scale(Options.blockSize, Options.blockSize);
             setImage(pSwitchUp);
@@ -38,12 +41,10 @@ public class PSwitch extends Blocks {
             setImage(box);
         }
 
+        }
 
     }
 
-    /**
-     * Simple act method getting called every frame to
-     */
     public void act()
     {
         Switch();
@@ -51,27 +52,23 @@ public class PSwitch extends Blocks {
     }
 
         void Switch() {
-
             if (getImage() == pSwitchUp && isTouching(Player.class))
             {
                 setImage(pSwitchDown);
+                isActive = true;
             }
         }
 
         void Event()
         {
-            if (getImage() == pSwitchDown && eventTimer > 0)
+            if (isActive)
             {
-                eventTimer --;
-                if(getImage() == box)
+                eventTimer--;
+                System.out.println(eventTimer);
+
+                if(eventTimer <= 0)
                 {
-
-                    Coins coin = (Coins) getOneIntersectingObject(Coins.class);
-                    if (coin.getValue() == 1)
-                    {
-
-                    }
-
+                    isActive = false;
                 }
             }
         }

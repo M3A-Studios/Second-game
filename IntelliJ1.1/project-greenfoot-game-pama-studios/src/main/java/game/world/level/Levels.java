@@ -1,6 +1,5 @@
 package game.world.level;
 
-import game.entities.enemies.Bee;
 import greenfoot.Actor;
 import greenfoot.GreenfootImage;
 import greenfoot.World;
@@ -19,7 +18,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
 public class Levels extends World
@@ -66,23 +64,6 @@ public class Levels extends World
      * calls up camera.scroll with resulted dsx and dsy to scroll by those cords relative to current camera position
      */
     private void scroll() {
-        int player1x = 0;
-        int player1y = 0;
-        int player2x = 0;
-        int player2y = 0;
-        List<Player> players = (List<Player>)(getObjects(Player.class));
-        for(Player player : players) {
-            if (player.player == 2) {
-                player2x = player.getX();
-                player2y = player.getY();
-            } else {
-                player1x = player.getX();
-                player1y = player.getY();
-            }
-        }
-        int highestX = Math.max(player2x, player1x); //grab highest off the 2
-        int highestY = Math.max(player2y, player1y); //grav highest off the 2
-
         int loX = Options.screenWidth/16*7; //Barrier left of center to move
         int hiX = Options.screenWidth-(Options.screenWidth/16*7); //Barrier right of center to move
         int loY = Options.screenHeight/8*2; //Barrier from the ceiling to move
@@ -90,10 +71,10 @@ public class Levels extends World
         // determine offsets and scroll
         int dsx = 0, dsy = 0;
         //check if player is past the barriers ^
-        if (highestX < loX) dsx = highestX-loX;
-        if (highestX > hiX) dsx = highestX-hiX;
-        if (highestY < loY) dsy = highestY-loY;
-        if (highestY > hiY) dsy = highestY-hiY;
+        if (player.getX() < loX) dsx = player.getX()-loX;
+        if (player.getX() > hiX) dsx = player.getX()-hiX;
+        if (player.getY() < loY) dsy = player.getY()-loY;
+        if (player.getY() > hiY) dsy = player.getY()-hiY;
         camera.scroll(dsx, dsy); //scroll the camera
     }
 
@@ -142,7 +123,7 @@ public class Levels extends World
 
         //getMap(level); //get the map of this level
         getCheckpointLocations(level);
-        addObject(new Background(getBackground(level), level), 0, Options.screenHeight);
+        addObject(new Background(getBackground(level)), 0, Options.screenHeight);
         renderMap(getMap(level), getPlayerLayer(level), level); //spawn the map and player as said layer
 
         if (level >= 7 && level <= 9) {
@@ -264,6 +245,9 @@ public class Levels extends World
         addObject (new HUDNumber(3, "score"), (int) (Options.blockSize * 18.5), (int) (Options.blockSize * 0.5));
         addObject (new HUDNumber(4, "score"), (int) (Options.blockSize * 19), (int) (Options.blockSize * 0.5));
         addObject (new HUDNumber(5, "score"), (int) (Options.blockSize * 19.5), (int) (Options.blockSize * 0.5));
+        addObject (new HUDNumber(0, "star"), (int) (Options.blockSize * 18.5), (int) (Options.blockSize * 1.25));
+        addObject (new HUDNumber(1, "star"), (int) (Options.blockSize * 19), (int) (Options.blockSize * 1.25));
+        addObject (new HUDNumber(2, "star"), (int) (Options.blockSize * 19.5), (int) (Options.blockSize * 1.25));
     }
 
     /**
@@ -285,7 +269,7 @@ public class Levels extends World
         //currently has no case in this because we only have one background.. will update later
         String file;
         if (level <= 3) {
-            file = "backgroundStone.png";
+            file = "background.png";
         } else if (level <= 6) {
             file = "backgroundColorFall.png";
         } else if (level <= 9) {
@@ -452,10 +436,6 @@ public class Levels extends World
                     {
                         nextBlock = new Slime(worldMap[layer][position]);
                     }
-                    else if (check(Globals.bee, worldMap[layer][position]))
-                    {
-                        nextBlock = new Bee(worldMap[layer][position]);
-                    }
                     else if (check(Globals.lavas, worldMap[layer][position]))
                     {
                         nextBlock = new Lava(worldMap[layer][position]);
@@ -480,6 +460,12 @@ public class Levels extends World
                     }
                     else if (check(Globals.pswitch, worldMap[layer][position])) {
                         nextBlock = new PSwitch((worldMap[layer][position]));
+                    }
+                    else if (check(Globals.switchBlock, worldMap[layer][position])) {
+                        nextBlock = new SwitchBlock((worldMap[layer][position]));
+                    }
+                    else if (check(Globals.star, worldMap[layer][position])) {
+                        nextBlock = new Star((worldMap[layer][position]));
                     }
                     else if (worldMap[layer][position] != 0)
                     {

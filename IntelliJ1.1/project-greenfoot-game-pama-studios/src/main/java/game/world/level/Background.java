@@ -1,7 +1,5 @@
 package game.world.level;
 
-import game.Camera;
-import game.Globals;
 import greenfoot.Actor;
 import greenfoot.GreenfootImage;
 import game.Options;
@@ -27,21 +25,12 @@ public class Background extends Actor {
             image.scale(Options.screenWidth, Options.screenHeight);
         }
         setImage(image);
-        this.level = level;
     }
 
     /**
      * Updates the location of the background every frame to make it static or move along based on what level
      */
     public void act() {
-        if (level <= 3) {
-            if (!started) {
-                getImage().scale(Globals.worldWidth, Globals.worldHeight);
-                setLocation(Globals.worldWidth / 2 - Camera.scrolledX, Globals.worldHeight / 2 - Camera.scrolledY);
-                started = true;
-            }
-        } else {
-            setLocation(Options.screenWidth / 2, Options.screenHeight / 2);
-        }
+        setLocation(Options.screenWidth/2, Options.screenHeight/2);
     }
 }

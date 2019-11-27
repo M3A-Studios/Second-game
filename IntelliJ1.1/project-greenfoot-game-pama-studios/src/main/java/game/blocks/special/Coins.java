@@ -2,6 +2,8 @@ package game.blocks.special;
 
 import game.Options;
 import game.blocks.Blocks;
+import game.blocks.normal.BreakableBlocks;
+import greenfoot.Actor;
 
 public class Coins extends Blocks {
 

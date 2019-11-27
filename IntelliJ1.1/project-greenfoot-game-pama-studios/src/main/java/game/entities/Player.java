@@ -20,7 +20,7 @@ import java.util.Random;
 
 public class Player extends Physics {
 
-    public int player;
+    private int player;
 
     private Actor popup;
     public static int health;
@@ -39,30 +39,26 @@ public class Player extends Physics {
     private int dropCooldown = 60;
     public int pickUpCooldown;
     public boolean canTakeDmg;
-    private int dmgTimer;
+    private int deathTimer;
     public String lastDroppedItem;
     public int lastItemCD = 30;
-    private static boolean player2exists;
+    public boolean canJump = true;
 
     //sizes for the images
     private int playerWidth = Options.blockSize;          //1 block
     private int playerHeight = Options.blockSize * 3 / 2; //1.5 blocks
 
-    //Images
-    private GreenfootImage climb1;
-    private GreenfootImage climb2;
-    private GreenfootImage front;
-    private GreenfootImage deadimg;
-    private GreenfootImage walk1;
-    private GreenfootImage walk2;
-    private GreenfootImage walk1m;
-    private GreenfootImage walk2m;
-    private GreenfootImage jump;
-    private GreenfootImage jumpm;
-    private GreenfootImage hit;
-    private GreenfootImage hitm;
-    private String knockbackDirection;
-
+    //Images 
+    private GreenfootImage climb1 = new GreenfootImage("alien" + Options.player1Color + "_climb1.png");
+    private GreenfootImage climb2 = new GreenfootImage("alien" + Options.player1Color + "_climb2.png");
+    private GreenfootImage front = new GreenfootImage("alien" + Options.player1Color + "_front.png");
+    private GreenfootImage deadimg = new GreenfootImage("alienGreen_dead.png"); //no death images for other aliens
+    private GreenfootImage walk1 = new GreenfootImage("alien" + Options.player1Color + "_walk1.png");
+    private GreenfootImage walk2 = new GreenfootImage("alien" + Options.player1Color + "_walk2.png");
+    private GreenfootImage walk1m = new GreenfootImage("alien" + Options.player1Color + "_walk1.png");
+    private GreenfootImage walk2m = new GreenfootImage("alien" + Options.player1Color + "_walk2.png");
+    private GreenfootImage jump = new GreenfootImage("alien" + Options.player1Color + "_jump.png");
+    private GreenfootImage jumpm = new GreenfootImage("alien" + Options.player1Color + "_jump.png");
 
     /**
      * Constructor method used to simply size the images and set it, also sets started to false
@@ -74,26 +70,18 @@ public class Player extends Physics {
         this.dyingAnimation = 0;
         this.started = false;
         this.endingAnimation = 0;
-        if (player == 1) {
-            Globals.levelCoinsCollected = 0;
-            Globals.levelScore = 0;
-            inventoryItem = "";
-            health = 6;
-            player2exists = false;
-        }
+        Globals.levelCoinsCollected = 0;
+        Globals.levelScore = 0;
+        Globals.levelStarsCollected = 0;
         this.holding = "";
         this.lastDroppedItem = "";
         this.canTakeDmg = true;
         LockedBlocks.blocksToUnlock = new ArrayList<LockedBlocks>();
+        inventoryItem = "";
+        health = 6;
         won = false;
         dead = false;
 
-        String color;
-        if (player == 2) {
-            color = Options.player2Color;
-        } else {
-            color = Options.player1Color;
-        }
 
         climb1 = new GreenfootImage("alien" + color+ "_climb1.png");
         climb2 = new GreenfootImage("alien" + color+ "_climb2.png");
@@ -118,9 +106,6 @@ public class Player extends Physics {
         walk2.scale(playerWidth, playerHeight);
         walk1m.scale(playerWidth, playerHeight);
         walk2m.scale(playerWidth, playerHeight);
-        hit.scale(playerWidth, playerHeight);
-        hitm.scale(playerWidth, playerHeight);
-        hitm.mirrorHorizontally();
         walk1m.mirrorHorizontally();
         walk2m.mirrorHorizontally();
         jumpm.mirrorHorizontally();
@@ -163,7 +148,8 @@ public class Player extends Physics {
             dropObject();
             cooldowns();
             takeDmg();
-            dmgTimer();
+            deathTimer();
+            CollectStar();
         } else if (won) {
             winAnimation();
             isTouchingObject();
@@ -176,11 +162,7 @@ public class Player extends Physics {
         }
     }
     private void checkForSecondPlayer() {
-        if (!player2exists && (Greenfoot.isKeyDown(Options.player2Left) || Greenfoot.isKeyDown(Options.player2Right) ||
-                Greenfoot.isKeyDown(Options.player2Down) || Greenfoot.isKeyDown(Options.player2Up) || Greenfoot.isKeyDown(Options.player2Jump))) {
-            getWorld().addObject(new Player(2), this.getX(), this.getY());
-            player2exists = true;
-        }
+
     }
     private void updateWind() {
 
@@ -237,7 +219,7 @@ public class Player extends Physics {
                 Greenfoot.setWorld(new LevelSelector(LevelSelector.getSelectedLevel()));
             }
         }
-        if ((Greenfoot.isKeyDown(Options.player1Jump) && player == 1) || (Greenfoot.isKeyDown(Options.player2Jump) && player == 2)) {
+        if (Greenfoot.isKeyDown("space") && canJump  ){
             if (onGround()) {
                 spaceKeyDown = 0;
                 jump(15);
@@ -285,6 +267,10 @@ public class Player extends Physics {
             leftKeyDown = 0;
         }
         if (onLadder()) {
+            if (isTouching(Ladder.class))
+            {
+                canJump = false;
+            }
             if ((Greenfoot.isKeyDown(Options.player1Up) && player == 1) || (Greenfoot.isKeyDown(Options.player2Up) && player == 2)) {
                 setRelativeLocation(0, -3);
                 animateMovement("Ladder");
@@ -294,6 +280,7 @@ public class Player extends Physics {
                 animateMovement("Ladder");
             }
         }
+        else {canJump = true;}
         if (Greenfoot.isKeyDown("k")) {
             health = health - 6;
         }
@@ -440,6 +427,16 @@ public class Player extends Physics {
             getWorld().removeObject(coin);
         }
     }
+    private void CollectStar()
+    {
+        Star star = (Star) getOneIntersectingObject(Star.class);
+        if(star != null)
+        {
+            Globals.levelScore += 650;
+            Globals.levelStarsCollected += 1;
+            getWorld().removeObject(star);
+        }
+     }
 
     private void checkCheckpoint() {
         Checkpoint checkpoint = (Checkpoint) getOneIntersectingObject(Checkpoint.class);
@@ -465,13 +462,15 @@ public class Player extends Physics {
         endingAnimation++;
         if (endingAnimation < 200) {
             if (onGround()) {
-                if (canMoveRight(5) || (getX() + getImage().getWidth() > Options.screenWidth && getX() - getImage().getWidth() < Options.screenWidth)) {
+                if (canMoveRight(5) || getX() - getImage().getWidth()/2 < Options.screenWidth) {
                     moveRight(5);
                     moving = true;
                     animateMovement("Right");
                     if (getX() - getImage().getWidth() > Options.screenWidth) {
                         endingAnimation = 999;
                     }
+                } else {
+                    System.out.println("Out of bounds");
                 }
             } else if (isTouching(Flagpole.class)) {
                 if (vSpeed > 5)
@@ -479,6 +478,7 @@ public class Player extends Physics {
             }
         } else {
             Globals.totalCoinsCollected += Globals.levelCoinsCollected;
+            Globals.totalStarsCollected += Globals.levelStarsCollected;
             Globals.totalScore += Globals.levelScore;
             if (LevelSelector.getSelectedLevel() == Globals.levelsUnlocked) {
                 Globals.levelsUnlocked ++;
@@ -563,35 +563,13 @@ public class Player extends Physics {
         }
     }
 
-    private void dmgTimer(){ //Adds delay to taking dmg
-        if(canTakeDmg){ getImage().setTransparency(255); }
+    private void deathTimer(){ //Adds delay to taking dmg
         if(!canTakeDmg){
-            dmgTimer++;
-            if (dmgTimer == 10){this.getImage().setTransparency(50); jump(5);}
-            if (dmgTimer > 10 && dmgTimer < 40){knockBack();}
-            if (dmgTimer == 20){this.getImage().setTransparency(255);}
-            if (dmgTimer == 30){this.getImage().setTransparency(50);}
-            if (dmgTimer == 40){this.getImage().setTransparency(255);}
-            if (dmgTimer == 50){this.getImage().setTransparency(50);}
-            if (dmgTimer > 60) {
-                this.getImage().setTransparency(255);
+            deathTimer++;
+            if (deathTimer > 40) {
                 canTakeDmg = true;
-                dmgTimer = 0;
+                deathTimer = 0;
             }
-        }
-    }
-
-    private void knockBack(){
-        if (knockbackDirection.equals("right")) {
-            if (canMoveRight(3)) {
-                moveRight(3);
-            }
-            this.setImage(hitm);
-        } else{
-            if (canMoveLeft(3)) {
-                moveLeft(3);
-            }
-            this.setImage(hit);
         }
     }
 
@@ -616,11 +594,6 @@ public class Player extends Physics {
             if (!slimedmg.dead){
                 if(canTakeDmg) {
                     Player.health -= 0.5;
-                    if (getX() < slimedmg.getX()) {
-                        knockbackDirection = "left";
-                    } else {
-                        knockbackDirection = "right";
-                    }
                     canTakeDmg = false;
                 }
             }
@@ -658,15 +631,9 @@ public class Player extends Physics {
     }
 
     private void spikes(){
-        Spikes spikes = (Spikes) getOneIntersectingObject(Spikes.class);
         if (isTouching(Spikes.class)){
             if(canTakeDmg) {
                 Player.health -= 0.5;
-                if (getX() < spikes.getX()) {
-                    knockbackDirection = "left";
-                } else {
-                    knockbackDirection = "right";
-                }
                 canTakeDmg = false;
             }
         }

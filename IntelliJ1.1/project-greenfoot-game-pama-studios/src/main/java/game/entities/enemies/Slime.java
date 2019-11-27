@@ -11,16 +11,12 @@ public class Slime extends Physics {
     static GreenfootImage menuSlimeDead = new GreenfootImage("37.png");
     //install blue slime immages
     static GreenfootImage blueSlime = new GreenfootImage("40.png");
-    static GreenfootImage blueSlime2 = new GreenfootImage("39.png");
     static GreenfootImage blueSlimeM = new GreenfootImage("40.png");
-    static GreenfootImage blueSlime2M = new GreenfootImage("39.png");
     static GreenfootImage blueSlimeDead = new GreenfootImage("37.png");
     static GreenfootImage blueSlimeDeadM = new GreenfootImage("37.png");
     //install pink slime immages
     static GreenfootImage pinkSlime = new GreenfootImage("48.png");
     static GreenfootImage pinkSlimeM = new GreenfootImage("48.png");
-    static GreenfootImage pinkSlime2 = new GreenfootImage("47.png");
-    static GreenfootImage pinkSlime2M = new GreenfootImage("47.png");
     static GreenfootImage pinkSlimeDead = new GreenfootImage("45.png");
     static GreenfootImage pinkSlimeDeadM = new GreenfootImage("45.png");
     static GreenfootImage pinkSlimeJump = new GreenfootImage("46.png");
@@ -28,8 +24,6 @@ public class Slime extends Physics {
     //install green slime immages
     static GreenfootImage greenSlime = new GreenfootImage("44.png");
     static GreenfootImage greenSlimeM = new GreenfootImage("44.png");
-    static GreenfootImage greenSlime2 = new GreenfootImage("43.png");
-    static GreenfootImage greenSlime2M = new GreenfootImage("43.png");
     static GreenfootImage greenSlimeDead = new GreenfootImage("41.png");
     static GreenfootImage greenSlimeDeadM = new GreenfootImage("41.png");
 
@@ -37,13 +31,12 @@ public class Slime extends Physics {
     private int slimeHeight = 32;
 
     static int movementRange = 4;
-    private int startingX;
     private double speed = 2.5;
     private boolean isMovingLeft = false;
     private boolean started = false;
+    private int startingX;
     public boolean dead;
     int aTime = 0;
-    int maTime = 0;
     private int pinkJump = 0;
     private String color;
     private boolean isMenuSlime;
@@ -92,7 +85,6 @@ public class Slime extends Physics {
             greenSlimeM.mirrorHorizontally();
             greenSlime2M.mirrorHorizontally();
             isMirrored = true;
-            //green slime moving animation
         }
         //looking for slime
         if (ID >= 45 && ID <= 48) {
@@ -113,7 +105,7 @@ public class Slime extends Physics {
         }
         dead = false;
     }
-    //spawning slime in world
+
     public void act() {
         entityOffset();
         if (!started) {
@@ -129,7 +121,6 @@ public class Slime extends Physics {
                 moving();
             }
         }
-        //show slime dead animation
         if (dead) {
             aTime++;
             if (aTime <= 3) {
@@ -155,16 +146,13 @@ public class Slime extends Physics {
                     setImage(menuSlimeDead);
                 }
             }
-            //removing slime
             if (aTime == 50) {
                 getWorld().removeObject(this);
             }
         }
     }
 
-    //slime abilities
     private void moving() {
-        maTime++;
         if (color.equals("pink")) {
             if (onGround()) {
                 pinkJump++;
@@ -176,43 +164,29 @@ public class Slime extends Physics {
                 pinkJump = 0;
             }
         }
-        //slime moving left
         if (isMovingLeft) {
             if (canEntityMoveLeft(speed) || (canMoveLeft(speed) && color.equals("pink"))) {
                 moveLeft(speed);
                 if (color.equals("pink")) {
-                    if(maTime > 0 && maTime < 10) {setImage(pinkSlime);}
-                    else if(maTime == 20) {setImage(pinkSlime2);}
-                    if(maTime > 30) {maTime = 0;}
+                    setImage(pinkSlime);
                 } else if (color.equals("green")) {
-                    if(maTime > 0 && maTime < 10) {setImage(greenSlime);}
-                    else if(maTime == 20) {setImage(greenSlime2);}
-                    if(maTime > 30) {maTime = 0;}
+                    setImage(greenSlime);
                 } else {
-                    if(maTime > 0 && maTime < 10) {setImage(blueSlime);}
-                    else if(maTime == 20) {setImage(blueSlime2);}
-                    if(maTime > 30) {maTime = 0;}
+                    setImage(blueSlime);
                 }
             } else {
                 isMovingLeft = false;
             }
         }
-        //slime moving right
         if (!isMovingLeft) {
             if (canEntityMoveRight(speed) || (canMoveRight(speed) && color.equals("pink"))) {
                 moveRight(speed);
                 if (color.equals("pink")) {
-                    if(maTime > 0 && maTime < 10) {setImage(pinkSlimeM);}
-                    else if(maTime == 20) {setImage(pinkSlime2M);}
-                    if(maTime > 30) {maTime = 0;}
+                    setImage(pinkSlimeM);
                 } else if (color.equals("green")) {
-                    if(maTime > 0 && maTime < 10) {setImage(greenSlimeM);}
-                    else if(maTime == 20) {setImage(greenSlime2M);}
-                    if(maTime > 30) {maTime = 0;}
+                    setImage(greenSlimeM);
                 } else {
-                    if(maTime > 0 && maTime < 10) {setImage(blueSlimeM);}
-                    else if(maTime == 20) {setImage(blueSlime2M);}
-                    if(maTime > 30) {maTime = 0;}
+                    setImage(blueSlimeM);
                 }
             } else {
                 isMovingLeft = true;

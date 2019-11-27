@@ -52,14 +52,10 @@ public class Saver {
                     + "\nPlayer1UpButton:" + Options.player1Up
                     + "\nPlayer1DownButton:" + Options.player1Down
                     + "\nPlayer1RightButton:" + Options.player1Right
-                    + "\nPlayer1JumpButton:" + Options.player1Jump
-
                     + "\nPlayer2LeftButton:" + Options.player2Left
                     + "\nPlayer2UpButton:" + Options.player2Up
                     + "\nPlayer2DownButton:" + Options.player2Down
                     + "\nPlayer2RightButton:" + Options.player2Right
-                    + "\nPlayer2JumpButton:" + Options.player2Jump
-
                     + "\nInteractButton:" + Options.interact
                     + "\nDropItemButton:" + Options.dropItem
                     + "\nDropObjectButton:" + Options.dropObject

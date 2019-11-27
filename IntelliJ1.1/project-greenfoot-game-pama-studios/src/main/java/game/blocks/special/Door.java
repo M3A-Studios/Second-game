@@ -10,9 +10,7 @@ import game.Options;
 public class Door extends Actor {
     /** ID of the door to link it to the lever, if doorID and leverID are the same they are affected by eachother */
     int doorID;
-    /** Boolean for if the door is open or not, open doors can be walked through */
     public boolean opened;
-    /** The ID of what image the door is currently using */
     private int imageID;
 
     /** The image for the top part of the door when it's open */
@@ -25,10 +23,10 @@ public class Door extends Actor {
     private GreenfootImage bottomClosed = new GreenfootImage("214.png");
 
     /**
-     * Calls for the constructor in Blocks.java to set the image of the tile.
-     * All of these images will be 1x1 in the grid. (Options.blockSize * Options.blockSize)
+     * This is the constructor that should be used in every tile
+     * All tiles should simply extend Blocks and call Super with the ID
      *
-     * @param ID    used to get what file should be displayed as the image of this object
+     * @param ID refers to what the ID of the tile is, used for the image
      */
     public Door(int ID, int doorID) {
         this.doorID = doorID;
@@ -56,6 +54,8 @@ public class Door extends Actor {
             setImage(topOpen);
             opened = true;
         }
+
+
     }
 
     /**
