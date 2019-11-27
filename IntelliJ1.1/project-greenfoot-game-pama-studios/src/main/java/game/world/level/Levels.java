@@ -182,7 +182,10 @@ public class Levels extends World
         } else if (level == 5) {
             checkpointX.add(2);
             checkpointY.add(15);
-        } else if (level == 7) {
+        } else if (level == 6) {
+            checkpointX.add(2);
+            checkpointY.add(45);
+        }else if (level == 7) {
             checkpointX.add(2);
             checkpointY.add(16);
             //check 1
@@ -234,6 +237,8 @@ public class Levels extends World
             case 2:
                 return 0;
             case 5:
+                return 3;
+            case 6:
                 return 3;
             default:
                 return 0;

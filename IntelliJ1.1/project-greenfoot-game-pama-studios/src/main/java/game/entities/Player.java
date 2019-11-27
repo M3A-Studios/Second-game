@@ -1,5 +1,6 @@
 package game.entities;
 
+import game.entities.enemies.*;
 import greenfoot.Actor;
 import greenfoot.Greenfoot;
 import greenfoot.GreenfootImage;
@@ -8,7 +9,6 @@ import game.blocks.special.Coins;
 import game.blocks.normal.Lava;
 import game.blocks.normal.Spikes;
 import game.blocks.special.*;
-import game.entities.enemies.Slime;
 import game.overlays.PopUp;
 import game.DesertStorm;
 import game.world.level.Levels;
@@ -599,6 +599,7 @@ public class Player extends Physics {
         Slime();
         Lava();
         spikes();
+        Bee();
     }
 
     private void Slime(){
@@ -616,6 +617,30 @@ public class Player extends Physics {
                 if(canTakeDmg) {
                     Player.health -= 0.5;
                     if (getX() < slimedmg.getX()) {
+                        knockbackDirection = "left";
+                    } else {
+                        knockbackDirection = "right";
+                    }
+                    canTakeDmg = false;
+                }
+            }
+        }
+    }
+    private void Bee(){
+        Bee bee = (Bee) getObjectBelowOfClass(Bee.class);
+        Bee beedmg = (Bee) getOneIntersectingObject(Bee.class);
+        if (bee != null) {
+            if (!bee.dead) {
+                bee.dead = true;
+                vSpeed = 0;
+                jump(20);
+            }
+        }
+        if(beedmg != null){
+            if (!beedmg.dead){
+                if(canTakeDmg) {
+                    Player.health -= 0.5;
+                    if (getX() < beedmg.getX()) {
                         knockbackDirection = "left";
                     } else {
                         knockbackDirection = "right";

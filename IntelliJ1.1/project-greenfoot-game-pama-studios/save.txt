@@ -15,7 +15,13 @@ InteractButton:E
 DropItemButton:Q
 DropObjectButton:Z
 LevelsUnlocked:15
+<<<<<<< Updated upstream
 SelectedLevel:1
 Coins:11
 Score:1110
+=======
+SelectedLevel:6
+Coins:421
+Score:5210
+>>>>>>> Stashed changes
 

@@ -314,9 +314,9 @@ public class Physics extends Actor
                 lockBlock3.unlockBlock();
             }
         }
-        if (getOneObjectAtOffset(getImage().getWidth() / -2 - (int) Math.ceil(speed), getImage().getHeight() / -2 - 2, LockedBlocks.class) != null ||
+        if (getOneObjectAtOffset(getImage().getWidth() / -2 - (int) Math.ceil(speed), getImage().getHeight() / -2 + 2, LockedBlocks.class) != null ||
                 getOneObjectAtOffset(getImage().getWidth() / -2 - (int) Math.ceil(speed), 0, LockedBlocks.class) != null ||
-                getOneObjectAtOffset(getImage().getWidth() / -2 - (int) Math.ceil(speed), getImage().getHeight() / 2 + 2, LockedBlocks.class) != null)
+                getOneObjectAtOffset(getImage().getWidth() / -2 - (int) Math.ceil(speed), getImage().getHeight() / 2 - 2, LockedBlocks.class) != null)
         {
             canMoveLeft = false;
         }

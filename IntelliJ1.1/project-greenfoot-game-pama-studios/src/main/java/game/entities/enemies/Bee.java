@@ -21,7 +21,7 @@ public class Bee extends Physics {
     private double speed = 2.5;
     private boolean isMovingLeft = false;
     private boolean started = false;
-    private boolean dead = false;
+    public boolean dead;
     int aTime = 0;
     int maTime = 0;
     private int pinkJump = 0;
@@ -39,6 +39,7 @@ public class Bee extends Physics {
         bee.scale(beeWidth, beeHeight);//blue slime scale
         bee2.scale(beeWidth, beeHeight);
         beeDead.scale(beeWidth, beeHeight);
+        dead = false;
     }
 
     public void act() {
