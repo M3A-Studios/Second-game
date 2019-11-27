@@ -17,7 +17,7 @@ public class Globals
     public static int levelsUnlocked = 15;
     public static int currentLevel = 5;
 
-    //Keep track of the coins, stars and score
+    //Keep track of the coins and score
     public static int levelCoinsCollected;
     public static int totalCoinsCollected;
     public static int levelStarsCollected;
@@ -33,7 +33,7 @@ public class Globals
     public static Integer[] waters = {};
     public static Integer[] spikes = {261,262,263,264};
     public static Integer[] finishFlag = {270, 271,272};
-    public static Integer[] nonSolids = {210,211,212,215,216,217,218,219,232,233,234,235,236,237,238,239,240,269,270,260,265,266,267,268,285};
+    public static Integer[] nonSolids = {210,211,212,215,216,217,218,219,232,233,234,235,236,237,238,239,240,269,270,260,265,266,267,268};
     public static Integer[] animatedObjects = {252,253,254};
     public static Integer[] ladder = {220,221};
     public static Integer[] lever = {225,226,227};
@@ -47,8 +47,8 @@ public class Globals
     public static Integer[] lockedBlocks = {228,229,230,231,275,276,277,278};
     public static Integer[] breakableBlocks = {192,193,194,195,196,197,198,199,200,201,202,203,204,205,206,207};
     public static Integer[] slime = {36,37,38,39,40,41,42,43,44,45,46,47};
-    public static Integer[] pswitch = {273,274,194};
+    public static Integer[] bee = {3,4,5};
+    public static Integer[] pswitch = {273,274,194}; //273 and 274 is the power switch, the rest of je IDs change when the switch is turned on.
     public static Integer[] switchBlock = {281,282,283,284};
 }
-
 

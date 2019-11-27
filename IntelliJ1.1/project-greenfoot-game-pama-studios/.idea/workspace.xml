@@ -6,34 +6,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c4615df-7eab-44ce-b708-99aaf69c1c72" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/alienBlue_dead.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/alienPink_dead.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/alienYellow_dead.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/save.txt" beforeDir="false" afterPath="$PROJECT_DIR$/save.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Globals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Globals.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Options.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Options.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/blocks/special/Lever.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/blocks/special/Lever.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/blocks/special/PSwitch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/blocks/special/PSwitch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/blocks/special/SwitchBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/blocks/special/SwitchBlock.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/entities/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/entities/enemies/Bee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/entities/enemies/Bee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/blocks/Blocks.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/blocks/Blocks.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/blocks/normal/BreakableBlocks.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/blocks/normal/BreakableBlocks.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/blocks/normal/Ladder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/blocks/normal/Ladder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/blocks/normal/Lava.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/blocks/normal/Lava.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/blocks/normal/MapTile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/blocks/normal/MapTile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/blocks/normal/NonSolid.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/blocks/normal/NonSolid.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/blocks/normal/SlopeLeft.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/blocks/normal/SlopeLeft.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/blocks/normal/SlopeRight.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/blocks/normal/SlopeRight.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/blocks/normal/Solid.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/blocks/normal/Solid.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/blocks/normal/Spikes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/blocks/normal/Spikes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/blocks/special/AnimatedObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/blocks/special/AnimatedObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/entities/enemies/Slime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/entities/enemies/Slime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/world/level/Levels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/world/level/Levels.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/DesertStorm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/DesertStorm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Globals.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Globals.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Options.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Options.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Physics.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Physics.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Saver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Saver.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/game/blocks/special/Coins.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/blocks/special/Coins.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/game/blocks/special/Door.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/blocks/special/Door.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/game/blocks/special/Flagpole.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/blocks/special/Flagpole.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/game/blocks/special/JumpPad.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/blocks/special/JumpPad.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/game/blocks/special/Keys.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/blocks/special/Keys.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/blocks/special/LockedBlocks.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/blocks/special/LockedBlocks.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/game/entities/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/entities/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/entities/enemies/Bee.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/entities/enemies/Bee.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/game/overlays/HUDNumber.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/overlays/HUDNumber.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/overlays/Heart.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/overlays/Heart.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/overlays/PopUp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/overlays/PopUp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/world/level/Background.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/world/level/Background.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/world/level/Levels.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/world/level/Levels.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/world/menu/PlayerSelectorPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/world/menu/PlayerSelectorPlayer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tilemap/level1.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tilemap/level1.tmx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tilemap/level10.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tilemap/level10.tmx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tilemap/level2.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tilemap/level2.tmx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

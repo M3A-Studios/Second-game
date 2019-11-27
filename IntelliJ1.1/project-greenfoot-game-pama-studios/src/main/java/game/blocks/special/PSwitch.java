@@ -1,8 +1,5 @@
 package game.blocks.special;
 
-import com.sun.xml.internal.bind.v2.model.core.ID;
-import game.blocks.normal.BreakableBlocks;
-import greenfoot.Actor;
 import greenfoot.GreenfootImage;
 import game.Options;
 import game.blocks.Blocks;
@@ -19,7 +16,6 @@ public class PSwitch extends Blocks {
     /** How long an event should last in frames */
     double eventTimer = 600;
 
-        private boolean isActive = false;
     /**
      * Calls for the constructor in Blocks.java to set the image of the tile.
      * All of these images will be 1x1 in the grid. (Options.blockSize * Options.blockSize)
@@ -29,7 +25,8 @@ public class PSwitch extends Blocks {
      */
     public PSwitch(int ID) {
         super(ID);
-        if (ID == 274)
+        System.out.print(ID);
+        if (ID == 275)
         {
             pSwitchUp.scale(Options.blockSize, Options.blockSize);
             setImage(pSwitchUp);
@@ -41,35 +38,41 @@ public class PSwitch extends Blocks {
             setImage(box);
         }
 
-        }
 
     }
 
+    /**
+     * Simple act method getting called every frame to
+     */
     public void act()
     {
         Switch();
         Event();
     }
 
-        void Switch() {
-            if (getImage() == pSwitchUp && isTouching(Player.class))
-            {
-                setImage(pSwitchDown);
-                isActive = true;
-            }
-        }
+    void Switch() {
 
-        void Event()
+        if (getImage() == pSwitchUp && isTouching(Player.class))
         {
-            if (isActive)
-            {
-                eventTimer--;
-                System.out.println(eventTimer);
+            setImage(pSwitchDown);
+        }
+    }
 
-                if(eventTimer <= 0)
+    void Event()
+    {
+        if (getImage() == pSwitchDown && eventTimer > 0)
+        {
+            eventTimer --;
+            if(getImage() == box)
+            {
+
+                Coins coin = (Coins) getOneIntersectingObject(Coins.class);
+                if (coin.getValue() == 1)
                 {
-                    isActive = false;
+
                 }
+
             }
         }
+    }
 }
