@@ -6,36 +6,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c4615df-7eab-44ce-b708-99aaf69c1c72" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/entities/enemies/Blade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/save.txt" beforeDir="false" afterPath="$PROJECT_DIR$/save.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/Globals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Globals.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Options.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Options.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/blocks/special/Lever.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/blocks/special/Lever.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/blocks/special/PSwitch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/blocks/special/PSwitch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/blocks/special/SwitchBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/blocks/special/SwitchBlock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Physics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Physics.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/entities/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/entities/enemies/Slime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/entities/enemies/Slime.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/world/level/Levels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/world/level/Levels.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/DesertStorm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/DesertStorm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/tilemap/level1.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tilemap/level1.tmx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/tilemap/level10.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tilemap/level10.tmx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/greenfoot-engine.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/greenfoot-engine.kotlin_module" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/game/Globals.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Globals.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/game/Options.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Options.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/game/Physics.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Physics.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Saver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Saver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/blocks/special/Coins.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/blocks/special/Coins.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/blocks/special/Door.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/blocks/special/Door.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/blocks/special/Flagpole.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/blocks/special/Flagpole.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/blocks/special/JumpPad.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/blocks/special/JumpPad.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/blocks/special/Keys.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/blocks/special/Keys.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/game/entities/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/entities/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/overlays/HUDNumber.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/overlays/HUDNumber.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/world/level/Background.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/world/level/Background.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/game/world/level/Levels.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/world/level/Levels.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/world/menu/PlayerSelectorPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/world/menu/PlayerSelectorPlayer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tilemap/level1.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tilemap/level1.tmx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tilemap/level10.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tilemap/level10.tmx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tilemap/level2.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tilemap/level2.tmx" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -98,18 +86,6 @@
       <recent name="$PROJECT_DIR$/src/main/java" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
     <configuration name="App" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
@@ -128,6 +104,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -154,5 +142,27 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="713" y="415" width="494" height="237" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1574861773996">
+      <screen x="0" y="27" width="1920" height="1004" />
+    </state>
+    <state x="713" y="415" width="494" height="237" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.27.1920.1004@0.27.1920.1004" timestamp="1574861773996" />
+    <state width="1874" height="219" key="GridCell.Tab.0.bottom" timestamp="1574864799063">
+      <screen x="0" y="27" width="1920" height="1004" />
+    </state>
+    <state width="1874" height="219" key="GridCell.Tab.0.bottom/0.27.1920.1004@0.27.1920.1004" timestamp="1574864799063" />
+    <state width="1874" height="219" key="GridCell.Tab.0.center" timestamp="1574864799061">
+      <screen x="0" y="27" width="1920" height="1004" />
+    </state>
+    <state width="1874" height="219" key="GridCell.Tab.0.center/0.27.1920.1004@0.27.1920.1004" timestamp="1574864799061" />
+    <state width="1874" height="219" key="GridCell.Tab.0.left" timestamp="1574864799060">
+      <screen x="0" y="27" width="1920" height="1004" />
+    </state>
+    <state width="1874" height="219" key="GridCell.Tab.0.left/0.27.1920.1004@0.27.1920.1004" timestamp="1574864799060" />
+    <state width="1874" height="219" key="GridCell.Tab.0.right" timestamp="1574864799062">
+      <screen x="0" y="27" width="1920" height="1004" />
+    </state>
+    <state width="1874" height="219" key="GridCell.Tab.0.right/0.27.1920.1004@0.27.1920.1004" timestamp="1574864799062" />
   </component>
 </project>

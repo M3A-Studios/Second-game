@@ -23,6 +23,7 @@ public class Physics extends Actor
 
     private double doubleX;
     private double doubleY;
+
     /**
      * Simple method to get the accurate X coordinate of the entity on the screen
      *

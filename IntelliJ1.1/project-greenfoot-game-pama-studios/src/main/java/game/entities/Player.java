@@ -1,6 +1,7 @@
 package game.entities;
 
 import game.entities.enemies.Bee;
+import game.entities.enemies.Blade;
 import greenfoot.Actor;
 import greenfoot.Greenfoot;
 import greenfoot.GreenfootImage;
@@ -612,6 +613,7 @@ public class Player extends Physics {
         Lava();
         spikes();
         Bee();
+        Blade();
     }
 
     private void Slime(){
@@ -629,6 +631,23 @@ public class Player extends Physics {
                 if(canTakeDmg) {
                     Player.health -= 0.5;
                     if (getX() < slimedmg.getX()) {
+                        knockbackDirection = "left";
+                    } else {
+                        knockbackDirection = "right";
+                    }
+                    canTakeDmg = false;
+                }
+            }
+        }
+    }
+
+    private void Blade(){
+        Blade bladedmg = (Blade) getOneIntersectingObject(Blade.class);
+        if(bladedmg != null){
+            if (!bladedmg.dead){
+                if(canTakeDmg) {
+                    Player.health -= 1;
+                    if (getX() < bladedmg.getX()) {
                         knockbackDirection = "left";
                     } else {
                         knockbackDirection = "right";
