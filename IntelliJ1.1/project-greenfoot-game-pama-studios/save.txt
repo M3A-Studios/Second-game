@@ -13,7 +13,7 @@ InteractButton:E
 DropItemButton:Q
 DropObjectButton:Z
 LevelsUnlocked:15
-SelectedLevel:1
+SelectedLevel:2
 Coins:0
 Score:0
 

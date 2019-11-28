@@ -172,7 +172,10 @@ public class Levels extends World
         } else if (level == 2) {
             //Spawn location (checkpoint 0)
             checkpointX.add(2);
-            checkpointY.add(16);
+            checkpointY.add(41);
+            //Checkpoint 1
+            checkpointX.add(23);
+            checkpointY.add(36);
         } else if (level == 3) {
             //Spawn location (checkpoint 0)
             checkpointX.add(2);
@@ -283,7 +286,9 @@ public class Levels extends World
     private static GreenfootImage getBackground(int level) {
         //currently has no case in this because we only have one background.. will update later
         String file;
-        if (level <= 3) {
+        if (level == 1 | level == 3) {
+            file = "backgroundStone.png";
+        }else if (level == 2) {
             file = "backgroundStone.png";
         } else if (level <= 6) {
             file = "backgroundColorFall.png";

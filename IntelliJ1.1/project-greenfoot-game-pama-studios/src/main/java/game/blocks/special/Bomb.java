@@ -20,6 +20,7 @@ public class Bomb extends Physics {
     public boolean dropped;
     private boolean spamfire = false;
     public boolean holding;
+    public boolean exploded;
 
     public Bomb(int ID){
         GreenfootImage image = new GreenfootImage ((ID) + ".png");
@@ -55,8 +56,9 @@ public class Bomb extends Physics {
                 animationTimer++;
                 changeImage();
                 if (animationTimer == 50) {spamfire = true;}
-                else if (animationTimer == 200){spamfire = false; damagePlayer();}
+                else if (animationTimer == 200){spamfire = false;}
                 if (animationTimer >= 200 && animationTimer < 300){Explode();}
+                if (animationTimer >= 200 && animationTimer < 225){exploded = true;}
                 if (animationTimer >= 200 && animationTimer < 250){deleteBlocks();}
                 if (animationTimer >= 200 && animationTimer < 300){fadeTime += 1; fadelong(); }
                 else if (animationTimer > 301){getWorld().removeObject(this);}
@@ -85,15 +87,7 @@ public class Bomb extends Physics {
             this.getImage().setTransparency(255 - fadeTime);
         }
     }
-    private void damagePlayer(){
-        Player player = (Player) getOneIntersectingObject(Player.class); //Make this only see the object that you hold
-        if (player != null) {
-            if(player.canTakeDmg){
-                Player.health -= 2;
-                player.canTakeDmg = false;
-            }
-        }
-    }
+
     private void deleteBlocks() {
         getWorld().removeObjects(getObjectsInRange(Options.blockSize * 3, BreakableBlocks.class));
     }

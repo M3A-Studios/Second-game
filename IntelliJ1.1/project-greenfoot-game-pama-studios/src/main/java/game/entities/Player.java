@@ -618,6 +618,7 @@ public class Player extends Physics {
         spikes();
         Bee();
         Blade();
+        Bomb();
     }
 
     private void Slime(){
@@ -661,6 +662,24 @@ public class Player extends Physics {
             }
         }
     }
+
+    private void Bomb(){
+        Bomb Bombdmg = (Bomb) getOneIntersectingObject(Bomb.class);
+        if(Bombdmg != null){
+            if (Bombdmg.exploded){
+                if(canTakeDmg) {
+                    Player.health -= 1;
+                    if (getX() < Bombdmg.getX()) {
+                        knockbackDirection = "left";
+                    } else {
+                        knockbackDirection = "right";
+                    }
+                    canTakeDmg = false;
+                }
+            }
+        }
+    }
+
 
     private void Bee(){
         Bee bee = (Bee) getObjectBelowOfClass(Bee.class);
