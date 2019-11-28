@@ -79,6 +79,7 @@ public class Player extends Physics {
         if (player == 1) {
             Globals.levelCoinsCollected = 0;
             Globals.levelScore = 0;
+            Globals.levelStarsCollected = 0;
             inventoryItem = "";
             health = 6;
             player2exists = false;
@@ -167,6 +168,7 @@ public class Player extends Physics {
             takeDmg();
             dmgTimer();
             hiddenBlocks();
+            CollectStar();
         } else if (won) {
             winAnimation();
             isTouchingObject();
@@ -482,6 +484,7 @@ public class Player extends Physics {
             }
         } else {
             Globals.totalCoinsCollected += Globals.levelCoinsCollected;
+            Globals.totalStarsCollected += Globals.levelStarsCollected;
             Globals.totalScore += Globals.levelScore;
             if (LevelSelector.getSelectedLevel() == Globals.levelsUnlocked) {
                 Globals.levelsUnlocked ++;

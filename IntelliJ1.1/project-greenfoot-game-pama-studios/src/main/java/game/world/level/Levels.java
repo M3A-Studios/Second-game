@@ -167,7 +167,7 @@ public class Levels extends World
             checkpointX.add(1);
             checkpointY.add(14);
             //Checkpoint 1
-            checkpointX.add(60);
+            checkpointX.add(61);
             checkpointY.add(9);
         } else if (level == 2) {
             //Spawn location (checkpoint 0)
@@ -260,6 +260,9 @@ public class Levels extends World
         addObject (new HUDNumber(3, "score"), (int) (Options.blockSize * 18.5), (int) (Options.blockSize * 0.5));
         addObject (new HUDNumber(4, "score"), (int) (Options.blockSize * 19), (int) (Options.blockSize * 0.5));
         addObject (new HUDNumber(5, "score"), (int) (Options.blockSize * 19.5), (int) (Options.blockSize * 0.5));
+        addObject (new HUDNumber(0, "star"), (int) (Options.blockSize * 18.5), (int) (Options.blockSize * 1.25));
+        addObject (new HUDNumber(1, "star"), (int) (Options.blockSize * 19), (int) (Options.blockSize * 1.25));
+        addObject (new HUDNumber(2, "star"), (int) (Options.blockSize * 19.5), (int) (Options.blockSize * 1.25));
     }
 
     /**
@@ -431,6 +434,10 @@ public class Levels extends World
                     else if (check(Globals.hiddenBlocks, worldMap[layer][position]))
                     {
                         nextBlock = new HiddenBlocks(worldMap[layer][position]);
+                    }
+                    else if (check(Globals.star, worldMap[layer][position]))
+                    {
+                        nextBlock = new Star(worldMap[layer][position]);
                     }
                     else if (check(Globals.bombs, worldMap[layer][position]))
                     {

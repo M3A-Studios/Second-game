@@ -17,7 +17,7 @@ public class Globals
     public static int levelsUnlocked = 15;
     public static int currentLevel = 5;
 
-    //Keep track of the coins and score
+    //Keep track of the coins, stars and score
     public static int levelCoinsCollected;
     public static int totalCoinsCollected;
     public static int levelStarsCollected;
@@ -35,7 +35,7 @@ public class Globals
     public static Integer[] spikes = {261,262,263,264};
     public static Integer[] finishFlag = {270, 271,272};
     public static Integer[] nonSolids = {210,211,212,215,216,217,218,219,232,233,234,235,236,237,238,239,240,269,270,
-            260,265,266,267,268,290,291,345,346,347,348,349};
+            260,265,266,267,268,290,291,345,346,347,348,349,354,355,356,357};
     public static Integer[] animatedObjects = {252,253,254};
     public static Integer[] ladder = {220,221};
     public static Integer[] lever = {225,226,227};

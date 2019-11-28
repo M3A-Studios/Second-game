@@ -56,8 +56,8 @@ public class HUDNumber extends Physics {
      */
     private void renderImages() {
         for(int i = 0; i <= 9; i++) {
-           images[i] = new GreenfootImage("hud" + i + ".png");
-           images[i].scale(Options.blockSize, Options.blockSize);
+            images[i] = new GreenfootImage("hud" + i + ".png");
+            images[i].scale(Options.blockSize, Options.blockSize);
         }
     }
 
@@ -121,4 +121,3 @@ public class HUDNumber extends Physics {
         }
     }
 }
-

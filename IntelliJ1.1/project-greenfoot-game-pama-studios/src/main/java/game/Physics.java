@@ -98,6 +98,7 @@ public class Physics extends Actor
         doubleY = doubleY + Camera.entityYOffset;
     }
 
+
     /**
      * @param height
      */
@@ -135,7 +136,11 @@ public class Physics extends Actor
      * @return      returns true or false based on if the player is on a ladder or not
      */
     protected boolean onLadder() {
-        return getOneObjectAtOffset(0, -1 + (int) Math.floor(vSpeed), Ladder.class) != null;
+        if (getOneObjectAtOffset(0, -1 + getImage().getHeight() / 2 + (int) Math.floor(vSpeed), Ladder.class) != null) {
+            return getOneObjectAtOffset(0, -1 + (int) Math.floor(vSpeed), Ladder.class) != null;
+        } else {
+            return false;
+        }
     }
 
     /**

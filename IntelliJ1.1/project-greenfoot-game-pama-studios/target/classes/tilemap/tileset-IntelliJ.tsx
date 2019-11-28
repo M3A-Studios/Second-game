@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.2" tiledversion="1.3.1" name="tileset-IntelliJ" tilewidth="128" tileheight="128" tilecount="354" columns="0">
+<tileset version="1.2" tiledversion="1.3.1" name="tileset-IntelliJ" tilewidth="128" tileheight="128" tilecount="358" columns="0">
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="0">
   <image width="128" height="128" source="../images/1.png"/>
@@ -1062,5 +1062,17 @@
  </tile>
  <tile id="353">
   <image width="128" height="128" source="../images/354.png"/>
+ </tile>
+ <tile id="354">
+  <image width="128" height="128" source="../images/355.png"/>
+ </tile>
+ <tile id="355">
+  <image width="128" height="128" source="../images/356.png"/>
+ </tile>
+ <tile id="356">
+  <image width="128" height="128" source="../images/357.png"/>
+ </tile>
+ <tile id="357">
+  <image width="128" height="128" source="../images/358.png"/>
  </tile>
 </tileset>
