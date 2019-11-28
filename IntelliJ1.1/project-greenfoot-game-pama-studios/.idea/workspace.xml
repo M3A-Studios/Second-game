@@ -5,25 +5,7 @@
     <option name="CUSTOM_SCOPE_NAME" value="game package scope" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c4615df-7eab-44ce-b708-99aaf69c1c72" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/game/entities/enemies/Blade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/save.txt" beforeDir="false" afterPath="$PROJECT_DIR$/save.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Globals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Globals.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Physics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Physics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/entities/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/world/level/Levels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/world/level/Levels.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/tilemap/level1.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tilemap/level1.tmx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/tilemap/level10.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tilemap/level10.tmx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/greenfoot-engine.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/greenfoot-engine.kotlin_module" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Globals.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Globals.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Options.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Options.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Physics.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Physics.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/entities/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/entities/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/world/level/Levels.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/world/level/Levels.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tilemap/level1.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tilemap/level1.tmx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tilemap/level10.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tilemap/level10.tmx" afterDir="false" />
-    </list>
+    <list default="true" id="7c4615df-7eab-44ce-b708-99aaf69c1c72" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -148,21 +130,25 @@
       <screen x="0" y="27" width="1920" height="1004" />
     </state>
     <state x="713" y="415" width="494" height="237" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.27.1920.1004@0.27.1920.1004" timestamp="1574861773996" />
-    <state width="1874" height="219" key="GridCell.Tab.0.bottom" timestamp="1574864799063">
-      <screen x="0" y="27" width="1920" height="1004" />
+    <state width="1878" height="128" key="GridCell.Tab.0.bottom" timestamp="1574927102262">
+      <screen x="0" y="32" width="3840" height="1048" />
     </state>
     <state width="1874" height="219" key="GridCell.Tab.0.bottom/0.27.1920.1004@0.27.1920.1004" timestamp="1574864799063" />
-    <state width="1874" height="219" key="GridCell.Tab.0.center" timestamp="1574864799061">
-      <screen x="0" y="27" width="1920" height="1004" />
+    <state width="1878" height="128" key="GridCell.Tab.0.bottom/0.32.3840.1048@0.32.3840.1048" timestamp="1574927102262" />
+    <state width="1878" height="128" key="GridCell.Tab.0.center" timestamp="1574927102260">
+      <screen x="0" y="32" width="3840" height="1048" />
     </state>
     <state width="1874" height="219" key="GridCell.Tab.0.center/0.27.1920.1004@0.27.1920.1004" timestamp="1574864799061" />
-    <state width="1874" height="219" key="GridCell.Tab.0.left" timestamp="1574864799060">
-      <screen x="0" y="27" width="1920" height="1004" />
+    <state width="1878" height="128" key="GridCell.Tab.0.center/0.32.3840.1048@0.32.3840.1048" timestamp="1574927102260" />
+    <state width="1878" height="128" key="GridCell.Tab.0.left" timestamp="1574927102260">
+      <screen x="0" y="32" width="3840" height="1048" />
     </state>
     <state width="1874" height="219" key="GridCell.Tab.0.left/0.27.1920.1004@0.27.1920.1004" timestamp="1574864799060" />
-    <state width="1874" height="219" key="GridCell.Tab.0.right" timestamp="1574864799062">
-      <screen x="0" y="27" width="1920" height="1004" />
+    <state width="1878" height="128" key="GridCell.Tab.0.left/0.32.3840.1048@0.32.3840.1048" timestamp="1574927102260" />
+    <state width="1878" height="128" key="GridCell.Tab.0.right" timestamp="1574927102261">
+      <screen x="0" y="32" width="3840" height="1048" />
     </state>
     <state width="1874" height="219" key="GridCell.Tab.0.right/0.27.1920.1004@0.27.1920.1004" timestamp="1574864799062" />
+    <state width="1878" height="128" key="GridCell.Tab.0.right/0.32.3840.1048@0.32.3840.1048" timestamp="1574927102261" />
   </component>
 </project>
