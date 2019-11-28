@@ -164,10 +164,10 @@ public class Levels extends World
     private void getCheckpointLocations(int level) {
         if (level == 1) {
             //Spawn location (checkpoint 0)
-            checkpointX.add(2);
-            checkpointY.add(9);
+            checkpointX.add(1);
+            checkpointY.add(14);
             //Checkpoint 1
-            checkpointX.add(23);
+            checkpointX.add(60);
             checkpointY.add(9);
         } else if (level == 2) {
             //Spawn location (checkpoint 0)
@@ -427,6 +427,10 @@ public class Levels extends World
                     else if (check(Globals.door, worldMap[layer][position]))
                     {
                         nextBlock = new Door(worldMap[layer][position], 1);
+                    }
+                    else if (check(Globals.hiddenBlocks, worldMap[layer][position]))
+                    {
+                        nextBlock = new HiddenBlocks(worldMap[layer][position]);
                     }
                     else if (check(Globals.bombs, worldMap[layer][position]))
                     {

@@ -166,6 +166,7 @@ public class Player extends Physics {
             cooldowns();
             takeDmg();
             dmgTimer();
+            hiddenBlocks();
         } else if (won) {
             winAnimation();
             isTouchingObject();
@@ -700,6 +701,21 @@ public class Player extends Physics {
                     knockbackDirection = "right";
                 }
                 canTakeDmg = false;
+            }
+        }
+    }
+
+    private void hiddenBlocks(){
+        if(isTouching(HiddenBlocks.class)){
+            List<HiddenBlocks> HiddenBlocks = (List<HiddenBlocks>) (this.getObjectsInRange(Options.blockSize * 10, HiddenBlocks.class));
+            for(HiddenBlocks block : HiddenBlocks) {
+                block.getImage().setTransparency(50);
+            }
+        }
+        else{
+            List<HiddenBlocks> HiddenBlocks = (List<HiddenBlocks>) (this.getObjectsInRange(Options.blockSize * 10, HiddenBlocks.class));
+            for(HiddenBlocks block : HiddenBlocks) {
+                    block.getImage().setTransparency(255);
             }
         }
     }
