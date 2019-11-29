@@ -159,6 +159,7 @@ public class Player extends Physics {
             checkinput();
             isTouchingObject();
             collectCoin();
+            CollectStar();
             checkCheckpoint();
             jumpPad();
             checkFlagpole();

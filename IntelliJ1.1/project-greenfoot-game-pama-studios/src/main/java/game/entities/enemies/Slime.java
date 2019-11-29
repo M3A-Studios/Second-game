@@ -162,7 +162,7 @@ public class Slime extends Physics {
         }
     }
 
-    //slime abilities
+    //Slime abilities
     private void moving() {
         maTime++;
         if (color.equals("pink")) {

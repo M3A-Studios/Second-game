@@ -66,12 +66,6 @@ public class PSwitch extends Blocks {
             if(getImage() == box)
             {
 
-                Coins coin = (Coins) getOneIntersectingObject(Coins.class);
-                if (coin.getValue() == 1)
-                {
-
-                }
-
             }
         }
     }
