@@ -294,6 +294,8 @@ public class Levels extends World
             file = "backgroundColorFall.png";
         } else if (level <= 9) {
             file = "backgroundColorDesert.png";
+        } else if (level <= 10) {
+            file = "Level10BG.png";
         } else if (level <= 12) {
             file = "backgroundForest.png";
         } else {

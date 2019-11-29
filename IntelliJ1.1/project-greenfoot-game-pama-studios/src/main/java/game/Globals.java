@@ -32,10 +32,11 @@ public class Globals
     public static Integer[] slopeRights = {71,89,107,125,143,161};
     public static Integer[] lavas = {222,223,224};
     public static Integer[] waters = {};
-    public static Integer[] spikes = {261,262,263,264};
+    public static Integer[] spikes = {261,262,263,264,315,316,317,318,319,320,321};
     public static Integer[] finishFlag = {270, 271,272};
     public static Integer[] nonSolids = {210,211,212,215,216,217,218,219,232,233,234,235,236,237,238,239,240,269,270,
             260,265,266,267,268,290,291,345,346,347,348,349,354,355,356,357};
+            260,265,266,267,268,290,291,306,307,308,309,310,311,312,313,314,322,323,324,325,326,327,328,329,330,323,324,325,326,327,339,340,345,346,347,348,349};
     public static Integer[] animatedObjects = {252,253,254};
     public static Integer[] ladder = {220,221};
     public static Integer[] lever = {225,226,227};
