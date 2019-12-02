@@ -31,6 +31,7 @@ public class SwitchBlock extends Actor
      */
 
     public SwitchBlock(int ID) {
+        isSolid = false;
         switchOff.scale(Options.blockSize,Options.blockSize);
         switchOn.scale(Options.blockSize,Options.blockSize);
         blockOff.scale(Options.blockSize,Options.blockSize);

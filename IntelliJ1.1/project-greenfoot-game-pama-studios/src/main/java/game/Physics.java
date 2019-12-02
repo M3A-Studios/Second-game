@@ -1,14 +1,11 @@
 package game;
 
-import game.blocks.special.SwitchBlock;
+import game.blocks.special.*;
 import greenfoot.Actor;
 import game.blocks.normal.Ladder;
 import game.blocks.normal.SlopeLeft;
 import game.blocks.normal.SlopeRight;
 import game.blocks.normal.Solid;
-import game.blocks.special.Door;
-import game.blocks.special.JumpPad;
-import game.blocks.special.LockedBlocks;
 import game.entities.Player;
 
 /**
@@ -529,6 +526,17 @@ public class Physics extends Actor
     protected void moveLeft(double speed)
     {
         setRelativeLocation(- speed,0);
+    }
+
+
+    protected void PSwitchC()
+    {
+        if (vSpeed >= 0) {
+            PSwitch pSwitch = (PSwitch) getObjectBelowOfClass(PSwitch.class);
+            if (pSwitch != null) {
+                pSwitch.Switch();
+            }
+        }
     }
 
     protected void jumpPad(){

@@ -165,6 +165,7 @@ public class Player extends Physics {
             CollectStar();
             checkCheckpoint();
             jumpPad();
+            PSwitchC();
             checkFlagpole();
             holdObject();
             dropObject();

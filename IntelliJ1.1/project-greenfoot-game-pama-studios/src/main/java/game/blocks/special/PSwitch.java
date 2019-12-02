@@ -43,36 +43,29 @@ public class PSwitch extends Blocks {
             box.scale(Options.blockSize, Options.blockSize);
             setImage(box);
         }
-
-
     }
-
-    /**
-     * Simple act method getting called every frame to
-     */
 
     public void act()
     {
-        Switch();
-        Event();
-    }
-
-    // Check if switch is up or down.
-    void Switch() {
-
-        if (getImage() == pSwitchUp && isTouching(Player.class))
-        {
-            setImage(pSwitchDown);
-            pSwitchDown.scale(Options.blockSize, Options.blockSize);
-
-        }
         if (getImage() == pSwitchDown)
         {
             if (eventTimer >= 0)
             {
                 Event();
+                System.out.print(eventTimer + ", ");
             }
         }
+    }
+
+    // Check if switch is up or down.
+    public void Switch() {
+
+        if (getImage() == pSwitchUp && isTouching(Player.class))
+        {
+            setImage(pSwitchDown);
+            pSwitchDown.scale(Options.blockSize, Options.blockSize);
+        }
+
     }
 
     //run the event where coins are replaced into blocks or blocks into coins.
