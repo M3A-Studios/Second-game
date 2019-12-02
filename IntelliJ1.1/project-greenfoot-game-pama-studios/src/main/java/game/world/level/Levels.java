@@ -163,49 +163,92 @@ public class Levels extends World
      * @param level     the level to get the checkpoints off
      */
     private void getCheckpointLocations(int level) {
-        if (level == 1) {
-            //Spawn location (checkpoint 0)
-            checkpointX.add(1);
-            checkpointY.add(14);
-            //Checkpoint 1
-            checkpointX.add(61);
-            checkpointY.add(9);
-        } else if (level == 2) {
-            //Spawn location (checkpoint 0)
-            checkpointX.add(2);
-            checkpointY.add(41);
-            //Checkpoint 1
-            checkpointX.add(23);
-            checkpointY.add(36);
-        } else if (level == 3) {
-            //Spawn location (checkpoint 0)
-            checkpointX.add(1);
-            checkpointY.add(26);
-        } else if (level == 4) {
-            checkpointX.add(2);
-            checkpointY.add(15);
-        } else if (level == 5) {
-            checkpointX.add(2);
-            checkpointY.add(15);
-        } else if (level == 7) {
-            checkpointX.add(2);
-            checkpointY.add(16);
-            //check 1
-            checkpointX.add(58);
-            checkpointY.add(3);
-        } else if (level == 8) {
-            checkpointX.add(2);
-            checkpointY.add(16);
-        } else if (level == 10) {
-            checkpointX.add(2);
-            checkpointY.add(14);
-            //check 1
-            checkpointX.add(28);
-            checkpointY.add(26);
-        } else {
-            //Spawn location (checkpoint 0)
-            checkpointX.add(2);
-            checkpointY.add(8);
+        switch (level) {
+            case 1:
+                //Spawn location (checkpoint 0)
+                checkpointX.add(1);
+                checkpointY.add(14);
+                //Checkpoint 1
+                checkpointX.add(61);
+                checkpointY.add(9);
+                break;
+            case 2:
+                //Spawn location (checkpoint 0)
+                checkpointX.add(2);
+                checkpointY.add(41);
+                //Checkpoint 1
+                checkpointX.add(23);
+                checkpointY.add(36);
+                break;
+            case 3:
+                //Spawn location (checkpoint 0)
+                checkpointX.add(1);
+                checkpointY.add(26);
+                break;
+            case 4:
+                checkpointX.add(2);
+                checkpointY.add(15);
+                break;
+            case 5:
+                checkpointX.add(2);
+                checkpointY.add(15);
+                break;
+            case 6:
+                //Spawn location (checkpoint 0)
+                checkpointX.add(2);
+                checkpointY.add(8);
+                break;
+            case 7:
+                checkpointX.add(2);
+                checkpointY.add(16);
+                //check 1
+                checkpointX.add(58);
+                checkpointY.add(3);
+                break;
+            case 8:
+                checkpointX.add(2);
+                checkpointY.add(16);
+                break;
+            case 9:
+                //Spawn location (checkpoint 0)
+                checkpointX.add(2);
+                checkpointY.add(8);
+                break;
+            case 10:
+                checkpointX.add(2);
+                checkpointY.add(14);
+                //check 1
+                checkpointX.add(28);
+                checkpointY.add(26);
+                break;
+            case 11:
+                //Spawn location (checkpoint 0)
+                checkpointX.add(2);
+                checkpointY.add(7);
+                break;
+            case 12:
+                checkpointX.add(2);
+                checkpointY.add(7);
+                break;
+            case 13:
+                //Spawn location (checkpoint 0)
+                checkpointX.add(2);
+                checkpointY.add(8);
+                break;
+            case 14:
+                //Spawn location (checkpoint 0)
+                checkpointX.add(2);
+                checkpointY.add(8);
+                break;
+            case 15:
+                //Spawn location (checkpoint 0)
+                checkpointX.add(2);
+                checkpointY.add(8);
+                break;
+            default:
+                //Spawn location (checkpoint 0)
+                checkpointX.add(2);
+                checkpointY.add(8);
         }
     }
 

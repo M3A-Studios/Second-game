@@ -30,7 +30,7 @@ public class Player extends Physics {
     private boolean moving;
     private double leftKeyDown;
     private double rightKeyDown;
-    private double spaceKeyDown;
+    public double spaceKeyDown;
     public static String inventoryItem;
     private double animationTimer;
     public static boolean dead;
@@ -64,6 +64,10 @@ public class Player extends Physics {
     private GreenfootImage hit;
     private GreenfootImage hitm;
     private String knockbackDirection;
+
+    //double jump
+    public boolean doubleJumpAvailable; //can currently doublejump (gets set to true when letting go off space after a jump)
+    public boolean refreshDoubleJump; //can refresh double jump (gets set to true when you jump normally)
 
 
     /**
@@ -251,7 +255,13 @@ public class Player extends Physics {
             if (onGround()) {
                 spaceKeyDown = 0;
                 jump(15);
-            } else {
+                doubleJumpAvailable = false;
+                refreshDoubleJump = true;
+            } else if (Options.doubleJumpUnlocked && doubleJumpAvailable) {
+                jump(13);
+                doubleJumpAvailable = false;
+            }
+            if (!onGround()) {
                 spaceKeyDown += 1;
                 if (spaceKeyDown < 60) {
                     if (vSpeed < 0) {
@@ -266,6 +276,11 @@ public class Player extends Physics {
                 } else if ((Greenfoot.isKeyDown(Options.player1Right) && player == 1) || (Greenfoot.isKeyDown(Options.player2Right) && player == 2)) {
                     animateMovement("Jump");
                 }
+            }
+        } else {
+            if (refreshDoubleJump) {
+                refreshDoubleJump = false;
+                doubleJumpAvailable = true;
             }
         }
         if ((Greenfoot.isKeyDown(Options.player1Right) && !Greenfoot.isKeyDown(Options.player1Left) && player == 1)

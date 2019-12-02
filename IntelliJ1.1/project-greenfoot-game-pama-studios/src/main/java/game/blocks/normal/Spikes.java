@@ -22,7 +22,6 @@ public class Spikes extends Blocks {
      */
     public Spikes(int ID){
         super(ID);
-        System.out.println(ID);
         if (ID == 262 || ID == 316 || ID == 317 || ID == 318) { //floor spikes
             this.type = "floorSpike";
             this.getImage().scale(Options.blockSize, Options.blockSize / 2);

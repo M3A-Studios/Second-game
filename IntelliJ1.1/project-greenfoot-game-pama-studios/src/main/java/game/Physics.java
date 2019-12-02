@@ -153,18 +153,46 @@ public class Physics extends Actor
                 getOneObjectAtOffset(getImage().getWidth() / 2, getImage().getHeight() / 2 + (int) Math.ceil(vSpeed), Solid.class) != null) {
             onGround = true;
         }
-        if (getOneObjectAtOffset(getImage().getWidth() / -2, getImage().getHeight() / 2 + (int) Math.ceil(vSpeed), SwitchBlock.class) != null ||
-                getOneObjectAtOffset(0, getImage().getHeight() / 2 + (int) Math.ceil(vSpeed), SwitchBlock.class) != null ||
-                getOneObjectAtOffset(getImage().getWidth() / 2, getImage().getHeight() / 2 + (int) Math.ceil(vSpeed), SwitchBlock.class) != null)
-        {
-            if (SwitchBlock.isSolid) {
-                onGround = true;
-            }
-        }
-
         if (onSlope())
         {
             onGround = true;
+        }
+        //Check if on an active switch block
+        SwitchBlock block1 = (SwitchBlock) getOneObjectAtOffset(getImage().getWidth() / -2, getImage().getHeight() / 2 + (int) Math.ceil(vSpeed), SwitchBlock.class);
+        SwitchBlock block2 = (SwitchBlock) getOneObjectAtOffset(0, getImage().getHeight() / 2 + (int) Math.ceil(vSpeed), SwitchBlock.class);
+        SwitchBlock block3 = (SwitchBlock) getOneObjectAtOffset(getImage().getWidth() / 2, getImage().getHeight() / 2 + (int) Math.ceil(vSpeed), SwitchBlock.class);
+        if (block1 != null) {
+            if (!block1.purpose.equals("switch")) {
+                if (block1.purpose.equals("red") && SwitchBlock.switchActive) {
+                    onGround = true;
+                } else if (block1.purpose.equals("blue") && !SwitchBlock.switchActive){
+                    onGround = true;
+                }
+            } else {
+                onGround = true;
+            }
+        }
+        if (block2 != null) {
+            if (!block2.purpose.equals("switch")) {
+                if (block2.purpose.equals("red") && SwitchBlock.switchActive) {
+                    onGround = true;
+                } else if (block2.purpose.equals("blue") && !SwitchBlock.switchActive){
+                    onGround = true;
+                }
+            } else {
+                onGround = true;
+            }
+        }
+        if (block3 != null) {
+            if (!block3.purpose.equals("switch")) {
+                if (block3.purpose.equals("red") && SwitchBlock.switchActive) {
+                    onGround = true;
+                } else if (block3.purpose.equals("blue") && !SwitchBlock.switchActive){
+                    onGround = true;
+                }
+            } else {
+                onGround = true;
+            }
         }
         //Check if you're inside of a platform
         boolean insidePlatform = false;
@@ -247,38 +275,46 @@ public class Physics extends Actor
                 getOneObjectAtOffset(getImage().getWidth() / 2, getImage().getHeight() / -2 + (int) Math.floor(vSpeed), LockedBlocks.class) != null ||
                 getOneObjectAtOffset(0, getImage().getHeight() / -2 + (int) Math.floor(vSpeed), LockedBlocks.class) != null);
         //SWITCHES
-        boolean willHitSwitch = false;
-        SwitchBlock switchBlock1 = (SwitchBlock) getOneObjectAtOffset(getImage().getWidth() / -2, getImage().getHeight() / -2 + (int) Math.floor(vSpeed), SwitchBlock.class);
-        if (switchBlock1 != null) {
-            if (!switchBlock1.purpose.equals("switch")) {
-                willHitSwitch = true;
-            }else {
-                switchBlock1.switchBlock();
-                willHitSolid = true;
-            }
-        }
-        SwitchBlock switchBlock2 = (SwitchBlock) getOneObjectAtOffset(getImage().getWidth() / 2, getImage().getHeight() / -2 + (int) Math.floor(vSpeed), SwitchBlock.class);
-        if (switchBlock2 != null) {
-            if (!switchBlock2.purpose.equals("switch")) {
-                willHitSwitch = true;
-            }else {
-                switchBlock2.switchBlock();
-                willHitSolid = true;
-            }
-        }
-        SwitchBlock switchBlock3 = (SwitchBlock) getOneObjectAtOffset(0, getImage().getHeight() / -2 + (int) Math.floor(vSpeed), SwitchBlock.class);
-        if (switchBlock3 != null) {
-            if (!switchBlock3.purpose.equals("switch")) {
-                willHitSwitch = true;
+        SwitchBlock block1 = (SwitchBlock) getOneObjectAtOffset(getImage().getWidth() / -2, getImage().getHeight() / -2 + (int) Math.floor(vSpeed), SwitchBlock.class);
+        SwitchBlock block2 = (SwitchBlock) getOneObjectAtOffset(0, getImage().getHeight() / -2 + (int) Math.floor(vSpeed), SwitchBlock.class);
+        SwitchBlock block3 = (SwitchBlock) getOneObjectAtOffset(getImage().getWidth() / 2, getImage().getHeight() / -2 + (int) Math.floor(vSpeed), SwitchBlock.class);
+        if (block1 != null) {
+            if (!block1.purpose.equals("switch")) {
+                if (block1.purpose.equals("red") && SwitchBlock.switchActive) {
+                    willHitSolid = true;
+                } else if (block1.purpose.equals("blue") && !SwitchBlock.switchActive){
+                    willHitSolid = true;
+                }
             } else {
-                switchBlock3.switchBlock();
+                block1.switchBlock();
                 willHitSolid = true;
             }
         }
-        //
-
-
-        return (willHitLock || willHitSolid || (willHitSwitch && SwitchBlock.isSolid));
+        if (block2 != null) {
+            if (!block2.purpose.equals("switch")) {
+                if (block2.purpose.equals("red") && SwitchBlock.switchActive) {
+                    willHitSolid = true;
+                } else if (block2.purpose.equals("blue") && !SwitchBlock.switchActive){
+                    willHitSolid = true;
+                }
+            } else {
+                block2.switchBlock();
+                willHitSolid = true;
+            }
+        }
+        if (block3 != null) {
+            if (!block3.purpose.equals("switch")) {
+                if (block3.purpose.equals("red") && SwitchBlock.switchActive) {
+                    willHitSolid = true;
+                } else if (block3.purpose.equals("blue") && !SwitchBlock.switchActive){
+                    willHitSolid = true;
+                }
+            } else {
+                block3.switchBlock();
+                willHitSolid = true;
+            }
+        }
+        return (willHitLock || willHitSolid);
     }
 
     private boolean isOnSlopeLeft() {
@@ -333,11 +369,39 @@ public class Physics extends Actor
                 getOneObjectAtOffset(getImage().getWidth() / -2 - (int) Math.ceil(speed), getImage().getHeight() / 2 - 2,  Solid.class) != null)
         { canMoveLeft = false; }
 
-        if (getOneObjectAtOffset(getImage().getWidth() / -2 - (int) Math.ceil(speed), getImage().getHeight() / -2 + 2, SwitchBlock.class) != null ||
-                getOneObjectAtOffset(getImage().getWidth() / -2 - (int) Math.ceil(speed), 0, SwitchBlock.class) != null ||
-                getOneObjectAtOffset(getImage().getWidth() / -2 - (int) Math.ceil(speed), getImage().getHeight() / 2 - 2, SwitchBlock.class) != null)
-        {
-            if (SwitchBlock.isSolid) {
+        SwitchBlock block1 = (SwitchBlock) getOneObjectAtOffset(getImage().getWidth() / -2 - (int) Math.ceil(speed), getImage().getHeight() / -2 + 2, SwitchBlock.class);
+        SwitchBlock block2 = (SwitchBlock) getOneObjectAtOffset(getImage().getWidth() / -2 - (int) Math.ceil(speed), 0, SwitchBlock.class);
+        SwitchBlock block3 = (SwitchBlock) getOneObjectAtOffset(getImage().getWidth() / -2 - (int) Math.ceil(speed), getImage().getHeight() / 2 - 2, SwitchBlock.class);
+        if (block1 != null) {
+            if (!block1.purpose.equals("switch")) {
+                if (block1.purpose.equals("red")) {
+                    canMoveLeft = !SwitchBlock.switchActive;
+                } else {
+                    canMoveLeft = SwitchBlock.switchActive;
+                }
+            } else {
+                canMoveLeft = false;
+            }
+        }
+        if (block2 != null) {
+            if (!block2.purpose.equals("switch")) {
+                if (block2.purpose.equals("red")) {
+                    canMoveLeft = !SwitchBlock.switchActive;
+                } else {
+                    canMoveLeft= SwitchBlock.switchActive;
+                }
+            } else {
+                canMoveLeft = false;
+            }
+        }
+        if (block3 != null) {
+            if (!block3.purpose.equals("switch")) {
+                if (block3.purpose.equals("red")) {
+                    canMoveLeft = !SwitchBlock.switchActive;
+                } else {
+                    canMoveLeft = SwitchBlock.switchActive;
+                }
+            } else {
                 canMoveLeft = false;
             }
         }
@@ -420,13 +484,42 @@ public class Physics extends Actor
                 getOneObjectAtOffset(getImage().getWidth() / 2 + (int) Math.ceil(speed), getImage().getHeight() / 2 - 2, Solid.class) != null) {
             canMoveRight = false;
         }
-        if (getOneObjectAtOffset(getImage().getWidth() / 2 + (int) Math.ceil(speed), getImage().getHeight() / -2 + 2, SwitchBlock.class) != null ||
-                getOneObjectAtOffset(getImage().getWidth() / 2 + (int) Math.ceil(speed), 0, SwitchBlock.class) != null ||
-                getOneObjectAtOffset(getImage().getWidth() / 2 + (int) Math.ceil(speed), getImage().getHeight() / 2 - 2, SwitchBlock.class) != null)
-            if (SwitchBlock.isSolid) {
+        SwitchBlock block1 = (SwitchBlock) getOneObjectAtOffset(getImage().getWidth() / 2 + (int) Math.ceil(speed), getImage().getHeight() / -2 + 2, SwitchBlock.class);
+        SwitchBlock block2 = (SwitchBlock) getOneObjectAtOffset(getImage().getWidth() / 2 + (int) Math.ceil(speed), 0, SwitchBlock.class);
+        SwitchBlock block3 = (SwitchBlock) getOneObjectAtOffset(getImage().getWidth() / 2 + (int) Math.ceil(speed), getImage().getHeight() / 2 - 2, SwitchBlock.class);
+        if (block1 != null) {
+            if (!block1.purpose.equals("switch")) {
+                if (block1.purpose.equals("red")) {
+                    canMoveRight = !SwitchBlock.switchActive;
+                } else {
+                    canMoveRight = SwitchBlock.switchActive;
+                }
+            } else {
                 canMoveRight = false;
             }
-
+        }
+        if (block2 != null) {
+            if (!block2.purpose.equals("switch")) {
+                if (block2.purpose.equals("red")) {
+                    canMoveRight = !SwitchBlock.switchActive;
+                } else {
+                    canMoveRight = SwitchBlock.switchActive;
+                }
+            } else {
+                canMoveRight = false;
+            }
+        }
+        if (block3 != null) {
+            if (!block3.purpose.equals("switch")) {
+                if (block3.purpose.equals("red")) {
+                    canMoveRight = !SwitchBlock.switchActive;
+                } else {
+                    canMoveRight = SwitchBlock.switchActive;
+                }
+            } else {
+                canMoveRight = false;
+            }
+        }
         if (this instanceof Player) {
             LockedBlocks lockBlock1 = (LockedBlocks) getOneObjectAtOffset(getImage().getWidth() / 2 + (int) Math.ceil(speed), getImage().getHeight() / -2 + 2, LockedBlocks.class);
             if (lockBlock1 != null) {
@@ -545,16 +638,24 @@ public class Physics extends Actor
             if (jumpPad != null) {
                 if (!jumpPad.holding){
                     jtime = jtime + 1;
+                    if (jtime == 1) {
+                        this.vSpeed = 3;
+                    }
                     if (jtime <= 9) {
                         if (jumpPad.vSpeed >= 0) {
-                            vSpeed = jumpPad.vSpeed + 4;
+                            vSpeed = jumpPad.vSpeed + 3;
                         } else {
                             this.vSpeed = jumpPad.vSpeed;
                         }
                     }
                     if (jtime == 10) {
                         this.vSpeed = 0;
-                        this.jump(25);
+                        this.jump(23);
+                        if (this instanceof Player) {
+                            ((Player) this).doubleJumpAvailable = false;
+                            ((Player) this).refreshDoubleJump = true;
+                            ((Player) this).spaceKeyDown = 30;
+                        }
                     }
                     if (jtime >= 10) {
                         jtime = 0;
