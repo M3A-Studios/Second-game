@@ -78,6 +78,7 @@ public class LevelSelector extends World
         spawnCamera(); //spawn the camera
         renderHud();
 
+        addObject(new StoreButton(), Options.blockSize, Options.screenHeight - Options.blockSize); //add the store button
         Saver.saveGame(); //save the game when loading the level selector (so also after every level)
     }
 

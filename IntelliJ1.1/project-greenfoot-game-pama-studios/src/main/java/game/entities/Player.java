@@ -145,8 +145,11 @@ public class Player extends Physics {
         //execute normal gameplay as long as the player is alive
         if (!dead && deathCheck() && !won) {
             dead = true;
-            Particles beam = new Particles("beam");
-            getWorld().addObject(beam, getX(), getY());
+            List<Player> players = (List<Player>) (getWorld().getObjects(Player.class));
+            for(Player player : players) {
+                Particles beam = new Particles("beam");
+                getWorld().addObject(beam, player.getX(), player.getY());
+            }
             dyingAnimation = 0;
         }
         if (!dead && !won) {

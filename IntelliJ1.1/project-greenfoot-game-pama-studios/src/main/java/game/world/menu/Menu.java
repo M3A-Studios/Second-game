@@ -34,6 +34,7 @@ public class Menu extends World {
         addObject(new Slime(40, true), (int) (Options.blockSize * 8.5), (int) (Options.blockSize * 7.8));
         addObject(new MenuNewGame(), Options.blockSize * 10, (int) (Options.blockSize * 1.5));
         addObject(new MenuContinue(), Options.blockSize * 10, (int) (Options.blockSize * 3.5));
+        addObject(new MenuOptions(), Options.blockSize * 10, (int) (Options.blockSize * 5.5));
         addObject(new MenuExit(), Options.blockSize * 10, (int) (Options.blockSize * 10.5));
         addObject(new MenuLogo(), Options.blockSize * 3, Options.blockSize * 2);
     }
