@@ -34,7 +34,7 @@ public class Background extends Actor {
      * Updates the location of the background every frame to make it static or move along based on what level
      */
     public void act() {
-        if (level <= 3) {
+        if (level <= 3 || level == 10) {
             if (!started) {
                 getImage().scale(Globals.worldWidth, Globals.worldHeight);
                 setLocation(Globals.worldWidth / 2 - Camera.scrolledX, Globals.worldHeight / 2 - Camera.scrolledY);

@@ -13,7 +13,7 @@ public class SwitchBlock extends Actor
     private GreenfootImage blockOff = new GreenfootImage("284.png");
     private GreenfootImage blockOn = new GreenfootImage("285.png");
     private int activationTimer = 30;
-    public static boolean isSolid;
+    public static boolean isSolid = false;
     public String purpose = "block";
 
     public void act()
