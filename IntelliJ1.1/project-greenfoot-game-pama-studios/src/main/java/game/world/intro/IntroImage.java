@@ -9,7 +9,7 @@ import greenfoot.GreenfootImage;
 
 public class IntroImage extends Actor {
 
-    private int introLength = 300;
+    private int introLength = 480;
 
     IntroImage(String image, int width, int height) {
         GreenfootImage introImage  = new GreenfootImage(image);
