@@ -1,9 +1,12 @@
 package game.blocks.special;
 
+import game.blocks.normal.BreakableBlocks;
 import greenfoot.GreenfootImage;
 import game.Options;
 import game.blocks.Blocks;
 import game.entities.Player;
+
+import java.util.List;
 
 public class PSwitch extends Blocks {
 
@@ -25,12 +28,15 @@ public class PSwitch extends Blocks {
      */
     public PSwitch(int ID) {
         super(ID);
-        System.out.print(ID);
+        if (ID == 274)
+        {
+            setImage(pSwitchUp);
+            pSwitchUp.scale(Options.blockSize, Options.blockSize);
+        }
         if (ID == 275)
         {
-            pSwitchUp.scale(Options.blockSize, Options.blockSize);
             setImage(pSwitchUp);
-            pSwitchDown.scale(Options.blockSize, Options.blockSize);
+            pSwitchUp.scale(Options.blockSize, Options.blockSize);
         }
         if (ID == 195)
         {
@@ -44,29 +50,61 @@ public class PSwitch extends Blocks {
     /**
      * Simple act method getting called every frame to
      */
+
     public void act()
     {
         Switch();
         Event();
     }
 
+    // Check if switch is up or down.
     void Switch() {
 
         if (getImage() == pSwitchUp && isTouching(Player.class))
         {
             setImage(pSwitchDown);
+            pSwitchDown.scale(Options.blockSize, Options.blockSize);
+
+        }
+        if (getImage() == pSwitchDown)
+        {
+            if (eventTimer >= 0)
+            {
+                Event();
+            }
         }
     }
 
+    //run the event where coins are replaced into blocks or blocks into coins.
     void Event()
     {
-        if (getImage() == pSwitchDown && eventTimer > 0)
+        if (getImage() == pSwitchDown && eventTimer >= 0)
         {
             eventTimer --;
-            if(getImage() == box)
-            {
 
+            if (eventTimer == 599)
+            {
+                System.out.println("yes");
+            List<BreakableBlocks> blocks = (List<BreakableBlocks>) (getWorld().getObjects(BreakableBlocks.class));
+            for(BreakableBlocks block : blocks) {
+                Coins coinToAdd = new Coins(166, false, block.id);
+                coinToAdd.fromPSwitch = true;
+                getWorld().addObject(coinToAdd, block.getX(), block.getY());
+                getWorld().removeObject(block);
+                }
+            }
+            if (eventTimer <= 0)
+            {
+                List<Coins> coins = (List<Coins>) (getWorld().getObjects(Coins.class));
+                for(Coins coin : coins) {
+                    if (coin.fromPSwitch) {
+                        BreakableBlocks block = new BreakableBlocks(coin.fromBreakableBlockID);
+                        getWorld().addObject(block, coin.getX(), coin.getY());
+                        getWorld().removeObject(coin);
+                    }
+                }
             }
         }
+
     }
 }

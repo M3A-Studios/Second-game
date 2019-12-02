@@ -9,6 +9,8 @@ public class Coins extends Blocks {
 
     /** Represents how many coins this coin object is worth*/
     private int value;
+    public boolean fromPSwitch = false;
+    public int fromBreakableBlockID;
 
     /**
      * Calls the constructor with menu = false letting the game know this is not a main menu coin
@@ -27,6 +29,10 @@ public class Coins extends Blocks {
      * @param ID    used to get what file should be displayed as the image of this object
      * @see Blocks#Blocks(int)
      */
+    public Coins(int ID, boolean menu, int fromBlock) {
+       this(ID, menu);
+       this.fromBreakableBlockID = fromBlock;
+    }
     public Coins(int ID, boolean menu){
         super(ID);
         if (menu) {
