@@ -250,7 +250,7 @@ public class Physics extends Actor
         boolean willHitSwitch = false;
         SwitchBlock switchBlock1 = (SwitchBlock) getOneObjectAtOffset(getImage().getWidth() / -2, getImage().getHeight() / -2 + (int) Math.floor(vSpeed), SwitchBlock.class);
         if (switchBlock1 != null) {
-            if (switchBlock1.purpose.equals("block")) {
+            if (!switchBlock1.purpose.equals("switch")) {
                 willHitSwitch = true;
             }else {
                 switchBlock1.switchBlock();
@@ -259,7 +259,7 @@ public class Physics extends Actor
         }
         SwitchBlock switchBlock2 = (SwitchBlock) getOneObjectAtOffset(getImage().getWidth() / 2, getImage().getHeight() / -2 + (int) Math.floor(vSpeed), SwitchBlock.class);
         if (switchBlock2 != null) {
-            if (switchBlock2.purpose.equals("block")) {
+            if (!switchBlock2.purpose.equals("switch")) {
                 willHitSwitch = true;
             }else {
                 switchBlock2.switchBlock();
@@ -268,7 +268,7 @@ public class Physics extends Actor
         }
         SwitchBlock switchBlock3 = (SwitchBlock) getOneObjectAtOffset(0, getImage().getHeight() / -2 + (int) Math.floor(vSpeed), SwitchBlock.class);
         if (switchBlock3 != null) {
-            if (switchBlock3.purpose.equals("block")) {
+            if (!switchBlock3.purpose.equals("switch")) {
                 willHitSwitch = true;
             } else {
                 switchBlock3.switchBlock();

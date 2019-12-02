@@ -2,6 +2,7 @@ package game.blocks.special;
 
 import game.Options;
 import greenfoot.Actor;
+import greenfoot.Greenfoot;
 import greenfoot.GreenfootImage;
 
 import java.util.List;
@@ -10,8 +11,11 @@ public class SwitchBlock extends Actor
 {
     private GreenfootImage switchOff = new GreenfootImage("282.png");
     private GreenfootImage switchOn = new GreenfootImage("283.png");
-    private GreenfootImage blockOff = new GreenfootImage("284.png");
-    private GreenfootImage blockOn = new GreenfootImage("285.png");
+    private GreenfootImage redBlockOff = new GreenfootImage("284.png");
+    private GreenfootImage redBlockOn = new GreenfootImage("285.png");
+    private GreenfootImage blueBlockOn = new GreenfootImage("359.png");
+    private GreenfootImage blueBlockOff = new GreenfootImage("360.png");
+
     private int activationTimer = 30;
     public static boolean isSolid = false;
     public String purpose = "block";
@@ -34,8 +38,10 @@ public class SwitchBlock extends Actor
         isSolid = false;
         switchOff.scale(Options.blockSize,Options.blockSize);
         switchOn.scale(Options.blockSize,Options.blockSize);
-        blockOff.scale(Options.blockSize,Options.blockSize);
-        blockOn.scale(Options.blockSize,Options.blockSize);
+        redBlockOff.scale(Options.blockSize,Options.blockSize);
+        redBlockOn.scale(Options.blockSize,Options.blockSize);
+        blueBlockOff.scale(Options.blockSize,Options.blockSize);
+        blueBlockOn.scale(Options.blockSize,Options.blockSize);
         if (ID == 282)
         {
             setImage(switchOff);
@@ -48,11 +54,23 @@ public class SwitchBlock extends Actor
         }
         if(ID == 284)
         {
-            setImage(blockOff);
+            setImage(redBlockOff);
+            this.purpose = "red";
         }
         if (ID == 285)
         {
-            setImage(blockOn);
+            setImage(redBlockOn);
+            this.purpose = "red";
+        }
+        if (ID == 359 )
+        {
+            setImage(blueBlockOff);
+            this.purpose = "blue";
+        }
+        if (ID == 360 )
+        {
+            setImage(blueBlockOn);
+            this.purpose = "blue";
         }
     }
     public void switchBlock()
@@ -76,11 +94,20 @@ public class SwitchBlock extends Actor
 
         List<SwitchBlock> switchBlockerus = (List<SwitchBlock>) (getWorld().getObjects(SwitchBlock.class));
         for(SwitchBlock block : switchBlockerus) {
-            if (!(block.getImage() == switchOn) && !(block.getImage() == switchOff)) {
+            System.out.println(block.purpose);
+            if (!block.purpose.equals("switch")) {
                 if (active) {
-                    block.setImage(blockOn);
+                    if (block.purpose.equals("red")) {
+                        block.setImage(redBlockOn);
+                    } else if (block.purpose.equals("blue")) {
+                        block.setImage(blueBlockOff);
+                    }
                 } else {
-                    block.setImage(blockOff);
+                    if (block.purpose.equals("red")) {
+                        block.setImage(redBlockOff);
+                    } else if (block.purpose.equals("blue")) {
+                        block.setImage(blueBlockOn);
+                    }
                 }
             }
         }

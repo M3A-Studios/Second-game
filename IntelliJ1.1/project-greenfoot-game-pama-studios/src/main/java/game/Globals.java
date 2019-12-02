@@ -54,7 +54,7 @@ public class Globals
     public static Integer[] bee = {3,4,5};
     public static Integer[] sawBlade = {31,32};
     public static Integer[] pswitch = {273,274,194}; //273 and 274 is the power switch, the rest of je IDs change when the switch is turned on.
-    public static Integer[] switchBlock = {281,282,283,284};
+    public static Integer[] switchBlock = {281,282,283,284,358,359};
     public static Integer[] hiddenBlocks = {352,353};
 }
 
