@@ -1,5 +1,6 @@
 package game.overlays;
 
+import game.world.store.Store;
 import greenfoot.GreenfootImage;
 import game.Globals;
 import game.world.levelselector.LevelSelector;
@@ -79,6 +80,9 @@ public class HUDNumber extends Physics {
                     if (getWorld() instanceof LevelSelector) {
                         coins = Integer.toString(Globals.totalCoinsCollected);
                         start = 4;
+                    } else if (getWorld() instanceof Store) {
+                        coins = Integer.toString(Globals.totalCoinsCollected);
+                        start = 4;
                     } else {
                         coins = Integer.toString(Globals.levelCoinsCollected);
                         start = 3;
@@ -87,6 +91,8 @@ public class HUDNumber extends Physics {
                     start = start - strArray.length + 1;
                     if (position >= start) {
                         value = strArray[position - start];
+                    } else {
+                        value = "0";
                     }
                 } else if (purpose.equals("score")) {
                     if (getWorld() instanceof LevelSelector) {

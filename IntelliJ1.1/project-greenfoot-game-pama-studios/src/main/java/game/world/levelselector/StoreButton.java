@@ -41,6 +41,7 @@ public class StoreButton extends Actor {
             startingY = getY();
             started = true;
         }
+        setLocation(startingX, startingY);
         //check for if clicked on
         if (Greenfoot.mouseClicked(this))
         {

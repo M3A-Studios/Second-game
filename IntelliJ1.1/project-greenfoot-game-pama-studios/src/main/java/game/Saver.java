@@ -59,6 +59,11 @@ public class Saver {
                     + "\nInteractButton:" + Options.interact
                     + "\nDropItemButton:" + Options.dropItem
                     + "\nDropObjectButton:" + Options.dropObject
+                    //Store
+                    + "\nDoubleJumpUnlocked:" + Options.doubleJumpUnlocked
+                    + "\nSpeedBoostUnlocked:" + Options.speedBoostUnlocked
+                    + "\nBonusHeartUnlocked:" + Options.bonusHeartUnlocked
+                    + "\nBonusTorchUseUnlocked:" + Options.bonusTorchUseUnlocked
                     //levels & score info
                     + "\nLevelsUnlocked:" + Globals.levelsUnlocked
                     + "\nSelectedLevel:" + LevelSelector.getSelectedLevel()
@@ -142,7 +147,31 @@ public class Saver {
                 Options.dropItem = line;
             } else if (line.contains("DropObjectButton:")) {
                 line = line.replaceAll("DropObjectButton:", "");
-                Options.dropObject= line;
+                Options.dropObject = line;
+            } else if (line.contains("DoubleJumpUnlocked:")) {
+                if (line.contains("true")) {
+                    Options.doubleJumpUnlocked = true;
+                } else {
+                    Options.doubleJumpUnlocked = false;
+                }
+            } else if (line.contains("SpeedBoostUnlocked:")) {
+                if (line.contains("true")) {
+                    Options.speedBoostUnlocked = true;
+                } else {
+                    Options.speedBoostUnlocked = false;
+                }
+            } else if (line.contains("BonusHeartUnlocked:")) {
+                if (line.contains("true")) {
+                    Options.bonusHeartUnlocked = true;
+                } else {
+                    Options.bonusHeartUnlocked = false;
+                }
+            } else if (line.contains("BonusTorchUseUnlocked:")) {
+                if (line.contains("true")) {
+                    Options.bonusTorchUseUnlocked = true;
+                } else {
+                    Options.bonusTorchUseUnlocked = false;
+                }
             } else if (line.contains("LevelsUnlocked:")) {
                 line = line.replaceAll("LevelsUnlocked:","");
                 Globals.levelsUnlocked = Integer.parseInt(line);

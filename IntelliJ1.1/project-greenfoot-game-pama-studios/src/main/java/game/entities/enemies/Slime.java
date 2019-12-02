@@ -121,7 +121,7 @@ public class Slime extends Physics {
             setDoubleX(getX());
             setDoubleY(getY());
             startingX = getX();
-            setNewLocation(getDoubleX(), getDoubleY() + getImage().getHeight());
+            setNewLocation(getDoubleX(), getDoubleY() + getImage().getHeight()/2);
         }
         if (!isMenuSlime) {
             updateGravity();
