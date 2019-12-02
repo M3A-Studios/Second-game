@@ -32,7 +32,7 @@ public class Blade extends Physics {
             setDoubleX(getX());
             setDoubleY(getY());
             startingX = getX();
-            setNewLocation(getDoubleX(), getDoubleY() - getImage().getHeight());
+            setNewLocation(getDoubleX(), getDoubleY() + getImage().getHeight());
         }
         if (!dead) {
             moving();
