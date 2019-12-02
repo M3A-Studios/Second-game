@@ -1,12 +1,8 @@
 package game.world.levelselector;
 
+import game.*;
 import greenfoot.Greenfoot;
 import greenfoot.GreenfootImage;
-import game.Globals;
-import game.Options;
-import game.Saver;
-import game.Camera;
-import game.Physics;
 import game.world.level.Levels;
 import game.world.menu.Menu;
 

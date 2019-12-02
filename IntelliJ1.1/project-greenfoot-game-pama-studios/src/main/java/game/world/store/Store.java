@@ -1,5 +1,6 @@
 package game.world.store;
 
+import game.Music;
 import game.Options;
 import greenfoot.GreenfootImage;
 import greenfoot.World;
@@ -19,6 +20,9 @@ public class Store extends World {
         background.scale(Options.screenWidth, Options.screenHeight);
         setBackground(background);
         renderMenu();
+
+        Music.stopMusic();
+        addObject(new Music(), -100, -100);
     }
 
     /**

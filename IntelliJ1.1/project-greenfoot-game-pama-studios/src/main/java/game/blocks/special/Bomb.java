@@ -13,6 +13,7 @@ public class Bomb extends Physics {
     static GreenfootImage explode = new GreenfootImage("explosion00.png");
     static GreenfootImage explode2 = new GreenfootImage("explosion01.png");
     static GreenfootImage explode3 = new GreenfootImage("explosion02.png");
+    static GreenfootSound tnt = new GreenfootSound("soundeffects/tnt.wav");
 
     private int selectImage;
     private int animationTimer;
@@ -56,9 +57,10 @@ public class Bomb extends Physics {
                 animationTimer++;
                 changeImage();
                 if (animationTimer == 50) {spamfire = true;}
-                else if (animationTimer == 200){spamfire = false;}
+                if (animationTimer == 150) {tnt.setVolume(Options.soundeffectVolume); tnt.play();}
+                else if (animationTimer == 200){spamfire = false; }
                 if (animationTimer >= 200 && animationTimer < 300){Explode();}
-                if (animationTimer >= 200 && animationTimer < 225){exploded = true;}
+                if (animationTimer >= 200 && animationTimer < 225){exploded = true; }
                 if (animationTimer >= 200 && animationTimer < 250){deleteBlocks();}
                 if (animationTimer >= 200 && animationTimer < 300){fadeTime += 1; fadelong(); }
                 else if (animationTimer > 301){getWorld().removeObject(this);}

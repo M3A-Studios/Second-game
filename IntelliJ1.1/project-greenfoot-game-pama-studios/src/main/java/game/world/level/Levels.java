@@ -2,9 +2,7 @@ package game.world.level;
 
 import game.entities.enemies.Bee;
 import game.entities.enemies.Blade;
-import greenfoot.Actor;
-import greenfoot.GreenfootImage;
-import greenfoot.World;
+import greenfoot.*;
 import game.*;
 import game.blocks.normal.*;
 import game.blocks.special.*;
@@ -154,6 +152,9 @@ public class Levels extends World
         spawnCamera(); //spawn the camera
         renderHUD(); //render the Heads Up Display (overlay like hearts and score)
         addObject(new GameLogic(), -64, -64); //add gamelogic object off the map, we want to use it's act method for counters etc like lockedblocks chain
+
+        Music.stopMusic();
+        addObject(new Music(), -100, -100);
     }
 
     /**

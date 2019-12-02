@@ -2,6 +2,7 @@ package game.world.levelselector;
 
 import greenfoot.Actor;
 import greenfoot.GreenfootImage;
+import greenfoot.GreenfootSound;
 import greenfoot.World;
 import game.*;
 import game.blocks.normal.MapTile;
@@ -79,6 +80,8 @@ public class LevelSelector extends World
         renderHud();
 
         addObject(new StoreButton(), Options.blockSize, Options.screenHeight - Options.blockSize); //add the store button
+        Music.stopMusic();
+        addObject(new Music(), -100, -100);
         Saver.saveGame(); //save the game when loading the level selector (so also after every level)
     }
 

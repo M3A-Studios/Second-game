@@ -21,6 +21,9 @@ public class Menu extends World {
         background.scale(Options.screenWidth, Options.screenHeight);
         setBackground(background);
         renderMenu();
+
+        Music.stopMusic();
+        addObject(new Music(), -100, -100);
     }
 
     /**

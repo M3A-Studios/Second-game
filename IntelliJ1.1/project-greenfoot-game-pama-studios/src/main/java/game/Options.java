@@ -30,4 +30,8 @@ public class Options
     public static int screenHeight = 720;
     public static int screenWidth = screenHeight / 9 * 16;
     public static int blockSize = screenWidth / 20;
+
+    //Volume
+    public static int musicVolume = 0; //40
+    public static int soundeffectVolume = 60;
 }
