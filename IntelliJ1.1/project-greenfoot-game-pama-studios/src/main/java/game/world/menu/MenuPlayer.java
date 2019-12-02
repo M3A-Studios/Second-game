@@ -116,7 +116,7 @@ public class MenuPlayer extends Physics {
             getWorld().addObject(new Coins(166, true), Options.blockSize * 13, (int) (Options.blockSize * 7));
             getWorld().addObject(new Coins(168, true), Options.blockSize * 15, (int) (Options.blockSize * 5));
             getWorld().addObject(new Coins(167, true), Options.blockSize * 17, (int) (Options.blockSize * 3));
-            getWorld().addObject(new Slime(40, true), (int) (Options.blockSize * 8.5), (int) (Options.blockSize * 9.8));
+            getWorld().addObject(new Slime(40, true), (int) (Options.blockSize * 8.5), (int) (Options.blockSize * 7.8));
         } else {
             setRelativeLocation(3, 0);
         }
