@@ -178,8 +178,8 @@ public class Levels extends World
             checkpointY.add(36);
         } else if (level == 3) {
             //Spawn location (checkpoint 0)
-            checkpointX.add(2);
-            checkpointY.add(8);
+            checkpointX.add(1);
+            checkpointY.add(26);
         } else if (level == 4) {
             checkpointX.add(2);
             checkpointY.add(15);
@@ -298,7 +298,7 @@ public class Levels extends World
         if (level == 1 | level == 3) {
             file = "backgroundStone.png";
         }else if (level == 2) {
-            file = "backgroundStone.png";
+            file = "backgroundStone2.png";
         } else if (level <= 6) {
             file = "backgroundColorFall.png";
         } else if (level <= 9) {
