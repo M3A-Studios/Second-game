@@ -52,7 +52,6 @@ public class PSwitch extends Blocks {
             if (eventTimer >= 0)
             {
                 Event();
-                System.out.print(eventTimer + ", ");
             }
         }
     }
@@ -77,7 +76,6 @@ public class PSwitch extends Blocks {
 
             if (eventTimer == 599)
             {
-                System.out.println("yes");
             List<BreakableBlocks> blocks = (List<BreakableBlocks>) (getWorld().getObjects(BreakableBlocks.class));
             for(BreakableBlocks block : blocks) {
                 Coins coinToAdd = new Coins(166, false, block.id);

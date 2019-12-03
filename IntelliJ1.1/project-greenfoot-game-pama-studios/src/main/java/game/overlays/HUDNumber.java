@@ -1,5 +1,6 @@
 package game.overlays;
 
+import game.world.level.Levels;
 import game.world.store.Store;
 import greenfoot.GreenfootImage;
 import game.Globals;
@@ -26,6 +27,9 @@ public class HUDNumber extends Physics {
     /** The purpose of the HUD number, if it should be a "coin" or "score" counter */
     private String purpose;
 
+    private GreenfootImage emptyImage = new GreenfootImage("1.png");
+    private GreenfootImage starImage = new GreenfootImage("189.png");
+
     /**
      * Constructor for the HUD Numbers which simply sets the images
      *
@@ -45,9 +49,9 @@ public class HUDNumber extends Physics {
                 setImage(coinImage);
             }
             if (purpose.equals("star")) {
-                GreenfootImage starImage = new GreenfootImage("189.png");
                 starImage.scale(Options.blockSize, Options.blockSize);
-                setImage(starImage);
+                emptyImage.scale(Options.blockSize, Options.blockSize);
+                setImage(emptyImage);
             }
         }
     }
@@ -110,19 +114,30 @@ public class HUDNumber extends Physics {
                 }
                 else if (purpose.equals("star")) {
                     if (getWorld() instanceof LevelSelector) {
-                        star = Integer.toString(Globals.totalStarsCollected);
-                        start = 1;
-                    } else {
-                        star = Integer.toString(Globals.levelStarsCollected);
                         start = 2;
-                    }
-                    String[] strArray = star.split("");
-                    start = start - strArray.length + 1;
-                    if (position >= start) {
-                        value = strArray[position - start];
+                        int stars = 0;
+                        for (int i = 1; i <= 15; i++) {
+                            if (Globals.starsCollected[i] = true) {
+                                stars += 1;
+                            }
+                        }
+                        String startext = Integer.toString(stars);
+                        String[] strArray = startext.split("");
+                        start = start - strArray.length + 1;
+                        if (position >= start) {
+                            value = strArray[position - start];
+                        }
                     }
                 }
                 setImage(images[Integer.parseInt(value)]);
+            } else {
+                if (purpose.equals("star")) {
+                    if (getWorld() instanceof Levels) {
+                        if (Globals.levelStarsCollected > 0) {
+                            setImage(starImage);
+                        }
+                    }
+                }
             }
         }
     }

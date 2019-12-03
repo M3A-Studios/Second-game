@@ -57,7 +57,7 @@ public class Particles extends Physics {
                 fade();
             }
         }
-        else { System.out.println(type); }
+        else { System.out.println(type + "owo"); }
     }
 
     public Particles(String type) {

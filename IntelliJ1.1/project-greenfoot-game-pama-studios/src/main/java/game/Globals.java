@@ -21,7 +21,9 @@ public class Globals
     public static int levelCoinsCollected;
     public static int totalCoinsCollected;
     public static int levelStarsCollected;
-    public static int totalStarsCollected;
+
+    public static boolean[] starsCollected = {false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false};
+
     public static int levelScore;
     public static int totalScore;
 

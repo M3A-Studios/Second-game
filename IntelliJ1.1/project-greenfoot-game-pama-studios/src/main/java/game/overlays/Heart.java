@@ -36,7 +36,8 @@ public class Heart extends Actor {
     public Heart(int heart, boolean bonusheart) {
         this.heart = heart;
         if (bonusheart) {
-            //set yellow heart imgs
+            half = new GreenfootImage("heartHalfYellow.png");
+            full = new GreenfootImage("heartFullYellow.png");
         }
         half.scale((Options.blockSize),(Options.blockSize));
         full.scale((Options.blockSize),(Options.blockSize));

@@ -350,9 +350,7 @@ public class Levels extends World
         addObject (new HUDNumber(3, "score"), (int) (Options.blockSize * 18.5), (int) (Options.blockSize * 0.5));
         addObject (new HUDNumber(4, "score"), (int) (Options.blockSize * 19), (int) (Options.blockSize * 0.5));
         addObject (new HUDNumber(5, "score"), (int) (Options.blockSize * 19.5), (int) (Options.blockSize * 0.5));
-        addObject (new HUDNumber(0, "star"), (int) (Options.blockSize * 18.5), (int) (Options.blockSize * 1.25));
-        addObject (new HUDNumber(1, "star"), (int) (Options.blockSize * 19), (int) (Options.blockSize * 1.25));
-        addObject (new HUDNumber(2, "star"), (int) (Options.blockSize * 19.5), (int) (Options.blockSize * 1.25));
+        addObject (new HUDNumber(0, "star"), (int) (Options.blockSize * 19.5), (int) (Options.blockSize * 1.25));
     }
 
     /**

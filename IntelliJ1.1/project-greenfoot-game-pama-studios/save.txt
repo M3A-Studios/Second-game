@@ -12,12 +12,12 @@ Player2RightButton:right
 InteractButton:E
 DropItemButton:Q
 DropObjectButton:Z
-DoubleJumpUnlocked:false
+DoubleJumpUnlocked:true
 SpeedBoostUnlocked:false
 BonusHeartUnlocked:true
 BonusTorchUseUnlocked:false
 LevelsUnlocked:15
 SelectedLevel:1
-Coins:100
-Score:0
+Coins:104
+Score:2540
 

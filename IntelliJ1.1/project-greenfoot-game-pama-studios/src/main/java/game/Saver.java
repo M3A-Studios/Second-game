@@ -44,6 +44,7 @@ public class Saver {
     public static void saveGame() {
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter("save.txt"));
+            System.out.println(Globals.starsCollected);
             bw.write("Player1Color:" + Options.player1Color
                     + "\nPlayer2Color:" + Options.player2Color
                     + "\nScreenHeight:" + Options.screenHeight

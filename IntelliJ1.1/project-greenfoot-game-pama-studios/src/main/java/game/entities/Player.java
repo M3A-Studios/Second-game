@@ -508,7 +508,11 @@ public class Player extends Physics {
             }
         } else {
             Globals.totalCoinsCollected += Globals.levelCoinsCollected;
-            Globals.totalStarsCollected += Globals.levelStarsCollected;
+            if (Globals.starsCollected[LevelSelector.getSelectedLevel()] != true) {
+                if (Globals.levelStarsCollected > 0) {
+                    Globals.starsCollected[LevelSelector.getSelectedLevel()] = true;
+                }
+            }
             Globals.totalScore += Globals.levelScore;
             if (LevelSelector.getSelectedLevel() == Globals.levelsUnlocked) {
                 Globals.levelsUnlocked ++;
@@ -616,7 +620,7 @@ public class Player extends Physics {
         Star star = (Star) getOneIntersectingObject(Star.class);
         if(star != null)
         {
-            Globals.levelScore += 650;
+            Globals.levelScore += 1000;
             Globals.levelStarsCollected += 1;
             getWorld().removeObject(star);
         }
