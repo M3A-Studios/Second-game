@@ -16,10 +16,7 @@ import game.Camera;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Levels extends World
 {
@@ -40,6 +37,7 @@ public class Levels extends World
     /** The player object, initialized later in renderMap() */
     private Actor player;
 
+    private int cameraShakeX, cameraShakeY;
     /**
      * Act method called every frame to scroll the camera as long as the death condition isn't met.
      */
@@ -69,6 +67,10 @@ public class Levels extends World
         int player1y = 0;
         int player2x = 0;
         int player2y = 0;
+
+        boolean moving = false;
+        String direction = null;
+
         List<Player> players = (List<Player>)(getObjects(Player.class));
         for(Player player : players) {
             if (player.player == 2) {
@@ -78,9 +80,26 @@ public class Levels extends World
                 player1x = player.getX();
                 player1y = player.getY();
             }
+            if (player.moving) {
+                moving = true;
+                direction = player.movementDirection;
+            }
         }
         int highestX = Math.max(player2x, player1x); //grab highest off the 2
         int highestY = Math.max(player2y, player1y); //grav highest off the 2
+
+        //camera shake
+        int addShakeX = 0; //how much to shake in X
+        int addShakeY = 0; //how much to shake in Y
+        if (cameraShakeX == 0 && cameraShakeY == 0) {
+            if (moving) {
+                if (direction.equals("left")) {
+                    //addShakeX = new Random().nextInt(4) - 1;
+                } else if (direction.equals("right")) {
+                    //addShakeX = new Random().nextInt(4) - 1;
+                }
+            }
+        }
 
         int loX = Options.screenWidth/16*7; //Barrier left of center to move
         int hiX = Options.screenWidth-(Options.screenWidth/16*7); //Barrier right of center to move
@@ -93,6 +112,17 @@ public class Levels extends World
         if (highestX > hiX) dsx = highestX-hiX;
         if (highestY < loY) dsy = highestY-loY;
         if (highestY > hiY) dsy = highestY-hiY;
+        if (!(cameraShakeX == 0) || !(cameraShakeY == 0)) {
+            dsx += cameraShakeX;
+            dsy += cameraShakeY;
+            cameraShakeX = 0;
+            cameraShakeY = 0;
+        } else {
+            dsx += addShakeX;
+            dsy += addShakeY;
+            cameraShakeX = addShakeX;
+            cameraShakeY = addShakeY;
+        }
         camera.scroll(dsx, dsy); //scroll the camera
     }
 
@@ -151,7 +181,7 @@ public class Levels extends World
         renderText(level);
         spawnCamera(); //spawn the camera
         renderHUD(); //render the Heads Up Display (overlay like hearts and score)
-        addObject(new GameLogic(), -64, -64); //add gamelogic object off the map, we want to use it's act method for counters etc like lockedblocks chain
+        addObject(new GameLogic(), -10000, -10000); //add gamelogic object off the map, we want to use it's act method for counters etc like lockedblocks chain
 
         Music.stopMusic();
         addObject(new Music(), -100, -100);
@@ -305,6 +335,10 @@ public class Levels extends World
         addObject (new Heart(1), Options.blockSize, Options.blockSize);
         addObject (new Heart(2), Options.blockSize * 2, Options.blockSize);
         addObject (new Heart(3), Options.blockSize * 3, Options.blockSize);
+        if (Options.bonusHeartUnlocked) {
+            addObject(new Heart(4,true), Options.blockSize * 4, Options.blockSize);
+            Player.health += 2;
+        }
         addObject(new Inventory("panel"),Options.blockSize * 4, Options.blockSize);
         addObject(new Inventory("item"),Options.blockSize * 4, Options.blockSize);
         addObject (new HUDNumber(0, "coin"), Options.blockSize , Options.blockSize * 2);

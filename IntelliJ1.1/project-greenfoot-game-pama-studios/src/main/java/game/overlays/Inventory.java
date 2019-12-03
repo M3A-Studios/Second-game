@@ -27,6 +27,9 @@ public class Inventory extends Actor
     public void act() {
         //get start location if first frame
         if (!started) {
+            if (Options.bonusHeartUnlocked) {
+                setLocation(getX() + Options.blockSize, getY()); //move it a bit over to make space for the bonus heart
+            }
             startX = getX();
             startY = getY();
             started = true;

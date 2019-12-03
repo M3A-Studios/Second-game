@@ -42,7 +42,7 @@ public class StoreSpeedBoost extends Actor {
         if (!Options.speedBoostUnlocked) {
             //check for if clicked on
             if (Greenfoot.mouseClicked(this)) {
-                if (Globals.totalCoinsCollected > 50) {
+                if (Globals.totalCoinsCollected >= 50) {
                     Globals.totalCoinsCollected -= 50;
                     Options.speedBoostUnlocked = true;
                     getWorld().addObject(new StoreCross(), getX(), getY());

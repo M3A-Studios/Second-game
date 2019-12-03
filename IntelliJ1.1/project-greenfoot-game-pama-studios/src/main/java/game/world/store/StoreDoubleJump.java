@@ -42,7 +42,7 @@ public class StoreDoubleJump extends Actor {
         if (!Options.doubleJumpUnlocked) {
             //check for if clicked on
             if (Greenfoot.mouseClicked(this)) {
-                if (Globals.totalCoinsCollected > 50) {
+                if (Globals.totalCoinsCollected >= 50) {
                     Globals.totalCoinsCollected -= 50;
                     Options.doubleJumpUnlocked = true;
                     getWorld().addObject(new StoreCross(), getX(), getY());

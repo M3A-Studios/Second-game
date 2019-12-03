@@ -27,7 +27,7 @@ public class Player extends Physics {
     private Actor popup;
     public static int health;
     private boolean started;
-    private boolean moving;
+    public boolean moving;
     private double leftKeyDown;
     private double rightKeyDown;
     public double spaceKeyDown;
@@ -68,6 +68,8 @@ public class Player extends Physics {
     //double jump
     public boolean doubleJumpAvailable; //can currently doublejump (gets set to true when letting go off space after a jump)
     public boolean refreshDoubleJump; //can refresh double jump (gets set to true when you jump normally)
+
+    public String movementDirection;
 
 
     /**
@@ -291,6 +293,7 @@ public class Player extends Physics {
             if (canMoveRight(speed)) {
                 moveRight(speed);
                 moving = true;
+                movementDirection = "right";
                 if (onGround()) animateMovement("Right");
             }
         } else {
@@ -304,6 +307,7 @@ public class Player extends Physics {
             if (canMoveLeft(speed)) {
                 moveLeft(speed);
                 moving = true;
+                movementDirection = "left";
                 if (onGround()) animateMovement("Left");
             }
         } else {

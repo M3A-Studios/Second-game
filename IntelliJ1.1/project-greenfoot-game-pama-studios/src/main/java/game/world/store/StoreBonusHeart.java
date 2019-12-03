@@ -42,7 +42,7 @@ public class StoreBonusHeart extends Actor {
         if (!Options.bonusHeartUnlocked) {
             //check for if clicked on
             if (Greenfoot.mouseClicked(this)) {
-                if (Globals.totalCoinsCollected > 50) {
+                if (Globals.totalCoinsCollected >= 50) {
                     Globals.totalCoinsCollected -= 50;
                     Options.bonusHeartUnlocked = true;
                     getWorld().addObject(new StoreCross(), getX(), getY());

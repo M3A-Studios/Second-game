@@ -42,7 +42,7 @@ public class StoreBonusTorchUse extends Actor {
         if (!Options.bonusTorchUseUnlocked) {
             //check for if clicked on
             if (Greenfoot.mouseClicked(this)) {
-                if (Globals.totalCoinsCollected > 50) {
+                if (Globals.totalCoinsCollected >= 50) {
                     Globals.totalCoinsCollected -= 50;
                     Options.bonusTorchUseUnlocked= true;
                     getWorld().addObject(new StoreCross(), getX(), getY());

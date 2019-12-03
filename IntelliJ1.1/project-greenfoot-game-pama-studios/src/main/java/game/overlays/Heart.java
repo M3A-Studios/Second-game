@@ -23,6 +23,9 @@ public class Heart extends Actor {
     /** Image for when the heart is empty */
     private GreenfootImage empty = new GreenfootImage("heartEmpty.png");
 
+    public Heart(int heart) {
+        this(heart, false);
+    }
     /**
      * Constructor, the value given here is which spot it takes
      * giving a value of 1 would mean the last heart, value of 3 would be the first when total health is 6
@@ -30,8 +33,11 @@ public class Heart extends Actor {
      *
      * @param heart         give which heart this is, 1 would be the last heart
      */
-    public Heart(int heart) {
+    public Heart(int heart, boolean bonusheart) {
         this.heart = heart;
+        if (bonusheart) {
+            //set yellow heart imgs
+        }
         half.scale((Options.blockSize),(Options.blockSize));
         full.scale((Options.blockSize),(Options.blockSize));
         empty.scale((Options.blockSize),(Options.blockSize));

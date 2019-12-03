@@ -43,7 +43,7 @@ public class Blade extends Physics {
         maTime++;
         //Blade moving left
         if (isMovingLeft) {
-            if (canEntityMoveLeft(speed) || (canMoveLeft(speed) )) {
+            if (canEntityMoveLeft(speed)) {
                 moveLeft(speed);
                 if(maTime > 0 && maTime < 10) {setImage(blade1);}
                 else if(maTime == 10) {setImage(blade2);}
@@ -54,7 +54,7 @@ public class Blade extends Physics {
         }
         //Blade moving right
         if (!isMovingLeft) {
-            if (canEntityMoveRight(speed) || (canMoveRight(speed))) {
+            if (canEntityMoveRight(speed)) {
                 moveRight(speed);
                 if(maTime > 0 && maTime < 10) {setImage(blade1);}
                 else if(maTime == 10) {setImage(blade2);}
