@@ -4,6 +4,7 @@ import greenfoot.Actor;
 import greenfoot.GreenfootImage;
 import game.Options;
 import game.entities.Player;
+import greenfoot.GreenfootSound;
 
 /**
  *
@@ -15,6 +16,7 @@ public class Keys extends Actor {
     public static GreenfootImage greenKey = new GreenfootImage("186.png");
     public static GreenfootImage redKey = new GreenfootImage("187.png");
     public static GreenfootImage yellowKey = new GreenfootImage("188.png");
+    static GreenfootSound keySound = new GreenfootSound("soundeffects/Key.wav");
 
     /**
      * This is the constructor that should be used in every tile
@@ -67,6 +69,8 @@ public class Keys extends Actor {
                     Player.inventoryItem = itemToPickup;
                     getWorld().removeObject(this);
                     player.pickUpCooldown = 120;
+                    keySound.setVolume(Options.soundeffectVolume);
+                    keySound.play();
                 }
                 player.lastItemCD = 30;
             }

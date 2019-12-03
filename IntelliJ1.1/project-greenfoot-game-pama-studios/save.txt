@@ -1,4 +1,4 @@
-Player1Color:Pink
+Player1Color:Blue
 Player2Color:Blue
 ScreenHeight:720
 Player1LeftButton:A

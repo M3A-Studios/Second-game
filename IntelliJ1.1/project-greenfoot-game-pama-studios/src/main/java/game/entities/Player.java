@@ -15,6 +15,7 @@ import game.overlays.PopUp;
 import game.DesertStorm;
 import game.world.level.Levels;
 import game.world.levelselector.LevelSelector;
+import greenfoot.GreenfootSound;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -65,6 +66,8 @@ public class Player extends Physics {
     private GreenfootImage hitm;
     private String knockbackDirection;
 
+    //Sound effects
+    static GreenfootSound coinSound = new GreenfootSound("soundeffects/Coin.wav");
     //double jump
     public boolean doubleJumpAvailable; //can currently doublejump (gets set to true when letting go off space after a jump)
     public boolean refreshDoubleJump; //can refresh double jump (gets set to true when you jump normally)
@@ -135,6 +138,7 @@ public class Player extends Physics {
         jumpm.mirrorHorizontally();
 
         setImage(front);
+
     }
 
     /**
@@ -468,6 +472,8 @@ public class Player extends Physics {
         if (coin != null) {
             Globals.levelScore += coin.getValue() * 10;
             Globals.levelCoinsCollected += coin.getValue();
+            coinSound.setVolume(Options.soundeffectVolume);
+            coinSound.play();
             getWorld().removeObject(coin);
         }
     }
