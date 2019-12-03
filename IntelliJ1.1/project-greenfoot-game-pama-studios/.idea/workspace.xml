@@ -6,18 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c4615df-7eab-44ce-b708-99aaf69c1c72" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/save.txt" beforeDir="false" afterPath="$PROJECT_DIR$/save.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Globals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Globals.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/entities/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/entities/enemies/Blade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/entities/enemies/Blade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/overlays/Heart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/overlays/Heart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/overlays/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/overlays/Inventory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/world/level/Levels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/world/level/Levels.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/world/store/StoreBonusHeart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/world/store/StoreBonusHeart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/world/store/StoreBonusTorchUse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/world/store/StoreBonusTorchUse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/world/store/StoreDoubleJump.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/world/store/StoreDoubleJump.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/world/store/StoreSpeedBoost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/world/store/StoreSpeedBoost.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Physics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Physics.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

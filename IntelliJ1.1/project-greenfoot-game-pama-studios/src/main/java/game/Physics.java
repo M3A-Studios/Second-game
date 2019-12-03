@@ -374,10 +374,10 @@ public class Physics extends Actor
         SwitchBlock block3 = (SwitchBlock) getOneObjectAtOffset(getImage().getWidth() / -2 - (int) Math.ceil(speed), getImage().getHeight() / 2 - 2, SwitchBlock.class);
         if (block1 != null) {
             if (!block1.purpose.equals("switch")) {
-                if (block1.purpose.equals("red")) {
-                    canMoveLeft = !SwitchBlock.switchActive;
-                } else {
-                    canMoveLeft = SwitchBlock.switchActive;
+                if (block1.purpose.equals("red") && SwitchBlock.switchActive) {
+                    canMoveLeft = false;
+                } else if (block1.purpose.equals("blue") && !SwitchBlock.switchActive) {
+                    canMoveLeft = false;
                 }
             } else {
                 canMoveLeft = false;
@@ -385,10 +385,10 @@ public class Physics extends Actor
         }
         if (block2 != null) {
             if (!block2.purpose.equals("switch")) {
-                if (block2.purpose.equals("red")) {
-                    canMoveLeft = !SwitchBlock.switchActive;
-                } else {
-                    canMoveLeft= SwitchBlock.switchActive;
+                if (block2.purpose.equals("red") && SwitchBlock.switchActive) {
+                    canMoveLeft = false;
+                } else if (block2.purpose.equals("blue") && !SwitchBlock.switchActive) {
+                    canMoveLeft = false;
                 }
             } else {
                 canMoveLeft = false;
@@ -396,10 +396,10 @@ public class Physics extends Actor
         }
         if (block3 != null) {
             if (!block3.purpose.equals("switch")) {
-                if (block3.purpose.equals("red")) {
-                    canMoveLeft = !SwitchBlock.switchActive;
-                } else {
-                    canMoveLeft = SwitchBlock.switchActive;
+                if (block3.purpose.equals("red") && SwitchBlock.switchActive) {
+                    canMoveLeft = false;
+                } else if (block3.purpose.equals("blue") && !SwitchBlock.switchActive) {
+                    canMoveLeft = false;
                 }
             } else {
                 canMoveLeft = false;
@@ -489,10 +489,10 @@ public class Physics extends Actor
         SwitchBlock block3 = (SwitchBlock) getOneObjectAtOffset(getImage().getWidth() / 2 + (int) Math.ceil(speed), getImage().getHeight() / 2 - 2, SwitchBlock.class);
         if (block1 != null) {
             if (!block1.purpose.equals("switch")) {
-                if (block1.purpose.equals("red")) {
-                    canMoveRight = !SwitchBlock.switchActive;
-                } else {
-                    canMoveRight = SwitchBlock.switchActive;
+                if (block1.purpose.equals("red") && SwitchBlock.switchActive) {
+                    canMoveRight = false;
+                } else if (block1.purpose.equals("blue") && !SwitchBlock.switchActive) {
+                    canMoveRight = false;
                 }
             } else {
                 canMoveRight = false;
@@ -500,10 +500,10 @@ public class Physics extends Actor
         }
         if (block2 != null) {
             if (!block2.purpose.equals("switch")) {
-                if (block2.purpose.equals("red")) {
-                    canMoveRight = !SwitchBlock.switchActive;
-                } else {
-                    canMoveRight = SwitchBlock.switchActive;
+                if (block2.purpose.equals("red") && SwitchBlock.switchActive) {
+                    canMoveRight = false;
+                } else if (block2.purpose.equals("blue") && !SwitchBlock.switchActive) {
+                    canMoveRight = false;
                 }
             } else {
                 canMoveRight = false;
@@ -511,10 +511,10 @@ public class Physics extends Actor
         }
         if (block3 != null) {
             if (!block3.purpose.equals("switch")) {
-                if (block3.purpose.equals("red")) {
-                    canMoveRight = !SwitchBlock.switchActive;
-                } else {
-                    canMoveRight = SwitchBlock.switchActive;
+                if (block3.purpose.equals("red") && SwitchBlock.switchActive) {
+                    canMoveRight = false;
+                } else if (block3.purpose.equals("blue") && !SwitchBlock.switchActive) {
+                    canMoveRight = false;
                 }
             } else {
                 canMoveRight = false;
