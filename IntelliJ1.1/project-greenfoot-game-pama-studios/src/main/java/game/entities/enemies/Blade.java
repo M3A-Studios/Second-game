@@ -19,9 +19,10 @@ public class Blade extends Physics {
     int maTime = 0;
 
     public Blade(int ID) {
-        //blue slime scale
+        System.out.println("bld");
         blade2.scale(bladeWidth / 2, bladeHeight / 2);
         blade1.scale(bladeWidth / 2, bladeHeight / 2);
+        setImage(blade1);
         dead = false;
     }
 
@@ -32,7 +33,7 @@ public class Blade extends Physics {
             setDoubleX(getX());
             setDoubleY(getY());
             startingX = getX();
-            setNewLocation(getDoubleX(), getDoubleY() + getImage().getHeight());
+            setNewLocation(getDoubleX(), getDoubleY() + getImage().getHeight()/2.0);
         }
         if (!dead) {
             moving();

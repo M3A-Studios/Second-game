@@ -37,22 +37,24 @@ public class Inventory extends Actor
             setLocation(startX, startY);
         }
         if (purpose.equals("item")) {
-            switch (Player.inventoryItem) {
-                case "blueKey":
-                    setImage(Keys.blueKey);
-                    break;
-                case "greenKey":
-                    setImage(Keys.greenKey);
-                    break;
-                case "redKey":
-                    setImage(Keys.redKey);
-                    break;
-                case "yellowKey":
-                    setImage(Keys.yellowKey);
-                    break;
-                default:
-                    setImage(inventory);
-                    break;
+            if (Player.inventoryItem != null) {
+                switch (Player.inventoryItem) {
+                    case "blueKey":
+                        setImage(Keys.blueKey);
+                        break;
+                    case "greenKey":
+                        setImage(Keys.greenKey);
+                        break;
+                    case "redKey":
+                        setImage(Keys.redKey);
+                        break;
+                    case "yellowKey":
+                        setImage(Keys.yellowKey);
+                        break;
+                    default:
+                        setImage(inventory);
+                        break;
+                }
             }
         }
     }
