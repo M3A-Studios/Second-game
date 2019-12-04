@@ -30,8 +30,8 @@ public class Bomb extends Physics {
         selectImage = ID;
         dropped = false;
         holding = false;
-        bomb.scale(Options.blockSize, Options.blockSize);
-        bomb2.scale(Options.blockSize, Options.blockSize);
+        bomb.scale(Options.blockSize / 20 * 19, Options.blockSize / 20 * 19);
+        bomb2.scale(Options.blockSize / 20 * 19, Options.blockSize / 20 * 19);
         explode.scale(Options.blockSize * 3 , Options.blockSize * 3);
         explode2.scale(Options.blockSize * 2 , Options.blockSize * 2);
         explode3.scale(Options.blockSize, Options.blockSize);

@@ -14,8 +14,8 @@ public class JumpPad extends Physics {
         GreenfootImage image = new GreenfootImage ((ID) + ".png");
         image.scale((Options.blockSize),(Options.blockSize)); //scale to the size of 1 block
         setImage(image);
-        jumppadDown.scale((Options.blockSize),(Options.blockSize));
-        jumppadUp.scale((Options.blockSize),(Options.blockSize));
+        jumppadDown.scale((int) (Options.blockSize / 20 * 18),(int) (Options.blockSize / 20 * 18));
+        jumppadUp.scale((int) (Options.blockSize / 20 * 18),(int) (Options.blockSize / 20 * 18));
         setImage(jumppadUp);
         holding = false;
     }

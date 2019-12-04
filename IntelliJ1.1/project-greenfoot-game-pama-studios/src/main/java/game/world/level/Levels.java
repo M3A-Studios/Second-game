@@ -177,7 +177,7 @@ public class Levels extends World
         addObject(new Background(getBackground(level), level), 0, Options.screenHeight);
         renderMap(getMap(level), getPlayerLayer(level), level); //spawn the map and player as said layer
 
-        if (level >= 7 && level <= 9) {
+        if (level == 7 || level == 9) {
             addObject(new DesertStorm(), 0, Options.screenHeight);
         }
 
@@ -241,18 +241,26 @@ public class Levels extends World
             case 8:
                 checkpointX.add(2);
                 checkpointY.add(16);
+                checkpointX.add(18);
+                checkpointY.add(2);
+                checkpointX.add(44);
+                checkpointY.add(16);
+                checkpointX.add(73);
+                checkpointY.add(8);
                 break;
             case 9:
                 //Spawn location (checkpoint 0)
-                checkpointX.add(2);
-                checkpointY.add(8);
+                checkpointX.add(1);
+                checkpointY.add(4);
+                checkpointX.add(47);
+                checkpointY.add(4);
                 break;
             case 10:
-                checkpointX.add(2);
-                checkpointY.add(14);
+                checkpointX.add(1);
+                checkpointY.add(8);
                 //check 1
-                checkpointX.add(28);
-                checkpointY.add(26);
+                checkpointX.add(47);
+                checkpointY.add(8);
                 break;
             case 11:
                 //Spawn location (checkpoint 0)
@@ -493,6 +501,8 @@ public class Levels extends World
         String checkpointColor;
         if (level == 1 || level == 2 || level == 3) {
             checkpointColor = "blue";
+        } else if (level == 7 || level == 8 || level == 9) {
+            checkpointColor = "red";
         } else {
             checkpointColor = "blue";
         }

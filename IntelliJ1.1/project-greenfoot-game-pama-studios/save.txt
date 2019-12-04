@@ -17,8 +17,8 @@ SpeedBoostUnlocked:false
 BonusHeartUnlocked:false
 BonusTorchUseUnlocked:false
 LevelsUnlocked:15
-SelectedLevel:12
-Coins:141
-Score:2410
-Stars:false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,
+SelectedLevel:5
+Coins:426
+Score:24760
+Stars:true,true,true,false,false,false,false,false,false,true,false,false,false,false,false,false,
 

@@ -25,7 +25,7 @@ public class SwitchBlock extends Actor
 
     public void act()
     {
-        if(activationTimer >= 0)
+        if (activationTimer >= 0)
         {
             activationTimer --;
         }
@@ -36,7 +36,6 @@ public class SwitchBlock extends Actor
      *
      * @param ID refers to what the ID of the tile is, used for the image
      */
-
     public SwitchBlock(int ID) {
         switchActive = false;
         switchOff.scale(Options.blockSize,Options.blockSize);
@@ -61,16 +60,17 @@ public class SwitchBlock extends Actor
             this.purpose = "blue";
         }
     }
+
     public void switchBlock()
     {
         if (activationTimer <= 0)
         {
-            if (getImage() == switchOff)
+            if (!switchActive)
             {
                 setImage(switchOn);
                 activationTimer = 30;
                 switchBlocksTo(true);
-            } else if (getImage() == switchOn) {
+            } else {
                 setImage(switchOff);
                 activationTimer = 30;
                 switchBlocksTo(false);
