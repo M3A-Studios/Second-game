@@ -1,5 +1,6 @@
 package game;
 
+import game.entities.Player;
 import game.world.level.Levels;
 import game.world.levelselector.LevelSelector;
 import game.world.menu.Menu;
@@ -11,16 +12,20 @@ public class Music extends Actor {
 
     private static GreenfootSound music = new GreenfootSound("soundeffects/Music/Menu.wav");
     private static boolean started = false;
+    static int vTime = 0;
 
     public Music () {
         started = false;
     }
     public void act() {
+        if (Player.dead){
+            stopMusic(); //Moet uit faden fadeMusic();
+        }
         if (!started) {
             started = true;
             music.stop();
             if (getWorld() instanceof LevelSelector) {
-                music = new GreenfootSound("soundeffects/Music/Menu.wav");
+                music = new GreenfootSound("soundeffects/Music/Main theme.wav");
             } else if (getWorld() instanceof Levels) {
                 int level = LevelSelector.getSelectedLevel();
                 if (level <= 3) {
@@ -31,15 +36,17 @@ public class Music extends Actor {
                     music = new GreenfootSound("soundeffects/Music/Stage3.wav");
                 } else if (level <= 12) {
                     music = new GreenfootSound("soundeffects/Music/Stage4.wav");
-                } else {
+                } else if (level <= 14) {
                     music = new GreenfootSound("soundeffects/Music/Stage5.wav");
+                } else if (level <= 15) {
+                    music = new GreenfootSound("soundeffects/Music/Boss.wav");
                 }
             } else if (getWorld() instanceof Menu) {
-                music = new GreenfootSound("soundeffects/Music/Menu.wav");
+                music = new GreenfootSound("soundeffects/Music/Main theme.wav");
             } else if (getWorld() instanceof Store) {
-                music = new GreenfootSound("soundeffects/Music/Menu.wav");
+                music = new GreenfootSound("soundeffects/Music/Wii.wav");
             } else {
-                music = new GreenfootSound("soundeffects/Music/Menu.wav");
+                music = new GreenfootSound("soundeffects/Music/Wii.wav");
             }
             if (music != null && !music.isPlaying()) {
                 music.playLoop();
@@ -51,6 +58,22 @@ public class Music extends Actor {
     public static void stopMusic() {
         if (music != null) {
             music.stop();
+        }
+    }
+    public static void fadeMusic() {
+        if (music != null) {
+            vTime++;
+            if (vTime == 10){
+                music.setVolume(Options.musicVolume -= 25);
+            } else if (vTime == 20){
+                music.setVolume(Options.musicVolume -= 25);
+            } else if (vTime == 30){
+                music.setVolume(Options.musicVolume -= 25);
+            } else if (vTime == 40){
+                music.setVolume(Options.musicVolume -= 25);
+            } else if (vTime >= 50){
+                music.stop();
+            }
         }
     }
 }

@@ -1,9 +1,6 @@
 package game.world.menu;
 
-import greenfoot.Actor;
-import greenfoot.Greenfoot;
-import greenfoot.GreenfootImage;
-import greenfoot.MouseInfo;
+import greenfoot.*;
 import game.Options;
 
 import java.util.List;
@@ -20,6 +17,8 @@ public class MenuExit extends Actor
     private int normalHeight;
     /** Boolean for if the mouse is hovering over a continue object */
     private boolean overObject = false;
+    //Click sound
+    static GreenfootSound close = new GreenfootSound("soundeffects/Close.wav");
 
     /**
      * Simply sets the image, scales it and sets what the dimensions of the default image are to the end result
@@ -40,6 +39,9 @@ public class MenuExit extends Actor
         //check for if clicked on
         if (Greenfoot.mouseClicked(this))
         {
+            close.setVolume(Options.soundeffectVolume);
+            close.play();
+            Greenfoot.delay(10); //Delay to play sound effect
             System.exit(0);
         }
         //check if hovering over the button

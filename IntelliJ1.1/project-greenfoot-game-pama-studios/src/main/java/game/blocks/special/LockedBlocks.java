@@ -5,6 +5,7 @@ import game.GameLogic;
 import game.Options;
 import game.blocks.Blocks;
 import game.entities.Player;
+import greenfoot.GreenfootSound;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +27,8 @@ public class LockedBlocks extends Blocks {
     private String blockType;
     /** List of all blocks that need to be unlocked in the next frame */
     public static List<LockedBlocks> blocksToUnlock = new ArrayList<LockedBlocks>();
+    //Sound effect
+    static GreenfootSound openLockedBlock = new GreenfootSound("soundeffects/openLockedBlock.wav");
 
     /**
      * Constructor to set the image and what block it extends
@@ -126,6 +129,8 @@ public class LockedBlocks extends Blocks {
         if (!Player.inventoryItem.equals("") && !blockToRemove.equals("")) {
             unlockExtendedBlock(blockToRemove);
             Player.inventoryItem = "";
+            openLockedBlock.setVolume(Options.soundeffectVolume);
+            openLockedBlock.play();
         }
     }
 }

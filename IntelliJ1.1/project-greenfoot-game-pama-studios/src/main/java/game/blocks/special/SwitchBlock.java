@@ -3,6 +3,7 @@ package game.blocks.special;
 import game.Options;
 import greenfoot.Actor;
 import greenfoot.GreenfootImage;
+import greenfoot.GreenfootSound;
 
 import java.util.List;
 
@@ -14,6 +15,9 @@ public class SwitchBlock extends Actor
     private GreenfootImage redBlockOn = new GreenfootImage("285.png");
     private GreenfootImage blueBlockOn = new GreenfootImage("359.png");
     private GreenfootImage blueBlockOff = new GreenfootImage("360.png");
+
+    //Sound effect
+    static GreenfootSound onoff = new GreenfootSound("soundeffects/on-off.wav");
 
     private int activationTimer = 30;
     public static boolean switchActive = false;
@@ -95,8 +99,12 @@ public class SwitchBlock extends Actor
             } else {
                 if (active) {
                     block.setImage(switchOn);
+                    onoff.setVolume(Options.soundeffectVolume);
+                    onoff.play();
                 } else {
                     block.setImage(switchOff);
+                    onoff.setVolume(Options.soundeffectVolume);
+                    onoff.play();
                 }
             }
         }

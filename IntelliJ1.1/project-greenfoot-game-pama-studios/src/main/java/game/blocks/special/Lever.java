@@ -28,6 +28,9 @@ public class Lever extends Blocks {
     private GreenfootImage middle = new GreenfootImage ("227.png");
     /** Image for when the lever is active */
     private GreenfootImage right = new GreenfootImage ("228.png");
+    //Sound effects
+    static GreenfootSound doorClose = new GreenfootSound("soundeffects/door_close.wav");
+    static GreenfootSound doorOpen = new GreenfootSound("soundeffects/door_open.wav");
 
     /**
      * Calls for the constructor in Blocks.java to set the image of the tile.
@@ -90,6 +93,8 @@ public class Lever extends Blocks {
             if (animationTimer== 60) {
                 setImage(right);
                 switchdoor("open");
+                doorOpen.setVolume(Options.soundeffectVolume);
+                doorOpen.play();
             }
         }
         if (isSwitched) {
@@ -99,6 +104,8 @@ public class Lever extends Blocks {
             if (animationTimer== 60){
                 setImage(left);
                 switchdoor("closed");
+                doorClose.setVolume(Options.soundeffectVolume);
+                doorClose.play();
             }
         }
     }

@@ -5,6 +5,7 @@ import greenfoot.Greenfoot;
 import greenfoot.GreenfootImage;
 import game.world.level.Levels;
 import game.world.menu.Menu;
+import greenfoot.GreenfootSound;
 
 /**
  * The character of the user in the level selector world
@@ -25,6 +26,8 @@ public class SelectorPlayer extends Physics {
     private boolean moving;
     /** Boolean for if this is the first frame of the world for some position fixes regarding Physics */
     private boolean started = false;
+    //Sound effect
+    static GreenfootSound select = new GreenfootSound("soundeffects/mapSelect.wav");
 
     /**
      * Simply sets the image and scales it
@@ -236,6 +239,8 @@ public class SelectorPlayer extends Physics {
             }
             if (Greenfoot.isKeyDown("enter") || Greenfoot.isKeyDown("space")) {
                 Greenfoot.setWorld(new Levels(LevelSelector.getSelectedLevel()));
+                select.setVolume(Options.soundeffectVolume);
+                select.play();
             }
             if (movingTo != LevelSelector.getSelectedLevel() && movingTo <= Globals.levelsUnlocked && movingDir != null) {
                 moving = true;

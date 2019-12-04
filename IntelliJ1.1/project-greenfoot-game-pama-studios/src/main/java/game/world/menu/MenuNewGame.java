@@ -1,9 +1,6 @@
 package game.world.menu;
 
-import greenfoot.Actor;
-import greenfoot.Greenfoot;
-import greenfoot.GreenfootImage;
-import greenfoot.MouseInfo;
+import greenfoot.*;
 import game.Globals;
 import game.Options;
 import game.Saver;
@@ -22,6 +19,8 @@ public class MenuNewGame extends Actor {
     private int normalHeight;
     /** Boolean for if the mouse is hovering over a continue object */
     private boolean overObject = false;
+    //Click sound
+    static GreenfootSound select = new GreenfootSound("soundeffects/Select.wav");
 
     /**
      * Simply sets the image, scales it and sets what the dimensions of the default image are to the end result
@@ -51,6 +50,8 @@ public class MenuNewGame extends Actor {
             Globals.levelScore = 0;
             //Globals.levelsUnlocked = 1;
             Greenfoot.setWorld(new PlayerSelectorScreen());
+            select.setVolume(Options.soundeffectVolume);
+            select.play();
         }
         //check if hovering over the button
         MouseInfo mouse = Greenfoot.getMouseInfo();

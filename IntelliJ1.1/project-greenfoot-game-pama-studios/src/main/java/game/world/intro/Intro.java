@@ -13,7 +13,7 @@ public class Intro extends World {
     public Intro() {
         super(Options.screenWidth, Options.screenHeight, 1, false); //render the screen with said screensize
         setBackground(new GreenfootImage("introblack.jpg"));
-        addObject(new IntroImage("unrealengine.png", Options.blockSize * 6, (int) (Options.blockSize * 6)), Options.blockSize * 6, Options.blockSize * 4);
+        addObject(new IntroImage("Pama engine.png", Options.blockSize * 6, (int) (Options.blockSize * 6)), Options.blockSize * 6, Options.blockSize * 4);
         addObject(new IntroImage("pamaLogo.png", Options.blockSize * 7, Options.blockSize * 7), Options.screenWidth - Options.blockSize * 6, Options.blockSize * 4);
         addObject(new IntroImage("introtext.png", Options.blockSize * 16, Options.blockSize * 3), Options.screenWidth /2, Options.screenHeight - Options.blockSize * 2);
     }

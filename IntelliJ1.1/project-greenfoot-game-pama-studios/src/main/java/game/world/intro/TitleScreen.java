@@ -5,14 +5,16 @@ import game.world.menu.Menu;
 import greenfoot.Actor;
 import greenfoot.Greenfoot;
 import greenfoot.GreenfootImage;
+import greenfoot.GreenfootSound;
 
 public class TitleScreen extends Actor {
 
     private int frame = 0;
     private boolean started = false;
+    static GreenfootSound select = new GreenfootSound("soundeffects/Select.wav");
 
     public TitleScreen() {
-        GreenfootImage image = new GreenfootImage("1.png");
+        GreenfootImage image = new GreenfootImage("Titlescreen.png");
         image.scale(Options.screenWidth, Options.screenHeight);
         setImage(image);
         started = false;
@@ -26,6 +28,8 @@ public class TitleScreen extends Actor {
             String key = Greenfoot.getKey();
             if (key != null) {
                 started = true;
+                select.setVolume(Options.soundeffectVolume);
+                select.play();
                 getWorld().showText("", Options.screenWidth/2, Options.screenHeight/10*9);
             }
         }

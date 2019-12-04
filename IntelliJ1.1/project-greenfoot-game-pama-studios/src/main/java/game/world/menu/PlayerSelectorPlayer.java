@@ -1,9 +1,6 @@
 package game.world.menu;
 
-import greenfoot.Actor;
-import greenfoot.Greenfoot;
-import greenfoot.GreenfootImage;
-import greenfoot.MouseInfo;
+import greenfoot.*;
 import game.Options;
 import game.world.levelselector.LevelSelector;
 
@@ -22,6 +19,8 @@ public class PlayerSelectorPlayer extends Actor {
     private boolean overObject = false;
     /** The color of this object, being Green, Blue, Pink or Yellow */
     private String color;
+    //Click sound
+    static GreenfootSound select = new GreenfootSound("soundeffects/Select.wav");
 
     /**
      * Simply sets the image and the default sizes
@@ -47,6 +46,8 @@ public class PlayerSelectorPlayer extends Actor {
         {
             Options.player1Color = this.color;
             Greenfoot.setWorld(new LevelSelector());
+            select.setVolume(Options.soundeffectVolume);
+            select.play();
         }
         //check if hovering over the button
         MouseInfo mouse = Greenfoot.getMouseInfo();

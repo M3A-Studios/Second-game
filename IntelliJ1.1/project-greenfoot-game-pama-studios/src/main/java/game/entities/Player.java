@@ -68,6 +68,11 @@ public class Player extends Physics {
 
     //Sound effects
     static GreenfootSound coinSound = new GreenfootSound("soundeffects/Coin.wav");
+    static GreenfootSound finish = new GreenfootSound("soundeffects/Finish.wav");
+    static GreenfootSound back = new GreenfootSound("soundeffects/Back.wav");
+    static GreenfootSound death = new GreenfootSound("soundeffects/death.wav");
+    static GreenfootSound dmgSound = new GreenfootSound("soundeffects/dmg.wav");
+
     //double jump
     public boolean doubleJumpAvailable; //can currently doublejump (gets set to true when letting go off space after a jump)
     public boolean refreshDoubleJump; //can refresh double jump (gets set to true when you jump normally)
@@ -216,6 +221,8 @@ public class Player extends Physics {
         if (!won) {
             if (dyingAnimation < 200) {
                 animateMovement("Death");
+                death.setVolume(Options.soundeffectVolume);
+                death.play();
                 dyingAnimation += 1;
             } else {
                 Greenfoot.setWorld(new Levels(LevelSelector.getSelectedLevel(), Levels.activeCheckpoint));
@@ -255,6 +262,8 @@ public class Player extends Physics {
         if (key != null) {
             if (key.equals("escape")) {
                 Greenfoot.setWorld(new LevelSelector(LevelSelector.getSelectedLevel()));
+                back.setVolume(Options.soundeffectVolume);
+                back.play();
             }
         }
         if ((Greenfoot.isKeyDown(Options.player1Jump) && player == 1) || (Greenfoot.isKeyDown(Options.player2Jump) && player == 2)) {
@@ -609,7 +618,12 @@ public class Player extends Physics {
         if(canTakeDmg){ getImage().setTransparency(255); }
         if(!canTakeDmg){
             dmgTimer++;
-            if (dmgTimer == 10){this.getImage().setTransparency(50); jump(5);}
+            if (dmgTimer == 10){
+                this.getImage().setTransparency(50);
+                jump(5);
+                dmgSound.setVolume(Options.soundeffectVolume);
+                dmgSound.play();
+            }
             if (dmgTimer > 10 && dmgTimer < 40){knockBack();}
             if (dmgTimer == 20){this.getImage().setTransparency(255);}
             if (dmgTimer == 30){this.getImage().setTransparency(50);}

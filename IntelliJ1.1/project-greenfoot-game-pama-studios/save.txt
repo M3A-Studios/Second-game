@@ -1,4 +1,4 @@
-Player1Color:Blue
+Player1Color:Green
 Player2Color:Blue
 ScreenHeight:720
 Player1LeftButton:A
@@ -12,13 +12,13 @@ Player2RightButton:right
 InteractButton:E
 DropItemButton:Q
 DropObjectButton:Z
-DoubleJumpUnlocked:true
-SpeedBoostUnlocked:true
-BonusHeartUnlocked:true
-BonusTorchUseUnlocked:true
+DoubleJumpUnlocked:false
+SpeedBoostUnlocked:false
+BonusHeartUnlocked:false
+BonusTorchUseUnlocked:false
 LevelsUnlocked:15
-SelectedLevel:2
-Coins:219
-Score:20690
-Stars:true,true,true,false,false,false,false,false,false,true,false,false,false,false,false,false,
+SelectedLevel:1
+Coins:0
+Score:0
+Stars:false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,
 
