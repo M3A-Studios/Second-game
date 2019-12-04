@@ -66,7 +66,7 @@ public class Particles extends Physics {
             smoke();
         }
         if (type.equals("beam")){
-            beam.scale(Options.blockSize * 2, Options.screenHeight * 2);
+            beam.scale(Options.blockSize * 2, Options.screenHeight * 6);
             setImage(beam);
         }
         if (type.equals("confetti") || type.equals("confettim")){

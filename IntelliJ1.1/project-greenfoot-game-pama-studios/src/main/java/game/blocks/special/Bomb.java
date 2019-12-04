@@ -13,15 +13,15 @@ public class Bomb extends Physics {
     static GreenfootImage explode = new GreenfootImage("explosion00.png");
     static GreenfootImage explode2 = new GreenfootImage("explosion01.png");
     static GreenfootImage explode3 = new GreenfootImage("explosion02.png");
-    static GreenfootSound tnt = new GreenfootSound("soundeffects/tnt.wav");
+    static GreenfootSound tnt = new GreenfootSound("soundeffects/Explosive.wav");
 
     private int selectImage;
     private int animationTimer;
     private int fadeTime = 0;
     public boolean dropped;
-    private boolean spamfire = false;
+    private boolean spamfire;
     public boolean holding;
-    public boolean exploded;
+    public boolean playerTakeDmg;
 
     public Bomb(int ID){
         GreenfootImage image = new GreenfootImage ((ID) + ".png");
@@ -30,6 +30,7 @@ public class Bomb extends Physics {
         selectImage = ID;
         dropped = false;
         holding = false;
+        spamfire = false;
         bomb.scale(Options.blockSize / 20 * 19, Options.blockSize / 20 * 19);
         bomb2.scale(Options.blockSize / 20 * 19, Options.blockSize / 20 * 19);
         explode.scale(Options.blockSize * 3 , Options.blockSize * 3);
@@ -57,22 +58,22 @@ public class Bomb extends Physics {
                 animationTimer++;
                 changeImage();
                 if (animationTimer == 50) {spamfire = true;}
-                if (animationTimer == 150) {tnt.setVolume(Options.soundeffectVolume); tnt.play();}
-                else if (animationTimer == 200){spamfire = false; }
-                if (animationTimer >= 200 && animationTimer < 300){Explode();}
-                if (animationTimer >= 200 && animationTimer < 225){exploded = true; }
-                if (animationTimer >= 200 && animationTimer < 250){deleteBlocks();}
-                if (animationTimer >= 200 && animationTimer < 300){fadeTime += 1; fadelong(); }
+                if (animationTimer == 200){spamfire = false; }
+                if (animationTimer == 200){playerTakeDmg = true;}
+                if (animationTimer >= 205){playerTakeDmg = false;}
+                if (animationTimer >= 200 && animationTimer < 250){deleteBlocks(); tnt.setVolume(Options.soundeffectVolume); tnt.play();}
+                if (animationTimer >= 200 && animationTimer < 300){fadeTime += 1; fadeOut(); explode();}
                 else if (animationTimer > 301){getWorld().removeObject(this);}
             }
         }
     }
+
     private void lit(){
         Particles Bomb = new Particles("fire");
         getWorld().addObject(Bomb, this.getX() - (int) (Options.blockSize / 64.0 * 20), this.getY() -(int) (Options.blockSize / 64.0 * 30));
     }
 
-    private void Explode(){
+    private void explode(){
         if (animationTimer == 200){setImage(explode);}
         else if (animationTimer == 225){setImage(explode2);}
         else if (animationTimer > 250){setImage(explode3);}
@@ -84,7 +85,7 @@ public class Bomb extends Physics {
             if (animationTimer % 50 == 0) {setImage(bomb);}
         }
     }
-    private void fadelong(){ //Fade out en kill object
+    private void fadeOut(){
         if (255 - fadeTime > 0) {
             this.getImage().setTransparency(255 - fadeTime);
         }

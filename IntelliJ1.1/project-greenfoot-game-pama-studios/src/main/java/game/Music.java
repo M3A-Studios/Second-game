@@ -13,16 +13,15 @@ public class Music extends Actor {
     private static GreenfootSound music = new GreenfootSound("soundeffects/Music/Menu.wav");
     private static boolean started = false;
     static int vTime = 0;
+    static int holdVolume;
 
     public Music () {
         started = false;
     }
     public void act() {
-        if (Player.dead){
-            stopMusic(); //Moet uit faden fadeMusic();
-        }
         if (!started) {
             started = true;
+            holdVolume = Options.musicVolume;
             music.stop();
             if (getWorld() instanceof LevelSelector) {
                 music = new GreenfootSound("soundeffects/Music/Main theme.wav");
@@ -58,22 +57,6 @@ public class Music extends Actor {
     public static void stopMusic() {
         if (music != null) {
             music.stop();
-        }
-    }
-    public static void fadeMusic() {
-        if (music != null) {
-            vTime++;
-            if (vTime == 10){
-                music.setVolume(Options.musicVolume -= 25);
-            } else if (vTime == 20){
-                music.setVolume(Options.musicVolume -= 25);
-            } else if (vTime == 30){
-                music.setVolume(Options.musicVolume -= 25);
-            } else if (vTime == 40){
-                music.setVolume(Options.musicVolume -= 25);
-            } else if (vTime >= 50){
-                music.stop();
-            }
         }
     }
 }

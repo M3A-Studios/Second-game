@@ -70,7 +70,7 @@ public class Player extends Physics {
     static GreenfootSound coinSound = new GreenfootSound("soundeffects/Coin.wav");
     static GreenfootSound finish = new GreenfootSound("soundeffects/Finish.wav");
     static GreenfootSound back = new GreenfootSound("soundeffects/Back.wav");
-    static GreenfootSound death = new GreenfootSound("soundeffects/death.wav");
+    static GreenfootSound death = new GreenfootSound("soundeffects/gameOver.wav");
     static GreenfootSound dmgSound = new GreenfootSound("soundeffects/dmg.wav");
 
     //double jump
@@ -196,6 +196,8 @@ public class Player extends Physics {
             jumpPad();
             winConfetti();
             updateGravity();
+            finish.setVolume(Options.soundeffectVolume); //Laat niet meerdere keren afspelen
+            finish.play();
         } else {
             deadAnimation();
         }
@@ -219,10 +221,9 @@ public class Player extends Physics {
     }
     private void deadAnimation() {
         if (!won) {
+            if (dyingAnimation > 0 && dyingAnimation < 100){death.setVolume(Options.soundeffectVolume); death.play();}
             if (dyingAnimation < 200) {
                 animateMovement("Death");
-                death.setVolume(Options.soundeffectVolume);
-                death.play();
                 dyingAnimation += 1;
             } else {
                 Greenfoot.setWorld(new Levels(LevelSelector.getSelectedLevel(), Levels.activeCheckpoint));
@@ -548,8 +549,8 @@ public class Player extends Physics {
     }
 
 
-    private void holdObject(){ //Michael
-        moveToPlayer(); //Moves holding object
+    private void holdObject(){
+        moveToPlayer();
         if(Greenfoot.isKeyDown(Options.interact)){
             if(isTouching(Bomb.class) && holding.equals("")){
                 Bomb bomb = (Bomb) getOneIntersectingObject(Bomb.class);
@@ -572,8 +573,8 @@ public class Player extends Physics {
             }
         }
     }
-    private void dropObject(){ //Michael
-        if(Greenfoot.isKeyDown(Options.dropObject)){ //Should be drop key in options
+    private void dropObject(){
+        if(Greenfoot.isKeyDown(Options.dropObject)){
             if(holding.equals("Bomb")) {
                 Bomb bomb = (Bomb) getOneIntersectingObject(Bomb.class);
                 if (bomb != null) {
@@ -599,13 +600,13 @@ public class Player extends Physics {
     }
     private void moveToPlayer() {
         if(holding.length() > 0){
-            Bomb bomb = (Bomb) getOneIntersectingObject(Bomb.class); //Make this only see the object that you hold
+            Bomb bomb = (Bomb) getOneIntersectingObject(Bomb.class);
             if (bomb != null) {
                 if (bomb.holding && !bomb.dropped) {
                     bomb.setLocation(this.getX(), this.getY());
                 }
             }
-            JumpPad jumppad = (JumpPad) getOneIntersectingObject(JumpPad.class); //Make this only see the object that you hold
+            JumpPad jumppad = (JumpPad) getOneIntersectingObject(JumpPad.class);
             if (jumppad != null) {
                 if (jumppad.holding) {
                     jumppad.setLocation(this.getX(), this.getY());
@@ -614,7 +615,7 @@ public class Player extends Physics {
         }
     }
 
-    private void dmgTimer(){ //Adds delay to taking dmg
+    private void dmgTimer(){
         if(canTakeDmg){ getImage().setTransparency(255); }
         if(!canTakeDmg){
             dmgTimer++;
@@ -716,7 +717,7 @@ public class Player extends Physics {
     private void Bomb(){
         Bomb Bombdmg = (Bomb) getOneIntersectingObject(Bomb.class);
         if(Bombdmg != null){
-            if (Bombdmg.exploded){
+            if (Bombdmg.playerTakeDmg){
                 if(canTakeDmg) {
                     Player.health -= 1;
                     if (getX() < Bombdmg.getX()) {
