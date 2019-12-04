@@ -22,7 +22,7 @@ public class IntroImage extends Actor {
             getImage().setTransparency(introLength * 3 / 2);
         }
         if (introLength == 0) {
-            Greenfoot.setWorld(new Menu());
+            Greenfoot.setWorld(new Intro(true));
         }
     }
 }
