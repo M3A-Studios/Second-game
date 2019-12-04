@@ -47,8 +47,8 @@ public class Player extends Physics {
     private static boolean player2exists;
 
     //sizes for the images
-    private int playerWidth = Options.blockSize;          //1 block
-    private int playerHeight = Options.blockSize * 3 / 2; //1.5 blocks
+    private int playerWidth = Options.blockSize / 20 * 19;          //0.95 block
+    private int playerHeight = (int) (Options.blockSize * 1.42); //1.42 blocks
 
     //Images
     private GreenfootImage climb1;

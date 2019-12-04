@@ -173,7 +173,7 @@ public class Levels extends World
         getCheckpointLocations(level);
         if (level >= 10 && level <= 12) {
             addObject(new Background(new GreenfootImage("backgroundForest.png"), 0), 0, Options.screenHeight/2);
-        }
+        } 
         addObject(new Background(getBackground(level), level), 0, Options.screenHeight);
         renderMap(getMap(level), getPlayerLayer(level), level); //spawn the map and player as said layer
 
@@ -187,7 +187,7 @@ public class Levels extends World
         addObject(new GameLogic(), -10000, -10000); //add gamelogic object off the map, we want to use it's act method for counters etc like lockedblocks chain
 
         Music.stopMusic();
-        addObject(new Music(), -100, -100);
+        addObject(new Music(), -10000, -10000);
     }
 
     /**
@@ -382,9 +382,11 @@ public class Levels extends World
             file = "backgroundColorFall.png";
         } else if (level <= 9) {
             file = "backgroundColorDesert.png";
-        } else if (level <= 10) {
+        } else if (level == 10) {
             file = "level10BG.png" ;
-        } else if (level <= 12) {
+        } else if (level == 11) {
+            file = "level11BG.png" ;
+        } else if (level == 12) {
             file = "backgroundForest.png";
         } else {
             file = "backgroundColorGrass.png";
