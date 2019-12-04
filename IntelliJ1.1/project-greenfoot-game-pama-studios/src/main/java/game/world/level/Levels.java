@@ -171,6 +171,9 @@ public class Levels extends World
 
         //getMap(level); //get the map of this level
         getCheckpointLocations(level);
+        if (level >= 10 && level <= 12) {
+            addObject(new Background(new GreenfootImage("backgroundForest.png"), 0), 0, Options.screenHeight/2);
+        }
         addObject(new Background(getBackground(level), level), 0, Options.screenHeight);
         renderMap(getMap(level), getPlayerLayer(level), level); //spawn the map and player as said layer
 
@@ -254,7 +257,7 @@ public class Levels extends World
             case 11:
                 //Spawn location (checkpoint 0)
                 checkpointX.add(2);
-                checkpointY.add(7);
+                checkpointY.add(9);
                 break;
             case 12:
                 checkpointX.add(2);
@@ -380,7 +383,7 @@ public class Levels extends World
         } else if (level <= 9) {
             file = "backgroundColorDesert.png";
         } else if (level <= 10) {
-            file = "Level10BG.png";
+            file = "level10BG.png" ;
         } else if (level <= 12) {
             file = "backgroundForest.png";
         } else {
