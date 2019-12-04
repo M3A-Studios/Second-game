@@ -27,7 +27,7 @@ public class StoreBonusHeart extends Actor {
      * Simply sets the image, scales it and sets what the dimensions of the default image are to the end result
      */
     public StoreBonusHeart() {
-        GreenfootImage image = new GreenfootImage("emptystore.png");
+        GreenfootImage image = new GreenfootImage("storebonusheart.png");
         image.scale((int) ((Options.blockSize) * 7.5), (Options.blockSize) * 3);
         setImage(image);
         normalWidth = image.getWidth();
@@ -42,8 +42,8 @@ public class StoreBonusHeart extends Actor {
         if (!Options.bonusHeartUnlocked) {
             //check for if clicked on
             if (Greenfoot.mouseClicked(this)) {
-                if (Globals.totalCoinsCollected >= 50) {
-                    Globals.totalCoinsCollected -= 50;
+                if (Globals.totalCoinsCollected >= 1000) {
+                    Globals.totalCoinsCollected -= 1000;
                     Options.bonusHeartUnlocked = true;
                     getWorld().addObject(new StoreCross(), getX(), getY());
                 }

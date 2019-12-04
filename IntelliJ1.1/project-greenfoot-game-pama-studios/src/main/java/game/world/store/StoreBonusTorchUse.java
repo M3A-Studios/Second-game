@@ -27,7 +27,7 @@ public class StoreBonusTorchUse extends Actor {
      * Simply sets the image, scales it and sets what the dimensions of the default image are to the end result
      */
     public StoreBonusTorchUse() {
-        GreenfootImage image = new GreenfootImage("emptystore.png");
+        GreenfootImage image = new GreenfootImage("storeextrafireball.png");
         image.scale((int) ((Options.blockSize) * 7.5), (Options.blockSize) * 3);
         setImage(image);
         normalWidth = image.getWidth();
@@ -42,8 +42,8 @@ public class StoreBonusTorchUse extends Actor {
         if (!Options.bonusTorchUseUnlocked) {
             //check for if clicked on
             if (Greenfoot.mouseClicked(this)) {
-                if (Globals.totalCoinsCollected >= 50) {
-                    Globals.totalCoinsCollected -= 50;
+                if (Globals.totalCoinsCollected >= 2500) {
+                    Globals.totalCoinsCollected -= 2500;
                     Options.bonusTorchUseUnlocked= true;
                     getWorld().addObject(new StoreCross(), getX(), getY());
                 }

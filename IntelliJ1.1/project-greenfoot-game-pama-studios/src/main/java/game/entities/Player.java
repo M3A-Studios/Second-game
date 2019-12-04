@@ -290,6 +290,7 @@ public class Player extends Physics {
             rightKeyDown += 1;
             if (rightKeyDown > 60) rightKeyDown = 60;
             double speed = 2 + rightKeyDown / 60.0;
+            if (Options.speedBoostUnlocked) speed += 0.5;
             if (canMoveRight(speed)) {
                 moveRight(speed);
                 moving = true;
@@ -304,6 +305,7 @@ public class Player extends Physics {
             leftKeyDown += 1;
             if (leftKeyDown > 60) leftKeyDown = 60;
             double speed = 2 + leftKeyDown / 60.0;
+            if (Options.speedBoostUnlocked) speed += 0.5;
             if (canMoveLeft(speed)) {
                 moveLeft(speed);
                 moving = true;
@@ -508,9 +510,9 @@ public class Player extends Physics {
             }
         } else {
             Globals.totalCoinsCollected += Globals.levelCoinsCollected;
-            if (Globals.starsCollected[LevelSelector.getSelectedLevel()] != true) {
+            if (Globals.starsCollected[LevelSelector.getSelectedLevel() - 1] != true) {
                 if (Globals.levelStarsCollected > 0) {
-                    Globals.starsCollected[LevelSelector.getSelectedLevel()] = true;
+                    Globals.starsCollected[LevelSelector.getSelectedLevel() - 1] = true;
                 }
             }
             Globals.totalScore += Globals.levelScore;

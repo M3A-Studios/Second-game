@@ -27,7 +27,7 @@ public class HUDNumber extends Physics {
     /** The purpose of the HUD number, if it should be a "coin" or "score" counter */
     private String purpose;
 
-    private GreenfootImage emptyImage = new GreenfootImage("1.png");
+    private GreenfootImage emptyImage = new GreenfootImage("starempty.png");
     private GreenfootImage starImage = new GreenfootImage("189.png");
 
     /**

@@ -27,7 +27,7 @@ public class StoreSpeedBoost extends Actor {
      * Simply sets the image, scales it and sets what the dimensions of the default image are to the end result
      */
     public StoreSpeedBoost() {
-        GreenfootImage image = new GreenfootImage("emptystore.png");
+        GreenfootImage image = new GreenfootImage("storespeedboost.png");
         image.scale((int) ((Options.blockSize) * 7.5), (Options.blockSize) * 3);
         setImage(image);
         normalWidth = image.getWidth();
@@ -42,8 +42,8 @@ public class StoreSpeedBoost extends Actor {
         if (!Options.speedBoostUnlocked) {
             //check for if clicked on
             if (Greenfoot.mouseClicked(this)) {
-                if (Globals.totalCoinsCollected >= 50) {
-                    Globals.totalCoinsCollected -= 50;
+                if (Globals.totalCoinsCollected >= 2000) {
+                    Globals.totalCoinsCollected -= 2000;
                     Options.speedBoostUnlocked = true;
                     getWorld().addObject(new StoreCross(), getX(), getY());
                 }

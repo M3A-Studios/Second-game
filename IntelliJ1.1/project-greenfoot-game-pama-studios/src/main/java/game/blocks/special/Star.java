@@ -13,6 +13,5 @@ public class Star extends Blocks
      */
     public Star(int ID) {
         super(ID);
-        System.out.print(ID);
     }
 }

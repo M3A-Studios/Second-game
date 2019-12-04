@@ -76,6 +76,7 @@ public class LevelSelector extends World
 
         renderMap(getMap(), level, 4); //spawn the map and player as said layer
         renderLocks(); //render the locks over locked levels
+        renderStars();
         spawnCamera(); //spawn the camera
         renderHud();
 
@@ -133,6 +134,13 @@ public class LevelSelector extends World
                         (int) (getLevelX(i) * Options.blockSize),                           //x location in proper cords from levelX
                         (int) (getLevelY(i) * Options.blockSize  + Options.blockSize / 4)); //y location in proper cords and offset from levelY
             }
+        }
+    }
+    private void renderStars() {
+        for (int i = 0; i < 16; i++) {
+            addObject(new LevelStar(i + 1),
+                    (int) (getLevelX(i + 1) * Options.blockSize),                           //x location in proper cords from levelX
+                    (int) (getLevelY(i + 1) * Options.blockSize  + Options.blockSize / 8 * 7)); //y location in proper cords and offset from levelY
         }
     }
 

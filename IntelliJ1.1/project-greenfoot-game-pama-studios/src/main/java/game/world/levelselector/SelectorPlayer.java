@@ -235,7 +235,6 @@ public class SelectorPlayer extends Physics {
                 }
             }
             if (Greenfoot.isKeyDown("enter") || Greenfoot.isKeyDown("space")) {
-                Saver.saveGame(); //save the game when going into a level
                 Greenfoot.setWorld(new Levels(LevelSelector.getSelectedLevel()));
             }
             if (movingTo != LevelSelector.getSelectedLevel() && movingTo <= Globals.levelsUnlocked && movingDir != null) {

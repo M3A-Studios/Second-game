@@ -44,7 +44,11 @@ public class Saver {
     public static void saveGame() {
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter("save.txt"));
-            System.out.println(Globals.starsCollected);
+            StringBuilder starsString = new StringBuilder();
+
+            for(boolean value : Globals.starsCollected) {
+                starsString.append(value).append(",");
+            }
             bw.write("Player1Color:" + Options.player1Color
                     + "\nPlayer2Color:" + Options.player2Color
                     + "\nScreenHeight:" + Options.screenHeight
@@ -70,6 +74,7 @@ public class Saver {
                     + "\nSelectedLevel:" + LevelSelector.getSelectedLevel()
                     + "\nCoins:" + Globals.totalCoinsCollected
                     + "\nScore:" + Globals.totalScore
+                    + "\nStars:" + starsString
                     + "\n");
             bw.newLine();
             bw.close();
@@ -183,10 +188,20 @@ public class Saver {
                 line = line.replaceAll("Coins:","");
                 Globals.totalCoinsCollected = Integer.parseInt(line);
             } else if (line.contains("Score:")) {
-                line = line.replaceAll("Score:","");
+                line = line.replaceAll("Score:", "");
                 Globals.totalScore = Integer.parseInt(line);
-            } else {
-                System.out.println("Couldnt find the purpose of: " + line);
+            } else if (line.contains("Stars:")) {
+                line = line.replaceAll("Stars:","");
+                String[] values = line.split(",");
+                int i = 0;
+                for (String value : values) {
+                    if (value.equals("true")) {
+                        Globals.starsCollected[i] = true;
+                    } else {
+                        Globals.starsCollected[i] = false;
+                    }
+                    i ++;
+                }
             }
         }
         dataReader.close();
