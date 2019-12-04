@@ -23,7 +23,7 @@ public class Background extends Actor {
      * @param level     The level this object is made for
      */
     Background(GreenfootImage image, int level) {
-        if (level == 0 || level > 3 && !(level == 10)) {
+        if (level == 0 || level > 3 && !(level >= 10 && level <= 12)) {
             image.scale(Options.screenWidth, Options.screenHeight);
         }
         setImage(image);
@@ -34,7 +34,7 @@ public class Background extends Actor {
      * Updates the location of the background every frame to make it static or move along based on what level
      */
     public void act() {
-        if (level > 0 && (level <= 3 || level == 10)) {
+        if (level > 0 && (level <= 3 || (level >= 10 && level <= 12))) {
             if (!started) {
                 getImage().scale(Globals.worldWidth, Globals.worldHeight);
                 setLocation(Globals.worldWidth / 2 - Camera.scrolledX, Globals.worldHeight / 2 - Camera.scrolledY);
