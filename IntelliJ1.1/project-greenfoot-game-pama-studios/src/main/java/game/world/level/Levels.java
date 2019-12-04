@@ -257,16 +257,26 @@ public class Levels extends World
             case 11:
                 //Spawn location (checkpoint 0)
                 checkpointX.add(2);
-                checkpointY.add(9);
+                checkpointY.add(29);
+                //checkpoint 1
+                checkpointX.add(36);
+                checkpointY.add(34);
+                //checkpoint 2
+                checkpointX.add(61);
+                checkpointY.add(43);
                 break;
             case 12:
                 checkpointX.add(2);
-                checkpointY.add(7);
+                checkpointY.add(13);
+                //checkpoint 1
+                checkpointX.add(45);
+                checkpointY.add(13);
                 break;
+
             case 13:
                 //Spawn location (checkpoint 0)
                 checkpointX.add(2);
-                checkpointY.add(8);
+                checkpointY.add(29);
                 break;
             case 14:
                 //Spawn location (checkpoint 0)
@@ -325,6 +335,12 @@ public class Levels extends World
                 return 0;
             case 5:
                 return 3;
+            case 10:
+                return 2;
+            case 11:
+                return 2;
+            case 12:
+                return 1;
             default:
                 return 0;
         }
