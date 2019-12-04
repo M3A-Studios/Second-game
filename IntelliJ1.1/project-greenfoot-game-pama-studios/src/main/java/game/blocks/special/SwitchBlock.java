@@ -16,9 +16,6 @@ public class SwitchBlock extends Actor
     private GreenfootImage blueBlockOn = new GreenfootImage("359.png");
     private GreenfootImage blueBlockOff = new GreenfootImage("360.png");
 
-    //Sound effect
-    static GreenfootSound onoff = new GreenfootSound("soundeffects/on-off.wav");
-
     private int activationTimer = 30;
     public static boolean switchActive = false;
     public String purpose = "block";
@@ -99,12 +96,8 @@ public class SwitchBlock extends Actor
             } else {
                 if (active) {
                     block.setImage(switchOn);
-                    onoff.setVolume(Options.soundeffectVolume);
-                    onoff.play();
                 } else {
                     block.setImage(switchOff);
-                    onoff.setVolume(Options.soundeffectVolume);
-                    onoff.play();
                 }
             }
         }
