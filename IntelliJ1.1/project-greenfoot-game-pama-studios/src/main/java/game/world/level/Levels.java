@@ -253,7 +253,7 @@ public class Levels extends World
                 checkpointX.add(1);
                 checkpointY.add(4);
                 checkpointX.add(47);
-                checkpointY.add(4);
+                checkpointY.add(8);
                 break;
             case 10:
                 checkpointX.add(1);

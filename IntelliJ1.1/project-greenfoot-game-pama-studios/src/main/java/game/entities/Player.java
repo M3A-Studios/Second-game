@@ -37,6 +37,7 @@ public class Player extends Physics {
     public static boolean dead;
     private int dyingAnimation;
     public static boolean won;
+    private static boolean finished;
     private int endingAnimation;
     private String holding;
     private int dropCooldown = 60;
@@ -103,6 +104,7 @@ public class Player extends Physics {
         this.canTakeDmg = true;
         LockedBlocks.blocksToUnlock = new ArrayList<LockedBlocks>();
         won = false;
+        finished = false;
         dead = false;
 
         String color;
@@ -197,7 +199,10 @@ public class Player extends Physics {
             winConfetti();
             updateGravity();
             finish.setVolume(Options.soundeffectVolume); //Laat niet meerdere keren afspelen
-            finish.play();
+            if (!finished) {
+                finished = true;
+                finish.play();
+            }
         } else {
             deadAnimation();
         }
@@ -331,18 +336,22 @@ public class Player extends Physics {
         }
         if (onLadder()) {
             if ((Greenfoot.isKeyDown(Options.player1Up) && player == 1) || (Greenfoot.isKeyDown(Options.player2Up) && player == 2)) {
-                setRelativeLocation(0, -3);
-                animateMovement("Ladder");
+                if (!willBumpHead(-3)) {
+                    setRelativeLocation(0, -3);
+                    animateMovement("Ladder");
+                }
             }
             if (((Greenfoot.isKeyDown(Options.player1Down) && player == 1) || (Greenfoot.isKeyDown(Options.player2Down) && player == 2)) && !onGround()) {
-                setRelativeLocation(0, 3);
-                animateMovement("Ladder");
+                if (!onGround(3)) {
+                    setRelativeLocation(0, 3);
+                    animateMovement("Ladder");
+                }
             }
         }
         if (Greenfoot.isKeyDown("k")) {
             health = health - 6;
         }
-        if (Greenfoot.isKeyDown(Options.dropItem)) {
+        if (Greenfoot.isKeyDown(Options.player1DropItem) || Greenfoot.isKeyDown(Options.player2DropItem)) {
             Inventory();
         }
     }
@@ -386,10 +395,14 @@ public class Player extends Physics {
 
         if (lever != null) {
             if (popup == null) {
-                popup = new PopUp(Options.interact);
+                if (player == 1) {
+                    popup = new PopUp(Options.player1Interact);
+                } else {
+                    popup = new PopUp(Options.player2Interact);
+                }
             }
             getWorld().addObject(popup, lever.getX(), lever.getY() - Options.blockSize * 2);
-            if (Greenfoot.isKeyDown(Options.interact)) { //Sets image if key down
+            if ((Greenfoot.isKeyDown(Options.player1Interact) && player == 1) || (Greenfoot.isKeyDown(Options.player2Interact) && player == 2))  { //Sets image if key down
                 popup.getImage().scale((int) (Options.blockSize * 1.2), (int) (Options.blockSize * 1.2));
             } else {
                 popup.getImage().scale((int) (Options.blockSize * 1.4), (int) (Options.blockSize * 1.4));
@@ -551,7 +564,7 @@ public class Player extends Physics {
 
     private void holdObject(){
         moveToPlayer();
-        if(Greenfoot.isKeyDown(Options.interact)){
+        if((Greenfoot.isKeyDown(Options.player1Interact) && player == 1) || (Greenfoot.isKeyDown(Options.player2Interact) && player == 2)){
             if(isTouching(Bomb.class) && holding.equals("")){
                 Bomb bomb = (Bomb) getOneIntersectingObject(Bomb.class);
                 if (bomb != null) {
@@ -574,7 +587,7 @@ public class Player extends Physics {
         }
     }
     private void dropObject(){
-        if(Greenfoot.isKeyDown(Options.dropObject)){
+        if((Greenfoot.isKeyDown(Options.player1DropObject) && player == 1) || (Greenfoot.isKeyDown(Options.player2DropObject) && player == 2)) {
             if(holding.equals("Bomb")) {
                 Bomb bomb = (Bomb) getOneIntersectingObject(Bomb.class);
                 if (bomb != null) {

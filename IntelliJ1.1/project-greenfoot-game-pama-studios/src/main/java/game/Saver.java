@@ -61,9 +61,13 @@ public class Saver {
                     + "\nPlayer2UpButton:" + Options.player2Up
                     + "\nPlayer2DownButton:" + Options.player2Down
                     + "\nPlayer2RightButton:" + Options.player2Right
-                    + "\nInteractButton:" + Options.interact
-                    + "\nDropItemButton:" + Options.dropItem
-                    + "\nDropObjectButton:" + Options.dropObject
+                    //interact buttons
+                    + "\nPlayer1InteractButton:" + Options.player1Interact
+                    + "\nPlayer1DropItemButton:" + Options.player1DropItem
+                    + "\nPlayer1DropObjectButton:" + Options.player1DropObject
+                    + "\nPlayer2InteractButton:" + Options.player2Interact
+                    + "\nPlayer2DropItemButton:" + Options.player2DropItem
+                    + "\nPlayer2DropObjectButton:" + Options.player2DropObject
                     //Store
                     + "\nDoubleJumpUnlocked:" + Options.doubleJumpUnlocked
                     + "\nSpeedBoostUnlocked:" + Options.speedBoostUnlocked
@@ -75,6 +79,9 @@ public class Saver {
                     + "\nCoins:" + Globals.totalCoinsCollected
                     + "\nScore:" + Globals.totalScore
                     + "\nStars:" + starsString
+                    //Sounds
+                    + "\nMusic:" + Options.musicVolume
+                    + "\nEffects:" + Options.soundeffectVolume
                     + "\n");
             bw.newLine();
             bw.close();
@@ -145,15 +152,24 @@ public class Saver {
             } else if (line.contains("Player2JumpButton:")) {
                 line = line.replaceAll("Player2JumpButton:","");
                 Options.player2Jump = line;
-            } else if (line.contains("InteractButton:")) {
-                line = line.replaceAll("InteractButton:", "");
-                Options.interact = line;
-            } else if (line.contains("DropItemButton:")) {
-                line = line.replaceAll("DropItemButton:", "");
-                Options.dropItem = line;
-            } else if (line.contains("DropObjectButton:")) {
-                line = line.replaceAll("DropObjectButton:", "");
-                Options.dropObject = line;
+            } else if (line.contains("Player1InteractButton:")) {
+                line = line.replaceAll("Player1InteractButton:", "");
+                Options.player1Interact = line;
+            } else if (line.contains("Player1DropItemButton:")) {
+                line = line.replaceAll("Player1DropItemButton:", "");
+                Options.player1DropItem = line;
+            } else if (line.contains("Player1DropObjectButton:")) {
+                line = line.replaceAll("Player1DropObjectButton:", "");
+                Options.player1DropObject = line;
+            } else if (line.contains("Player2InteractButton:")) {
+                line = line.replaceAll("Player2InteractButton:", "");
+                Options.player2Interact = line;
+            } else if (line.contains("Player2DropItemButton:")) {
+                line = line.replaceAll("Player2DropItemButton:", "");
+                Options.player2DropItem = line;
+            } else if (line.contains("Player2DropObjectButton:")) {
+                line = line.replaceAll("Player2DropObjectButton:", "");
+                Options.player2DropObject = line;
             } else if (line.contains("DoubleJumpUnlocked:")) {
                 if (line.contains("true")) {
                     Options.doubleJumpUnlocked = true;
@@ -202,6 +218,12 @@ public class Saver {
                     }
                     i ++;
                 }
+            } else if (line.contains("Music:")) {
+                line = line.replaceAll("Music:","");
+                Options.musicVolume = Integer.parseInt(line);
+            } else if (line.contains("Effects:")) {
+                line = line.replaceAll("Effects:","");
+                Options.soundeffectVolume = Integer.parseInt(line);
             }
         }
         dataReader.close();

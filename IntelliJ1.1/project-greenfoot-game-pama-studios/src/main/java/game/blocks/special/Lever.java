@@ -67,7 +67,7 @@ public class Lever extends Blocks {
      * Method for switching the lever when holding down the interact button
      */
     private void leverSystem() {
-        if (Greenfoot.isKeyDown(Options.interact)  && getOneIntersectingObject(Player.class) != null) {
+        if (Greenfoot.isKeyDown(Options.player1Interact)  && getOneIntersectingObject(Player.class) != null) {
             animationTimer ++;
             if (cooldownTimer <= 0) {
                 animationTimer = 0;

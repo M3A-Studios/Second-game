@@ -19,7 +19,6 @@ public class Blade extends Physics {
     int maTime = 0;
 
     public Blade(int ID) {
-        System.out.println("bld");
         blade2.scale(bladeWidth / 2, bladeHeight / 2);
         blade1.scale(bladeWidth / 2, bladeHeight / 2);
         setImage(blade1);

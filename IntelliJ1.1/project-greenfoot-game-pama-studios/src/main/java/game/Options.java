@@ -23,9 +23,13 @@ public class Options
     public static String player2Right = "right";
     public static String player2Jump = "control";
 
-    public static String interact = "E";
-    public static String dropItem = "Q";
-    public static String dropObject = "Z";
+    public static String player1Interact = "E";
+    public static String player1DropItem = "Q";
+    public static String player1DropObject = "Z";
+
+    public static String player2Interact = "I";
+    public static String player2DropItem = "O";
+    public static String player2DropObject = "P";
     //Store stuff
     public static boolean doubleJumpUnlocked = false;
     public static boolean speedBoostUnlocked = false;
@@ -37,6 +41,6 @@ public class Options
     public static int blockSize = screenWidth / 20;
 
     //Volume
-    public static int musicVolume = 50; //40
-    public static int soundeffectVolume = 100;
+    public static int musicVolume = 0; //40
+    public static int soundeffectVolume = 70;
 }

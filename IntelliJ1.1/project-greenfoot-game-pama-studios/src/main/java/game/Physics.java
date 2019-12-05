@@ -140,13 +140,16 @@ public class Physics extends Actor
         }
     }
 
+    protected boolean onGround() {
+        return onGround(vSpeed);
+    }
     /**
      * Check if in the next frame the player will hit the ground if we make them fall by the gravity + 1 pixel
      * returns true or false
      *
      * @return          returns true or false based on if the player is hitting the ground (or just standing on it)
      */
-    protected boolean onGround() {
+    protected boolean onGround(double vSpeed) {
         boolean onGround = false;
         if (getOneObjectAtOffset(getImage().getWidth() / -2, getImage().getHeight() / 2 + (int) Math.ceil(vSpeed), Solid.class) != null ||
                 getOneObjectAtOffset(0, getImage().getHeight() / 2 + (int) Math.ceil(vSpeed), Solid.class) != null ||
@@ -244,12 +247,15 @@ public class Physics extends Actor
         return onGround;
     }
 
+    protected boolean willBumpHead() {
+        return willBumpHead(vSpeed);
+    }
     /**
      * Checks if in the next frame the player will hit his head against a solid block above him.
      *
      * @return
      */
-    private boolean willBumpHead(){
+    protected boolean willBumpHead(double vSpeed){
         boolean willHitSolid = false;
         boolean willHitLock = false;
         willHitSolid = getOneObjectAtOffset(getImage().getWidth() / -2, getImage().getHeight() / -2 + (int) Math.floor(vSpeed), Solid.class) != null ||
