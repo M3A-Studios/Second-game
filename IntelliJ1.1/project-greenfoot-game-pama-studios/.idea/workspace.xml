@@ -5,6 +5,7 @@
     <option name="CUSTOM_SCOPE_NAME" value="game package scope" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="7c4615df-7eab-44ce-b708-99aaf69c1c72" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -27,6 +28,9 @@
       <change beforePath="$PROJECT_DIR$/target/classes/tilemap/level11.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tilemap/level11.tmx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tilemap/level7.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tilemap/level7.tmx" afterDir="false" />
     </list>
+=======
+    <list default="true" id="7c4615df-7eab-44ce-b708-99aaf69c1c72" name="Default Changelist" comment="" />
+>>>>>>> Stashed changes
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -271,12 +275,21 @@
     </state>
     <state x="831" y="145" width="900" height="731" key="SettingsEditor/0.32.1920.1048/1920.0.1920.1080@0.32.1920.1048" timestamp="1574938667916" />
     <state x="464" y="190" width="992" height="731" key="SettingsEditor/0.32.3840.1048@0.32.3840.1048" timestamp="1574936427163" />
+<<<<<<< Updated upstream
     <state x="624" y="246" key="run.anything.popup" timestamp="1575544369192">
       <screen x="0" y="27" width="3840" height="1053" />
     </state>
     <state x="624" y="246" key="run.anything.popup/0.27.3840.1053@0.27.3840.1053" timestamp="1575544369192" />
     <state x="1246" y="237" width="1344" height="678" key="search.everywhere.popup" timestamp="1575543597088">
       <screen x="0" y="27" width="3840" height="1053" />
+=======
+    <state x="371" y="125" width="1168" height="775" key="new project wizard" timestamp="1575495683769">
+      <screen x="0" y="32" width="1920" height="961" />
+    </state>
+    <state x="371" y="125" width="1168" height="775" key="new project wizard/0.32.1920.961@0.32.1920.961" timestamp="1575495683769" />
+    <state x="623" y="237" width="672" height="678" key="search.everywhere.popup" timestamp="1575457003598">
+      <screen x="0" y="27" width="1920" height="1053" />
+>>>>>>> Stashed changes
     </state>
     <state x="1246" y="237" width="1344" height="678" key="search.everywhere.popup/0.27.3840.1053@0.27.3840.1053" timestamp="1575543597088" />
     <state x="623" y="237" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1575457003598" />
