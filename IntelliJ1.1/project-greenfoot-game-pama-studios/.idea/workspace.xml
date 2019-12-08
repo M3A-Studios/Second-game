@@ -5,32 +5,13 @@
     <option name="CUSTOM_SCOPE_NAME" value="game package scope" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< Updated upstream
     <list default="true" id="7c4615df-7eab-44ce-b708-99aaf69c1c72" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/save.txt" beforeDir="false" afterPath="$PROJECT_DIR$/save.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Music.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Music.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/Options.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Options.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Physics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Physics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Saver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Saver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/blocks/special/Lever.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/blocks/special/Lever.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/entities/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/entities/enemies/Blade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/entities/enemies/Blade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/world/level/Levels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/world/level/Levels.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/tilemap/level1.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tilemap/level1.tmx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/tilemap/level11.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tilemap/level11.tmx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/tilemap/level7.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tilemap/level7.tmx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/tilemap/level9.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tilemap/level9.tmx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Physics.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Physics.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/entities/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/entities/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/world/level/Levels.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/world/level/Levels.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tilemap/level1.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tilemap/level1.tmx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tilemap/level11.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tilemap/level11.tmx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tilemap/level7.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tilemap/level7.tmx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Options.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Options.class" afterDir="false" />
     </list>
-=======
-    <list default="true" id="7c4615df-7eab-44ce-b708-99aaf69c1c72" name="Default Changelist" comment="" />
->>>>>>> Stashed changes
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -178,8 +159,8 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1575537385680" />
-    <state width="1874" height="380" key="GridCell.Tab.0.bottom" timestamp="1575544723597">
-      <screen x="0" y="27" width="3840" height="1053" />
+    <state width="1878" height="143" key="GridCell.Tab.0.bottom" timestamp="1575843265910">
+      <screen x="0" y="32" width="1920" height="961" />
     </state>
     <state width="1874" height="312" key="GridCell.Tab.0.bottom/0.27.1920.1004@0.27.1920.1004" timestamp="1575469041724" />
     <state width="1874" height="380" key="GridCell.Tab.0.bottom/0.27.3840.1053@0.27.3840.1053" timestamp="1575544723597" />
@@ -187,15 +168,15 @@
     <state width="1878" height="161" key="GridCell.Tab.0.bottom/0.32.1920.1048/1920.0.1920.1080@0.32.1920.1048" timestamp="1575469629515" />
     <state width="1878" height="128" key="GridCell.Tab.0.bottom/0.32.1920.1048/1920.0.1920.1080@1920.0.1920.1080" timestamp="1574942169742" />
     <state width="1878" height="161" key="GridCell.Tab.0.bottom/0.32.1920.1048@0.32.1920.1048" timestamp="1575359575811" />
-    <state width="1878" height="143" key="GridCell.Tab.0.bottom/0.32.1920.961@0.32.1920.961" timestamp="1575495529780" />
+    <state width="1878" height="143" key="GridCell.Tab.0.bottom/0.32.1920.961@0.32.1920.961" timestamp="1575843265910" />
     <state width="1878" height="152" key="GridCell.Tab.0.bottom/0.32.3840.1048@0.32.3840.1048" timestamp="1575277360342" />
     <state width="1874" height="381" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1575468618725" />
     <state width="1874" height="273" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.27.1920.1056@0.27.1920.1056" timestamp="1575313344101" />
     <state width="1344" height="273" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.27.1920.1056@1920.0.1920.1080" timestamp="1575313972385" />
     <state width="1344" height="273" key="GridCell.Tab.0.bottom/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1575314358247" />
     <state width="1807" height="369" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1575538696127" />
-    <state width="1874" height="380" key="GridCell.Tab.0.center" timestamp="1575544723595">
-      <screen x="0" y="27" width="3840" height="1053" />
+    <state width="1878" height="143" key="GridCell.Tab.0.center" timestamp="1575843265909">
+      <screen x="0" y="32" width="1920" height="961" />
     </state>
     <state width="1874" height="312" key="GridCell.Tab.0.center/0.27.1920.1004@0.27.1920.1004" timestamp="1575469041722" />
     <state width="1874" height="380" key="GridCell.Tab.0.center/0.27.3840.1053@0.27.3840.1053" timestamp="1575544723595" />
@@ -203,15 +184,15 @@
     <state width="1878" height="161" key="GridCell.Tab.0.center/0.32.1920.1048/1920.0.1920.1080@0.32.1920.1048" timestamp="1575469629515" />
     <state width="1878" height="128" key="GridCell.Tab.0.center/0.32.1920.1048/1920.0.1920.1080@1920.0.1920.1080" timestamp="1574942169742" />
     <state width="1878" height="161" key="GridCell.Tab.0.center/0.32.1920.1048@0.32.1920.1048" timestamp="1575359575810" />
-    <state width="1878" height="143" key="GridCell.Tab.0.center/0.32.1920.961@0.32.1920.961" timestamp="1575495529779" />
+    <state width="1878" height="143" key="GridCell.Tab.0.center/0.32.1920.961@0.32.1920.961" timestamp="1575843265909" />
     <state width="1878" height="152" key="GridCell.Tab.0.center/0.32.3840.1048@0.32.3840.1048" timestamp="1575277360341" />
     <state width="1874" height="381" key="GridCell.Tab.0.center/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1575468618725" />
     <state width="1874" height="273" key="GridCell.Tab.0.center/1920.0.1920.1080/0.27.1920.1056@0.27.1920.1056" timestamp="1575313344101" />
     <state width="1344" height="273" key="GridCell.Tab.0.center/1920.0.1920.1080/0.27.1920.1056@1920.0.1920.1080" timestamp="1575313972385" />
     <state width="1344" height="273" key="GridCell.Tab.0.center/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1575314358247" />
     <state width="1807" height="369" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1575538696126" />
-    <state width="1874" height="380" key="GridCell.Tab.0.left" timestamp="1575544723595">
-      <screen x="0" y="27" width="3840" height="1053" />
+    <state width="1878" height="143" key="GridCell.Tab.0.left" timestamp="1575843265909">
+      <screen x="0" y="32" width="1920" height="961" />
     </state>
     <state width="1874" height="312" key="GridCell.Tab.0.left/0.27.1920.1004@0.27.1920.1004" timestamp="1575469041721" />
     <state width="1874" height="380" key="GridCell.Tab.0.left/0.27.3840.1053@0.27.3840.1053" timestamp="1575544723595" />
@@ -219,15 +200,15 @@
     <state width="1878" height="161" key="GridCell.Tab.0.left/0.32.1920.1048/1920.0.1920.1080@0.32.1920.1048" timestamp="1575469629515" />
     <state width="1878" height="128" key="GridCell.Tab.0.left/0.32.1920.1048/1920.0.1920.1080@1920.0.1920.1080" timestamp="1574942169742" />
     <state width="1878" height="161" key="GridCell.Tab.0.left/0.32.1920.1048@0.32.1920.1048" timestamp="1575359575810" />
-    <state width="1878" height="143" key="GridCell.Tab.0.left/0.32.1920.961@0.32.1920.961" timestamp="1575495529779" />
+    <state width="1878" height="143" key="GridCell.Tab.0.left/0.32.1920.961@0.32.1920.961" timestamp="1575843265909" />
     <state width="1878" height="152" key="GridCell.Tab.0.left/0.32.3840.1048@0.32.3840.1048" timestamp="1575277360340" />
     <state width="1874" height="381" key="GridCell.Tab.0.left/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1575468618725" />
     <state width="1874" height="273" key="GridCell.Tab.0.left/1920.0.1920.1080/0.27.1920.1056@0.27.1920.1056" timestamp="1575313344101" />
     <state width="1344" height="273" key="GridCell.Tab.0.left/1920.0.1920.1080/0.27.1920.1056@1920.0.1920.1080" timestamp="1575313972385" />
     <state width="1344" height="273" key="GridCell.Tab.0.left/1920.0.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1575314358245" />
     <state width="1807" height="369" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1575538696125" />
-    <state width="1874" height="380" key="GridCell.Tab.0.right" timestamp="1575544723596">
-      <screen x="0" y="27" width="3840" height="1053" />
+    <state width="1878" height="143" key="GridCell.Tab.0.right" timestamp="1575843265910">
+      <screen x="0" y="32" width="1920" height="961" />
     </state>
     <state width="1874" height="312" key="GridCell.Tab.0.right/0.27.1920.1004@0.27.1920.1004" timestamp="1575469041723" />
     <state width="1874" height="380" key="GridCell.Tab.0.right/0.27.3840.1053@0.27.3840.1053" timestamp="1575544723596" />
@@ -235,7 +216,7 @@
     <state width="1878" height="161" key="GridCell.Tab.0.right/0.32.1920.1048/1920.0.1920.1080@0.32.1920.1048" timestamp="1575469629515" />
     <state width="1878" height="128" key="GridCell.Tab.0.right/0.32.1920.1048/1920.0.1920.1080@1920.0.1920.1080" timestamp="1574942169742" />
     <state width="1878" height="161" key="GridCell.Tab.0.right/0.32.1920.1048@0.32.1920.1048" timestamp="1575359575811" />
-    <state width="1878" height="143" key="GridCell.Tab.0.right/0.32.1920.961@0.32.1920.961" timestamp="1575495529780" />
+    <state width="1878" height="143" key="GridCell.Tab.0.right/0.32.1920.961@0.32.1920.961" timestamp="1575843265910" />
     <state width="1878" height="152" key="GridCell.Tab.0.right/0.32.3840.1048@0.32.3840.1048" timestamp="1575277360341" />
     <state width="1874" height="381" key="GridCell.Tab.0.right/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1575468618725" />
     <state width="1874" height="273" key="GridCell.Tab.0.right/1920.0.1920.1080/0.27.1920.1056@0.27.1920.1056" timestamp="1575313344101" />
@@ -275,21 +256,16 @@
     </state>
     <state x="831" y="145" width="900" height="731" key="SettingsEditor/0.32.1920.1048/1920.0.1920.1080@0.32.1920.1048" timestamp="1574938667916" />
     <state x="464" y="190" width="992" height="731" key="SettingsEditor/0.32.3840.1048@0.32.3840.1048" timestamp="1574936427163" />
-<<<<<<< Updated upstream
-    <state x="624" y="246" key="run.anything.popup" timestamp="1575544369192">
-      <screen x="0" y="27" width="3840" height="1053" />
-    </state>
-    <state x="624" y="246" key="run.anything.popup/0.27.3840.1053@0.27.3840.1053" timestamp="1575544369192" />
-    <state x="1246" y="237" width="1344" height="678" key="search.everywhere.popup" timestamp="1575543597088">
-      <screen x="0" y="27" width="3840" height="1053" />
-=======
     <state x="371" y="125" width="1168" height="775" key="new project wizard" timestamp="1575495683769">
       <screen x="0" y="32" width="1920" height="961" />
     </state>
     <state x="371" y="125" width="1168" height="775" key="new project wizard/0.32.1920.961@0.32.1920.961" timestamp="1575495683769" />
+    <state x="624" y="246" key="run.anything.popup" timestamp="1575544369192">
+      <screen x="0" y="27" width="3840" height="1053" />
+    </state>
+    <state x="624" y="246" key="run.anything.popup/0.27.3840.1053@0.27.3840.1053" timestamp="1575544369192" />
     <state x="623" y="237" width="672" height="678" key="search.everywhere.popup" timestamp="1575457003598">
       <screen x="0" y="27" width="1920" height="1053" />
->>>>>>> Stashed changes
     </state>
     <state x="1246" y="237" width="1344" height="678" key="search.everywhere.popup/0.27.3840.1053@0.27.3840.1053" timestamp="1575543597088" />
     <state x="623" y="237" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1575457003598" />

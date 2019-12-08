@@ -10,7 +10,7 @@ import greenfoot.GreenfootSound;
 
 public class Music extends Actor {
 
-    private static GreenfootSound music = new GreenfootSound("soundeffects/Music/Menu.wav");
+    private static GreenfootSound music = new GreenfootSound("soundeffects/Music/Main theme.wav");
     private static boolean started = false;
     static int vTime = 0;
     static int holdVolume;
@@ -45,7 +45,7 @@ public class Music extends Actor {
             } else if (getWorld() instanceof Store) {
                 music = new GreenfootSound("soundeffects/Music/Wii.wav");
             } else {
-                music = new GreenfootSound("soundeffects/Music/Wii.wav");
+                music = new GreenfootSound("soundeffects/Music/Main theme.wav");
             }
             if (music != null && !music.isPlaying()) {
                 music.playLoop();
