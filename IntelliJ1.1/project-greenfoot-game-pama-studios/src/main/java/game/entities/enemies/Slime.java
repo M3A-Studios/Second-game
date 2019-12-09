@@ -4,6 +4,8 @@ import greenfoot.GreenfootImage;
 import game.Options;
 import game.Physics;
 
+import java.util.ArrayList;
+
 public class Slime extends Physics {
     static boolean isMirrored = false;
     //Menu slime images
@@ -47,6 +49,8 @@ public class Slime extends Physics {
     private int pinkJump = 0;
     private String color;
     private boolean isMenuSlime;
+
+    ArrayList<GreenfootImage> Slime = new ArrayList<>();
 
     public Slime(int ID) {
         this(ID, false);
