@@ -259,16 +259,16 @@ public class Levels extends World
                 checkpointX.add(1);
                 checkpointY.add(8);
                 //check 1
-                checkpointX.add(47);
-                checkpointY.add(8);
+                checkpointX.add(59);
+                checkpointY.add(23);
                 break;
             case 11:
                 //Spawn location (checkpoint 0)
                 checkpointX.add(2);
                 checkpointY.add(29);
                 //checkpoint 1
-                checkpointX.add(36);
-                checkpointY.add(34);
+                checkpointX.add(49);
+                checkpointY.add(33);
                 //checkpoint 2
                 checkpointX.add(61);
                 checkpointY.add(43);

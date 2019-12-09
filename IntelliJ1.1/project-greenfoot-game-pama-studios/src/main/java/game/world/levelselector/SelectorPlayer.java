@@ -242,7 +242,7 @@ public class SelectorPlayer extends Physics {
                 select.setVolume(Options.soundeffectVolume);
                 select.play();
             }
-            if (movingTo != LevelSelector.getSelectedLevel() && movingTo <= Globals.levelsUnlocked && movingDir != null) {
+            if (movingTo != LevelSelector.getSelectedLevel() && movingTo <= Globals.levelsUnlocked && movingTo < 12 && movingDir != null) {
                 moving = true;
                 animationBlocks = movingDir.length;
                 animatedTime = 0;

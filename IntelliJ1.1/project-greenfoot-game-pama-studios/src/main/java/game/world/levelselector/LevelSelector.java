@@ -128,8 +128,8 @@ public class LevelSelector extends World
      * does this for all 15 levels by checking Globals.levelsUnlocked vs what index it's at.
      */
     private void renderLocks() {
-        for (int i = 0; i < 15; i++) { //loop to check all levels
-            if (i > Globals.levelsUnlocked) { //if this level is unlocked
+        for (int i = 0; i < 16; i++) { //loop to check all levels
+            if (i > Globals.levelsUnlocked || i > 12) { //if this level is unlocked
                 addObject(new LevelLock(),                                                  //actor
                         (int) (getLevelX(i) * Options.blockSize),                           //x location in proper cords from levelX
                         (int) (getLevelY(i) * Options.blockSize  + Options.blockSize / 4)); //y location in proper cords and offset from levelY

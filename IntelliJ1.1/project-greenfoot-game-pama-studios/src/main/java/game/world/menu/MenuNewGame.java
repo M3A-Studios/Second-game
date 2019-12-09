@@ -48,7 +48,7 @@ public class MenuNewGame extends Actor {
             Globals.totalCoinsCollected = 0;
             Globals.totalScore = 0;
             Globals.levelScore = 0;
-            //Globals.levelsUnlocked = 1;
+            Globals.levelsUnlocked = 1;
             Greenfoot.setWorld(new PlayerSelectorScreen());
             select.setVolume(Options.soundeffectVolume);
             select.play();
