@@ -43,7 +43,7 @@ public class Music extends Actor {
             } else if (getWorld() instanceof Menu) {
                 music = new GreenfootSound("soundeffects/Music/Main theme.wav");
             } else if (getWorld() instanceof Store) {
-                music = new GreenfootSound("soundeffects/Music/Wii.wav");
+                music = new GreenfootSound("soundeffects/Music/Main theme.wav");
             } else {
                 music = new GreenfootSound("soundeffects/Music/Main theme.wav");
             }
