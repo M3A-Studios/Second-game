@@ -47,6 +47,9 @@ public class Player extends Physics {
     public String lastDroppedItem;
     public int lastItemCD = 30;
     private static boolean player2exists;
+    public boolean isHoldingTorch;
+    public boolean canShoot;
+    private int shootTimer;
 
     //sizes for the images
     private int playerWidth = Options.blockSize / 20 * 19;          //0.95 block
@@ -102,6 +105,8 @@ public class Player extends Physics {
         this.holding = "";
         this.lastDroppedItem = "";
         this.canTakeDmg = true;
+        this.isHoldingTorch = false;
+        this.canShoot = false;
         LockedBlocks.blocksToUnlock = new ArrayList<LockedBlocks>();
         won = false;
         finished = false;
@@ -191,6 +196,8 @@ public class Player extends Physics {
             dmgTimer();
             hiddenBlocks();
             CollectStar();
+            shootFireBall();
+            shootTimer();
         } else if (won) {
             winAnimation();
             isTouchingObject();
@@ -584,6 +591,16 @@ public class Player extends Physics {
                     }
                 }
             }
+            if(isTouching(Torch.class) && (!this.isHoldingTorch)){
+                Torch torch = (Torch) getOneIntersectingObject(Torch.class);
+                if (torch != null) {
+                    if (!torch.holding) {
+                        torch.holding = true;
+                        torch.setLocation(this.getX(), this.getY());
+                        isHoldingTorch = true;
+                    }
+                }
+            }
         }
     }
     private void dropObject(){
@@ -612,7 +629,7 @@ public class Player extends Physics {
         }
     }
     private void moveToPlayer() {
-        if(holding.length() > 0){
+        if(holding.length() > 0 || isHoldingTorch){
             Bomb bomb = (Bomb) getOneIntersectingObject(Bomb.class);
             if (bomb != null) {
                 if (bomb.holding && !bomb.dropped) {
@@ -623,6 +640,19 @@ public class Player extends Physics {
             if (jumppad != null) {
                 if (jumppad.holding) {
                     jumppad.setLocation(this.getX(), this.getY());
+                }
+            }
+            Torch torch = (Torch) getOneIntersectingObject(Torch.class);
+            if (torch != null) {
+                if (torch.holding) {
+                    if (movementDirection.equals("left")) { //Left//
+                        torch.setLocation(this.getX() - 30, this.getY());
+                        torch.setRotation(-25);
+                    }
+                    else {
+                        torch.setLocation(this.getX() + 30, this.getY());
+                        torch.setRotation(25);
+                    }
                 }
             }
         }
@@ -647,6 +677,16 @@ public class Player extends Physics {
                 this.getImage().setTransparency(255);
                 canTakeDmg = true;
                 dmgTimer = 0;
+            }
+        }
+    }
+
+    private void shootTimer(){
+        if(!canShoot){
+            shootTimer++;
+            if (shootTimer > 60) {
+                canShoot = true;
+                shootTimer = 0;
             }
         }
     }
@@ -744,7 +784,6 @@ public class Player extends Physics {
         }
     }
 
-
     private void Bee(){
         Bee bee = (Bee) getObjectBelowOfClass(Bee.class);
         Bee beedmg = (Bee) getOneIntersectingObject(Bee.class);
@@ -802,6 +841,38 @@ public class Player extends Physics {
             List<HiddenBlocks> HiddenBlocks = (List<HiddenBlocks>) (this.getObjectsInRange(Options.blockSize * 10, HiddenBlocks.class));
             for(HiddenBlocks block : HiddenBlocks) {
                     block.getImage().setTransparency(255);
+            }
+        }
+    }
+
+    private void shootFireBall(){
+        if(this.isHoldingTorch && this.canShoot) {
+            if ((Greenfoot.isKeyDown(Options.player1Shoot) && player == 1) || (Greenfoot.isKeyDown(Options.player2Shoot) && player == 2)) {
+                Torch torch = (Torch) getOneIntersectingObject(Torch.class);
+                if (torch != null) {
+                    if (!torch.shoot) {
+                        torch.shoot = true;
+                        torch.uses -= 1;
+                        this.canShoot = false;
+                    }
+                    if (torch.uses <= 0) {
+                        this.isHoldingTorch = false;
+                    }
+                }
+            }
+            if ((Greenfoot.isKeyDown(Options.player1Left) && player == 1) || (Greenfoot.isKeyDown(Options.player2Left) && player == 2)) {
+                Torch torch = (Torch) getOneIntersectingObject(Torch.class);
+                if (torch != null) {
+                    torch.direction = "left";
+                    System.out.println("left");
+                }
+            }
+            if ((Greenfoot.isKeyDown(Options.player1Right) && player == 1) || (Greenfoot.isKeyDown(Options.player2Right) && player == 2)) {
+                Torch torch = (Torch) getOneIntersectingObject(Torch.class);
+                if (torch != null) {
+                    torch.direction = "right";
+                    System.out.println("right");
+                }
             }
         }
     }

@@ -561,6 +561,10 @@ public class Levels extends World
                     {
                         nextBlock = new HiddenBlocks(worldMap[layer][position]);
                     }
+                    else if (check(Globals.torches, worldMap[layer][position]))
+                    {
+                        nextBlock = new Torch(worldMap[layer][position]);
+                    }
                     else if (check(Globals.star, worldMap[layer][position]))
                     {
                         nextBlock = new Star(worldMap[layer][position]);
@@ -600,10 +604,6 @@ public class Levels extends World
                     else if (check(Globals.coins, worldMap[layer][position]))
                     {
                         nextBlock = new Coins(worldMap[layer][position]);
-                    }
-                    else if (check(Globals.animatedObjects, worldMap[layer][position]))
-                    {
-                        nextBlock = new AnimatedObject(worldMap[layer][position]);
                     }
                     else if (check(Globals.spikes, worldMap[layer][position]))
                     {

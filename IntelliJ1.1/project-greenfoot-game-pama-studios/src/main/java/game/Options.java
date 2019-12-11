@@ -24,10 +24,12 @@ public class Options
     public static String player2Jump = "control";
 
     public static String player1Interact = "E";
+    public static String player1Shoot= "F";
     public static String player1DropItem = "Q";
     public static String player1DropObject = "Z";
 
     public static String player2Interact = "I";
+    public static String player2Shoot = "U";
     public static String player2DropItem = "O";
     public static String player2DropObject = "P";
     //Store stuff

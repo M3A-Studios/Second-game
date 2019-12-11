@@ -39,7 +39,6 @@ public class Globals
     public static Integer[] nonSolids = {210,211,212,215,216,217,218,219,232,233,234,235,236,237,238,239,240,269,270,
             260,265,266,267,268,290,291,345,346,347,348,349,354,355,356,357,306,307,308,309,310,311,312,313,314,322,323,
             324,325,326,327,328,329,330,339,340,345,346,347,348,349};
-    public static Integer[] animatedObjects = {252,253,254};
     public static Integer[] ladder = {220,221};
     public static Integer[] lever = {225,226,227};
     public static Integer[] coins = {165,166,167};
@@ -58,5 +57,6 @@ public class Globals
     public static Integer[] pswitch = {273,274,194}; //273 and 274 is the power switch, the rest of je IDs change when the switch is turned on.
     public static Integer[] switchBlock = {281,282,283,284,358,359};
     public static Integer[] hiddenBlocks = {352,353};
+    public static Integer[] torches = {252,253,254};
 }
 

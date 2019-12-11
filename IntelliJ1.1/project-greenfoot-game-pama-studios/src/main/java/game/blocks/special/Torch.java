@@ -1,14 +1,13 @@
 package game.blocks.special;
 
-import greenfoot.GreenfootImage;
-import game.blocks.Blocks;
 import game.Options;
 import game.Particles;
+import game.Physics;
+import greenfoot.GreenfootImage;
 
 import java.util.Random;
 
-
-public class AnimatedObject extends Blocks {
+public class Torch extends Physics {
 
     /** The first image for the torch animation */
     private static GreenfootImage Torch1 = new GreenfootImage("253.png");
@@ -17,14 +16,20 @@ public class AnimatedObject extends Blocks {
 
     /** The timer to switch between things in the animations */
     private int animationTimer = 0;
-    /** The type of object that this instance is */
-    private String type = "";
     /** Time in frames till when the next particle should be generated off this object */
     private int timeTillNewParticle;
-    
+
     private static Random rn = new Random();
     /** Randomly sets a value for how often a particle should be spawned from this object, being between 70 and 100. */
     private int randomParticleSpawnTime = rn.nextInt(30) + 70; //Makes particles spawn randomly
+    //Player is holding torch
+    public boolean holding;
+    //How many uses does it have
+    public int uses;
+    //Is it shooting
+    public boolean shoot;
+    //Direction where to shoot
+    public String direction;
 
     /**
      * Calls for the constructor in Blocks.java to set the image of the tile.
@@ -33,15 +38,15 @@ public class AnimatedObject extends Blocks {
      * Also scales the images of the animated objects to make sure theyre the same 1x1 grid size
      *
      * @param ID    used to get what file should be displayed as the image of this object
-     * @see Blocks#Blocks(int)
      */
-    public AnimatedObject(int ID){
-        super(ID);
-        if (ID == 253 || ID == 254) {
-            this.type = "torch";
-        }
+    public Torch(int ID){
         Torch1.scale((Options.blockSize),(Options.blockSize));
         Torch2.scale((Options.blockSize),(Options.blockSize));
+        setImage(Torch1);
+        holding = false;
+        uses = 3;
+        shoot = false;
+        this.direction = "right";
     }
 
     /**
@@ -50,19 +55,18 @@ public class AnimatedObject extends Blocks {
      */
     public void act() {
         UpdateObject();
+        shootFireBall();
     }
 
     /**
      * Updates the animated Object and makes it do whatever it has to do
      */
     private void UpdateObject() {
-        if (type.equals("torch")) { //if the object is a torch
-            animateTorch();
-            timeTillNewParticle -= 1;
-            if (timeTillNewParticle <= 0) { //Spawns new particle in
-                timeTillNewParticle = randomParticleSpawnTime;
-                torchParticle(); //Put particle here
-            }
+        animateTorch();
+        timeTillNewParticle -= 1;
+        if (timeTillNewParticle <= 0) { //Spawns new particle in
+            timeTillNewParticle = randomParticleSpawnTime;
+            torchParticle(); //Put particle here
         }
     }
 
@@ -90,6 +94,16 @@ public class AnimatedObject extends Blocks {
         int randomX = rn.nextInt(20) - 9;
         getWorld().addObject(torchFlame, getX() + randomX, getY() - Options.blockSize / 2);
     }
+
+    private void shootFireBall(){
+        fireBall fireball = new fireBall();
+        fireball.direction = this.direction;
+        if (holding && uses >= 0 && shoot){
+            getWorld().addObject(fireball, getX(), getY() - Options.blockSize / 15);
+            shoot = false;
+        }
+        else if (uses <= 0){
+            this.getWorld().removeObject(this);
+        }
+    }
 }
-
-
