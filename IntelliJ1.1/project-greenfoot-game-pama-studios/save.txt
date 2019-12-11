@@ -1,4 +1,4 @@
-Player1Color:Pink
+Player1Color:Green
 Player2Color:Blue
 ScreenHeight:720
 Player1LeftButton:A
@@ -19,11 +19,11 @@ DoubleJumpUnlocked:false
 SpeedBoostUnlocked:false
 BonusHeartUnlocked:false
 BonusTorchUseUnlocked:false
-LevelsUnlocked:2
+LevelsUnlocked:1
 SelectedLevel:1
-Coins:33
-Score:2330
-Stars:true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,
+Coins:0
+Score:0
+Stars:false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,
 Music:70
 Effects:70
 

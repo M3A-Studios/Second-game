@@ -11,7 +11,7 @@ import greenfoot.GreenfootSound;
  */
 public class Keys extends Actor {
 
-    /** The image for the blue key */
+    /** The image for the keys */
     public static GreenfootImage blueKey = new GreenfootImage("185.png");
     public static GreenfootImage greenKey = new GreenfootImage("186.png");
     public static GreenfootImage redKey = new GreenfootImage("187.png");
@@ -24,6 +24,7 @@ public class Keys extends Actor {
      *
      * @param ID refers to what the ID of the tile is, used for the image
      */
+    // set Images and scale them.
     public Keys(int ID) {
         if (ID == 185) {
             blueKey.scale(Options.blockSize, Options.blockSize);
@@ -42,6 +43,12 @@ public class Keys extends Actor {
     public void act() {
         pickUpKey();
     }
+
+    /*
+    *Check which keyimage is being touched by the player, and change the itemToPickup to that specific key
+    *Remove the key when it has been picked-up.
+     */
+
     private void pickUpKey()
     {
         Player player = (Player) getOneIntersectingObject(Player.class);
