@@ -2,6 +2,7 @@ package game.world.store;
 
 import game.Globals;
 import game.Options;
+import game.blocks.special.Torch;
 import greenfoot.Actor;
 import greenfoot.Greenfoot;
 import greenfoot.GreenfootImage;

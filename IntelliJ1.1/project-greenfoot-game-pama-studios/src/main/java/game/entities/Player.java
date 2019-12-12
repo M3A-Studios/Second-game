@@ -864,14 +864,12 @@ public class Player extends Physics {
                 Torch torch = (Torch) getOneIntersectingObject(Torch.class);
                 if (torch != null) {
                     torch.direction = "left";
-                    System.out.println("left");
                 }
             }
             if ((Greenfoot.isKeyDown(Options.player1Right) && player == 1) || (Greenfoot.isKeyDown(Options.player2Right) && player == 2)) {
                 Torch torch = (Torch) getOneIntersectingObject(Torch.class);
                 if (torch != null) {
                     torch.direction = "right";
-                    System.out.println("right");
                 }
             }
         }

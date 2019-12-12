@@ -13,9 +13,9 @@ public class fireBall extends Physics {
     public String direction;
 
     fireBall(){
-        this.started = false;
-        this.rotate = true;
-        this.direction = "right";
+        started = false;
+        rotate = true;
+        direction = "right";
         fireBall.scale(Options.blockSize * 2,Options.blockSize * 2);
         setImage(fireBall);
     }

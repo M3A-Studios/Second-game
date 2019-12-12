@@ -44,9 +44,15 @@ public class Torch extends Physics {
         Torch2.scale((Options.blockSize),(Options.blockSize));
         setImage(Torch1);
         holding = false;
-        uses = 3;
         shoot = false;
-        this.direction = "right";
+        direction = "right";
+        if (Options.bonusTorchUseUnlocked){
+            uses = 3;
+            System.out.println(uses);
+        } else {
+            uses = 2;
+            System.out.println(uses);
+        }
     }
 
     /**
@@ -97,13 +103,13 @@ public class Torch extends Physics {
 
     private void shootFireBall(){
         fireBall fireball = new fireBall();
-        fireball.direction = this.direction;
+        fireball.direction = direction;
         if (holding && uses >= 0 && shoot){
             getWorld().addObject(fireball, getX(), getY() - Options.blockSize / 15);
             shoot = false;
         }
         else if (uses <= 0){
-            this.getWorld().removeObject(this);
+            getWorld().removeObject(this);
         }
     }
 }

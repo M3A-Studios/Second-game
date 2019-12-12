@@ -21,8 +21,8 @@ BonusHeartUnlocked:false
 BonusTorchUseUnlocked:false
 LevelsUnlocked:2
 SelectedLevel:1
-Coins:33
-Score:2330
+Coins:2500
+Score:5000
 Stars:true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,
 Music:70
 Effects:70
