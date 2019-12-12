@@ -1,4 +1,4 @@
-Player1Color:Pink
+Player1Color:Green
 Player2Color:Blue
 ScreenHeight:720
 Player1LeftButton:A
@@ -19,7 +19,7 @@ DoubleJumpUnlocked:false
 SpeedBoostUnlocked:false
 BonusHeartUnlocked:false
 BonusTorchUseUnlocked:false
-LevelsUnlocked:2
+LevelsUnlocked:1
 SelectedLevel:1
 Coins:2500
 Score:5000

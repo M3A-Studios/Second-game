@@ -108,7 +108,7 @@ public class LockedBlocks extends Blocks {
     }
 
     /**
-     * Unlocks a block and makes a new list of all blocks to unlock in the next frames
+     * Checks which key has been picked up, Unlocks a block and makes a new list of all blocks to unlock in the next frames
      */
     public void unlockBlock()
     {

@@ -1,18 +1,19 @@
 package game.world.menu;
 
+import game.overlays.Inventory;
 import greenfoot.*;
 import game.Globals;
 import game.Options;
 import game.Saver;
 import game.world.levelselector.LevelSelector;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * The new game button in the main menu
  */
 public class MenuNewGame extends Actor {
-
     /** The default width of the button */
     private int normalWidth;
     /** The default height of the button */
