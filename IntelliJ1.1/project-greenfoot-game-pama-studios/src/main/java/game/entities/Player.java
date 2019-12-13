@@ -205,7 +205,8 @@ public class Player extends Physics {
             jumpPad();
             winConfetti();
             updateGravity();
-            finish.setVolume(Options.soundeffectVolume); //Laat niet meerdere keren afspelen
+            finish.setVolume(Options.soundeffectVolume);
+            death.setVolume(Options.soundeffectVolume);
             if (!finished) {
                 finished = true;
                 finish.play();
@@ -232,8 +233,11 @@ public class Player extends Physics {
         }
     }
     private void deadAnimation() {
+        System.out.println(dyingAnimation);
         if (!won) {
-            if (dyingAnimation > 0 && dyingAnimation < 100){death.setVolume(Options.soundeffectVolume); death.play();}
+            if (dyingAnimation > 0 && dyingAnimation < 100){
+                death.play();
+            }
             if (dyingAnimation < 200) {
                 animateMovement("Death");
                 dyingAnimation += 1;

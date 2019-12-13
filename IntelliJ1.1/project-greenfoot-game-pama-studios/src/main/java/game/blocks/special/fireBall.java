@@ -8,33 +8,52 @@ import greenfoot.GreenfootImage;
 
 public class fireBall extends Physics {
     private static GreenfootImage fireBall = new GreenfootImage("fireball.png");
+    private static GreenfootImage fire = new GreenfootImage("fire01.png");
     private boolean started;
-    private boolean rotate;
     public String direction;
+    //fall Time
+    private int fTime;
+    //remove image time
+    private int rTime;
+    //fade out image to fire then delete
+    private boolean fade;
 
     fireBall(){
         started = false;
-        rotate = true;
         direction = "right";
-        fireBall.scale(Options.blockSize * 2,Options.blockSize * 2);
+        fade = false;
+        fireBall.scale((int) (Options.blockSize * 1.5), (int) (Options.blockSize * 1.5));
+        fire.scale((int) (Options.blockSize * 1.5), (int) (Options.blockSize * 1.5));
         setImage(fireBall);
     }
 
     public void act(){
-        killEnemy();
         if (!started) {
             setDoubleX(getX());
             setDoubleY(getY());
             started = true;
         }
         entityOffset();
-        if (direction.equals("right")) {
-            setRelativeLocation(+10, 0);
-        } else {
-            setRelativeLocation(-10, 0);
-        }
-        if (rotate) {
-            setRotation(getRotation() + 15);
+        moveDirection();
+        killEnemy();
+        fadeout();
+        /*if(this.isTouching(Solid.class)){
+            getWorld().removeObject(this);
+        }*/
+    }
+
+    public void moveDirection(){
+        fTime++;
+        setRotation(getRotation() + 15);
+        if(!fade) {
+            if (direction.equals("right")) {
+                if (fTime > 0) { setRelativeLocation(+10, -2.5); }
+                if (fTime > 15) { setRelativeLocation(0, +5); }
+            } else {
+                setRotation(getRotation() - 15);
+                if (fTime > 0) { setRelativeLocation(-10, -2.5); }
+                if (fTime > 15) { setRelativeLocation(0, +5); }
+            }
         }
     }
 
@@ -43,9 +62,18 @@ public class fireBall extends Physics {
         Slime slime = (Slime) getOneIntersectingObject(Slime.class);
         if (bee != null) {
             bee.getWorld().removeObject(bee);
+            fade = true;
         }
         if (slime != null) {
             slime.getWorld().removeObject(slime);
+            fade = true;
+        }
+    }
+    public void fadeout(){
+        if (fade){
+            rTime++;
+            if(rTime > 0){setImage(fire);}
+            if(rTime > 10){getWorld().removeObject(this);};
         }
     }
 }
