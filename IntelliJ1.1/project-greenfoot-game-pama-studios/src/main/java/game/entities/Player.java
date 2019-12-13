@@ -790,7 +790,6 @@ public class Player extends Physics {
 
     private void Bee(){
         Bee bee = (Bee) getObjectBelowOfClass(Bee.class);
-        Bee beedmg = (Bee) getOneIntersectingObject(Bee.class);
         if (bee != null) {
             if (!bee.dead) {
                 bee.dead = true;
@@ -798,6 +797,7 @@ public class Player extends Physics {
                 jump(20);
             }
         }
+        Bee beedmg = (Bee) getOneIntersectingObject(Bee.class);
         if(beedmg != null){
             if (!beedmg.dead){
                 if(canTakeDmg) {

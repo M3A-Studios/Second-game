@@ -44,15 +44,17 @@ public class fireBall extends Physics {
 
     public void moveDirection(){
         fTime++;
-        setRotation(getRotation() + 15);
         if(!fade) {
             if (direction.equals("right")) {
+                setRotation(getRotation() + 15);
                 if (fTime > 0) { setRelativeLocation(+10, -2.5); }
-                if (fTime > 15) { setRelativeLocation(0, +5); }
+                if (fTime > 15) { setRelativeLocation(-2.5, +5); }
+                if (fTime > 30) { setRelativeLocation(-5, +2.5); }
             } else {
                 setRotation(getRotation() - 15);
                 if (fTime > 0) { setRelativeLocation(-10, -2.5); }
-                if (fTime > 15) { setRelativeLocation(0, +5); }
+                if (fTime > 15) { setRelativeLocation(+2.5, +5); }
+                if (fTime > 30) { setRelativeLocation(+5, +2.5); }
             }
         }
     }
